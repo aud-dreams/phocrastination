@@ -376,6 +376,8 @@
 "Assets/Scripts/crafting_toggle.cs"
 "Assets/Scripts/dishes_toggle.cs"
 "Assets/Scripts/dish_pile.cs"
+"Assets/Scripts/drawing_pad.cs"
+"Assets/Scripts/GameHandler.cs"
 "Assets/Scripts/main_toggle.cs"
 "Assets/Scripts/menu1.cs"
 "Assets/Scripts/menu2.cs"

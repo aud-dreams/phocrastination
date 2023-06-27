@@ -7,9 +7,13 @@ public class dish_pile : MonoBehaviour
     private new Collider collider;
     public GameObject dish_pile_large;
     public GameObject dish_pile_small;
+    Vector3 mousePositionOffset;
 
     private void Start() {
         collider = GetComponent<Collider>();
+        dish_pile_small.SetActive(true);
+
+        mousePositionOffset = bowl.transform.position - transform.position;
     }
 
     private void Update() {
@@ -18,15 +22,12 @@ public class dish_pile : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                if (bowl != null) {
-                    Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    spawnPosition.z = 0f;
-                    Instantiate(bowl, spawnPosition, Quaternion.identity);
-                }
-
-                count++;
+                bowl.transform.position = hit.point;
+                bowl.SetActive(true);
             }
         }
+        int count = PlayerPrefs.GetInt("Bowl");
+
         if (count == 4) {
             dish_pile_large.SetActive(false);
             dish_pile_small.SetActive(true);

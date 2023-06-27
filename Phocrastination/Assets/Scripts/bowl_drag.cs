@@ -3,10 +3,8 @@ using UnityEngine;
 public class bowl_drag : MonoBehaviour
 {
     Vector3 mousePositionOffset;
-    private new Collider collider;
 
     private void Start() {
-        collider = GetComponent<Collider>();
     }
 
     private Vector3 GetMouseWorldPosition() {
@@ -49,19 +47,11 @@ public class bowl_drag : MonoBehaviour
         }
 
         gameObject.SetActive(false);
-    }
-
-    private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                spawnPosition.z = 0f;
-                transform.position = spawnPosition;
-                gameObject.SetActive(true);
-            }
-        }
+        int bowls = PlayerPrefs.GetInt("Bowl");
+        Debug.Log(bowls);
+        bowls += 1;
+        
+        PlayerPrefs.SetInt("Bowl", bowls);
+        PlayerPrefs.SetInt("firstClick", 0);
     }
 }

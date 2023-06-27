@@ -8,6 +8,8 @@ public class cover : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Bool", 1);
+        PlayerPrefs.SetInt("Bowl", 0);
+        PlayerPrefs.SetInt("firstClick", 1);
     }
 
     // Update is called once per frame
