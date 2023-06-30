@@ -33,7 +33,7 @@ public class dish_pile : MonoBehaviour
             dish_pile_small.SetActive(true);
         }
 
-        if (count == 8) {
+        if (count == 7) {
             dish_pile_small.SetActive(false);
         }
     }

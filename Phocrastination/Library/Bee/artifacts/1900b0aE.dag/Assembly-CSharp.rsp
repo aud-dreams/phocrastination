@@ -388,6 +388,7 @@
 "Assets/Scripts/menu5.cs"
 "Assets/Scripts/next.cs"
 "Assets/Scripts/next_button.cs"
+"Assets/Scripts/next_customer_toggle.cs"
 "Assets/Scripts/next_toggle.cs"
 "Assets/Scripts/redo_toggle.cs"
 "Assets/Scripts/serving_toggle.cs"

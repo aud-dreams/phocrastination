@@ -18,8 +18,7 @@ public class speech_swap : MonoBehaviour
 
     private void ActivateObject(GameObject objectToActivate)
     {
-        if (activeObject != null)
-        {
+        if (activeObject != null) {
             activeObject.SetActive(false);
         }
 
@@ -27,14 +26,10 @@ public class speech_swap : MonoBehaviour
         activeObject.SetActive(true);
     }
 
-    private void SwitchObjects()
-    {
-        if (activeObject == object1)
-        {
+    private void SwitchObjects() {
+        if (activeObject == object1) {
             ActivateObject(object2);
-        }
-        else
-        {
+        } else {
             ActivateObject(object1);
         }
     }

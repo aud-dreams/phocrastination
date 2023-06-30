@@ -14,7 +14,7 @@ public class bowl_drag : MonoBehaviour
 
     private void OnMouseDown() {
         // capture mouse offset
-        mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
+        mousePositionOffset = transform.position - GetMouseWorldPosition();
     }
 
     private void OnMouseDrag() {
