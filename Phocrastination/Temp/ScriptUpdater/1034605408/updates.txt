@@ -1,0 +1,1 @@
+Temp/ScriptUpdater/1034605408\775122762_customer_manager.cs => Assets/Scripts/customer_manager.cs
