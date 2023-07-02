@@ -17,5 +17,10 @@ public class game_data : ScriptableObject
     public bool herbs_inside;
     public bool noodles_inside;
 
+    // serving station
+    public int total_customers = 10;
+    public int counter = 10;
+    public List<GameObject> customers_line = new List<GameObject>();
+    public bool can_next = false;
 
 }

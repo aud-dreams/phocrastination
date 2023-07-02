@@ -4,39 +4,35 @@ using UnityEngine;
 
 public class customer_manager : MonoBehaviour
 {
-    // HARDCODED num of customers for now
-    private int numCustomers = 10, copyNumCustomers = 10;
+    public game_data game_data;
     float offset = 1f;
     public GameObject current;
-    public List<GameObject> customers = new List<GameObject>();
-    public int currentIndex = 0;
-
+    
     void Start() {
         Vector3 position = new Vector3(3f, 3.04f, 0f); 
         Renderer renderer1 = current.GetComponent<Renderer>();
 
-        for (int i = 0; i < numCustomers; i++) {
-            renderer1.sortingOrder = copyNumCustomers;
-            copyNumCustomers--;
+        for (int i = 0; i < game_data.total_customers; i++) {
+            renderer1.sortingOrder = game_data.counter;
+            game_data.counter--;
 
             Vector3 newPosition = new Vector3(position.x + (i * offset), position.y, position.z);
             GameObject newCustomer = Instantiate(current, newPosition, Quaternion.identity);
 
-            customers.Add(newCustomer);
+            game_data.customers_line.Add(newCustomer);
         }
 
         current.SetActive(false);
         Shadow();
 
         // first customer in list leaves
-        StartCoroutine(Order(customers[0]));
-        customers.RemoveAt(0);
-        Debug.Log(customers.Count);
+        StartCoroutine(Order(game_data.customers_line[0]));
+        game_data.customers_line.RemoveAt(0);
     }
 
     public void Shadow() {
-        for (int i = 1; i < customers.Count; i++) {
-            Renderer renderer2 = customers[i].GetComponent<SpriteRenderer>();
+        for (int i = 1; i < game_data.customers_line.Count; i++) {
+            Renderer renderer2 = game_data.customers_line[i].GetComponent<SpriteRenderer>();
             float darkenAmount = 0.65f;
             Color dark = new Color(renderer2.material.color.r * darkenAmount, renderer2.material.color.g * darkenAmount, renderer2.material.color.b * darkenAmount, renderer2.material.color.a);
             renderer2.material.color = dark;
@@ -48,6 +44,7 @@ public class customer_manager : MonoBehaviour
 
     public IEnumerator Order(GameObject customer) {
         // wait 5 seconds for order
+        speech.SetActive(true);
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);
 
@@ -58,5 +55,6 @@ public class customer_manager : MonoBehaviour
 
         // deactivate off screen
         customer.SetActive(false); 
+        game_data.can_next = true;
     }
 }

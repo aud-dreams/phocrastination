@@ -6,6 +6,7 @@ public class next_customer_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
+    public game_data game_data;
 
     private void Start() {
         // get render component
@@ -17,11 +18,20 @@ public class next_customer_toggle : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        render.enabled = true;
+        if (game_data.can_next) {
+            render.enabled = true;
+        }
     }
 
     private void OnMouseExit() {
         render.enabled = false;
+    }
+
+    public void Lighten() {
+        Renderer renderer2 = game_data.customers_line[0].GetComponent<SpriteRenderer>();
+        float lightenAmount = 1.53f;
+        Color light = new Color(renderer2.material.color.r * lightenAmount, renderer2.material.color.g * lightenAmount, renderer2.material.color.b * lightenAmount, renderer2.material.color.a);
+        renderer2.material.color = light;
     }
 
     void Update() {
@@ -30,12 +40,20 @@ public class next_customer_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                // all customers shift left
-                // foreach (customer in customers) {
-                    // shift their position 0.5f to the left
-                // customers[0].SetActive(true);
-                // StartCoroutine(Order(customers[0]));
-                // remove from list
+                if (game_data.can_next) {
+                    // all customers shift left & front customer turns active & light
+                    foreach (GameObject customer in game_data.customers_line) {
+                        customer.transform.position += new Vector3(-1f, 0f, 0f);
+                    }
+                    Lighten();
+                    game_data.customers_line[0].SetActive(true);
+                    StartCoroutine(Order(game_data.customers_line[0]));
+                    game_data.customers_line.RemoveAt(0);
+                    Debug.Log(game_data.customers_line.Count);
+                }
+
+                // once button clicked, deactivate button again until next customer leaves
+                game_data.can_next = false;
             }
         }
     }
@@ -45,6 +63,7 @@ public class next_customer_toggle : MonoBehaviour
 
     public IEnumerator Order(GameObject customer) {
         // wait 5 seconds for order
+        speech.SetActive(true);
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);
 
@@ -55,5 +74,6 @@ public class next_customer_toggle : MonoBehaviour
 
         // deactivate off screen
         customer.SetActive(false); 
+        game_data.can_next = true;
     }
 }

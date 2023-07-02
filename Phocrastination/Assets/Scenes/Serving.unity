@@ -817,7 +817,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -56
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 30185ebffc8e53345871b2c22c3d8b11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1137,6 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda297c49775f7d43a893c2654d56a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
   speech: {fileID: 705137943}
   speed: 5
 --- !u!65 &2077936025
@@ -1181,9 +1182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85efcb73fbff6bd49aefb792ae2ec62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
   current: {fileID: 1100029900}
-  customers: []
-  currentIndex: 0
   speech: {fileID: 705137943}
   speed: 5
 --- !u!4 &2120430950
