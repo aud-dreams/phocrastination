@@ -62,5 +62,6 @@ public class bowl_drag : MonoBehaviour
         game_data.dirty_bowls = dirty_bowls;
         game_data.clean_bowls = clean_bowls;
         game_data.firstClick = 0;
+        PlayerPrefs.SetInt("firstClick", 0);
     }
 }

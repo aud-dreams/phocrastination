@@ -1,16 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - GameHandler
     - bowl_drag
     - cat_toggle
     - character_control
+    - color_switch
     - cover
     - crafting_toggle
+    - customer_manager
     - dish_pile
     - dishes_toggle
     - drawing_pad
+    - finish_bowl_toggle
     - food_drag
+    - game_data
     - main_dot
     - main_toggle
     - menu1
@@ -19,6 +22,7 @@ ScriptsOnlyBuild:
     - menu5
     - next
     - next_button
+    - next_customer_toggle
     - next_toggle
     - redo_toggle
     - serving_toggle
@@ -72,7 +76,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 8930}
+      Script: {instanceID: 8946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -96,6 +100,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
     - Class: 61
@@ -107,17 +113,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 7462}
+      Script: {instanceID: 2432}
     - Class: 114
-      Script: {instanceID: 8930}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 26702}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 31106}
+      Script: {instanceID: 4950}
     - Class: 114
-      Script: {instanceID: 33780}
+      Script: {instanceID: 6710}
     - Class: 114
-      Script: {instanceID: 35778}
+      Script: {instanceID: 7474}
+    - Class: 114
+      Script: {instanceID: 8644}
+    - Class: 114
+      Script: {instanceID: 8712}
+    - Class: 114
+      Script: {instanceID: 8946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -152,11 +164,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 3184}
+      Script: {instanceID: 3190}
     - Class: 114
-      Script: {instanceID: 6748}
+      Script: {instanceID: 4950}
     - Class: 114
-      Script: {instanceID: 8930}
+      Script: {instanceID: 6760}
+    - Class: 114
+      Script: {instanceID: 8946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -187,9 +201,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2594}
+      Script: {instanceID: 2596}
     - Class: 114
-      Script: {instanceID: 8930}
+      Script: {instanceID: 8946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -232,27 +246,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2008}
     - Class: 114
-      Script: {instanceID: 3300}
+      Script: {instanceID: 3306}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4162}
+      Script: {instanceID: 4168}
     - Class: 114
-      Script: {instanceID: 4770}
+      Script: {instanceID: 4778}
     - Class: 114
-      Script: {instanceID: 5476}
+      Script: {instanceID: 5486}
     - Class: 114
-      Script: {instanceID: 6276}
+      Script: {instanceID: 6286}
     - Class: 114
-      Script: {instanceID: 6282}
+      Script: {instanceID: 6292}
     - Class: 114
-      Script: {instanceID: 6726}
+      Script: {instanceID: 6738}
     - Class: 114
-      Script: {instanceID: 7690}
+      Script: {instanceID: 8466}
     - Class: 114
-      Script: {instanceID: 8454}
-    - Class: 114
-      Script: {instanceID: 8758}
+      Script: {instanceID: 8774}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -283,9 +295,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 7286}
+      Script: {instanceID: 4678}
     - Class: 114
-      Script: {instanceID: 8930}
+      Script: {instanceID: 7298}
+    - Class: 114
+      Script: {instanceID: 8946}
+    - Class: 114
+      Script: {instanceID: 9054}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -419,6 +435,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: c829a8b6dae6c7fdf6470ff8fc93fe72
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: food_drag
+  - hash:
+      serializedVersion: 2
       Hash: cfdd0010efd7b54c2b7512656dbc9119
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
@@ -447,6 +469,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: e1318e6574c524871fde7b2d16649213
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: color_switch
   - hash:
       serializedVersion: 2
       Hash: fe64a45214940b510a0ec79c96d43498
@@ -533,6 +561,12 @@ ScriptsOnlyBuild:
     className: UnityOnButtonClickMessageListener
   - hash:
       serializedVersion: 2
+      Hash: f5993e16a3cd332541d32e606828ce6b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: redo_toggle
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -551,7 +585,7 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: a65e7158cccf9eaec063b707e9640fc8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: bowl_drag
@@ -773,6 +807,12 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: 7a5f9afcceed16879681dc654a566b47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: customer_manager
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -801,6 +841,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Tilemap.Extras.dll
     namespaceName: UnityEngine.Tilemaps
     className: AnimatedTile
+  - hash:
+      serializedVersion: 2
+      Hash: 770b1eaa7b1fd11d673f7fb19f94a990
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: game_data
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -996,6 +1042,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: finish_bowl_toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
@@ -1007,7 +1059,7 @@ ScriptsOnlyBuild:
     className: menu1
   - hash:
       serializedVersion: 2
-      Hash: 37eb9eb993ce4e17e7c66ceb834461d2
+      Hash: f4102bc016824bdd9e7e7329f9c689eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: dish_pile
@@ -1103,7 +1155,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e22c7e136189220ee31e6f19f75a35b6
+      Hash: c9e8cae0d4fb2d0a02f0de834448eaf3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: drawing_pad
@@ -1289,6 +1341,18 @@ ScriptsOnlyBuild:
     className: SpriteLibrarySourceAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: main_dot
+  - hash:
+      serializedVersion: 2
+      Hash: a9e6300e9c5b7e6db6fd7ccf254d90c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: next_toggle
+  - hash:
+      serializedVersion: 2
       Hash: 956888f52428a26c6f986d124c5660ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1331,34 +1395,16 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
+      Hash: b93355f789ea20e52d5000f509404807
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: next_customer_toggle
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 28cfa84894f34f7b092f6a4645095025
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: next_toggle
-  - hash:
-      serializedVersion: 2
-      Hash: f5993e16a3cd332541d32e606828ce6b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: redo_toggle
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: main_dot
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: food_drag
   platform: 19
   scenePathNames:
   - Assets/Scenes/Landing.unity

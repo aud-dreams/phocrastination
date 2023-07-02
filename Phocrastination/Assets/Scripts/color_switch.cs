@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class color_switch : MonoBehaviour
 {
-    private Renderer render, render2;
+    private Renderer render;
     private new Collider collider;
     public GameObject baseDot;
+    public game_data game_data;
 
     private void Start() {
         // get render component
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
-        render2 = baseDot.GetComponent<SpriteRenderer>();
 
         // set visibility at start
         render.enabled = false;
@@ -42,26 +42,21 @@ public class color_switch : MonoBehaviour
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 // switch base dot to new color
                 if (this.CompareTag("OutlineColor")) {
-                    render2.material.color = Color.black;
-                    Debug.Log("change outline color");
+                    game_data.current_color = Color.black;
                 }
 
                 if (this.CompareTag("BeefColor")) {
-                    render2.material.color = HexToColor("#8d6042");
-                    Debug.Log("change beef color");
+                    game_data.current_color = HexToColor("#8d6042");
                 }
 
                 if (this.CompareTag("BrothColor")) {
-                    render2.material.color = HexToColor("#cfa76e");
-                    Debug.Log("change broth color");
+                    game_data.current_color = HexToColor("#cfa76e");
                 }
                 if (this.CompareTag("HerbsColor")) {
-                    render2.material.color = HexToColor("#507d4a");
-                    Debug.Log("change herbs color");
+                    game_data.current_color = HexToColor("#507d4a");
                 }
                 if (this.CompareTag("NoodlesColor")) {
-                    render2.material.color = HexToColor("#f0ddb6");
-                    Debug.Log("change noodles color");
+                    game_data.current_color = HexToColor("#f0ddb6");
                 }
 
             }

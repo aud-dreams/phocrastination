@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 67826320}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!212 &67826322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -327,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: bc4b9442e3ebd914980148c315049b06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -465,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389f10c7a2445574384fe8ae3a605e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!1 &146673030
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713099}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!65 &428247699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -777,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713099}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!65 &629354586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1034,6 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 965899513}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!212 &965899515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1181,6 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 987573232}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!212 &987573234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1616,6 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713099}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!65 &1083540225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1796,6 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 1449673947}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!61 &1449673947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2117,6 +2125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713099}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!65 &1714166122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2491,6 +2500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713101}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!61 &1798644808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2779,6 +2789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713099}
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
 --- !u!1 &1931998196
 GameObject:
   m_ObjectHideFlags: 0

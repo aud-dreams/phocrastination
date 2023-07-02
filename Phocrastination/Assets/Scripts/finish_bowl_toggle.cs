@@ -7,6 +7,7 @@ public class finish_bowl_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
+    public game_data game_data;
 
     private void Start() {
         // get render component
@@ -18,7 +19,9 @@ public class finish_bowl_toggle : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        render.enabled = true;
+        if (game_data.beef_inside && game_data.broth_inside && game_data.herbs_inside && game_data.noodles_inside) {
+            render.enabled = true;
+        }
     }
 
     private void OnMouseExit() {
@@ -31,7 +34,9 @@ public class finish_bowl_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                SceneManager.LoadScene("Main");
+                if (game_data.beef_inside && game_data.broth_inside && game_data.herbs_inside && game_data.noodles_inside) {
+                    SceneManager.LoadScene("Main");
+                }
             }
         }
     }
