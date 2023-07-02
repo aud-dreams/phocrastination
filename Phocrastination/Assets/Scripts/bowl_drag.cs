@@ -3,6 +3,9 @@ using UnityEngine;
 public class bowl_drag : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    public game_data game_data;
+    public int dirty_bowls;
+    public int clean_bowls;
 
     private void Start() {
     }
@@ -47,11 +50,17 @@ public class bowl_drag : MonoBehaviour
         }
 
         gameObject.SetActive(false);
-        int bowls = PlayerPrefs.GetInt("Bowl");
-        Debug.Log(bowls);
-        bowls += 1;
-        
-        PlayerPrefs.SetInt("Bowl", bowls);
-        PlayerPrefs.SetInt("firstClick", 0);
+
+        dirty_bowls = game_data.dirty_bowls;
+        clean_bowls = game_data.clean_bowls;
+        dirty_bowls -= 1;
+        clean_bowls += 1;
+
+        Debug.Log(dirty_bowls);
+        Debug.Log(clean_bowls);
+
+        game_data.dirty_bowls = dirty_bowls;
+        game_data.clean_bowls = clean_bowls;
+        game_data.firstClick = 0;
     }
 }

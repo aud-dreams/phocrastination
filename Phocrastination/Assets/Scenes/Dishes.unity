@@ -390,6 +390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4fb6e4790f5699469d6a63bd3fc7645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
+  dirty_bowls: 0
+  clean_bowls: 0
 --- !u!61 &240626607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -632,7 +635,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbb05071b1e98243b06721cea207c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
   bowl: {fileID: 240626603}
+  clean_bowls: 0
+  dirty_bowls: 0
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}
 --- !u!1 &688681382
@@ -902,7 +908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbb05071b1e98243b06721cea207c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: f11f8afac538fec4e8d107b289ba1d35, type: 2}
   bowl: {fileID: 240626603}
+  clean_bowls: 0
+  dirty_bowls: 0
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}
 --- !u!65 &1809112454

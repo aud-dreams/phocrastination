@@ -382,6 +382,7 @@
 "Assets/Scripts/finish_bowl_toggle.cs"
 "Assets/Scripts/food_drag.cs"
 "Assets/Scripts/GameHandler.cs"
+"Assets/Scripts/game_data.cs"
 "Assets/Scripts/main_dot.cs"
 "Assets/Scripts/main_toggle.cs"
 "Assets/Scripts/menu1.cs"
