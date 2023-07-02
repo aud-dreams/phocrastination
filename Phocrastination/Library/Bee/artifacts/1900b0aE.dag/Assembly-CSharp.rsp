@@ -378,6 +378,7 @@
 "Assets/Scripts/dishes_toggle.cs"
 "Assets/Scripts/dish_pile.cs"
 "Assets/Scripts/drawing_pad.cs"
+"Assets/Scripts/finish_bowl_toggle.cs"
 "Assets/Scripts/food_drag.cs"
 "Assets/Scripts/GameHandler.cs"
 "Assets/Scripts/main_dot.cs"

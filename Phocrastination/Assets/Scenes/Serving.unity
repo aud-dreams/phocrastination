@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda297c49775f7d43a893c2654d56a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speech: {fileID: 0}
+  speech: {fileID: 705137943}
   speed: 5
 --- !u!65 &2077936025
 BoxCollider:

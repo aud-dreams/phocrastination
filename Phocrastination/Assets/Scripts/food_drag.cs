@@ -3,6 +3,7 @@ using UnityEngine;
 public class food_drag : MonoBehaviour
 {
     Vector3 mousePositionOffset;
+    public BoxCollider2D food;
 
     private void Start() {
     }
@@ -21,9 +22,26 @@ public class food_drag : MonoBehaviour
         transform.position = GetMouseWorldPosition() + mousePositionOffset;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("collider")) {
-            // detect has entered bowl
+    private void OnTriggerStay2D(Collider2D collider) {
+        if (collider.bounds.Contains(food.bounds.min) && collider.bounds.Contains(food.bounds.max)) {
+            // turn bools true
+            // if 4 bools true, button activates
+
+            if (this.CompareTag("Beef")) {
+                Debug.Log("beef inside");
+            }
+
+            if (this.CompareTag("Broth")) {
+                Debug.Log("broth inside");
+            }
+
+            if (this.CompareTag("Herbs")) {
+                Debug.Log("herbs inside");
+            }
+
+            if (this.CompareTag("Noodles")) {
+                Debug.Log("noodles inside");
+            }
         }
     }
 }

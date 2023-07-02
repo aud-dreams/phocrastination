@@ -13,19 +13,15 @@ public class next_customer_toggle : MonoBehaviour
         collider = GetComponent<Collider>();
 
         // set visibility at start
-        SetVisibility(false);
+        render.enabled = false;
     }
 
     private void OnMouseEnter() {
-        SetVisibility(true);
+        render.enabled = true;
     }
 
     private void OnMouseExit() {
-        SetVisibility(false);
-    }
-
-    private void SetVisibility(bool isVisible) {
-        render.enabled = isVisible;
+        render.enabled = false;
     }
 
     void Update() {
@@ -38,7 +34,8 @@ public class next_customer_toggle : MonoBehaviour
                 // foreach (customer in customers) {
                     // shift their position 0.5f to the left
                 // customers[0].SetActive(true);
-                // StartCoroutine(Leave(customers[0]));
+                // StartCoroutine(Order(customers[0]));
+                // remove from list
             }
         }
     }
@@ -46,7 +43,7 @@ public class next_customer_toggle : MonoBehaviour
     public GameObject speech;
     public float speed = 5f;
 
-    public IEnumerator Leave(GameObject customer) {
+    public IEnumerator Order(GameObject customer) {
         // wait 5 seconds for order
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);

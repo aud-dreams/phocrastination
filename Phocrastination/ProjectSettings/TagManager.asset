@@ -6,6 +6,10 @@ TagManager:
   tags:
   - collider
   - Dot
+  - Beef
+  - Herbs
+  - Broth
+  - Noodles
   layers:
   - Default
   - TransparentFX

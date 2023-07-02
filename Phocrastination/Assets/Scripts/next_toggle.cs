@@ -7,7 +7,7 @@ public class next_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
-    public GameObject button, redo, instructions, pad;
+    public GameObject finish_bowl_button, finish_bowl_toggle, redo, instructions, pad;
     private int counter = 0;
     public GameObject beef, broth, herbs, noodles;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
@@ -30,6 +30,8 @@ public class next_toggle : MonoBehaviour
         herbsOutline.SetActive(false);
         noodlesOutline.SetActive(false);
         redo.SetActive(false);
+        finish_bowl_button.SetActive(false);
+        finish_bowl_toggle.SetActive(false);
         
         mainDot = FindObjectOfType<main_dot>();
 
@@ -83,13 +85,15 @@ public class next_toggle : MonoBehaviour
                     noodlesOutline.SetActive(false);
                     pad.SetActive(false);
                     redo.SetActive(false);
-                    button.SetActive(false);
+                    gameObject.SetActive(false);
                     clear();
 
                     beef.SetActive(true);
                     broth.SetActive(true);
                     herbs.SetActive(true);
                     noodles.SetActive(true);
+                    finish_bowl_button.SetActive(true);
+                    finish_bowl_toggle.SetActive(true);
                 }
             }
         }

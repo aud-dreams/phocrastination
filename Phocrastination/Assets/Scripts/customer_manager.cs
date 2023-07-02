@@ -29,7 +29,9 @@ public class customer_manager : MonoBehaviour
         Shadow();
 
         // first customer in list leaves
-        StartCoroutine(Leave(customers[0]));
+        StartCoroutine(Order(customers[0]));
+        customers.RemoveAt(0);
+        Debug.Log(customers.Count);
     }
 
     public void Shadow() {
@@ -44,7 +46,7 @@ public class customer_manager : MonoBehaviour
     public GameObject speech;
     public float speed = 5f;
 
-    public IEnumerator Leave(GameObject customer) {
+    public IEnumerator Order(GameObject customer) {
         // wait 5 seconds for order
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);
