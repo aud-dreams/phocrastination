@@ -372,6 +372,7 @@
 "Assets/Scripts/bowl_drag.cs"
 "Assets/Scripts/cat_toggle.cs"
 "Assets/Scripts/character_control.cs"
+"Assets/Scripts/color_switch.cs"
 "Assets/Scripts/cover.cs"
 "Assets/Scripts/crafting_toggle.cs"
 "Assets/Scripts/customer_manager.cs"

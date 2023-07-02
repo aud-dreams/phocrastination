@@ -14,19 +14,15 @@ public class main_toggle : MonoBehaviour
         collider = GetComponent<Collider>();
 
         // set visibility at start
-        SetVisibility(false);
+        render.enabled = false;
     }
 
     private void OnMouseEnter() {
-        SetVisibility(true);
+        render.enabled = true;
     }
 
     private void OnMouseExit() {
-        SetVisibility(false);
-    }
-
-    private void SetVisibility(bool isVisible) {
-        render.enabled = isVisible;
+        render.enabled = false;
     }
 
     void Update() {

@@ -12,6 +12,7 @@ public class next_toggle : MonoBehaviour
     public GameObject beef, broth, herbs, noodles;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
     public main_dot mainDot;
+    public GameObject outlineColorSwitch, beefColorSwitch, brothColorSwitch, herbsColorSwitch, noodlesColorSwitch;
 
     private void Start() {
         // get render component
@@ -32,6 +33,12 @@ public class next_toggle : MonoBehaviour
         redo.SetActive(false);
         finish_bowl_button.SetActive(false);
         finish_bowl_toggle.SetActive(false);
+
+        outlineColorSwitch.SetActive(false);
+        beefColorSwitch.SetActive(false);
+        brothColorSwitch.SetActive(false);
+        herbsColorSwitch.SetActive(false);
+        noodlesColorSwitch.SetActive(false);
         
         mainDot = FindObjectOfType<main_dot>();
 
@@ -65,6 +72,11 @@ public class next_toggle : MonoBehaviour
                     pad.SetActive(true);
                     beefOutline.SetActive(true);
                     redo.SetActive(true);
+                    outlineColorSwitch.SetActive(true);
+                    beefColorSwitch.SetActive(true);
+                    brothColorSwitch.SetActive(true);
+                    herbsColorSwitch.SetActive(true);
+                    noodlesColorSwitch.SetActive(true);
                     counter++;
                 } else if (counter == 1) {
                     beefOutline.SetActive(false);

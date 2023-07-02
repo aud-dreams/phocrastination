@@ -10,6 +10,11 @@ TagManager:
   - Herbs
   - Broth
   - Noodles
+  - OutlineColor
+  - BeefColor
+  - BrothColor
+  - HerbsColor
+  - NoodlesColor
   layers:
   - Default
   - TransparentFX
