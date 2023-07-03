@@ -33,28 +33,34 @@ public class dish_pile : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        if (game_data.allow_bowls) {
+            if (Input.GetMouseButtonDown(0)) {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                bowl.transform.position = hit.point;
-                bowl.SetActive(true);
+                if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
+                    bowl.transform.position = hit.point;
+                    bowl.SetActive(true);
+                }
             }
-        }
 
-        // get updated values
-        dirty_bowls = game_data.dirty_bowls;
-        clean_bowls = game_data.clean_bowls;
+            // get updated values
+            dirty_bowls = game_data.dirty_bowls;
+            clean_bowls = game_data.clean_bowls;
 
-        // base condition
-        if (dirty_bowls == 0) {
-            dish_pile_small.SetActive(false);
-        }
+            // base condition
+            if (dirty_bowls == 1) {
+                if (Input.GetMouseButtonDown(0)) {
+                    dish_pile_small.SetActive(false);
+                }
+            }
 
-        if (dirty_bowls == 4) {
-            dish_pile_large.SetActive(false);
-            dish_pile_small.SetActive(true);
+            if (dirty_bowls == 5) {
+                if (Input.GetMouseButtonDown(0)) {
+                    dish_pile_large.SetActive(false);
+                    dish_pile_small.SetActive(true);
+                }
+            }
         }
     }
 }

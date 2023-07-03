@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    // declare all vars as public (static, dependent on environment, datastream)
     public bool gameInProgress;
     public double timer;
+    public game_data game_data;
 
-    // Start is called before the first frame update
     void Start()
     {
-        gameInProgress = false;
+        gameInProgress = true;
+        game_data.menu_on = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (gameInProgress == true) {
-
-
+        if (gameInProgress == false) {
             //endGame condition
         }
         

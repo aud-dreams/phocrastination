@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  dirty_bowls: 4
-  clean_bowls: 1
-  firstClick: 0
+  menu_on: 0
+  character_position: {x: 0, y: 0, z: 0}
+  collisions: 0
+  washing_complete: 0
+  dirty_bowls: 5
+  clean_bowls: 0
+  allow_bowls: 1
   current_color: {r: 0, g: 0, b: 0, a: 1}
-  beef_inside: 0
-  broth_inside: 0
-  herbs_inside: 0
-  noodles_inside: 0
-  total_customers: 10
-  counter: 10
+  beef_inside: 1
+  broth_inside: 1
+  herbs_inside: 1
+  noodles_inside: 1
+  allow_drawing: 1
+  total_customers: 5
+  counter: 0
   customers_line: []
   can_next: 0

@@ -7,12 +7,11 @@ public class next_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
-    public GameObject finish_bowl_button, finish_bowl_toggle, redo, instructions, pad;
-    private int counter = 0;
+    public GameObject finish_bowl_button, finish_bowl_toggle, pad, redo;
     public GameObject beef, broth, herbs, noodles;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
     public main_dot mainDot;
-    public GameObject outlineColorSwitch, beefColorSwitch, brothColorSwitch, herbsColorSwitch, noodlesColorSwitch;
+    private int counter = 0;
 
     private void Start() {
         // get render component
@@ -21,27 +20,9 @@ public class next_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        pad.SetActive(false);
-        beef.SetActive(false);
-        broth.SetActive(false);
-        herbs.SetActive(false);
-        noodles.SetActive(false);
-        beefOutline.SetActive(false);
-        brothOutline.SetActive(false);
-        herbsOutline.SetActive(false);
-        noodlesOutline.SetActive(false);
-        redo.SetActive(false);
-        finish_bowl_button.SetActive(false);
-        finish_bowl_toggle.SetActive(false);
-
-        outlineColorSwitch.SetActive(false);
-        beefColorSwitch.SetActive(false);
-        brothColorSwitch.SetActive(false);
-        herbsColorSwitch.SetActive(false);
-        noodlesColorSwitch.SetActive(false);
+        beefOutline.SetActive(true);
         
         mainDot = FindObjectOfType<main_dot>();
-
     }
 
     private void OnMouseEnter() {
@@ -68,32 +49,21 @@ public class next_toggle : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 if (counter == 0) {
-                    instructions.SetActive(false);
-                    pad.SetActive(true);
-                    beefOutline.SetActive(true);
-                    redo.SetActive(true);
-                    outlineColorSwitch.SetActive(true);
-                    beefColorSwitch.SetActive(true);
-                    brothColorSwitch.SetActive(true);
-                    herbsColorSwitch.SetActive(true);
-                    noodlesColorSwitch.SetActive(true);
-                    counter++;
-                } else if (counter == 1) {
                     beefOutline.SetActive(false);
                     brothOutline.SetActive(true);
                     counter++;
                     clear();
-                } else if (counter == 2) {
+                } else if (counter == 1) {
                     brothOutline.SetActive(false);
                     herbsOutline.SetActive(true);
                     counter++;
                     clear();
-                } else if (counter == 3) {
+                } else if (counter == 2) {
                     herbsOutline.SetActive(false);
                     noodlesOutline.SetActive(true);
                     counter++;
                     clear();
-                } else if (counter == 4) {
+                } else if (counter == 3) {
                     noodlesOutline.SetActive(false);
                     pad.SetActive(false);
                     redo.SetActive(false);
