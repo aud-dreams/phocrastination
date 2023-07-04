@@ -373,7 +373,6 @@
 "Assets/Scripts/cat_toggle.cs"
 "Assets/Scripts/character_control.cs"
 "Assets/Scripts/color_switch.cs"
-"Assets/Scripts/cover.cs"
 "Assets/Scripts/crafting_toggle.cs"
 "Assets/Scripts/customer_manager.cs"
 "Assets/Scripts/dishes_toggle.cs"
@@ -383,11 +382,11 @@
 "Assets/Scripts/food_drag.cs"
 "Assets/Scripts/GameHandler.cs"
 "Assets/Scripts/game_data.cs"
+"Assets/Scripts/help_toggle.cs"
 "Assets/Scripts/kitchen_pad_toggle.cs"
 "Assets/Scripts/main_dot.cs"
 "Assets/Scripts/main_pad_toggle.cs"
 "Assets/Scripts/main_toggle.cs"
-"Assets/Scripts/menu.cs"
 "Assets/Scripts/next_customer_toggle.cs"
 "Assets/Scripts/next_toggle.cs"
 "Assets/Scripts/order_counter_pad_toggle.cs"
@@ -395,6 +394,10 @@
 "Assets/Scripts/serving_toggle.cs"
 "Assets/Scripts/sink_pad_toggle.cs"
 "Assets/Scripts/speech_swap.cs"
+"Assets/Scripts/start_crafting_config.cs"
+"Assets/Scripts/start_dishes_config.cs"
+"Assets/Scripts/start_main_config.cs"
+"Assets/Scripts/start_serving_config.cs"
 -langversion:9.0
 
 /deterministic

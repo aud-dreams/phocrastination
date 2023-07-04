@@ -11,7 +11,23 @@ public class GameHandler : MonoBehaviour
     void Start()
     {
         gameInProgress = true;
-        game_data.menu_on = true;
+        game_data.first_main_help = true;
+        game_data.first_serving_help = true;
+        game_data.help = false;
+        game_data.click = 1;
+        game_data.total_customers = 5;
+        game_data.counter = 5;
+        game_data.customers_line = new List<GameObject>();
+
+        game_data.can_next = false;
+        game_data.first_crafting_help = true;
+        game_data.beef_inside = false;
+        game_data.broth_inside = false;
+        game_data.herbs_inside = false;
+        game_data.noodles_inside = false;
+
+        game_data.first_dishes_help = true;
+        game_data.washing_complete = false;
     }
 
     void Update()

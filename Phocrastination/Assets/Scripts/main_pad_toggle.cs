@@ -11,10 +11,8 @@ public class main_pad_toggle : MonoBehaviour
     private new Collider collider;
 
     public SpriteRenderer main_pad1, main_pad2, main_pad3;
-    public GameObject[] start;
-    public GameObject[] toggles;
-
-    private int click = 1;
+    public GameObject[] start, toggles;
+    public GameObject help;
 
     private void Start() {        
         // get render component
@@ -23,6 +21,9 @@ public class main_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+        if (game_data.first_main_help) {
+            help.SetActive(false);
+        }
     }
 
     private void OnMouseEnter() {
@@ -39,15 +40,15 @@ public class main_pad_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                if (click == 1) {
+                if (game_data.click == 1) {
                     main_pad2.enabled = true;
                     main_pad1.enabled = false;
-                    click += 1;
-                } else if (click == 2) {
+                    game_data.click += 1;
+                } else if (game_data.click == 2) {
                     main_pad3.enabled = true;
                     main_pad2.enabled = false;
-                    click += 1;
-                } else if (click == 3) {
+                    game_data.click += 1;
+                } else if (game_data.click == 3) {
                     // disable all menu sprites
                     foreach (GameObject item in start) {
                         item.SetActive(false);
@@ -56,7 +57,10 @@ public class main_pad_toggle : MonoBehaviour
                     foreach (GameObject item in toggles) {
                         item.SetActive(true);
                     }
-                    game_data.menu_on = false;
+                    
+                    help.SetActive(true);
+                    game_data.first_main_help = false;
+                    game_data.help = false;
                 }
                 
             }

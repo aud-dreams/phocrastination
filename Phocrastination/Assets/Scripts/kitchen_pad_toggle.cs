@@ -9,7 +9,7 @@ public class kitchen_pad_toggle : MonoBehaviour
     public game_data game_data;
     public GameObject[] items;
 
-    public GameObject finish_bowl_button, finish_bowl_toggle, next, redo;
+    public GameObject finish_bowl_button, finish_bowl_toggle, next, redo, help, home;
     public GameObject beef, broth, herbs, noodles;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
     public main_dot mainDot;
@@ -41,6 +41,11 @@ public class kitchen_pad_toggle : MonoBehaviour
         brothColorSwitch.SetActive(false);
         herbsColorSwitch.SetActive(false);
         noodlesColorSwitch.SetActive(false);
+
+        if (game_data.first_crafting_help) {
+            help.SetActive(false);
+            home.SetActive(false);
+        }
     }
 
     private void OnMouseEnter() {
@@ -70,6 +75,12 @@ public class kitchen_pad_toggle : MonoBehaviour
                 brothColorSwitch.SetActive(true);
                 herbsColorSwitch.SetActive(true);
                 noodlesColorSwitch.SetActive(true);
+
+                help.SetActive(true);
+                home.SetActive(true);
+
+                game_data.first_crafting_help = false;
+                game_data.help = false;
             }
         }
     }

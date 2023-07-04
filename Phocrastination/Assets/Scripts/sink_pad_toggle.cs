@@ -9,6 +9,7 @@ public class sink_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public GameObject[] items;
+    public GameObject help, home;
 
     void Start()
     {
@@ -18,6 +19,11 @@ public class sink_pad_toggle : MonoBehaviour
         // set visibility at start
         render.enabled = false;
         game_data.allow_bowls = false;
+
+        if (game_data.first_dishes_help) {
+            help.SetActive(false);
+            home.SetActive(false);
+        }
     }
 
     private void OnMouseEnter() {
@@ -39,6 +45,12 @@ public class sink_pad_toggle : MonoBehaviour
                 }
 
                 game_data.allow_bowls = true;
+
+                help.SetActive(true);
+                home.SetActive(true);
+                game_data.first_dishes_help = false;
+                game_data.help = false;
+        
             }
         }
     }

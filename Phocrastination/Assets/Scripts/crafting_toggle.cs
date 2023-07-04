@@ -8,14 +8,13 @@ public class crafting_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
 
-    public GameObject buttonObject;
-
-    public GameObject player;
+    public GameObject buttonObject, player;
     public float proximityThreshold = 5f;
+    public game_data game_data;
 
     void Start() {
         // if start menu activated at beginning of game, disable hovers
-        if (PlayerPrefs.GetInt("Bool") == 1) {
+        if (game_data.first_main_help) {
             buttonObject.SetActive(false);
         } else {
             buttonObject.SetActive(true);
