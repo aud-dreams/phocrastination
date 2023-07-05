@@ -18,16 +18,19 @@ MonoBehaviour:
   character_position: {x: 0, y: 0, z: 0}
   first_dishes_help: 0
   dirty_bowls: 2
-  allow_bowls: 1
-  first_crafting_help: 1
+  allow_bowls: 0
+  first_crafting_help: 0
   current_color: {r: 0, g: 0, b: 0, a: 1}
   beef_inside: 0
   broth_inside: 0
   herbs_inside: 0
   noodles_inside: 0
   allow_drawing: 1
+  allow_paintbrush: 1
   first_serving_help: 1
   total_customers: 5
   counter: 5
   customers_line: []
   can_next: 0
+  first_cat_help: 1
+  allow_hand: 0

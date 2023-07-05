@@ -32,12 +32,17 @@ public class GameHandler : MonoBehaviour
         game_data.herbs_inside = false;
         game_data.noodles_inside = false;
         game_data.allow_drawing = false;
+        game_data.allow_paintbrush = false;
 
         // dishes initialization
         game_data.first_dishes_help = true;
         game_data.dirty_bowls = 6;
         game_data.allow_bowls = false;
         game_data.dirty_bowls = 6;
+
+        // cat initialization
+        game_data.first_cat_help = false;
+        game_data.allow_hand = false;
     }
 
     void Update()

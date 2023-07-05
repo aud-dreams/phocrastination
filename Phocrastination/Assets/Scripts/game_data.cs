@@ -24,6 +24,7 @@ public class game_data : ScriptableObject
     public bool herbs_inside;
     public bool noodles_inside;
     public bool allow_drawing;
+    public bool allow_paintbrush;
 
     // serving station
     public bool first_serving_help;
@@ -31,4 +32,8 @@ public class game_data : ScriptableObject
     public int counter;
     public List<GameObject> customers_line;
     public bool can_next;
+
+    // cat station
+    public bool first_cat_help;
+    public bool allow_hand;
 }

@@ -82,6 +82,7 @@ public class kitchen_pad_toggle : MonoBehaviour
 
                 game_data.first_crafting_help = false;
                 game_data.help = false;
+                game_data.allow_paintbrush = true;
             }
         }
     }
