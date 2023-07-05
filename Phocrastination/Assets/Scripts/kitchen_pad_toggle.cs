@@ -75,6 +75,7 @@ public class kitchen_pad_toggle : MonoBehaviour
                 brothColorSwitch.SetActive(true);
                 herbsColorSwitch.SetActive(true);
                 noodlesColorSwitch.SetActive(true);
+                beefOutline.SetActive(true);
 
                 help.SetActive(true);
                 home.SetActive(true);

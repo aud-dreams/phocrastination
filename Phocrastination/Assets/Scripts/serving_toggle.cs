@@ -37,6 +37,7 @@ public class serving_toggle : MonoBehaviour
 
             // switch scene if spacebar pressed
             if (Input.GetKey(KeyCode.Space)) {
+                game_data.character_position = player.transform.position;
                 SceneManager.LoadScene("Serving");
             }
         }

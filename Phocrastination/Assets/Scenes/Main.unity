@@ -1322,6 +1322,7 @@ MonoBehaviour:
   spriteFront: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   spriteBack: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
   movementSpeed: 5
+  game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
 --- !u!212 &1307838404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1382,7 +1383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307838401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.35, z: 0.07940581}
+  m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

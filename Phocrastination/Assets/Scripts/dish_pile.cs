@@ -4,7 +4,6 @@ public class dish_pile : MonoBehaviour
 {
     public game_data game_data;
     public GameObject bowl;
-    public int clean_bowls;
     public int dirty_bowls;
     private new Collider collider;
     public GameObject dish_pile_large;
@@ -28,10 +27,6 @@ public class dish_pile : MonoBehaviour
         mousePositionOffset = bowl.transform.position - transform.position;
     }
 
-    private void get_clean_bowls() {
-        
-    }
-
     private void Update() {
         if (game_data.allow_bowls) {
             if (Input.GetMouseButtonDown(0)) {
@@ -46,7 +41,6 @@ public class dish_pile : MonoBehaviour
 
             // get updated values
             dirty_bowls = game_data.dirty_bowls;
-            clean_bowls = game_data.clean_bowls;
 
             // base condition
             if (dirty_bowls == 1) {

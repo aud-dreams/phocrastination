@@ -13,10 +13,7 @@ public class game_data : ScriptableObject
 
     // dishes station
     public bool first_dishes_help;
-    public int collisions;
-    public bool washing_complete;
     public int dirty_bowls;
-    public int clean_bowls;
     public bool allow_bowls;
 
     // crafting station

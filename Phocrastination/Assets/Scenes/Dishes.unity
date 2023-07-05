@@ -218,8 +218,8 @@ GameObject:
   - component: {fileID: 240626605}
   - component: {fileID: 240626604}
   - component: {fileID: 240626607}
-  - component: {fileID: 240626606}
   - component: {fileID: 240626608}
+  - component: {fileID: 240626606}
   m_Layer: 0
   m_Name: bowl
   m_TagString: Untagged
@@ -268,7 +268,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: fdcca512733ea324c8e2cb90e7f1eda7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6137359d9dd52740b2971fd7224ebfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -307,11 +307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  dirty_bowls: 0
-  clean_bowls: 0
   bowl: {fileID: 240626607}
-  collisions: 0
-  washing_complete: 0
+  clean_bowl: {fileID: 21300000, guid: fdcca512733ea324c8e2cb90e7f1eda7, type: 3}
+  dirty_bowl: {fileID: 21300000, guid: b6137359d9dd52740b2971fd7224ebfd, type: 3}
 --- !u!61 &240626607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -516,7 +514,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8f6430d6ca5faa24aabc353eb3a9fcb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f20b37f282a65cd47a5a608de6f42d6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -556,7 +554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
   bowl: {fileID: 240626603}
-  clean_bowls: 0
   dirty_bowls: 0
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}
@@ -1244,7 +1241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 2094aedee308abf428631f6b4aadc599, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4950000ad89a833498f7a358bbbb8cb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1284,7 +1281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
   bowl: {fileID: 240626603}
-  clean_bowls: 0
   dirty_bowls: 0
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}

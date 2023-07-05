@@ -10,11 +10,13 @@ public class character_control : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    public game_data game_data;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        transform.position = game_data.character_position;
     }
 
     private void Update()
