@@ -15,6 +15,7 @@ TagManager:
   - BrothColor
   - HerbsColor
   - NoodlesColor
+  - Play
   layers:
   - Default
   - TransparentFX

@@ -7,13 +7,11 @@ public class kitchen_pad_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
-    public GameObject[] items;
 
-    public GameObject finish_bowl_button, finish_bowl_toggle, next, redo, help, home;
-    public GameObject beef, broth, herbs, noodles;
-    public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
     public main_dot mainDot;
-    public GameObject outlineColorSwitch, beefColorSwitch, brothColorSwitch, herbsColorSwitch, noodlesColorSwitch;
+    public GameObject[] start, items, ingredients, colorSwitches;
+    public GameObject beefOutline, help;
+    private SpriteRenderer paintbrush_render;
 
     private void Start() {        
         render = GetComponent<Renderer>();
@@ -23,29 +21,10 @@ public class kitchen_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        next.SetActive(false);
-        beef.SetActive(false);
-        broth.SetActive(false);
-        herbs.SetActive(false);
-        noodles.SetActive(false);
-        beefOutline.SetActive(false);
-        brothOutline.SetActive(false);
-        herbsOutline.SetActive(false);
-        noodlesOutline.SetActive(false);
-        redo.SetActive(false);
-        finish_bowl_button.SetActive(false);
-        finish_bowl_toggle.SetActive(false);
 
-        outlineColorSwitch.SetActive(false);
-        beefColorSwitch.SetActive(false);
-        brothColorSwitch.SetActive(false);
-        herbsColorSwitch.SetActive(false);
-        noodlesColorSwitch.SetActive(false);
-
-        if (game_data.first_crafting_help) {
-            help.SetActive(false);
-            home.SetActive(false);
-        }
+        foreach (GameObject item in items) { item.SetActive(false); }
+        foreach (GameObject i in ingredients) { i.SetActive(false); }
+        foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(false); }
     }
 
     private void OnMouseEnter() {
@@ -62,27 +41,23 @@ public class kitchen_pad_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                foreach (GameObject item in items) {
-                    item.SetActive(false);
+                foreach (GameObject s in start) {
+                    s.SetActive(false);
                 }
 
                 game_data.allow_drawing = true;
 
-                redo.SetActive(true);
-                next.SetActive(true);
-                outlineColorSwitch.SetActive(true);
-                beefColorSwitch.SetActive(true);
-                brothColorSwitch.SetActive(true);
-                herbsColorSwitch.SetActive(true);
-                noodlesColorSwitch.SetActive(true);
-                beefOutline.SetActive(true);
-
-                help.SetActive(true);
-                home.SetActive(true);
+                foreach (GameObject item in items) {
+                    if (!game_data.help) { item.SetActive(true); }
+                }
+                foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(true); }
+                
+                if (game_data.first_crafting_help) { beefOutline.SetActive(true); }
 
                 game_data.first_crafting_help = false;
                 game_data.help = false;
                 game_data.allow_paintbrush = true;
+                help.SetActive(true);
             }
         }
     }

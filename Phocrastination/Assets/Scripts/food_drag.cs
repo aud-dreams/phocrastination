@@ -20,7 +20,9 @@ public class food_drag : MonoBehaviour
     }
 
     private void OnMouseDrag() {
-        transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        if (!game_data.help) {
+            transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collider) {

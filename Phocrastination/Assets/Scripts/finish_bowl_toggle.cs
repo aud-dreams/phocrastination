@@ -8,6 +8,7 @@ public class finish_bowl_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    public GameObject button, toggle;
 
     private void Start() {
         // get render component
@@ -19,9 +20,7 @@ public class finish_bowl_toggle : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        if (game_data.beef_inside && game_data.broth_inside && game_data.herbs_inside && game_data.noodles_inside) {
-            render.enabled = true;
-        }
+        render.enabled = true;
     }
 
     private void OnMouseExit() {
@@ -34,9 +33,9 @@ public class finish_bowl_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                if (game_data.beef_inside && game_data.broth_inside && game_data.herbs_inside && game_data.noodles_inside) {
-                    SceneManager.LoadScene("Main");
-                }
+                game_data.bowl_complete = true;
+                button.SetActive(false);
+                toggle.SetActive(false);
             }
         }
     }

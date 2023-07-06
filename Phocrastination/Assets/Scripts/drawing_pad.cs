@@ -32,7 +32,7 @@ public class drawing_pad : MonoBehaviour
             isDrawing = false;
         }
 
-        if (isDrawing && game_data.allow_drawing) {
+        if (isDrawing && game_data.allow_drawing && !game_data.help) {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (drawingBounds.bounds.Contains(mousePosition)) {   // only allow drawing within bounds

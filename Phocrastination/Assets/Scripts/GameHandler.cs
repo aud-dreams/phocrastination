@@ -25,6 +25,8 @@ public class GameHandler : MonoBehaviour
         game_data.customers_line = new List<GameObject>();
 
         // crafting initialization
+        game_data.current_color = Color.black;
+        game_data.crafting_continue = false;
         game_data.can_next = false;
         game_data.first_crafting_help = true;
         game_data.beef_inside = false;
@@ -33,6 +35,7 @@ public class GameHandler : MonoBehaviour
         game_data.noodles_inside = false;
         game_data.allow_drawing = false;
         game_data.allow_paintbrush = false;
+        game_data.bowl_complete = false;
 
         // dishes initialization
         game_data.first_dishes_help = true;

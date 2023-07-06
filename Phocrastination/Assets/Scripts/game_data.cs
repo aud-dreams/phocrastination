@@ -18,6 +18,7 @@ public class game_data : ScriptableObject
 
     // crafting station
     public bool first_crafting_help;
+    public bool crafting_continue;
     public Color current_color;
     public bool beef_inside;
     public bool broth_inside;
@@ -25,6 +26,7 @@ public class game_data : ScriptableObject
     public bool noodles_inside;
     public bool allow_drawing;
     public bool allow_paintbrush;
+    public bool bowl_complete;
 
     // serving station
     public bool first_serving_help;

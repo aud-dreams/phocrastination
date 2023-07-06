@@ -7,6 +7,7 @@ public class redo_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public main_dot mainDot;
+    public game_data game_data;
 
     private void Start() {
         // get render component
@@ -19,7 +20,9 @@ public class redo_toggle : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        render.enabled = true;
+        if (!game_data.help) {
+            render.enabled = true;
+        }
     }
 
     private void OnMouseExit() {
@@ -41,7 +44,7 @@ public class redo_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                clear();
+                if (!game_data.help) { clear(); }
             }
         }
     }

@@ -19,7 +19,9 @@ public class color_switch : MonoBehaviour
     }
 
     private void OnMouseEnter() {
-        render.enabled = true;
+        if (!game_data.help) {
+            render.enabled = true;
+        }
     }
 
     private void OnMouseExit() {
@@ -41,24 +43,25 @@ public class color_switch : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 // switch base dot to new color
-                if (this.CompareTag("OutlineColor")) {
-                    game_data.current_color = Color.black;
-                }
+                if (!game_data.help) {
+                    if (this.CompareTag("OutlineColor")) {
+                        game_data.current_color = Color.black;
+                    }
 
-                if (this.CompareTag("BeefColor")) {
-                    game_data.current_color = HexToColor("#8d6042");
-                }
+                    if (this.CompareTag("BeefColor")) {
+                        game_data.current_color = HexToColor("#8d6042");
+                    }
 
-                if (this.CompareTag("BrothColor")) {
-                    game_data.current_color = HexToColor("#cfa76e");
+                    if (this.CompareTag("BrothColor")) {
+                        game_data.current_color = HexToColor("#cfa76e");
+                    }
+                    if (this.CompareTag("HerbsColor")) {
+                        game_data.current_color = HexToColor("#507d4a");
+                    }
+                    if (this.CompareTag("NoodlesColor")) {
+                        game_data.current_color = HexToColor("#f0ddb6");
+                    }
                 }
-                if (this.CompareTag("HerbsColor")) {
-                    game_data.current_color = HexToColor("#507d4a");
-                }
-                if (this.CompareTag("NoodlesColor")) {
-                    game_data.current_color = HexToColor("#f0ddb6");
-                }
-
             }
         }
     }
