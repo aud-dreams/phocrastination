@@ -46,7 +46,6 @@ public class drawing_pad : MonoBehaviour
                     // do not increment
                     total_dots += 0;
                 }
-                
 
                 // count hit dots for each edge collider
                 if (Input.GetMouseButton(0)) {
@@ -70,7 +69,7 @@ public class drawing_pad : MonoBehaviour
 
                 // calculate percentage hit
                 ratio_hit = (float)hit_dots / total_dots;
-                Debug.Log("Ratio hit: " + ratio_hit);
+                //Debug.Log("Ratio hit: " + ratio_hit);
             }
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class construct_bowl : MonoBehaviour
 {
-    public GameObject finish_bowl_button, finish_bowl_toggle, complete_bowl;
+    public GameObject finish_bowl_button, finish_bowl_toggle, complete_bowl, beefOutline, help;
     public GameObject[] items;
     public game_data game_data;
 
@@ -13,6 +13,8 @@ public class construct_bowl : MonoBehaviour
         finish_bowl_button.SetActive(false);
         finish_bowl_toggle.SetActive(false);
         complete_bowl.SetActive(false);
+        beefOutline.SetActive(true);
+        help.SetActive(true);
     }
 
     void Update() 
@@ -26,10 +28,17 @@ public class construct_bowl : MonoBehaviour
         }
 
         if (game_data.bowl_complete) {
+            // turn complete_bowl sprite active & others off
             complete_bowl.SetActive(true);
             foreach (GameObject item in items) {
                 item.SetActive(false);
             }
+            
+            game_data.bowl_complete = false;
+            game_data.beef_inside = false;
+            game_data.broth_inside = false;
+            game_data.herbs_inside = false;
+            game_data.noodles_inside = false;
         }
     }
 }

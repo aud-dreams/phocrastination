@@ -545,8 +545,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  button: {fileID: 403687626}
-  toggle: {fileID: 87578026}
 --- !u!1 &146673030
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +811,7 @@ GameObject:
   - component: {fileID: 293344922}
   m_Layer: 0
   m_Name: main_toggle
-  m_TagString: Untagged
+  m_TagString: Crafting
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,7 +1163,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1899bbfc8c11bb746bcefea78d2f2362, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1841,6 +1839,7 @@ MonoBehaviour:
   - {fileID: 1548664399}
   - {fileID: 293344921}
   - {fileID: 1844287309}
+  - {fileID: 1153640057}
   complete_bowl: {fileID: 619261032}
 --- !u!1 &1054249669
 GameObject:
@@ -2255,6 +2254,7 @@ MonoBehaviour:
   - {fileID: 237043187}
   - {fileID: 2008689064}
   help: {fileID: 1153640057}
+  home: {fileID: 293344921}
 --- !u!1 &1211808446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,8 +2668,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8720349, y: 0.7776583, z: 0}
-  m_Center: {x: 0.0048020906, y: 0.068418644, z: 0.099999435}
+  m_Size: {x: 0.8920459, y: 0.7641589, z: 0}
+  m_Center: {x: -0.04759373, y: 0.1248333, z: 0.09999952}
 --- !u!212 &1671822447
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3669,12 +3669,16 @@ MonoBehaviour:
   finish_bowl_button: {fileID: 403687626}
   finish_bowl_toggle: {fileID: 87578026}
   complete_bowl: {fileID: 619261032}
+  beefOutline: {fileID: 1931998196}
+  help: {fileID: 1153640057}
   items:
   - {fileID: 1844287309}
   - {fileID: 1449673941}
   - {fileID: 67826318}
   - {fileID: 987573230}
   - {fileID: 965899511}
+  - {fileID: 403687626}
+  - {fileID: 87578026}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
 --- !u!1 &1865811239
 GameObject:
@@ -4109,7 +4113,6 @@ MonoBehaviour:
   - {fileID: 67826318}
   - {fileID: 987573230}
   - {fileID: 965899511}
-  - {fileID: 1931998196}
   - {fileID: 1054249669}
   - {fileID: 45620900}
   - {fileID: 1745482199}
@@ -4119,8 +4122,6 @@ MonoBehaviour:
   - {fileID: 1083540223}
   - {fileID: 629354584}
   - {fileID: 1929328588}
-  beefOutline: {fileID: 1931998196}
-  help: {fileID: 1153640057}
 --- !u!1 &2046135839
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class game_data : ScriptableObject
     public bool help;
     public int click;
     public Vector3 character_position;
+    public bool allow_move;
+    public Sprite character_sprite;
 
     // dishes station
     public bool first_dishes_help;

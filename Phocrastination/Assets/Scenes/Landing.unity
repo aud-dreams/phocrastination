@@ -450,3 +450,4 @@ MonoBehaviour:
   gameInProgress: 0
   timer: 0
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}

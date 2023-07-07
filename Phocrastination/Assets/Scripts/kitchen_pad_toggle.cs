@@ -10,7 +10,6 @@ public class kitchen_pad_toggle : MonoBehaviour
 
     public main_dot mainDot;
     public GameObject[] start, items, ingredients, colorSwitches;
-    public GameObject beefOutline, help;
     private SpriteRenderer paintbrush_render;
 
     private void Start() {        
@@ -47,17 +46,13 @@ public class kitchen_pad_toggle : MonoBehaviour
 
                 game_data.allow_drawing = true;
 
-                foreach (GameObject item in items) {
-                    if (!game_data.help) { item.SetActive(true); }
-                }
+                game_data.help = false;
+
+                foreach (GameObject item in items) { item.SetActive(true); }
                 foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(true); }
                 
-                if (game_data.first_crafting_help) { beefOutline.SetActive(true); }
-
                 game_data.first_crafting_help = false;
-                game_data.help = false;
                 game_data.allow_paintbrush = true;
-                help.SetActive(true);
             }
         }
     }

@@ -23,7 +23,7 @@ public class next_toggle : MonoBehaviour
         // set visibility at start
         render.enabled = false;
         paintbrush_render = paintbrush.GetComponent<SpriteRenderer>();
-        //beefOutline.SetActive(true);
+        beefOutline.SetActive(true);
         
         mainDot = FindObjectOfType<main_dot>();
     }
@@ -53,23 +53,22 @@ public class next_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
+                counter++;
+
                 if (!game_data.help) {
-                    if (counter == 0) {
+                    if (counter == 1) {
                         beefOutline.SetActive(false);
                         brothOutline.SetActive(true);
-                        counter++;
-                        clear();
-                    } else if (counter == 1) {
-                        brothOutline.SetActive(false);
-                        herbsOutline.SetActive(true);
-                        counter++;
                         clear();
                     } else if (counter == 2) {
-                        herbsOutline.SetActive(false);
-                        noodlesOutline.SetActive(true);
-                        counter++;
+                        brothOutline.SetActive(false);
+                        herbsOutline.SetActive(true);
                         clear();
                     } else if (counter == 3) {
+                        herbsOutline.SetActive(false);
+                        noodlesOutline.SetActive(true);
+                        clear();
+                    } else if (counter == 4) {
                         noodlesOutline.SetActive(false);
                         pad.SetActive(false);
                         redo.SetActive(false);
@@ -80,6 +79,8 @@ public class next_toggle : MonoBehaviour
                         broth.SetActive(true);
                         herbs.SetActive(true);
                         noodles.SetActive(true);
+
+                        game_data.allow_drawing = false;
 
                         // turn cursor back on
                         game_data.allow_paintbrush = false;

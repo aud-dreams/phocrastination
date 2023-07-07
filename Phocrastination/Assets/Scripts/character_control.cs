@@ -17,6 +17,7 @@ public class character_control : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = game_data.character_position;
+        spriteRenderer.sprite = game_data.character_sprite;
     }
 
     private void Update()
@@ -26,17 +27,19 @@ public class character_control : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         // Update velocity based on input
-        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
-        rb.velocity = movement;
+        if (game_data.allow_move) {
+            Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
+            rb.velocity = movement;
 
-        // Update sprite based on direction
-        if (horizontalInput < 0)
-            spriteRenderer.sprite = spriteLeft;
-        else if (horizontalInput > 0)
-            spriteRenderer.sprite = spriteRight;
-        else if (verticalInput > 0)
-            spriteRenderer.sprite = spriteBack;
-        else if (verticalInput < 0)
-            spriteRenderer.sprite = spriteFront;
+            // Update sprite based on direction
+            if (horizontalInput < 0)
+                spriteRenderer.sprite = spriteLeft;
+            else if (horizontalInput > 0)
+                spriteRenderer.sprite = spriteRight;
+            else if (verticalInput > 0)
+                spriteRenderer.sprite = spriteBack;
+            else if (verticalInput < 0)
+                spriteRenderer.sprite = spriteFront;
+        }
     }
 }

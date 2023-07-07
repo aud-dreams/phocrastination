@@ -61,6 +61,7 @@ public class main_pad_toggle : MonoBehaviour
                     help.SetActive(true);
                     game_data.first_main_help = false;
                     game_data.help = false;
+                    game_data.allow_move = true;
                 }
                 
             }

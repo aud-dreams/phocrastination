@@ -32,11 +32,11 @@ public class main_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                if (!gameObject.CompareTag("Play")) {
+                SceneManager.LoadScene("Main");
+
+                if (gameObject.CompareTag("Crafting")) {
                     game_data.crafting_continue = true;
                 }
-
-                SceneManager.LoadScene("Main");
             }
         }
     }

@@ -10,7 +10,7 @@ public class crafting_continue : MonoBehaviour
 
     void Start()
     {
-        
+        complete_bowl.SetActive(false);
     }
 
     void Update()
@@ -22,7 +22,6 @@ public class crafting_continue : MonoBehaviour
             foreach (GameObject item in items) {
                 item.SetActive(true);
             }
-            complete_bowl.SetActive(false);
         }
     }
 }

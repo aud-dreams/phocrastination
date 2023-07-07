@@ -16,6 +16,7 @@ TagManager:
   - HerbsColor
   - NoodlesColor
   - Play
+  - Crafting
   layers:
   - Default
   - TransparentFX

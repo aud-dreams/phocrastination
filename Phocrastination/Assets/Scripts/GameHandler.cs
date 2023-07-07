@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    public bool gameInProgress;
-    public double timer;
+    private bool gameInProgress;
+    private double timer;
     public game_data game_data;
+    public Sprite sprite;
 
     void Start()
     {
@@ -17,6 +18,8 @@ public class GameHandler : MonoBehaviour
         game_data.help = false;
         game_data.click = 1;
         game_data.character_position = new Vector3(0f, 0.3f, 0f);
+        game_data.allow_move = false;
+        game_data.character_sprite = sprite;
 
         // serving initialization
         game_data.first_serving_help = true;

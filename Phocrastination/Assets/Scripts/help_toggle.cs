@@ -9,7 +9,7 @@ public class help_toggle : MonoBehaviour
     private new Collider collider;
     public game_data game_data;
     public GameObject[] items;
-    public GameObject help;
+    public GameObject help, home;
 
     private void Start() {
         // get render component
@@ -40,6 +40,7 @@ public class help_toggle : MonoBehaviour
                     item.SetActive(true);
                 }
                 help.SetActive(false);
+                home.SetActive(false);
             }
         }
     }

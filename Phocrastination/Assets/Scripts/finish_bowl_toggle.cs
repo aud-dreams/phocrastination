@@ -8,7 +8,6 @@ public class finish_bowl_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
-    public GameObject button, toggle;
 
     private void Start() {
         // get render component
@@ -34,8 +33,6 @@ public class finish_bowl_toggle : MonoBehaviour
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
                 game_data.bowl_complete = true;
-                button.SetActive(false);
-                toggle.SetActive(false);
             }
         }
     }
