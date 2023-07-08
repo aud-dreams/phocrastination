@@ -9,20 +9,22 @@ public class cat_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public GameObject[] items;
-    public GameObject help, home;
+    public GameObject help, home, hand;
+    private SpriteRenderer render2;
 
     void Start()
     {
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
+        render2 = hand.GetComponent<SpriteRenderer>();
 
         // set visibility at start
         render.enabled = false;
-        game_data.allow_hand = false;
 
         if (game_data.first_cat_help) {
             help.SetActive(false);
             home.SetActive(false);
+            game_data.allow_hand = false;
         }
     }
 
@@ -52,5 +54,16 @@ public class cat_pad_toggle : MonoBehaviour
                 game_data.help = false;
             }
         }
+
+        if (game_data.help) {
+            game_data.allow_hand = false;
+        }
+        
+        // // change cursor back
+        // if (game_data.help) {
+        //     Cursor.visible = true;
+        //     render2.enabled = false;
+        //     Debug.Log("hand off");
+        // }
     }
 }

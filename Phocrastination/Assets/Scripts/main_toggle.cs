@@ -37,6 +37,10 @@ public class main_toggle : MonoBehaviour
                 if (gameObject.CompareTag("Crafting")) {
                     game_data.crafting_continue = true;
                 }
+
+                if (gameObject.CompareTag("Cat")) {
+                    game_data.allow_hand = true;
+                }
             }
         }
     }

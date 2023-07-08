@@ -18,16 +18,14 @@ public class petting : MonoBehaviour
     private void Update()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        if (!collider.bounds.Contains(mousePosition)) {
-            Cursor.visible = true;
-            render.enabled = false;
-        } else {
-            if (game_data.allow_hand) {
-                render.enabled = true;
-                Cursor.visible = false;
-                hand.transform.position = mousePosition;
-            }
+        
+        Cursor.visible = true;
+        render.enabled = false;
+        
+        if (collider.bounds.Contains(mousePosition) && game_data.allow_hand) {
+            render.enabled = true;
+            Cursor.visible = false;
+            hand.transform.position = mousePosition;
         }
     }
 }

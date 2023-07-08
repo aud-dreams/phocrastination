@@ -15,7 +15,9 @@ MonoBehaviour:
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: -5.79142, y: 0.30000007, z: 0}
+  character_position: {x: 5.386011, y: -2.3182316, z: 0}
+  allow_move: 1
+  character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
   first_dishes_help: 1
   dirty_bowls: 6
   allow_bowls: 0

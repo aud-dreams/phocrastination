@@ -47,7 +47,7 @@ public class GameHandler : MonoBehaviour
         game_data.dirty_bowls = 6;
 
         // cat initialization
-        game_data.first_cat_help = false;
+        game_data.first_cat_help = true;
         game_data.allow_hand = false;
     }
 
