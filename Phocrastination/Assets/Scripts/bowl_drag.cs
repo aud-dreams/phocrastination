@@ -27,11 +27,15 @@ public class bowl_drag : MonoBehaviour
 
     private void OnMouseDown() {
         // capture mouse offset
-        mousePositionOffset = transform.position - GetMouseWorldPosition();
+        if (game_data.allow_bowls) {
+            mousePositionOffset = transform.position - GetMouseWorldPosition();
+        }
     }
 
     private void OnMouseDrag() {
-        transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        if (game_data.allow_bowls) {
+            transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        }
     }
 
     private IEnumerator OnTriggerEnter2D(Collider2D sink) {

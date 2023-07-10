@@ -41,6 +41,10 @@ public class help_toggle : MonoBehaviour
                 }
                 help.SetActive(false);
                 home.SetActive(false);
+
+                if (collider.CompareTag("Dishes")) {
+                    game_data.allow_bowls = false;
+                }
             }
         }
     }

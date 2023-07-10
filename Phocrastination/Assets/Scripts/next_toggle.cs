@@ -8,8 +8,8 @@ public class next_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public GameObject pad, redo, paintbrush;
-    public GameObject beef, broth, herbs, noodles;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
+    public GameObject[] items;
     public main_dot mainDot;
     private int counter = 0;
     public game_data game_data;
@@ -75,10 +75,9 @@ public class next_toggle : MonoBehaviour
                         gameObject.SetActive(false);
                         clear();
 
-                        beef.SetActive(true);
-                        broth.SetActive(true);
-                        herbs.SetActive(true);
-                        noodles.SetActive(true);
+                        foreach (GameObject item in items) {
+                            item.SetActive(true);
+                        }
 
                         game_data.allow_drawing = false;
 

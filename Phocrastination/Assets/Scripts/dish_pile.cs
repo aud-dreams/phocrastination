@@ -3,13 +3,10 @@ using UnityEngine;
 public class dish_pile : MonoBehaviour
 {
     public game_data game_data;
-    public GameObject bowl;
     public int dirty_bowls;
     private new Collider collider;
-    public GameObject dish_pile_large;
-    public GameObject dish_pile_small;
+    public GameObject bowl, dish_pile_large, dish_pile_small;
     Vector3 mousePositionOffset;
-    
 
     private void Start() {
         collider = GetComponent<Collider>();
@@ -18,6 +15,9 @@ public class dish_pile : MonoBehaviour
 
         if (dirty_bowls >= 1 && dirty_bowls <= 4) {
             dish_pile_small.SetActive(true);
+            dish_pile_large.SetActive(false);
+        } else if (dirty_bowls == 0) {
+            dish_pile_small.SetActive(false);
             dish_pile_large.SetActive(false);
         } else {
             dish_pile_small.SetActive(false);

@@ -18,6 +18,7 @@ TagManager:
   - Play
   - Crafting
   - Cat
+  - Dishes
   layers:
   - Default
   - TransparentFX

@@ -36,6 +36,7 @@ public class main_toggle : MonoBehaviour
 
                 if (gameObject.CompareTag("Crafting")) {
                     game_data.crafting_continue = true;
+                    game_data.current_color = Color.black;
                 }
 
                 if (gameObject.CompareTag("Cat")) {

@@ -13,10 +13,12 @@ public class game_data : ScriptableObject
     public bool allow_move;
     public Sprite character_sprite;
 
-    // dishes station
-    public bool first_dishes_help;
-    public int dirty_bowls;
-    public bool allow_bowls;
+    // serving station
+    public bool first_serving_help;
+    public int total_customers;
+    public int counter;
+    public List<GameObject> customers_line;
+    public bool can_next;
 
     // crafting station
     public bool first_crafting_help;
@@ -30,12 +32,10 @@ public class game_data : ScriptableObject
     public bool allow_paintbrush;
     public bool bowl_complete;
 
-    // serving station
-    public bool first_serving_help;
-    public int total_customers;
-    public int counter;
-    public List<GameObject> customers_line;
-    public bool can_next;
+    // dishes station
+    public bool first_dishes_help;
+    public int dirty_bowls;
+    public bool allow_bowls;
 
     // cat station
     public bool first_cat_help;

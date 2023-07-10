@@ -18,7 +18,9 @@ public class sink_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        game_data.allow_bowls = false;
+        if (game_data.first_dishes_help) {
+            game_data.allow_bowls = false;
+        }
 
         if (game_data.first_dishes_help) {
             help.SetActive(false);

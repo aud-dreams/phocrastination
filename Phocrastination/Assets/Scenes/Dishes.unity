@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1141781854}
   m_Layer: 0
   m_Name: help_toggle
-  m_TagString: Untagged
+  m_TagString: Dishes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -867,6 +867,7 @@ MonoBehaviour:
   - {fileID: 1888071099}
   - {fileID: 920879248}
   help: {fileID: 1141781853}
+  home: {fileID: 1773893751}
 --- !u!212 &1141781856
 SpriteRenderer:
   m_ObjectHideFlags: 0
