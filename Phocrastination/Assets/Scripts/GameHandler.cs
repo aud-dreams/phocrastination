@@ -24,14 +24,14 @@ public class GameHandler : MonoBehaviour
         // serving initialization
         game_data.first_serving_help = true;
         game_data.total_customers = 5;
-        game_data.counter = 5;
+        game_data.current_customers = 5;
         game_data.customers_line = new List<GameObject>();
 
         // crafting initialization
+        game_data.first_crafting_help = true;
         game_data.current_color = Color.black;
         game_data.crafting_continue = false;
         game_data.can_next = false;
-        game_data.first_crafting_help = true;
         game_data.beef_inside = false;
         game_data.broth_inside = false;
         game_data.herbs_inside = false;
@@ -44,7 +44,6 @@ public class GameHandler : MonoBehaviour
         game_data.first_dishes_help = true;
         game_data.dirty_bowls = 6;
         game_data.allow_bowls = false;
-        game_data.dirty_bowls = 6;
 
         // cat initialization
         game_data.first_cat_help = true;
