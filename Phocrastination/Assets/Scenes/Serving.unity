@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 501061206}
   m_Layer: 0
   m_Name: main_toggle
-  m_TagString: Untagged
+  m_TagString: Serving
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -989,6 +989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 665949450}
   - component: {fileID: 665949449}
+  - component: {fileID: 665949451}
   m_Layer: 0
   m_Name: serving_station
   m_TagString: Untagged
@@ -1063,6 +1064,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &665949451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665949448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b6d3c5981253b4889c65b91551406d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  home: {fileID: 501061205}
 --- !u!1 &705137943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1532,7 @@ MonoBehaviour:
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
   button: {fileID: 349349543}
   toggle: {fileID: 2077936021}
+  home: {fileID: 501061205}
   speech: {fileID: 705137943}
   speed: 5
 --- !u!65 &2077936025
@@ -1565,6 +1581,7 @@ MonoBehaviour:
   current: {fileID: 1100029900}
   toggle: {fileID: 2077936021}
   button: {fileID: 349349543}
+  home: {fileID: 501061205}
   speech: {fileID: 705137943}
   speed: 5
 --- !u!4 &2120430950

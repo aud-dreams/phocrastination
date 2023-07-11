@@ -6,7 +6,7 @@ public class customer_manager : MonoBehaviour
 {
     public game_data game_data;
     float offset = 1f;
-    public GameObject current, toggle, button;
+    public GameObject current, toggle, button, home;
     
     void Start() {
         Vector3 position = new Vector3(3f, 3.04f, 0f); 
@@ -31,9 +31,11 @@ public class customer_manager : MonoBehaviour
         toggle.GetComponent<Renderer>().enabled = false;
 
         // first customer in list leaves
-        StartCoroutine(Order(game_data.customers_line[0]));
-        game_data.customers_line.RemoveAt(0);
-        game_data.current_customers--;
+        if (game_data.current_customers != 0) {
+            StartCoroutine(Order(game_data.customers_line[0]));
+            game_data.customers_line.RemoveAt(0);
+            game_data.current_customers--;
+        }
     }
 
     public void Shadow() {

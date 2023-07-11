@@ -34,13 +34,17 @@ public class main_toggle : MonoBehaviour
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 SceneManager.LoadScene("Main");
 
-                if (gameObject.CompareTag("Crafting")) {
+                if (collider.CompareTag("Crafting")) {
                     game_data.crafting_continue = true;
                     game_data.current_color = Color.black;
                 }
 
-                if (gameObject.CompareTag("Cat")) {
+                if (collider.CompareTag("Cat")) {
                     game_data.allow_hand = true;
+                }
+
+                if (collider.CompareTag("Serving")) {
+                    game_data.can_next = false;
                 }
             }
         }

@@ -19,6 +19,7 @@ TagManager:
   - Crafting
   - Cat
   - Dishes
+  - Serving
   layers:
   - Default
   - TransparentFX

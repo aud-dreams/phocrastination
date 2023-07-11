@@ -7,7 +7,7 @@ public class next_customer_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
-    public GameObject button, toggle;
+    public GameObject button, toggle, home;
 
     private void Start() {
         // get render component
@@ -78,12 +78,11 @@ public class next_customer_toggle : MonoBehaviour
         // deactivate off screen
         customer.SetActive(false); 
         
+        game_data.can_next = false;
         if (game_data.customers_line.Count != 0) {
             game_data.can_next = true;
             button.SetActive(true);
             toggle.GetComponent<Renderer>().enabled = true;
-        } else {
-            game_data.can_next = false;
         }
     }
 }
