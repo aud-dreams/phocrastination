@@ -7,6 +7,7 @@ public class next_customer_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    public GameObject button, toggle;
 
     private void Start() {
         // get render component
@@ -40,7 +41,7 @@ public class next_customer_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                if (game_data.can_next) {
+                if (game_data.can_next && !game_data.help) {
                     // all customers shift left & front customer turns active & light
                     foreach (GameObject customer in game_data.customers_line) {
                         customer.transform.position += new Vector3(-1f, 0f, 0f);
@@ -49,11 +50,13 @@ public class next_customer_toggle : MonoBehaviour
                     game_data.customers_line[0].SetActive(true);
                     StartCoroutine(Order(game_data.customers_line[0]));
                     game_data.customers_line.RemoveAt(0);
-                    Debug.Log(game_data.customers_line.Count);
-                }
+                    game_data.current_customers--;
 
-                // once button clicked, deactivate button again until next customer leaves
-                game_data.can_next = false;
+                    // once button clicked, deactivate button again until next customer leaves
+                    game_data.can_next = false;
+                    button.SetActive(false);
+                    toggle.GetComponent<Renderer>().enabled = false;
+                }
             }
         }
     }
@@ -74,6 +77,13 @@ public class next_customer_toggle : MonoBehaviour
 
         // deactivate off screen
         customer.SetActive(false); 
-        game_data.can_next = true;
+        
+        if (game_data.customers_line.Count != 0) {
+            game_data.can_next = true;
+            button.SetActive(true);
+            toggle.GetComponent<Renderer>().enabled = true;
+        } else {
+            game_data.can_next = false;
+        }
     }
 }

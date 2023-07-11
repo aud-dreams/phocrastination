@@ -9,7 +9,7 @@ public class order_counter_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public GameObject[] items;
-    public GameObject next_customer_toggle, customer_manager, speech, help, home;
+    public GameObject button, toggle, customer_manager, speech, help, home;
 
     void Start()
     {
@@ -18,8 +18,12 @@ public class order_counter_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        next_customer_toggle.SetActive(false);
-        customer_manager.SetActive(false);
+        if (!game_data.can_next) { button.SetActive(false); }
+        toggle.GetComponent<Renderer>().enabled = false;
+
+        if (game_data.first_serving_help) { customer_manager.SetActive(false); } 
+        else { customer_manager.SetActive(true); }
+        
         speech.SetActive(false);
 
         if (game_data.first_serving_help) {
@@ -46,16 +50,15 @@ public class order_counter_pad_toggle : MonoBehaviour
                     item.SetActive(false);
                 }
 
-                next_customer_toggle.SetActive(true);
                 customer_manager.SetActive(true);
-                speech.SetActive(true);
-
                 help.SetActive(true);
                 home.SetActive(true);
                 
                 game_data.first_serving_help = false;
                 game_data.help = false;
             }
+        } else {
+            toggle.GetComponent<Renderer>().enabled = false;
         }
     }
 }

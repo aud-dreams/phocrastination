@@ -16,7 +16,7 @@ public class game_data : ScriptableObject
     // serving station
     public bool first_serving_help;
     public int total_customers;
-    public int counter;
+    public int current_customers;
     public List<GameObject> customers_line;
     public bool can_next;
 
