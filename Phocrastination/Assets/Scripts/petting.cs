@@ -13,19 +13,25 @@ public class petting : MonoBehaviour
     {
         collider = GetComponent<PolygonCollider2D>();
         render = hand.GetComponent<SpriteRenderer>();
+        Cursor.visible = false;
     }
 
     private void Update()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
-        Cursor.visible = true;
         render.enabled = false;
         
-        if (collider.bounds.Contains(mousePosition) && game_data.allow_hand) {
-            render.enabled = true;
-            Cursor.visible = false;
-            hand.transform.position = mousePosition;
+        if (game_data.allow_hand) {
+            if (collider.bounds.Contains(mousePosition)) {
+                render.enabled = true;
+                Cursor.visible = false;
+                hand.transform.position = mousePosition;
+            }
+            else {
+                Cursor.visible = true;
+                render.enabled = false;   
+            }
         }
     }
 }
