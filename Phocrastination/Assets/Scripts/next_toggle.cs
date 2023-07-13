@@ -9,6 +9,7 @@ public class next_toggle : MonoBehaviour
     private new Collider collider;
     public GameObject pad, redo, paintbrush;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
+    public GameObject beef, broth, herbs, noodles;
     public GameObject[] items;
     public main_dot mainDot;
     private int counter = 0;
@@ -83,6 +84,11 @@ public class next_toggle : MonoBehaviour
                         foreach (GameObject item in items) {
                             item.SetActive(true);
                         }
+
+                        beef.transform.position = new Vector3(2.7f, 0.3f, 0f);
+                        broth.transform.position = new Vector3(5.86f, 0.34f, 0f);
+                        herbs.transform.position = new Vector3(2.67f, -0.85f, 0f);
+                        noodles.transform.position = new Vector3(5.8f, -0.87f, 0f);
 
                         game_data.allow_drawing = false;
 
