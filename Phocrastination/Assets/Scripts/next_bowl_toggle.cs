@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class finish_bowl_toggle : MonoBehaviour
+public class next_bowl_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
-    public GameObject next_bowl_button, next_bowl_toggle;
+    public GameObject[] items;
+    public GameObject bowl_complete, next_bowl_button, brothOutline, herbsOutline, noodlesOutline;
 
     private void Start() {
         // get render component
@@ -21,7 +21,7 @@ public class finish_bowl_toggle : MonoBehaviour
 
     private void OnMouseEnter() {
         if (!game_data.help) {
-            render.enabled = true;
+            render.enabled = true; 
         }
     }
 
@@ -36,10 +36,17 @@ public class finish_bowl_toggle : MonoBehaviour
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
                 if (!game_data.help) {
-                    game_data.bowl_complete = true;
+                    foreach(GameObject item in items) { item.SetActive(true); }
+                    game_data.allow_paintbrush = true;
+                    game_data.allow_drawing = true;
+                    bowl_complete.SetActive(false);
+                    next_bowl_button.SetActive(false);
+                    gameObject.SetActive(false);
 
-                    next_bowl_button.SetActive(true);
-                    next_bowl_toggle.SetActive(true);
+                    brothOutline.SetActive(false);
+                    herbsOutline.SetActive(false);
+                    noodlesOutline.SetActive(false);
+                    game_data.start_drawing = true;
                 }
             }
         }

@@ -31,6 +31,7 @@ public class game_data : ScriptableObject
     public bool allow_drawing;
     public bool allow_paintbrush;
     public bool bowl_complete;
+    public bool start_drawing;
 
     // dishes station
     public bool first_dishes_help;

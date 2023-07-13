@@ -39,6 +39,7 @@ public class GameHandler : MonoBehaviour
         game_data.allow_drawing = false;
         game_data.allow_paintbrush = false;
         game_data.bowl_complete = false;
+        game_data.start_drawing = false;
 
         // dishes initialization
         game_data.first_dishes_help = true;
