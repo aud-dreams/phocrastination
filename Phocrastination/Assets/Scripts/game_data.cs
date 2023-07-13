@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "game_data", menuName = "Data")]
 public class game_data : ScriptableObject
 {
+    // global
+    public double timer;
+
     // main
     public bool first_main_help;
     public bool help;

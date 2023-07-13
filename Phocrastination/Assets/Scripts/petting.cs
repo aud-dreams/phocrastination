@@ -13,7 +13,7 @@ public class petting : MonoBehaviour
     {
         collider = GetComponent<PolygonCollider2D>();
         render = hand.GetComponent<SpriteRenderer>();
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     private void Update()

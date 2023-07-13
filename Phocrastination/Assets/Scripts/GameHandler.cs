@@ -5,13 +5,28 @@ using UnityEngine;
 public class GameHandler : MonoBehaviour
 {
     private bool gameInProgress;
-    private double timer;
     public game_data game_data;
     public Sprite sprite;
 
     void Start()
     {
         gameInProgress = true;
+        Initialize();
+    }
+
+    void Update()
+    {
+        game_data.timer += Time.deltaTime;
+
+        if (gameInProgress == false) {
+            //endGame condition
+        }
+        
+    }
+
+    void Initialize() {
+        // global
+        game_data.timer = 0;
         
         // main initialization
         game_data.first_main_help = true;
@@ -49,15 +64,6 @@ public class GameHandler : MonoBehaviour
         // cat initialization
         game_data.first_cat_help = true;
         game_data.allow_hand = false;
-    }
-
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (gameInProgress == false) {
-            //endGame condition
-        }
-        
     }
 
     void dayConfig() {
