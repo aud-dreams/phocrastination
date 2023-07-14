@@ -53,7 +53,7 @@ public class order_counter_pad_toggle : MonoBehaviour
                 customer_manager.SetActive(true);
                 help.SetActive(true);
                 home.SetActive(true);
-                
+
                 game_data.first_serving_help = false;
                 game_data.help = false;
             }

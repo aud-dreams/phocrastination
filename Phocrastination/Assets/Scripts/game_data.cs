@@ -22,6 +22,7 @@ public class game_data : ScriptableObject
     public int current_customers;
     public List<GameObject> customers_line;
     public bool can_next;
+    public int orders;
 
     // crafting station
     public bool first_crafting_help;

@@ -70,5 +70,8 @@ public class customer_manager : MonoBehaviour
             button.SetActive(true);
             toggle.GetComponent<Renderer>().enabled = true;
         }
+
+        // increment num of orders
+        game_data.orders++;
     }
 }
