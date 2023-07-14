@@ -27,7 +27,7 @@ public class GameHandler : MonoBehaviour
     void Initialize() {
         // global
         game_data.timer = 0;
-        
+
         // main initialization
         game_data.first_main_help = true;
         game_data.help = false;
@@ -41,6 +41,7 @@ public class GameHandler : MonoBehaviour
         game_data.total_customers = 5;
         game_data.current_customers = 5;
         game_data.customers_line = new List<GameObject>();
+        game_data.orders = 0;
 
         // crafting initialization
         game_data.first_crafting_help = true;

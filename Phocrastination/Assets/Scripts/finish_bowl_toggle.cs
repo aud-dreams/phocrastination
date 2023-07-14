@@ -38,8 +38,13 @@ public class finish_bowl_toggle : MonoBehaviour
                 if (!game_data.help) {
                     game_data.bowl_complete = true;
 
-                    next_bowl_button.SetActive(true);
-                    next_bowl_toggle.SetActive(true);
+                    if (game_data.orders > 1) {
+                        next_bowl_button.SetActive(true);
+                        next_bowl_toggle.SetActive(true);
+                    }
+                    
+                    // decrement num of orders
+                    game_data.orders--;
                 }
             }
         }
