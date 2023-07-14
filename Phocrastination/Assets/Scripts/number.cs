@@ -5,7 +5,8 @@ using UnityEngine;
 public class number : MonoBehaviour
 {
     public game_data game_data;
-    private SpriteRenderer number_sprite;
+    public GameObject number1, number2;
+    private SpriteRenderer render1, render2;
     private Dictionary<int, Sprite> numbers;
     private List<int> numbers_keys;
 
@@ -14,7 +15,8 @@ public class number : MonoBehaviour
 
     void Start()
     {
-        number_sprite = GetComponent<SpriteRenderer>();
+        render1 = number1.GetComponent<SpriteRenderer>();
+        render2 = number2.GetComponent<SpriteRenderer>();
         numbers = new Dictionary<int, Sprite>();
 
         // initialize dict
@@ -28,13 +30,31 @@ public class number : MonoBehaviour
     {
         if (gameObject.CompareTag("Serving")) {
             // customers in line
-            number_sprite.sprite = GetNumber(game_data.current_customers);
+            if (game_data.current_customers <= 9) {  // single digits = 1 sprite
+                render1.sprite = GetNumber(game_data.current_customers);
+                render2.sprite = null;
+            } else {  // double digits = 2 sprites side by side
+                render1.sprite = GetNumber(game_data.current_customers / 10);
+                render2.sprite = GetNumber(game_data.current_customers % 10);
+            }
         } else if (gameObject.CompareTag("Crafting")) {
             // orders placed
-            number_sprite.sprite = GetNumber(game_data.orders);
+            if (game_data.orders <= 9) {
+                render1.sprite = GetNumber(game_data.orders);
+                render2.sprite = null;
+            } else {
+                render1.sprite = GetNumber(game_data.orders / 10);
+                render2.sprite = GetNumber(game_data.orders % 10);
+            }
         } else if (gameObject.CompareTag("Dishes")) {
             // dirty bowls
-            number_sprite.sprite = GetNumber(game_data.dirty_bowls);
+            if (game_data.dirty_bowls <= 9) {
+                render1.sprite = GetNumber(game_data.dirty_bowls);
+                render2.sprite = null;
+            } else {
+                render1.sprite = GetNumber(game_data.dirty_bowls / 10);
+                render2.sprite = GetNumber(game_data.dirty_bowls % 10);
+            }
         }
     }
 

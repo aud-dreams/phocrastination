@@ -12,30 +12,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
+  timer: 46.901195845683105
   first_main_help: 0
   help: 0
-  click: 1
-  character_position: {x: 0, y: 2.9000003, z: 0}
+  click: 3
+  character_position: {x: -1.4204389, y: -1.3748292, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
-  first_serving_help: 0
+  character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
+  first_serving_help: 1
   total_customers: 5
-  customers_line:
-  - {fileID: 0}
-  can_next: 1
-  first_instantiate: 1
-  first_crafting_help: 1
-  crafting_continue: 0
+  current_customers: 5
+  customers_line: []
+  can_next: 0
+  orders: 0
+  first_crafting_help: 0
+  crafting_continue: 1
   current_color: {r: 0, g: 0, b: 0, a: 1}
   beef_inside: 0
   broth_inside: 0
   herbs_inside: 0
   noodles_inside: 0
-  allow_drawing: 0
-  allow_paintbrush: 0
+  allow_drawing: 1
+  allow_paintbrush: 1
   bowl_complete: 0
-  first_dishes_help: 1
-  dirty_bowls: 6
-  allow_bowls: 0
+  start_drawing: 1
+  first_dishes_help: 0
+  dirty_bowls: 12
+  allow_bowls: 1
   first_cat_help: 1
   allow_hand: 0
+  hand_on: 0
+  progress_position: {x: -1.16, y: 3.79, z: 0}
+  progress_scale: {x: 0.01, y: 1.1, z: 0}
