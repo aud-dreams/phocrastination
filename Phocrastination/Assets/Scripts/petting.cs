@@ -13,7 +13,6 @@ public class petting : MonoBehaviour
     {
         collider = GetComponent<BoxCollider2D>();
         render = hand.GetComponent<SpriteRenderer>();
-        //Cursor.visible = false;
     }
 
     private void Update()
@@ -27,10 +26,12 @@ public class petting : MonoBehaviour
                 render.enabled = true;
                 Cursor.visible = false;
                 hand.transform.position = mousePosition;
+                game_data.hand_on = true;
             }
             else {
                 Cursor.visible = true;
-                render.enabled = false;   
+                render.enabled = false;
+                game_data.hand_on = false; 
             }
         }
     }

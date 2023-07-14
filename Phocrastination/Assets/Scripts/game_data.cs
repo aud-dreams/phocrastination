@@ -45,4 +45,7 @@ public class game_data : ScriptableObject
     // cat station
     public bool first_cat_help;
     public bool allow_hand;
+    public bool hand_on;
+    public Vector3 progress_position;
+    public Vector3 progress_scale;
 }

@@ -65,6 +65,9 @@ public class GameHandler : MonoBehaviour
         // cat initialization
         game_data.first_cat_help = true;
         game_data.allow_hand = false;
+        game_data.hand_on = false;
+        game_data.progress_position = new Vector3(-1.16f, 3.79f, 0f);
+        game_data.progress_scale = new Vector3(0.01f, 1.1f, 0f);
     }
 
     void dayConfig() {
