@@ -2200,17 +2200,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8bc0165a1b899f34db198d34cdd2712e, type: 3}
   - {fileID: 21300000, guid: 67878d44173a52a4e9be4de37f394632, type: 3}
   - {fileID: 21300000, guid: 341ed57a1bffe124ab5ecc12a06d964b, type: 3}
-  numbers_values:
-  - {fileID: 21300000, guid: 8c1f3dbbe9e8fb846abf59d19e84806d, type: 3}
-  - {fileID: 21300000, guid: b833ae6f69490164eadfdb788faa70b2, type: 3}
-  - {fileID: 21300000, guid: 012f17abdabda394684798044519068c, type: 3}
-  - {fileID: 21300000, guid: 9b8f457326ff29f40bc90c9b80cbf72b, type: 3}
-  - {fileID: 21300000, guid: 71e49d0292cffa74fbd587106b62058c, type: 3}
-  - {fileID: 21300000, guid: 0216f082f9c20cf43a798be64602fb30, type: 3}
-  - {fileID: 21300000, guid: 83f25278a066ef74b832c355d016b744, type: 3}
-  - {fileID: 21300000, guid: c8e43e81984eb5340aa7fc71e031143b, type: 3}
-  - {fileID: 21300000, guid: c1a04b3d29a4eab429e0086b97d27865, type: 3}
-  - {fileID: 21300000, guid: 09a2bdfa098a6ee46be4f515a21b0b2a, type: 3}
 --- !u!1 &1833506152
 GameObject:
   m_ObjectHideFlags: 0

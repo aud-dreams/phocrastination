@@ -12,7 +12,6 @@ public class crafting_toggle : MonoBehaviour
     public GameObject buttonObject, player;
     public float proximityThreshold = 5f;
     public game_data game_data;
-    public Sprite sprite;
 
     void Start() {
         // if start menu activated at beginning of game, disable hovers

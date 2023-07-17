@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class dishes_toggle : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class dishes_toggle : MonoBehaviour
     public GameObject buttonObject, player;
     public float proximityThreshold = 5f;
     public game_data game_data;
-    public Sprite sprite;
+
+    user_log user = new user_log();
 
     void Start() {
         // if start menu activated at beginning of game, disable hovers
@@ -43,6 +45,10 @@ public class dishes_toggle : MonoBehaviour
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
                 SceneManager.LoadScene("Dishes");
+
+                // post to database
+                user.counter = 1;
+                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
             }
         }
         else {
