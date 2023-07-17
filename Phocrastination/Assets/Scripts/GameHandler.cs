@@ -68,6 +68,8 @@ public class GameHandler : MonoBehaviour
         game_data.hand_on = false;
         game_data.progress_position = new Vector3(-1.16f, 3.79f, 0f);
         game_data.progress_scale = new Vector3(0.01f, 1.1f, 0f);
+        game_data.x_transform = 0.0000099999f;
+        game_data.x_scale = 0.00001f;
     }
 
     void dayConfig() {

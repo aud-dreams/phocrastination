@@ -9,7 +9,7 @@ public class kitchen_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public main_dot mainDot;
-    public GameObject[] start, items, ingredients, colorSwitches;
+    public GameObject[] start, items, ingredients, colorSwitches, initial;
     private SpriteRenderer paintbrush_render;
 
     private void Start() {        
@@ -24,6 +24,12 @@ public class kitchen_pad_toggle : MonoBehaviour
         foreach (GameObject item in items) { item.SetActive(false); }
         foreach (GameObject i in ingredients) { i.SetActive(false); }
         foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(false); }
+
+        if (game_data.orders != 0) {
+            foreach (GameObject i in initial) { i.SetActive(true); }
+        } else {
+            foreach (GameObject i in initial) { i.SetActive(false); }
+        }
     }
 
     private void OnMouseEnter() {

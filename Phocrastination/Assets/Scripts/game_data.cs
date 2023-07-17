@@ -49,4 +49,6 @@ public class game_data : ScriptableObject
     public bool hand_on;
     public Vector3 progress_position;
     public Vector3 progress_scale;
+    public float x_transform;
+    public float x_scale;
 }

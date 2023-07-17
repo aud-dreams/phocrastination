@@ -9,5 +9,9 @@ public class timer : MonoBehaviour
     void Update()
     {
         game_data.timer += Time.deltaTime;
+
+        // decrement cat bar
+        game_data.x_transform += 0.0000099999f;
+        game_data.x_scale += 0.00001f;
     }
 }

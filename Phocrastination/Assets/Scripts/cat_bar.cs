@@ -29,8 +29,8 @@ public class cat_bar : MonoBehaviour
     void Update() {
         if (!game_data.hand_on && red.transform.localScale.x > 0) {
             // progress slowly decrement over time
-            red.transform.position = red.transform.position - new Vector3(0.0000099999f, 0f, 0f);
-            red.transform.localScale = red.transform.localScale - new Vector3(0.00001f, 0f, 0f);
+            red.transform.position = red.transform.position - new Vector3(game_data.x_transform, 0f, 0f);
+            red.transform.localScale = red.transform.localScale - new Vector3(game_data.x_scale, 0f, 0f);
         }
     }
 }
