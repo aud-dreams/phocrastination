@@ -41,6 +41,7 @@ public class main_toggle : MonoBehaviour
 
                 if (collider.CompareTag("Cat")) {
                     game_data.allow_hand = true;
+                    game_data.outside_catscene = true;
                 }
 
                 if (collider.CompareTag("Serving")) {

@@ -42,6 +42,7 @@ public class cat_toggle : MonoBehaviour
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
                 SceneManager.LoadScene("Cat");
+                game_data.outside_catscene = false;
             }
         }
         else {
