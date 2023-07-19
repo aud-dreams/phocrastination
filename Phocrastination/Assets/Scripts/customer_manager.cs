@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class customer_manager : MonoBehaviour
 {
     public game_data game_data;
     float offset = 1f;
-    public GameObject current, toggle, button, home;
+    public GameObject boy_customer, girl_customer, toggle, button, home;
+    private GameObject current;
     
     void Start() {
-        Vector3 position = new Vector3(3f, 3.04f, 0f); 
-        Renderer renderer1 = current.GetComponent<Renderer>();
+        Vector3 position = new Vector3(3f, 3.04f, 0f);
+        System.Random random = new System.Random();
 
         // reset customers_line
         game_data.customers_line.Clear();
 
         for (int i = 0; i < game_data.current_customers; i++) {
-            renderer1.sortingOrder = game_data.current_customers - i;
+            // randomize current customer gender
+            if (random.Next(2) == 1) {
+                current = boy_customer;
+            } else {
+                current = girl_customer;
+            }
+
+            // set layer so customers are overlapping properly
+            current.GetComponent<Renderer>().sortingOrder = game_data.current_customers - i;
 
             Vector3 newPosition = new Vector3(position.x + (i * offset), position.y, position.z);
             GameObject newCustomer = Instantiate(current, newPosition, Quaternion.identity);
@@ -24,7 +34,8 @@ public class customer_manager : MonoBehaviour
             game_data.customers_line.Add(newCustomer);
         }
         
-        current.SetActive(false);
+        boy_customer.SetActive(false);
+        girl_customer.SetActive(false);
         Shadow();
 
         button.SetActive(false);

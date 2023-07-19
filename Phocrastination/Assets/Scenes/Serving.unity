@@ -1268,8 +1268,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7d96f640188db43b37eeeab90dda48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  object1: {fileID: 241111500}
-  object2: {fileID: 484661351}
+  speech1: {fileID: 241111500}
+  speech2: {fileID: 484661351}
   switchDelay: 0.5
 --- !u!1 &1024177902
 GameObject:
@@ -1594,12 +1594,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c42063a1d4cd8014eabe33ac185d312d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 773d62449b29fcb4aa3ae0f2f1fbdc80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.88, y: 12.69}
+  m_Size: {x: 12.3, y: 12.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2124,7 +2124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  current: {fileID: 1100029900}
+  boy_customer: {fileID: 1100029900}
+  girl_customer: {fileID: 1347058715}
   toggle: {fileID: 2077936021}
   button: {fileID: 349349543}
   home: {fileID: 501061205}
