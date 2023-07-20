@@ -18,6 +18,7 @@ public class sink_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+
         if (game_data.first_dishes_help) {
             game_data.allow_bowls = false;
         }
@@ -25,6 +26,7 @@ public class sink_pad_toggle : MonoBehaviour
         if (game_data.first_dishes_help) {
             help.SetActive(false);
             home.SetActive(false);
+            game_data.allow_timer = false;
         }
     }
 
@@ -52,7 +54,7 @@ public class sink_pad_toggle : MonoBehaviour
                 home.SetActive(true);
                 game_data.first_dishes_help = false;
                 game_data.help = false;
-        
+                game_data.allow_timer = true;
             }
         }
     }

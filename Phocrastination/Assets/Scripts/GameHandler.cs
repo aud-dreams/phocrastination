@@ -16,8 +16,6 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
-        game_data.timer += Time.deltaTime;
-
         if (gameInProgress == false) {
             //endGame condition
         }
@@ -27,6 +25,7 @@ public class GameHandler : MonoBehaviour
     void Initialize() {
         // global
         game_data.timer = 0;
+        game_data.allow_timer = true;
 
         // main initialization
         game_data.first_main_help = true;

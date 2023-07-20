@@ -8,6 +8,7 @@ public class game_data : ScriptableObject
     // global
     public double timer;
     public string userID;
+    public bool allow_timer;
 
     // main
     public bool first_main_help;

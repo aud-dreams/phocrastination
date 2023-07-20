@@ -23,6 +23,7 @@ public class main_pad_toggle : MonoBehaviour
         render.enabled = false;
         if (game_data.first_main_help) {
             help.SetActive(false);
+            game_data.allow_timer = false;
         }
     }
 
@@ -62,6 +63,7 @@ public class main_pad_toggle : MonoBehaviour
                     game_data.first_main_help = false;
                     game_data.help = false;
                     game_data.allow_move = true;
+                    game_data.allow_timer = true;
                 }
                 
             }

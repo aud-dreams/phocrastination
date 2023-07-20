@@ -45,6 +45,7 @@ public class help_toggle : MonoBehaviour
                 if (collider.CompareTag("Dishes")) {
                     game_data.allow_bowls = false;
                 }
+                game_data.allow_timer = false;
             }
         }
     }

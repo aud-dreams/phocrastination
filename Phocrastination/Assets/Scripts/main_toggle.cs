@@ -16,6 +16,7 @@ public class main_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+        //game_data.allow_timer = true;
     }
 
     private void OnMouseEnter() {

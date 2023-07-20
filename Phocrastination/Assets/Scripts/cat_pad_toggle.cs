@@ -25,6 +25,7 @@ public class cat_pad_toggle : MonoBehaviour
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_hand = false;
+            game_data.allow_timer = false;
         }
     }
 
@@ -52,18 +53,12 @@ public class cat_pad_toggle : MonoBehaviour
                 home.SetActive(true);
                 game_data.first_cat_help = false;
                 game_data.help = false;
+                game_data.allow_timer = true;
             }
         }
 
         if (game_data.help) {
             game_data.allow_hand = false;
         }
-        
-        // // change cursor back
-        // if (game_data.help) {
-        //     Cursor.visible = true;
-        //     render2.enabled = false;
-        //     Debug.Log("hand off");
-        // }
     }
 }

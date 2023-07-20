@@ -8,7 +8,9 @@ public class timer : MonoBehaviour
 
     void Update()
     {
-        game_data.timer += Time.deltaTime;
+        if (game_data.allow_timer) {
+            game_data.timer += Time.deltaTime;
+        }
 
         // decrement cat bar once cat scene first clicked on
         if (!game_data.first_cat_help && game_data.outside_catscene) {

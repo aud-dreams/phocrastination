@@ -29,6 +29,7 @@ public class order_counter_pad_toggle : MonoBehaviour
         if (game_data.first_serving_help) {
             help.SetActive(false);
             home.SetActive(false);
+            game_data.allow_timer = false;
         }
     }
 
@@ -56,6 +57,7 @@ public class order_counter_pad_toggle : MonoBehaviour
 
                 game_data.first_serving_help = false;
                 game_data.help = false;
+                game_data.allow_timer = true;
             }
         } else {
             toggle.GetComponent<Renderer>().enabled = false;

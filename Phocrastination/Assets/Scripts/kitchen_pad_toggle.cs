@@ -30,6 +30,10 @@ public class kitchen_pad_toggle : MonoBehaviour
         } else {
             foreach (GameObject i in initial) { i.SetActive(false); }
         }
+
+        if (game_data.first_crafting_help) {
+            game_data.allow_timer = false;
+        }
     }
 
     private void OnMouseEnter() {
@@ -60,6 +64,7 @@ public class kitchen_pad_toggle : MonoBehaviour
                 game_data.first_crafting_help = false;
                 game_data.allow_paintbrush = true;
                 game_data.start_drawing = true;
+                game_data.allow_timer = true;
             }
         }
     }

@@ -301,8 +301,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1144105750}
   - component: {fileID: 1144105749}
-  - component: {fileID: 1144105747}
   - component: {fileID: 1144105751}
+  - component: {fileID: 1144105747}
   m_Layer: 0
   m_Name: play_toggle
   m_TagString: Play
