@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class customer_manager : MonoBehaviour
+public class customer_manager2 : MonoBehaviour
 {
     public game_data game_data;
     float offset = 1f;
@@ -15,9 +15,9 @@ public class customer_manager : MonoBehaviour
         System.Random random = new System.Random();
 
         // reset customers_line
-        game_data.customers_line.Clear();
+        game_data.ordered_line.Clear();
 
-        for (int i = 0; i < game_data.current_customers; i++) {
+        for (int i = 0; i < game_data.ordered_customers; i++) {
             // randomize current customer gender
             if (random.Next(2) == 1) {
                 current = boy_customer;
@@ -26,12 +26,12 @@ public class customer_manager : MonoBehaviour
             }
 
             // set layer so customers are overlapping properly
-            current.GetComponent<Renderer>().sortingOrder = game_data.current_customers - i;
+            current.GetComponent<Renderer>().sortingOrder = game_data.ordered_customers - i;
 
             Vector3 newPosition = new Vector3(position.x + (i * offset), position.y, position.z);
             GameObject newCustomer = Instantiate(current, newPosition, Quaternion.identity);
 
-            game_data.customers_line.Add(newCustomer);
+            game_data.ordered_line.Add(newCustomer);
         }
         
         boy_customer.SetActive(false);
@@ -42,48 +42,42 @@ public class customer_manager : MonoBehaviour
         toggle.GetComponent<Renderer>().enabled = false;
 
         // first customer in list leaves
-        if (game_data.current_customers != 0) {
-            StartCoroutine(Order(game_data.customers_line[0]));
-            game_data.customers_line.RemoveAt(0);
-            game_data.current_customers--;
+        if (game_data.ordered_customers != 0) {
+            StartCoroutine(Pickup(game_data.ordered_line[0]));
         }
     }
 
     public void Shadow() {
-        for (int i = 1; i < game_data.customers_line.Count; i++) {
-            Renderer renderer2 = game_data.customers_line[i].GetComponent<SpriteRenderer>();
+        for (int i = 1; i < game_data.ordered_line.Count; i++) {
+            Renderer renderer2 = game_data.ordered_line[i].GetComponent<SpriteRenderer>();
             float darkenAmount = 0.65f;
             Color dark = new Color(renderer2.material.color.r * darkenAmount, renderer2.material.color.g * darkenAmount, renderer2.material.color.b * darkenAmount, renderer2.material.color.a);
             renderer2.material.color = dark;
         }
     }
 
-    public GameObject speech;
     private float speed = 5f;
 
-    public IEnumerator Order(GameObject customer) {
-        // wait 5 seconds for order
-        speech.SetActive(true);
-        yield return new WaitForSeconds(5f);
-        speech.SetActive(false);
+    public IEnumerator Pickup(GameObject customer) {
+        // if customer recieves bowl
+        if (game_data.received) {
+            while (customer.transform.position.x > -11) {
+                customer.transform.Translate(Vector3.left * speed * Time.deltaTime);
+                yield return null;
+            }
 
-        while (customer.transform.position.x > -11) {
-            customer.transform.Translate(Vector3.left * speed * Time.deltaTime);
-            yield return null;
+            // deactivate off screen
+            customer.SetActive(false); 
+
+            game_data.can_next = false;
+            if (game_data.ordered_line.Count != 0) {
+                game_data.can_next = true;
+                button.SetActive(true);
+                toggle.GetComponent<Renderer>().enabled = true;
+            }
+
+            game_data.ordered_line.RemoveAt(0);
+            game_data.ordered_customers--;
         }
-
-        // deactivate off screen
-        customer.SetActive(false); 
-
-        game_data.can_next = false;
-        if (game_data.customers_line.Count != 0) {
-            game_data.can_next = true;
-            button.SetActive(true);
-            toggle.GetComponent<Renderer>().enabled = true;
-        }
-
-        // increment num of orders
-        game_data.orders++;
-        game_data.ordered_customers++;
     }
 }

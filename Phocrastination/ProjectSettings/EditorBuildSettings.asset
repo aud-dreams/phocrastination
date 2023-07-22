@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cat.unity
     guid: f1a1fc3e58d02064fa982144473f9854
+  - enabled: 1
+    path: Assets/Scenes/Pickup.unity
+    guid: 0ec85b86d1af39441bf6b0eaf8de77bc
   m_configObjects: {}

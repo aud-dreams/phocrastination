@@ -26,6 +26,13 @@ public class game_data : ScriptableObject
     public bool can_next;
     public int orders;
 
+    // pickup station
+    public bool first_pickup_help;
+    public int ordered_customers;
+    public List<GameObject> ordered_line;
+    public bool can_next2;
+    public bool received;
+
     // crafting station
     public bool first_crafting_help;
     public bool crafting_continue;

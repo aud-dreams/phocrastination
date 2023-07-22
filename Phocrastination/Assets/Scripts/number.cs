@@ -55,6 +55,15 @@ public class number : MonoBehaviour
                 render1.sprite = GetNumber(game_data.dirty_bowls / 10);
                 render2.sprite = GetNumber(game_data.dirty_bowls % 10);
             }
+        } else if (gameObject.CompareTag("Pickup")) {
+            // ordered customers in line
+            if (game_data.ordered_customers <= 9) {  // single digits = 1 sprite
+                render1.sprite = GetNumber(game_data.ordered_customers);
+                render2.sprite = null;
+            } else {  // double digits = 2 sprites side by side
+                render1.sprite = GetNumber(game_data.ordered_customers / 10);
+                render2.sprite = GetNumber(game_data.ordered_customers % 10);
+            }  
         }
     }
 

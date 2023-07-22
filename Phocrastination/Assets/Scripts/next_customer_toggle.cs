@@ -85,7 +85,8 @@ public class next_customer_toggle : MonoBehaviour
             toggle.GetComponent<Renderer>().enabled = true;
         }
 
-        // increment num of orders
+        // increment num of orders & ordered_customers
         game_data.orders++;
+        game_data.ordered_customers++;
     }
 }

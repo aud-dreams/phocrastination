@@ -20,6 +20,7 @@ TagManager:
   - Cat
   - Dishes
   - Serving
+  - Pickup
   layers:
   - Default
   - TransparentFX

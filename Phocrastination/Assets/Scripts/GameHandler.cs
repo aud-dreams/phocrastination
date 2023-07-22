@@ -41,12 +41,19 @@ public class GameHandler : MonoBehaviour
         game_data.current_customers = 5;
         game_data.customers_line = new List<GameObject>();
         game_data.orders = 0;
+        game_data.can_next = false;
+
+        // pickup initialization
+        game_data.first_pickup_help = true;
+        game_data.ordered_customers = 0;
+        game_data.ordered_line = new List<GameObject>();
+        game_data.can_next2 = false;
+        game_data.received = false;
 
         // crafting initialization
         game_data.first_crafting_help = true;
         game_data.current_color = Color.black;
         game_data.crafting_continue = false;
-        game_data.can_next = false;
         game_data.beef_inside = false;
         game_data.broth_inside = false;
         game_data.herbs_inside = false;
