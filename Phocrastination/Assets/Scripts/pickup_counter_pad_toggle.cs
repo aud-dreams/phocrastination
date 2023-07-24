@@ -9,7 +9,7 @@ public class pickup_counter_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public GameObject[] items;
-    public GameObject button, toggle, customer_manager, help, home, bowl;
+    public GameObject button, toggle, customer_manager, help, home, bowl, sparkles;
 
     void Start()
     {
@@ -32,6 +32,9 @@ public class pickup_counter_pad_toggle : MonoBehaviour
 
         // temp setup
         bowl.SetActive(false);
+        button.SetActive(false);
+        toggle.SetActive(false);
+        sparkles.SetActive(false);
     }
 
     private void OnMouseEnter() {

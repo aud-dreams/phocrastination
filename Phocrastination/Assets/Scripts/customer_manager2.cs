@@ -40,11 +40,6 @@ public class customer_manager2 : MonoBehaviour
 
         button.SetActive(false);
         toggle.GetComponent<Renderer>().enabled = false;
-
-        // first customer in list leaves
-        if (game_data.ordered_customers != 0) {
-            StartCoroutine(Pickup(game_data.ordered_line[0]));
-        }
     }
 
     public void Shadow() {
@@ -53,31 +48,6 @@ public class customer_manager2 : MonoBehaviour
             float darkenAmount = 0.65f;
             Color dark = new Color(renderer2.material.color.r * darkenAmount, renderer2.material.color.g * darkenAmount, renderer2.material.color.b * darkenAmount, renderer2.material.color.a);
             renderer2.material.color = dark;
-        }
-    }
-
-    private float speed = 5f;
-
-    public IEnumerator Pickup(GameObject customer) {
-        // if customer recieves bowl
-        if (game_data.received) {
-            while (customer.transform.position.x > -11) {
-                customer.transform.Translate(Vector3.left * speed * Time.deltaTime);
-                yield return null;
-            }
-
-            // deactivate off screen
-            customer.SetActive(false); 
-
-            game_data.can_next = false;
-            if (game_data.ordered_line.Count != 0) {
-                game_data.can_next = true;
-                button.SetActive(true);
-                toggle.GetComponent<Renderer>().enabled = true;
-            }
-
-            game_data.ordered_line.RemoveAt(0);
-            game_data.ordered_customers--;
         }
     }
 }
