@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "game_data", menuName = "Data")]
+[CreateAssetMenu(fileName = "game_data", menuName = "game_data")]
 public class game_data : ScriptableObject
 {
     // global

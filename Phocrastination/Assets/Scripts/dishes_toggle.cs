@@ -45,10 +45,6 @@ public class dishes_toggle : MonoBehaviour
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
                 SceneManager.LoadScene("Dishes");
-
-                // post to database
-                user.counter = 1;
-                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
             }
         }
         else {
