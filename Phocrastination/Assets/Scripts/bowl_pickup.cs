@@ -6,13 +6,22 @@ public class bowl_pickup : MonoBehaviour
 {
     public game_data game_data;
     Vector3 mousePositionOffset;
-    public BoxCollider2D bowl;
     private SpriteRenderer render;
-    public GameObject button, toggle, sparkles;
+    private Renderer bowl_render;
+    public GameObject bowl, button, toggle, sparkles, home;
+    private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
 
     private void Start() {
-        bowl = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
+        bowl_render = bowl.GetComponent<Renderer>();
+
+        if (game_data.constructed_orders != 0) {
+            bowl.SetActive(true);
+            bowl.transform.position = bowl_position;
+            bowl_render.enabled = true;
+        } else {
+            bowl.SetActive(false);
+        }
     }
 
     private Vector3 GetMouseWorldPosition() {
@@ -31,8 +40,21 @@ public class bowl_pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D customer) {
         if (customer.CompareTag("collider")) {
-            // first customer in line leaves
-            StartCoroutine(Pickup(game_data.ordered_line[0]));
+            render.enabled = false;
+
+            if (game_data.once) {
+                // first customer in line leaves
+                game_data.ordered_customers--;
+                game_data.orders--;
+                StartCoroutine(Pickup(game_data.ordered_line[0]));
+                game_data.ordered_line.RemoveAt(0);
+                game_data.once = false;
+            }
+                    
+            // once button clicked, deactivate button again until next customer leaves
+            button.SetActive(false);
+            toggle.SetActive(false);
+            game_data.can_next2 = false;
         }
     }
 
@@ -42,7 +64,6 @@ public class bowl_pickup : MonoBehaviour
         sparkles.SetActive(true);
         yield return new WaitForSeconds(3f);
         sparkles.SetActive(false);
-        render.enabled = false;
 
         while (customer.transform.position.x > -11) {
             customer.transform.Translate(Vector3.left * speed * Time.deltaTime);
@@ -52,16 +73,15 @@ public class bowl_pickup : MonoBehaviour
         // deactivate off screen
         customer.SetActive(false); 
 
-        game_data.can_next = false;
+        home.SetActive(true);
+        game_data.once = true;
+        game_data.constructed_orders--;
 
         // next button on if customers left
-        if (game_data.ordered_line.Count != 0) {
-            game_data.can_next = true;
+        if (game_data.ordered_customers != 0) {
+            game_data.can_next2 = true;
             button.SetActive(true);
-            toggle.GetComponent<Renderer>().enabled = true;
+            toggle.SetActive(true);
         }
-
-        game_data.ordered_line.RemoveAt(0);
-        game_data.ordered_customers--;
     }
 }

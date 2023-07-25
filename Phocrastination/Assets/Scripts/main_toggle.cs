@@ -16,7 +16,6 @@ public class main_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        //game_data.allow_timer = true;
     }
 
     private void OnMouseEnter() {
@@ -47,6 +46,10 @@ public class main_toggle : MonoBehaviour
 
                 if (collider.CompareTag("Serving")) {
                     game_data.can_next = false;
+                }
+
+                if (collider.CompareTag("Pickup")) {
+                    game_data.can_next2 = false;
                 }
             }
         }

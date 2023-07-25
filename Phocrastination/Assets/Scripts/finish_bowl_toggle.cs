@@ -45,6 +45,7 @@ public class finish_bowl_toggle : MonoBehaviour
                     
                     // decrement num of orders
                     game_data.orders--;
+                    game_data.constructed_orders++;
                 }
             }
         }

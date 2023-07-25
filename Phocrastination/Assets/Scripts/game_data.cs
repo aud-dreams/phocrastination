@@ -31,7 +31,8 @@ public class game_data : ScriptableObject
     public int ordered_customers;
     public List<GameObject> ordered_line;
     public bool can_next2;
-    public bool received;
+    public bool once;
+    public int constructed_orders;
 
     // crafting station
     public bool first_crafting_help;

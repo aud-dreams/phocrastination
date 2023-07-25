@@ -18,20 +18,19 @@ public class pickup_counter_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        if (!game_data.can_next) { button.SetActive(false); }
+        if (!game_data.can_next2) { button.SetActive(false); }
         toggle.GetComponent<Renderer>().enabled = false;
 
         if (game_data.first_pickup_help) { customer_manager.SetActive(false); } 
         else { customer_manager.SetActive(true); }
 
-        if (game_data.first_pickup_help) {
+        if (game_data.first_pickup_help || game_data.help) {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_timer = false;
         }
 
         // temp setup
-        bowl.SetActive(false);
         button.SetActive(false);
         toggle.SetActive(false);
         sparkles.SetActive(false);
@@ -58,7 +57,6 @@ public class pickup_counter_pad_toggle : MonoBehaviour
                 customer_manager.SetActive(true);
                 help.SetActive(true);
                 home.SetActive(true);
-                bowl.SetActive(true);
 
                 game_data.first_pickup_help = false;
                 game_data.help = false;

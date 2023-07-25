@@ -48,7 +48,8 @@ public class GameHandler : MonoBehaviour
         game_data.ordered_customers = 0;
         game_data.ordered_line = new List<GameObject>();
         game_data.can_next2 = false;
-        game_data.received = false;
+        game_data.once = true;
+        game_data.constructed_orders = 0;
 
         // crafting initialization
         game_data.first_crafting_help = true;

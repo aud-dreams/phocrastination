@@ -438,7 +438,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08485317, y: -0.10066891}
+  m_Offset: {x: -0.08485317, y: 1.00575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -449,7 +449,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.980349, y: 11.878662}
+  m_Size: {x: 10.980349, y: 9.665825}
   m_EdgeRadius: 0
 --- !u!1 &793279991
 GameObject:
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 915101461}
   m_Layer: 0
   m_Name: main_toggle
-  m_TagString: Serving
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -920,7 +920,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05033493, y: 0.0182333}
+  m_Offset: {x: -0.05033493, y: 1.1094956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -931,7 +931,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.062435, y: 12.2747345}
+  m_Size: {x: 10.062435, y: 10.09221}
   m_EdgeRadius: 0
 --- !u!1 &1045885889
 GameObject:
@@ -1280,6 +1280,7 @@ GameObject:
   - component: {fileID: 1147184672}
   - component: {fileID: 1147184671}
   - component: {fileID: 1147184669}
+  - component: {fileID: 1147184673}
   m_Layer: 0
   m_Name: next_customer_toggle
   m_TagString: Untagged
@@ -1367,6 +1368,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147184673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147184668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba66ab5d236215c4dbda208145ed3997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  bowl: {fileID: 2015941266}
+  button: {fileID: 649845125}
+  toggle: {fileID: 1147184668}
 --- !u!1 &1385650750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,28 +1890,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1781023617}
   - component: {fileID: 1781023616}
-  - component: {fileID: 1781023615}
   m_Layer: 0
   m_Name: serving_station
-  m_TagString: Pickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1781023615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781023614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55b6d3c5981253b4889c65b91551406d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  home: {fileID: 915101460}
 --- !u!212 &1781023616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2017,9 +2019,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -302816547
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: adf6493b74db9e042806c6c1c7f3cee9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2146,10 +2148,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  bowl: {fileID: 2015941270}
+  bowl: {fileID: 2015941266}
   button: {fileID: 649845125}
   toggle: {fileID: 1147184668}
   sparkles: {fileID: 1979863454}
+  home: {fileID: 915101460}
 --- !u!61 &2015941270
 BoxCollider2D:
   m_ObjectHideFlags: 0
