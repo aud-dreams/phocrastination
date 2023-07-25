@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class cat_toggle : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class cat_toggle : MonoBehaviour
     public GameObject buttonObject, player;
     public float proximityThreshold = 5f;
     public game_data game_data;
+    public stat_data stat_data;
+
+    user_log user = new user_log();
 
     void Start() {
         // if start menu activated at beginning of game, disable hovers
@@ -43,6 +47,11 @@ public class cat_toggle : MonoBehaviour
                 game_data.character_sprite = render2.sprite;
                 SceneManager.LoadScene("Cat");
                 game_data.outside_catscene = false;
+
+                // post to database
+                user.cat_scene_ts = game_data.timer;
+                user.distractability_bool = stat_data.distractability_bool;
+                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
             }
         }
         else {
