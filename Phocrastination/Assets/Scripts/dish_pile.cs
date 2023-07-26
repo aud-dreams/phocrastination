@@ -7,9 +7,11 @@ public class dish_pile : MonoBehaviour
     private new Collider collider;
     public GameObject bowl, dish_pile_large, dish_pile_small;
     Vector3 mousePositionOffset;
+    private Renderer render;
 
     private void Start() {
         collider = GetComponent<Collider>();
+        render = bowl.GetComponent<Renderer>();
 
         dirty_bowls = game_data.dirty_bowls;
 
@@ -36,6 +38,7 @@ public class dish_pile : MonoBehaviour
                 if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                     bowl.transform.position = hit.point;
                     bowl.SetActive(true);
+                    render.enabled = true;
                 }
             }
 

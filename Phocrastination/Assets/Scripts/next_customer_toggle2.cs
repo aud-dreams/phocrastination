@@ -46,7 +46,7 @@ public class next_customer_toggle2 : MonoBehaviour
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
                 if (game_data.can_next2 && !game_data.help) {
                     // "instantiate" bowl if orders are still left
-                    if (game_data.orders != 0) {
+                    if (game_data.constructed_orders != 0) {
                         bowl.transform.position = bowl_position;
                         bowl_render.enabled = true;
                     }

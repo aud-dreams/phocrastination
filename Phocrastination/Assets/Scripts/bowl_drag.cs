@@ -29,15 +29,17 @@ public class bowl_drag : MonoBehaviour
     private void OnMouseDown() {
         // capture mouse offset
         if (game_data.allow_bowls) {
-            mousePositionOffset = transform.position - GetMouseWorldPosition();
+            Debug.Log("down");
             render.enabled = true;
+            mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
     }
 
     private void OnMouseDrag() {
         if (game_data.allow_bowls) {
-            transform.position = GetMouseWorldPosition() + mousePositionOffset;
+            Debug.Log("drag");
             render.enabled = true;
+            transform.position = GetMouseWorldPosition() + mousePositionOffset;
         }
     }
 
