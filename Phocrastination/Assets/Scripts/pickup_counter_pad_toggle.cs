@@ -9,7 +9,7 @@ public class pickup_counter_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public GameObject[] items;
-    public GameObject button, toggle, customer_manager, help, home, bowl, sparkles;
+    public GameObject button, toggle, customer_manager, help, home, sparkles;
 
     void Start()
     {
@@ -18,19 +18,15 @@ public class pickup_counter_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        if (!game_data.can_next2) { button.SetActive(false); }
-        toggle.GetComponent<Renderer>().enabled = false;
-
-        if (game_data.first_pickup_help) { customer_manager.SetActive(false); } 
-        else { customer_manager.SetActive(true); }
+        // if (!game_data.can_next2) { button.SetActive(false); }
 
         if (game_data.first_pickup_help || game_data.help) {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_timer = false;
+            game_data.allow_drag = false;
         }
 
-        // temp setup
         button.SetActive(false);
         toggle.SetActive(false);
         sparkles.SetActive(false);
@@ -45,6 +41,12 @@ public class pickup_counter_pad_toggle : MonoBehaviour
     }
 
     void Update() {
+        if (game_data.first_pickup_help || game_data.help) {
+            help.SetActive(false);
+            home.SetActive(false);
+            game_data.allow_drag = false;
+        }
+        
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -61,6 +63,7 @@ public class pickup_counter_pad_toggle : MonoBehaviour
                 game_data.first_pickup_help = false;
                 game_data.help = false;
                 game_data.allow_timer = true;
+                game_data.allow_drag = true;
             }
         } else {
             toggle.GetComponent<Renderer>().enabled = false;

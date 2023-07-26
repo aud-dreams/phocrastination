@@ -3343,7 +3343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pad: {fileID: 1798644804}
-  redo: {fileID: 1548664399}
   paintbrush: {fileID: 1837657665}
   beefOutline: {fileID: 1931998196}
   brothOutline: {fileID: 1054249669}
@@ -3353,16 +3352,19 @@ MonoBehaviour:
   broth: {fileID: 67826318}
   herbs: {fileID: 987573230}
   noodles: {fileID: 965899511}
-  items:
-  - {fileID: 1449673941}
-  - {fileID: 67826318}
-  - {fileID: 987573230}
-  - {fileID: 965899511}
+  toggles:
   - {fileID: 1714166120}
   - {fileID: 428247697}
   - {fileID: 1083540223}
   - {fileID: 629354584}
   - {fileID: 1929328588}
+  - {fileID: 1671822444}
+  - {fileID: 1548664399}
+  ingredients:
+  - {fileID: 1449673941}
+  - {fileID: 67826318}
+  - {fileID: 987573230}
+  - {fileID: 965899511}
   mainDot: {fileID: 649713102}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
 --- !u!1 &1714166120
@@ -4899,8 +4901,6 @@ MonoBehaviour:
   - {fileID: 237043187}
   - {fileID: 2008689064}
   items:
-  - {fileID: 1671822444}
-  - {fileID: 1548664399}
   - {fileID: 1153640057}
   - {fileID: 293344921}
   ingredients:
@@ -4911,12 +4911,14 @@ MonoBehaviour:
   - {fileID: 1054249669}
   - {fileID: 45620900}
   - {fileID: 1745482199}
-  colorSwitches:
+  toggles:
   - {fileID: 1714166120}
   - {fileID: 428247697}
   - {fileID: 1083540223}
   - {fileID: 629354584}
   - {fileID: 1929328588}
+  - {fileID: 1671822444}
+  - {fileID: 1548664399}
   initial:
   - {fileID: 1931998196}
   - {fileID: 1798644804}

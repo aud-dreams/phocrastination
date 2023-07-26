@@ -49,7 +49,9 @@ public class GameHandler : MonoBehaviour
         game_data.ordered_line = new List<GameObject>();
         game_data.can_next2 = false;
         game_data.once = true;
+        game_data.once2 = true;
         game_data.constructed_orders = 0;
+        game_data.allow_drag = false;
 
         // crafting initialization
         game_data.first_crafting_help = true;
@@ -62,7 +64,8 @@ public class GameHandler : MonoBehaviour
         game_data.allow_drawing = false;
         game_data.allow_paintbrush = false;
         game_data.bowl_complete = false;
-        game_data.start_drawing = false;
+        game_data.counter = 0;
+        game_data.pad_on = false;
 
         // dishes initialization
         game_data.first_dishes_help = true;

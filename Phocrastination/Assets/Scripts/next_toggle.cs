@@ -7,12 +7,11 @@ public class next_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
-    public GameObject pad, redo, paintbrush;
+    public GameObject pad, paintbrush;
     public GameObject beefOutline, brothOutline, herbsOutline, noodlesOutline;
     public GameObject beef, broth, herbs, noodles;
-    public GameObject[] items;
+    public GameObject[] toggles, ingredients;
     public main_dot mainDot;
-    private int counter = 0;
     public game_data game_data;
     private SpriteRenderer paintbrush_render;
 
@@ -53,36 +52,35 @@ public class next_toggle : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (game_data.start_drawing) {  // reset counter at start of drawing_pad
-                counter = 0;
-            }
+            // if (game_data.start_drawing) {  // reset counter at start of drawing_pad
+            //     game_data.counter = 0;
+            // }
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                counter++;
+                game_data.counter++;
 
                 if (!game_data.help) {
-                    if (counter == 1) {
+                    if (game_data.counter == 1) {
                         beefOutline.SetActive(false);
                         brothOutline.SetActive(true);
                         clear();
-                        game_data.start_drawing = false;
-                    } else if (counter == 2) {
+                        //game_data.start_drawing = false;
+                    } else if (game_data.counter == 2) {
                         brothOutline.SetActive(false);
                         herbsOutline.SetActive(true);
                         clear();
-                    } else if (counter == 3) {
+                    } else if (game_data.counter == 3) {
                         herbsOutline.SetActive(false);
                         noodlesOutline.SetActive(true);
                         clear();
-                    } else if (counter == 4) {
+                    } else if (game_data.counter == 4) {
+                        game_data.counter = 0;
                         noodlesOutline.SetActive(false);
                         pad.SetActive(false);
-                        redo.SetActive(false);
-                        gameObject.SetActive(false);
                         clear();
 
-                        foreach (GameObject item in items) {
-                            item.SetActive(true);
+                        foreach (GameObject toggle in toggles) {
+                            toggle.SetActive(false);
                         }
 
                         beef.transform.position = new Vector3(2.7f, 0.3f, 0f);
@@ -90,7 +88,12 @@ public class next_toggle : MonoBehaviour
                         herbs.transform.position = new Vector3(2.67f, -0.85f, 0f);
                         noodles.transform.position = new Vector3(5.8f, -0.87f, 0f);
 
+                        foreach (GameObject ingredient in ingredients) {
+                            ingredient.SetActive(true);
+                        }
+
                         game_data.allow_drawing = false;
+                        game_data.pad_on = false;
 
                         // turn cursor back on
                         game_data.allow_paintbrush = false;

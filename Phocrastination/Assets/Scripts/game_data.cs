@@ -32,7 +32,9 @@ public class game_data : ScriptableObject
     public List<GameObject> ordered_line;
     public bool can_next2;
     public bool once;
+    public bool once2;
     public int constructed_orders;
+    public bool allow_drag;
 
     // crafting station
     public bool first_crafting_help;
@@ -45,7 +47,8 @@ public class game_data : ScriptableObject
     public bool allow_drawing;
     public bool allow_paintbrush;
     public bool bowl_complete;
-    public bool start_drawing;
+    public int counter;
+    public bool pad_on;
 
     // dishes station
     public bool first_dishes_help;

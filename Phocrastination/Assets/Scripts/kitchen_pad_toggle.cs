@@ -9,7 +9,7 @@ public class kitchen_pad_toggle : MonoBehaviour
     public game_data game_data;
 
     public main_dot mainDot;
-    public GameObject[] start, items, ingredients, colorSwitches, initial;
+    public GameObject[] start, items, ingredients, toggles, initial;
     private SpriteRenderer paintbrush_render;
 
     private void Start() {        
@@ -17,13 +17,14 @@ public class kitchen_pad_toggle : MonoBehaviour
         collider = GetComponent<Collider>();
 
         game_data.allow_drawing = false;
+        game_data.allow_paintbrush = false;
 
         // set visibility at start
         render.enabled = false;
 
         foreach (GameObject item in items) { item.SetActive(false); }
         foreach (GameObject i in ingredients) { i.SetActive(false); }
-        foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(false); }
+        foreach (GameObject toggle in toggles) { toggle.SetActive(false); }
 
         if (game_data.orders != 0) {
             foreach (GameObject i in initial) { i.SetActive(true); }
@@ -45,6 +46,12 @@ public class kitchen_pad_toggle : MonoBehaviour
     }
 
     void Update() {
+        game_data.allow_drawing = false;
+        game_data.allow_paintbrush = false;
+
+        foreach (GameObject item in items) { item.SetActive(false); }
+        foreach (GameObject toggle in toggles) { toggle.SetActive(false); }
+
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -54,16 +61,18 @@ public class kitchen_pad_toggle : MonoBehaviour
                     s.SetActive(false);
                 }
 
-                game_data.allow_drawing = true;
-
                 game_data.help = false;
 
                 foreach (GameObject item in items) { item.SetActive(true); }
-                foreach (GameObject colorSwitch in colorSwitches) { colorSwitch.SetActive(true); }
                 
+                if (game_data.pad_on) {
+                    game_data.allow_drawing = true;
+                    game_data.allow_paintbrush = true;
+                    foreach (GameObject toggle in toggles) { toggle.SetActive(true); }
+                }
+
                 game_data.first_crafting_help = false;
-                game_data.allow_paintbrush = true;
-                game_data.start_drawing = true;
+                //if (game_data.first_crafting_help) { game_data.start_drawing = true; }
                 game_data.allow_timer = true;
             }
         }

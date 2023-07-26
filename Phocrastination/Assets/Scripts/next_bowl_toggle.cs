@@ -46,7 +46,6 @@ public class next_bowl_toggle : MonoBehaviour
                     brothOutline.SetActive(false);
                     herbsOutline.SetActive(false);
                     noodlesOutline.SetActive(false);
-                    game_data.start_drawing = true;
                     game_data.current_color = Color.black;
                 }
             }

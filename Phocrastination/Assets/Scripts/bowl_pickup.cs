@@ -31,11 +31,15 @@ public class bowl_pickup : MonoBehaviour
 
     private void OnMouseDown() {
         // capture mouse offset
-        mousePositionOffset = transform.position - GetMouseWorldPosition();
+        if (game_data.allow_drag) {
+            mousePositionOffset = transform.position - GetMouseWorldPosition();
+        }
     }
 
     private void OnMouseDrag() {
-        transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        if (game_data.allow_drag) {
+            transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D customer) {
@@ -45,7 +49,6 @@ public class bowl_pickup : MonoBehaviour
             if (game_data.once) {
                 // first customer in line leaves
                 game_data.ordered_customers--;
-                game_data.orders--;
                 StartCoroutine(Pickup(game_data.ordered_line[0]));
                 game_data.ordered_line.RemoveAt(0);
                 game_data.once = false;

@@ -9,37 +9,40 @@ public class customer_manager2 : MonoBehaviour
     float offset = 1f;
     public GameObject boy_customer, girl_customer, toggle, button;
     private GameObject current;
-    
+    private Vector3 position = new Vector3(3f, 3.04f, 0f);
+    System.Random random = new System.Random();
+
     void Start() {
-        Vector3 position = new Vector3(3f, 3.04f, 0f);
-        System.Random random = new System.Random();
+        game_data.once2 = true;
+    }
+    
+    void Update() {
+        if (!game_data.first_pickup_help && game_data.once2) {
+            // reset customers_line
+            game_data.ordered_line.Clear();
 
-        // reset customers_line
-        game_data.ordered_line.Clear();
+            for (int i = 0; i < game_data.ordered_customers; i++) {
+                // randomize current customer gender
+                if (random.Next(2) == 1) {
+                    current = boy_customer;
+                } else {
+                    current = girl_customer;
+                }
 
-        for (int i = 0; i < game_data.ordered_customers; i++) {
-            // randomize current customer gender
-            if (random.Next(2) == 1) {
-                current = boy_customer;
-            } else {
-                current = girl_customer;
+                // set layer so customers are overlapping properly
+                current.GetComponent<Renderer>().sortingOrder = game_data.ordered_customers - i;
+
+                Vector3 newPosition = new Vector3(position.x + (i * offset), position.y, position.z);
+                GameObject newCustomer = Instantiate(current, newPosition, Quaternion.identity);
+
+                game_data.ordered_line.Add(newCustomer);
             }
 
-            // set layer so customers are overlapping properly
-            current.GetComponent<Renderer>().sortingOrder = game_data.ordered_customers - i;
-
-            Vector3 newPosition = new Vector3(position.x + (i * offset), position.y, position.z);
-            GameObject newCustomer = Instantiate(current, newPosition, Quaternion.identity);
-
-            game_data.ordered_line.Add(newCustomer);
+            boy_customer.SetActive(false);
+            girl_customer.SetActive(false);
+            Shadow();
+            game_data.once2 = false;
         }
-        
-        boy_customer.SetActive(false);
-        girl_customer.SetActive(false);
-        Shadow();
-
-        button.SetActive(false);
-        toggle.GetComponent<Renderer>().enabled = false;
     }
 
     public void Shadow() {

@@ -22,10 +22,13 @@ public class drawing_pad : MonoBehaviour
     void Start() 
     {
         drawingBounds = GetComponent<BoxCollider2D>();
+        game_data.pad_on = true;
     }
 
     void Update()
     {
+        game_data.pad_on = true;
+        
         if (Input.GetMouseButtonDown(0)) {
             isDrawing = true;
         } else if (Input.GetMouseButtonUp(0)) {
