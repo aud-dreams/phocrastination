@@ -12,42 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 95.70107503421605
-  userID: d669b89a-3dea-444b-954e-1c29f29109db
+  timer: 32.291894503869116
+  userID: ea6992f7-428e-4e95-81bf-a361f073102d
   allow_timer: 1
   first_main_help: 0
   help: 0
-  click: 1
-  character_position: {x: -5.7914233, y: 1.1350658, z: 0}
+  click: 3
+  character_position: {x: -3.499999, y: 1.9000002, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
-  first_serving_help: 0
+  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
+  first_serving_help: 1
   total_customers: 5
-  current_customers: 3
-  customers_line:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  current_customers: 5
+  customers_line: []
   can_next: 0
-  orders: 2
-  first_pickup_help: 1
-  ordered_customers: 2
-  ordered_line: []
-  can_next2: 0
+  orders: 0
+  first_pickup_help: 0
+  ordered_customers: 1
+  ordered_line:
+  - {fileID: 0}
+  can_next2: 1
   once: 1
-  constructed_orders: 0
-  first_crafting_help: 0
+  once2: 0
+  constructed_orders: 1
+  allow_drag: 1
+  first_crafting_help: 1
   crafting_continue: 0
-  current_color: {r: 0.5529412, g: 0.3764706, b: 0.25882354, a: 1}
-  beef_inside: 1
-  broth_inside: 1
+  current_color: {r: 0, g: 0, b: 0, a: 1}
+  beef_inside: 0
+  broth_inside: 0
   herbs_inside: 0
-  noodles_inside: 1
+  noodles_inside: 0
   allow_drawing: 0
   allow_paintbrush: 0
   bowl_complete: 0
-  start_drawing: 0
-  counter: 4
+  counter: 0
+  pad_on: 0
   first_dishes_help: 1
   dirty_bowls: 6
   allow_bowls: 0

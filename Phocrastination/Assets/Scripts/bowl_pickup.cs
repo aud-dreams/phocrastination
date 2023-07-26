@@ -10,6 +10,7 @@ public class bowl_pickup : MonoBehaviour
     private Renderer bowl_render;
     public GameObject bowl, button, toggle, sparkles, home;
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
+    public EdgeCollider2D wall;
 
     private void Start() {
         render = GetComponent<SpriteRenderer>();
@@ -45,6 +46,7 @@ public class bowl_pickup : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D customer) {
         if (customer.CompareTag("collider")) {
             render.enabled = false;
+            home.SetActive(false);
 
             if (game_data.once) {
                 // first customer in line leaves

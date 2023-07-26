@@ -52,10 +52,6 @@ public class next_toggle : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // if (game_data.start_drawing) {  // reset counter at start of drawing_pad
-            //     game_data.counter = 0;
-            // }
-
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 game_data.counter++;
 
@@ -64,7 +60,6 @@ public class next_toggle : MonoBehaviour
                         beefOutline.SetActive(false);
                         brothOutline.SetActive(true);
                         clear();
-                        //game_data.start_drawing = false;
                     } else if (game_data.counter == 2) {
                         brothOutline.SetActive(false);
                         herbsOutline.SetActive(true);

@@ -572,7 +572,6 @@ MonoBehaviour:
   customer_manager: {fileID: 673094145}
   help: {fileID: 1385650750}
   home: {fileID: 915101460}
-  bowl: {fileID: 2015941266}
   sparkles: {fileID: 1979863454}
 --- !u!1 &851045127
 GameObject:
@@ -2061,6 +2060,7 @@ GameObject:
   - component: {fileID: 2015941270}
   - component: {fileID: 2015941271}
   - component: {fileID: 2015941269}
+  - component: {fileID: 2015941272}
   m_Layer: 0
   m_Name: completed_bowl
   m_TagString: Untagged
@@ -2153,6 +2153,7 @@ MonoBehaviour:
   toggle: {fileID: 1147184668}
   sparkles: {fileID: 1979863454}
   home: {fileID: 915101460}
+  wall: {fileID: 0}
 --- !u!61 &2015941270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2200,3 +2201,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2015941272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015941266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d57a906e1a07b4418f8c73b98c5e935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 1045885891}

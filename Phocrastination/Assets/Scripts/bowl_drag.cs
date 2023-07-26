@@ -18,6 +18,7 @@ public class bowl_drag : MonoBehaviour
     private void Start() {
         bowl = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
+        render.enabled = false;
     }
 
     private Vector3 GetMouseWorldPosition() {
@@ -29,12 +30,14 @@ public class bowl_drag : MonoBehaviour
         // capture mouse offset
         if (game_data.allow_bowls) {
             mousePositionOffset = transform.position - GetMouseWorldPosition();
+            render.enabled = true;
         }
     }
 
     private void OnMouseDrag() {
         if (game_data.allow_bowls) {
             transform.position = GetMouseWorldPosition() + mousePositionOffset;
+            render.enabled = true;
         }
     }
 
