@@ -15,6 +15,15 @@ public class stat_data : ScriptableObject
     // pickup station
 
     // crafting station
+    public int redo;
+    public float ratio_hit;
+    public double start_drawing, end_drawing;
+    public double total_time_drawing;
+
+    public void CalculateTotalTimeDrawing() 
+    {
+        total_time_drawing += end_drawing - start_drawing;
+    }
 
     // dishes station
 

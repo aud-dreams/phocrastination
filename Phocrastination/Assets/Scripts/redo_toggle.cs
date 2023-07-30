@@ -8,6 +8,7 @@ public class redo_toggle : MonoBehaviour
     private new Collider collider;
     public main_dot mainDot;
     public game_data game_data;
+    public stat_data stat_data;
 
     private void Start() {
         // get render component
@@ -30,10 +31,11 @@ public class redo_toggle : MonoBehaviour
     }
 
     public void clear() {
+        stat_data.redo++;
         GameObject[] dots = GameObject.FindGameObjectsWithTag("Dot");
         foreach (GameObject dot in dots) { 
             if (dot != mainDot.gameObject) {    // don't destroy main dot
-                Destroy(dot); 
+                Destroy(dot);
             }
         }
     }

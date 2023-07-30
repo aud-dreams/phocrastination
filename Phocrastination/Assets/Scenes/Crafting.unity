@@ -643,6 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   next_bowl_button: {fileID: 32581063}
   next_bowl_toggle: {fileID: 1078494490}
 --- !u!1 &136528075
@@ -3130,6 +3131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainDot: {fileID: 649713102}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
 --- !u!65 &1548664403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3423,6 +3425,7 @@ MonoBehaviour:
   - {fileID: 965899511}
   mainDot: {fileID: 649713102}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
 --- !u!1 &1714166120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,6 +3893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDot: {fileID: 649713101}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   beef_collider: {fileID: 1931998199}
   broth_collider: {fileID: 1054249672}
   herbs_collider: {fileID: 45620903}
@@ -3897,6 +3901,7 @@ MonoBehaviour:
   total_dots: 0
   hit_dots: 0
   ratio_hit: 0
+  has_start_drawing: 0
 --- !u!61 &1798644808
 BoxCollider2D:
   m_ObjectHideFlags: 0
