@@ -13,6 +13,7 @@ public class next_toggle : MonoBehaviour
     public GameObject[] toggles, ingredients;
     public main_dot mainDot;
     public game_data game_data;
+    public stat_data stat_data;
     private SpriteRenderer paintbrush_render;
 
     private void Start() {
@@ -54,6 +55,9 @@ public class next_toggle : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
                 game_data.counter++;
+
+                // get start drawing time
+                stat_data.end_drawing = game_data.timer;
 
                 if (!game_data.help) {
                     if (game_data.counter == 1) {

@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class finish_bowl_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    public stat_data stat_data;
     public GameObject next_bowl_button, next_bowl_toggle;
+
+    user_log user = new user_log();
 
     private void Start() {
         // get render component
@@ -46,6 +50,13 @@ public class finish_bowl_toggle : MonoBehaviour
                     // decrement num of orders
                     game_data.orders--;
                     game_data.constructed_orders++;
+
+                    // post to database
+                    user.redo = stat_data.redo;
+                    user.ratio_hit = stat_data.ratio_hit;
+                    stat_data.CalculateTotalTimeDrawing();
+                    user.total_time_drawing = stat_data.total_time_drawing;
+                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
                 }
             }
         }

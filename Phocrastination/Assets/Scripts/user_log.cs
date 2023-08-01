@@ -13,6 +13,9 @@ public class user_log
     // pickup station
 
     // crafting station
+    public int redo;
+    public float ratio_hit;
+    public double total_time_drawing;
 
     // dishes station
 
@@ -20,7 +23,6 @@ public class user_log
     public double cat_scene_ts;  // when entered
     public bool distractability_bool;
     public List<(double, bool)> cat_list = new List<(double, bool)>();
-
 }
 
 

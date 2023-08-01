@@ -10,6 +10,7 @@ public class drawing_pad : MonoBehaviour
     public Transform baseDot;
     private BoxCollider2D drawingBounds;
     public game_data game_data;
+    public stat_data stat_data;
 
     public EdgeCollider2D beef_collider;
     public EdgeCollider2D broth_collider; 
@@ -18,6 +19,7 @@ public class drawing_pad : MonoBehaviour
     public int total_dots;
     public int hit_dots;
     public float ratio_hit;
+    public bool has_start_drawing;
 
     void Start() 
     {
@@ -31,6 +33,12 @@ public class drawing_pad : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0)) {
             isDrawing = true;
+
+            // get start drawing time ONCE
+            if (!has_start_drawing) {
+                has_start_drawing = true;
+                stat_data.start_drawing = game_data.timer;
+            }
         } else if (Input.GetMouseButtonUp(0)) {
             isDrawing = false;
         }
@@ -72,6 +80,7 @@ public class drawing_pad : MonoBehaviour
 
                 // calculate percentage hit
                 ratio_hit = (float)hit_dots / total_dots;
+                stat_data.ratio_hit = ratio_hit;
                 //Debug.Log("Ratio hit: " + ratio_hit);
             }
         }
