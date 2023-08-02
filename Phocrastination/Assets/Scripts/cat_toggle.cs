@@ -8,10 +8,10 @@ public class cat_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
-    private SpriteRenderer render2;
+    private SpriteRenderer render2, text_render;
 
-    public GameObject buttonObject, player;
-    public float proximityThreshold = 5f;
+    public GameObject buttonObject, player, text;
+    public float proximityThreshold;
     public game_data game_data;
     public stat_data stat_data;
 
@@ -29,6 +29,7 @@ public class cat_toggle : MonoBehaviour
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
         render2 = player.GetComponent<SpriteRenderer>();
+        text_render = text.GetComponent<SpriteRenderer>();
 
         // set visibility at start
         render.enabled = false;
@@ -40,6 +41,7 @@ public class cat_toggle : MonoBehaviour
 
         if (distance <= proximityThreshold) {
             render.enabled = true;
+            text_render.enabled = true;
 
             // switch scene if spacebar pressed
             if (Input.GetKey(KeyCode.Space)) {
@@ -56,6 +58,7 @@ public class cat_toggle : MonoBehaviour
         }
         else {
             render.enabled = false;
+            text_render.enabled = false;
         }
     }
 }

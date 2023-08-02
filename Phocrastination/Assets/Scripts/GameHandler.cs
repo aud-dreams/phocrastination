@@ -27,6 +27,15 @@ public class GameHandler : MonoBehaviour
         game_data.timer = 0;
         game_data.allow_timer = true;
 
+        // tutorial initialization
+        game_data.tutorial = true;
+        game_data.take_order_done = false;
+        game_data.make_order_done = false;
+        game_data.drop_order_done = false;
+        game_data.wash_dishes_done = false;
+        game_data.pet_cat_done = false;
+        game_data.tutorial_counter = 0;
+
         // main initialization
         game_data.first_main_help = true;
         game_data.help = false;

@@ -10,8 +10,8 @@ public class main_pad_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
 
-    public SpriteRenderer main_pad1, main_pad2, main_pad3;
-    public GameObject[] start, toggles;
+    public SpriteRenderer main_pad1, main_pad2, main_pad3, text_render;
+    public GameObject[] start, toggles, station_text;
     public GameObject help;
 
     private void Start() {        
@@ -24,6 +24,11 @@ public class main_pad_toggle : MonoBehaviour
         if (game_data.first_main_help) {
             help.SetActive(false);
             game_data.allow_timer = false;
+        }
+
+        foreach (GameObject text in station_text) {
+            text_render = text.GetComponent<SpriteRenderer>();
+            text_render.enabled = false;
         }
     }
 
