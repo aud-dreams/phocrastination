@@ -10,6 +10,16 @@ public class game_data : ScriptableObject
     public string userID;
     public bool allow_timer;
 
+    // tutorial
+    public bool tutorial;
+    public bool take_order_done;
+    public bool make_order_done;
+    public bool drop_order_done;
+    public bool wash_dishes_done;
+    public bool pet_cat_done;
+    public int tutorial_counter;
+    public bool blink;
+
     // main
     public bool first_main_help;
     public bool help;
