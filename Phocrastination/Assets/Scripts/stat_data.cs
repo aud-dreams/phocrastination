@@ -11,8 +11,10 @@ public class stat_data : ScriptableObject
     // main
 
     // serving station
+    public int order_collected_rem;
 
     // pickup station
+    public int order_given_rem;
 
     // crafting station
     public int redo;
@@ -25,7 +27,10 @@ public class stat_data : ScriptableObject
         total_time_drawing += end_drawing - start_drawing;
     }
 
+    public int bowl_created_rem;
+
     // dishes station
+    public int bowl_washed_rem;
 
     // cat station
     /* retrieve timestamp from cat sound & cat station entered, if <20 seconds, apply distractability weight */
