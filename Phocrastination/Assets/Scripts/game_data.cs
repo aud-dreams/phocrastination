@@ -20,6 +20,7 @@ public class game_data : ScriptableObject
     public int tutorial_counter;
     public bool blink;
     public bool tutorial_main;
+    public bool crafting_blink;
 
     // main
     public bool first_main_help;

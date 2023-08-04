@@ -45,7 +45,7 @@ public class TutorialHandler : MonoBehaviour
     private IEnumerator blink(GameObject toggle)
     {
         toggle_render = toggle.GetComponent<SpriteRenderer>();
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 5; i++)
         {
             toggle_render.enabled = true;
             yield return new WaitForSeconds(0.3f);

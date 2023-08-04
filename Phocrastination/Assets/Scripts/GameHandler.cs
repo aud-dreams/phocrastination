@@ -39,6 +39,7 @@ public class GameHandler : MonoBehaviour
         game_data.tutorial_counter = 0;
         game_data.blink = false;
         game_data.tutorial_main = false;
+        game_data.crafting_blink = false;
 
         // main initialization
         game_data.first_main_help = true;

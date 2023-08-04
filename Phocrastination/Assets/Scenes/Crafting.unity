@@ -646,6 +646,7 @@ MonoBehaviour:
   stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   next_bowl_button: {fileID: 32581063}
   next_bowl_toggle: {fileID: 1078494490}
+  home: {fileID: 293344921}
 --- !u!1 &136528075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  home: {fileID: 293344921}
 --- !u!65 &293344923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4961,9 +4963,6 @@ MonoBehaviour:
   - {fileID: 2046135839}
   - {fileID: 237043187}
   - {fileID: 2008689064}
-  items:
-  - {fileID: 1153640057}
-  - {fileID: 293344921}
   ingredients:
   - {fileID: 1449673941}
   - {fileID: 67826318}
@@ -4983,6 +4982,8 @@ MonoBehaviour:
   initial:
   - {fileID: 1931998196}
   - {fileID: 1798644804}
+  home: {fileID: 293344921}
+  help: {fileID: 1153640057}
 --- !u!1 &2046135839
 GameObject:
   m_ObjectHideFlags: 0

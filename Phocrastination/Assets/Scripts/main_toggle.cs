@@ -8,6 +8,8 @@ public class main_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    private SpriteRenderer toggle_render;
+    public GameObject home;
 
     private void Start()
     {
@@ -29,8 +31,27 @@ public class main_toggle : MonoBehaviour
         render.enabled = false;
     }
 
+    private IEnumerator blink(GameObject toggle)
+    {
+        toggle_render = toggle.GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 5; i++)
+        {
+            toggle_render.enabled = true;
+            yield return new WaitForSeconds(0.3f);
+            toggle_render.enabled = false;
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
     void Update()
     {
+        // blink home after finish_bowl_button pressed (for crafting station)
+        if (game_data.crafting_blink)
+        {
+            StartCoroutine(blink(home));
+            game_data.crafting_blink = false;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -52,6 +73,10 @@ public class main_toggle : MonoBehaviour
                 {
                     game_data.crafting_continue = true;
                     game_data.current_color = Color.black;
+                    if (game_data.tutorial)
+                    {
+                        game_data.make_order_done = true;
+                    }
                 }
 
                 if (collider.CompareTag("Cat"))

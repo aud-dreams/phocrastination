@@ -841,6 +841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  home: {fileID: 501061205}
 --- !u!65 &501061207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2078,7 +2079,6 @@ MonoBehaviour:
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
   button: {fileID: 349349543}
   toggle: {fileID: 2077936021}
-  home: {fileID: 501061205}
   speech: {fileID: 705137943}
   speed: 5
 --- !u!65 &2077936025
