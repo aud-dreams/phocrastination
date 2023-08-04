@@ -21,33 +21,40 @@ public class order_counter_pad_toggle : MonoBehaviour
         if (!game_data.can_next) { button.SetActive(false); }
         toggle.GetComponent<Renderer>().enabled = false;
 
-        if (game_data.first_serving_help) { customer_manager.SetActive(false); } 
+        if (game_data.first_serving_help) { customer_manager.SetActive(false); }
         else { customer_manager.SetActive(true); }
-        
+
         speech.SetActive(false);
 
-        if (game_data.first_serving_help) {
+        if (game_data.first_serving_help)
+        {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_timer = false;
         }
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                foreach (GameObject item in items) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                foreach (GameObject item in items)
+                {
                     item.SetActive(false);
                 }
 
@@ -59,7 +66,9 @@ public class order_counter_pad_toggle : MonoBehaviour
                 game_data.help = false;
                 game_data.allow_timer = true;
             }
-        } else {
+        }
+        else
+        {
             toggle.GetComponent<Renderer>().enabled = false;
         }
     }

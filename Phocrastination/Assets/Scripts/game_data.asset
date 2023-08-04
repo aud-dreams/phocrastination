@@ -12,30 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 32.291894503869116
-  userID: ea6992f7-428e-4e95-81bf-a361f073102d
+  timer: 62.37530778348446
+  userID: b9803505-630b-4e1b-9b87-5bbd1b7a93cf
   allow_timer: 1
+  tutorial: 1
+  take_order_done: 0
+  make_order_done: 0
+  drop_order_done: 0
+  wash_dishes_done: 0
+  pet_cat_done: 0
+  tutorial_counter: 2
+  blink: 0
   first_main_help: 0
   help: 0
   click: 3
-  character_position: {x: -3.499999, y: 1.9000002, z: 0}
+  character_position: {x: 2.6790724, y: 2.460824, z: 0}
   allow_move: 1
   character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
-  first_serving_help: 1
+  first_serving_help: 0
   total_customers: 5
-  current_customers: 5
-  customers_line: []
-  can_next: 0
-  orders: 0
-  first_pickup_help: 0
-  ordered_customers: 1
-  ordered_line:
+  current_customers: 4
+  customers_line:
   - {fileID: 0}
-  can_next2: 1
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  can_next: 1
+  orders: 1
+  first_pickup_help: 1
+  ordered_customers: 1
+  ordered_line: []
+  can_next2: 0
   once: 1
-  once2: 0
-  constructed_orders: 1
-  allow_drag: 1
+  once2: 1
+  constructed_orders: 0
+  allow_drag: 0
   first_crafting_help: 1
   crafting_continue: 0
   current_color: {r: 0, g: 0, b: 0, a: 1}
