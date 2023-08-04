@@ -6,8 +6,7 @@ public class bowl_drag : MonoBehaviour
 {
     Vector3 mousePositionOffset;
     public game_data game_data;
-    private int dirty_bowls;
-    private int clean_bowls;
+    private int dirty_bowls, clean_bowls;
 
     public BoxCollider2D bowl;
     private int collisions = 0;
@@ -15,6 +14,7 @@ public class bowl_drag : MonoBehaviour
 
     public Sprite clean_bowl, dirty_bowl;
     private SpriteRenderer render;
+    public GameObject home;
 
     user_log user = new user_log();
 
@@ -32,7 +32,6 @@ public class bowl_drag : MonoBehaviour
     private void OnMouseDown() {
         // capture mouse offset
         if (game_data.allow_bowls) {
-            Debug.Log("down");
             render.enabled = true;
             mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
@@ -40,7 +39,6 @@ public class bowl_drag : MonoBehaviour
 
     private void OnMouseDrag() {
         if (game_data.allow_bowls) {
-            Debug.Log("drag");
             render.enabled = true;
             transform.position = GetMouseWorldPosition() + mousePositionOffset;
         }
@@ -80,6 +78,11 @@ public class bowl_drag : MonoBehaviour
                     clean_bowls += 1;
 
                     game_data.dirty_bowls = dirty_bowls;
+
+                    if (game_data.dirty_bowls == 0 && game_data.tutorial) {
+                        game_data.dishes_blink = true;
+                        home.SetActive(true);
+                    }
 
                     // post to database
                     user.bowl_washed_ts = game_data.timer;

@@ -9,7 +9,7 @@ public class main_control : MonoBehaviour
 
     void Update()
     {
-        if (!game_data.tutorial_main)
+        if (!game_data.tutorial_main || game_data.help)
         {
             home.SetActive(false);
         }

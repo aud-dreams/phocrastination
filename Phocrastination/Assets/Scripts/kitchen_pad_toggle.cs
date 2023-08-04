@@ -77,9 +77,10 @@ public class kitchen_pad_toggle : MonoBehaviour
 
                 game_data.help = false;
 
-                if (!game_data.tutorial)
+                if (!game_data.tutorial || game_data.home_on)
                 {
                     home.SetActive(true);
+                    game_data.home_on = false;
                 }
                 help.SetActive(true);
 

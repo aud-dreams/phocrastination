@@ -417,6 +417,7 @@ MonoBehaviour:
   bowl: {fileID: 240626607}
   clean_bowl: {fileID: 21300000, guid: fdcca512733ea324c8e2cb90e7f1eda7, type: 3}
   dirty_bowl: {fileID: 21300000, guid: b6137359d9dd52740b2971fd7224ebfd, type: 3}
+  home: {fileID: 1773893751}
 --- !u!61 &240626607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -677,7 +678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   number1: {fileID: 1476146196}
   number2: {fileID: 1744297037}
   numbers_values:
@@ -1776,7 +1776,7 @@ GameObject:
   - component: {fileID: 1773893752}
   m_Layer: 0
   m_Name: main_toggle
-  m_TagString: Untagged
+  m_TagString: Dishes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

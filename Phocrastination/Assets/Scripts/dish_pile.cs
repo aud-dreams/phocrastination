@@ -3,7 +3,6 @@ using UnityEngine;
 public class dish_pile : MonoBehaviour
 {
     public game_data game_data;
-    public int dirty_bowls;
     private new Collider collider;
     public GameObject bowl, dish_pile_large, dish_pile_small;
     Vector3 mousePositionOffset;
@@ -13,12 +12,10 @@ public class dish_pile : MonoBehaviour
         collider = GetComponent<Collider>();
         render = bowl.GetComponent<Renderer>();
 
-        dirty_bowls = game_data.dirty_bowls;
-
-        if (dirty_bowls >= 1 && dirty_bowls <= 4) {
+        if (game_data.dirty_bowls >= 1 && game_data.dirty_bowls <= 4) {
             dish_pile_small.SetActive(true);
             dish_pile_large.SetActive(false);
-        } else if (dirty_bowls == 0) {
+        } else if (game_data.dirty_bowls == 0) {
             dish_pile_small.SetActive(false);
             dish_pile_large.SetActive(false);
         } else {
@@ -39,23 +36,15 @@ public class dish_pile : MonoBehaviour
                     bowl.transform.position = hit.point;
                     bowl.SetActive(true);
                     render.enabled = true;
-                }
-            }
 
-            // get updated values
-            dirty_bowls = game_data.dirty_bowls;
-
-            // base condition
-            if (dirty_bowls == 1) {
-                if (Input.GetMouseButtonDown(0)) {
-                    dish_pile_small.SetActive(false);
-                }
-            }
-
-            if (dirty_bowls == 5) {
-                if (Input.GetMouseButtonDown(0)) {
-                    dish_pile_large.SetActive(false);
-                    dish_pile_small.SetActive(true);
+                    // base condition
+                    if (game_data.dirty_bowls == 1) {
+                        dish_pile_small.SetActive(false);
+                    }
+                    if (game_data.dirty_bowls == 5) {
+                        dish_pile_large.SetActive(false);
+                        dish_pile_small.SetActive(true);
+                    }
                 }
             }
         }

@@ -10,17 +10,11 @@ public class customer_manager : MonoBehaviour
     float offset = 1f;
     public GameObject boy_customer, girl_customer, toggle, button, home;
     private GameObject current;
-<<<<<<< HEAD
-
+    private SpriteRenderer toggle_render;
     user_log user = new user_log();
-    
-    void Start() {
-=======
-    private SpriteRenderer render;
 
     void Start()
     {
->>>>>>> 08c4ea9a3487a5b1a740edd34d535fd57e0f55c4
         Vector3 position = new Vector3(3f, 3.04f, 0f);
         System.Random random = new System.Random();
 
@@ -66,12 +60,12 @@ public class customer_manager : MonoBehaviour
 
     private IEnumerator blink(GameObject toggle)
     {
-        render = toggle.GetComponent<SpriteRenderer>();
+        toggle_render = toggle.GetComponent<SpriteRenderer>();
         for (int i = 0; i < 5; i++)
         {
-            render.enabled = true;
+            toggle_render.enabled = true;
             yield return new WaitForSeconds(0.3f);
-            render.enabled = false;
+            toggle_render.enabled = false;
             yield return new WaitForSeconds(0.3f);
         }
     }
@@ -118,16 +112,14 @@ public class customer_manager : MonoBehaviour
         game_data.orders++;
         game_data.ordered_customers++;
 
-<<<<<<< HEAD
-        user.order_collected_ts = game_data.timer;
-        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-=======
         // if in tutorial, blink home
         if (game_data.tutorial)
         {
             game_data.tutorial_main = true;
             StartCoroutine(blink(home));
         }
->>>>>>> 08c4ea9a3487a5b1a740edd34d535fd57e0f55c4
+
+        user.order_collected_ts = game_data.timer;
+        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
     }
 }

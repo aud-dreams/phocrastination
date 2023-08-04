@@ -40,6 +40,8 @@ public class GameHandler : MonoBehaviour
         game_data.blink = false;
         game_data.tutorial_main = false;
         game_data.crafting_blink = false;
+        game_data.dishes_blink = false;
+        game_data.home_on = false;
 
         // main initialization
         game_data.first_main_help = true;
@@ -83,7 +85,7 @@ public class GameHandler : MonoBehaviour
 
         // dishes initialization
         game_data.first_dishes_help = true;
-        game_data.dirty_bowls = 6;
+        game_data.dirty_bowls = 2;
         game_data.allow_bowls = false;
 
         // cat initialization

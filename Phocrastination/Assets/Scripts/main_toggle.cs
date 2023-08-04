@@ -45,11 +45,18 @@ public class main_toggle : MonoBehaviour
 
     void Update()
     {
-        // blink home after finish_bowl_button pressed (for crafting station)
+        // blink home for tutorial after finish_bowl_button pressed (for crafting station)
         if (game_data.crafting_blink)
         {
             StartCoroutine(blink(home));
             game_data.crafting_blink = false;
+        }
+
+        // blink home for tutorial when finish washing dishes
+        if (game_data.dishes_blink) {
+            StartCoroutine(blink(home));
+            game_data.dishes_blink = false;
+            game_data.home_on = true;
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -62,10 +69,12 @@ public class main_toggle : MonoBehaviour
                 SceneManager.LoadScene("Main");
                 if (collider.CompareTag("Serving"))
                 {
+                    game_data.can_next = false;
                     if (game_data.tutorial)
                     {
                         game_data.take_order_done = true;
                         game_data.tutorial_main = false;
+                        game_data.home_on = false;
                     }
                 }
 
@@ -76,6 +85,26 @@ public class main_toggle : MonoBehaviour
                     if (game_data.tutorial)
                     {
                         game_data.make_order_done = true;
+                        game_data.home_on = false;
+                    }
+                }
+
+                if (collider.CompareTag("Pickup"))
+                {
+                    game_data.can_next2 = false;
+                    if (game_data.tutorial)
+                    {
+                        game_data.drop_order_done = true;
+                        game_data.home_on = false;
+                    }
+                }
+
+                if (collider.CompareTag("Dishes"))
+                {
+                    if (game_data.tutorial)
+                    {
+                        game_data.wash_dishes_done = true;
+                        game_data.home_on = false;
                     }
                 }
 
@@ -83,16 +112,11 @@ public class main_toggle : MonoBehaviour
                 {
                     game_data.allow_hand = true;
                     game_data.outside_catscene = true;
-                }
-
-                if (collider.CompareTag("Serving"))
-                {
-                    game_data.can_next = false;
-                }
-
-                if (collider.CompareTag("Pickup"))
-                {
-                    game_data.can_next2 = false;
+                    if (game_data.tutorial)
+                    {
+                        game_data.pet_cat_done = true;
+                        game_data.home_on = false;
+                    }
                 }
             }
         }

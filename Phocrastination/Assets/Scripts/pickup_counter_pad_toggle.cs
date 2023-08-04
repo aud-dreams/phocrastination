@@ -20,7 +20,8 @@ public class pickup_counter_pad_toggle : MonoBehaviour
         render.enabled = false;
         // if (!game_data.can_next2) { button.SetActive(false); }
 
-        if (game_data.first_pickup_help || game_data.help) {
+        if (game_data.first_pickup_help || game_data.help)
+        {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_timer = false;
@@ -32,40 +33,53 @@ public class pickup_counter_pad_toggle : MonoBehaviour
         sparkles.SetActive(false);
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (game_data.first_pickup_help || game_data.help) {
+    void Update()
+    {
+        if (game_data.first_pickup_help || game_data.help)
+        {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_drag = false;
         }
-        
-        if (Input.GetMouseButtonDown(0)) {
+
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                foreach (GameObject item in items) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                foreach (GameObject item in items)
+                {
                     item.SetActive(false);
                 }
 
                 customer_manager.SetActive(true);
                 help.SetActive(true);
-                home.SetActive(true);
+                if (!game_data.tutorial || game_data.home_on)
+                {
+                    home.SetActive(true);
+                    game_data.home_on = false;
+                }
 
                 game_data.first_pickup_help = false;
                 game_data.help = false;
                 game_data.allow_timer = true;
                 game_data.allow_drag = true;
             }
-        } else {
+        }
+        else
+        {
             toggle.GetComponent<Renderer>().enabled = false;
         }
     }

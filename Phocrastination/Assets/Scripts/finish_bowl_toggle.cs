@@ -50,6 +50,7 @@ public class finish_bowl_toggle : MonoBehaviour
                 {
                     game_data.bowl_complete = true;
                     game_data.crafting_blink = true;
+                    game_data.home_on = true;
                     home.SetActive(true);
 
                     if (game_data.orders > 1)
