@@ -16,13 +16,15 @@ public class GameHandler : MonoBehaviour
 
     void Update()
     {
-        if (gameInProgress == false) {
+        if (gameInProgress == false)
+        {
             //endGame condition
         }
-        
+
     }
 
-    void Initialize() {
+    void Initialize()
+    {
         // global
         game_data.timer = 0;
         game_data.allow_timer = true;
@@ -35,6 +37,7 @@ public class GameHandler : MonoBehaviour
         game_data.wash_dishes_done = false;
         game_data.pet_cat_done = false;
         game_data.tutorial_counter = 0;
+        game_data.blink = false;
 
         // main initialization
         game_data.first_main_help = true;
@@ -90,7 +93,8 @@ public class GameHandler : MonoBehaviour
         game_data.outside_catscene = true;
     }
 
-    void dayConfig() {
+    void dayConfig()
+    {
         // reset state vars
 
         // switch between days

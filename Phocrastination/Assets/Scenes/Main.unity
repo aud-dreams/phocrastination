@@ -2469,7 +2469,12 @@ MonoBehaviour:
   - {fileID: 1721679937}
   - {fileID: 1673181024}
   - {fileID: 102225786}
-  toggles: []
+  toggles:
+  - {fileID: 1833506152}
+  - {fileID: 169298119}
+  - {fileID: 524853426}
+  - {fileID: 257650330}
+  - {fileID: 1387471441}
   manager: {fileID: 886693596}
   player: {fileID: 1307838401}
   proximityThreshold: 3

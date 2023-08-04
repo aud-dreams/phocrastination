@@ -16,11 +16,15 @@ public class dishes_toggle : MonoBehaviour
 
     user_log user = new user_log();
 
-    void Start() {
+    void Start()
+    {
         // if start menu activated at beginning of game, disable hovers
-        if (game_data.first_main_help) {
+        if (game_data.first_main_help)
+        {
             buttonObject.SetActive(false);
-        } else {
+        }
+        else
+        {
             buttonObject.SetActive(true);
         }
 
@@ -34,24 +38,31 @@ public class dishes_toggle : MonoBehaviour
         render.enabled = false;
     }
 
-    private void Update() {
+    private void Update()
+    {
         // hover on if player gets close
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance <= proximityThreshold) {
+        if (distance <= proximityThreshold)
+        {
             render.enabled = true;
             text_render.enabled = true;
 
             // switch scene if spacebar pressed
-            if (Input.GetKey(KeyCode.Space)) {
+            if (Input.GetKey(KeyCode.Space))
+            {
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
                 SceneManager.LoadScene("Dishes");
             }
         }
-        else {
-            render.enabled = false;
-            text_render.enabled = false;
+        else
+        {
+            if (!game_data.blink)
+            {
+                render.enabled = false;
+                text_render.enabled = false;
+            }
         }
     }
 }
