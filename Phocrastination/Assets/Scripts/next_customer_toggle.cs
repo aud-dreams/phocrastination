@@ -94,6 +94,5 @@ public class next_customer_toggle : MonoBehaviour
 
         user.order_collected_ts = game_data.timer;
         RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-
     }
 }

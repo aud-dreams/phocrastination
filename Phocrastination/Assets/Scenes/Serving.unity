@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   number1: {fileID: 1920775132}
   number2: {fileID: 567563044}
   numbers_values:
@@ -2128,9 +2129,7 @@ MonoBehaviour:
   girl_customer: {fileID: 1347058715}
   toggle: {fileID: 2077936021}
   button: {fileID: 349349543}
-  home: {fileID: 501061205}
   speech: {fileID: 705137943}
-  speed: 5
 --- !u!4 &2120430950
 Transform:
   m_ObjectHideFlags: 0

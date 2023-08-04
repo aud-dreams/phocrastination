@@ -63,7 +63,7 @@ public class number : MonoBehaviour
             } else {  // double digits = 2 sprites side by side
                 render1.sprite = GetNumber(game_data.ordered_customers / 10);
                 render2.sprite = GetNumber(game_data.ordered_customers % 10);
-            }  
+            }
         }
     }
 

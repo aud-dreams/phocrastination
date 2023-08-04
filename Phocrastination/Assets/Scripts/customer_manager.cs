@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Proyecto26;
 
 public class customer_manager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class customer_manager : MonoBehaviour
     float offset = 1f;
     public GameObject boy_customer, girl_customer, toggle, button;
     private GameObject current;
+
+    user_log user = new user_log();
     
     void Start() {
         Vector3 position = new Vector3(3f, 3.04f, 0f);
@@ -85,5 +88,8 @@ public class customer_manager : MonoBehaviour
         // increment num of orders
         game_data.orders++;
         game_data.ordered_customers++;
+
+        user.order_collected_ts = game_data.timer;
+        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
     }
 }
