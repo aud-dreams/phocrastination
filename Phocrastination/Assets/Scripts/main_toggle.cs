@@ -9,7 +9,8 @@ public class main_toggle : MonoBehaviour
     private new Collider collider;
     public game_data game_data;
 
-    private void Start() {
+    private void Start()
+    {
         // get render component
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
@@ -18,37 +19,54 @@ public class main_toggle : MonoBehaviour
         render.enabled = false;
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
                 SceneManager.LoadScene("Main");
+                if (collider.CompareTag("Serving"))
+                {
+                    if (game_data.tutorial)
+                    {
+                        game_data.take_order_done = true;
+                        game_data.tutorial_main = false;
+                    }
+                }
 
-                if (collider.CompareTag("Crafting")) {
+                if (collider.CompareTag("Crafting"))
+                {
                     game_data.crafting_continue = true;
                     game_data.current_color = Color.black;
                 }
 
-                if (collider.CompareTag("Cat")) {
+                if (collider.CompareTag("Cat"))
+                {
                     game_data.allow_hand = true;
                     game_data.outside_catscene = true;
                 }
 
-                if (collider.CompareTag("Serving")) {
+                if (collider.CompareTag("Serving"))
+                {
                     game_data.can_next = false;
                 }
 
-                if (collider.CompareTag("Pickup")) {
+                if (collider.CompareTag("Pickup"))
+                {
                     game_data.can_next2 = false;
                 }
             }

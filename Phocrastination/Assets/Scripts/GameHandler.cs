@@ -38,6 +38,7 @@ public class GameHandler : MonoBehaviour
         game_data.pet_cat_done = false;
         game_data.tutorial_counter = 0;
         game_data.blink = false;
+        game_data.tutorial_main = false;
 
         // main initialization
         game_data.first_main_help = true;
@@ -49,8 +50,8 @@ public class GameHandler : MonoBehaviour
 
         // serving initialization
         game_data.first_serving_help = true;
-        game_data.total_customers = 5;
-        game_data.current_customers = 5;
+        game_data.total_customers = 1;
+        game_data.current_customers = 1;
         game_data.customers_line = new List<GameObject>();
         game_data.orders = 0;
         game_data.can_next = false;

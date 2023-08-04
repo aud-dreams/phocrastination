@@ -2130,7 +2130,6 @@ MonoBehaviour:
   button: {fileID: 349349543}
   home: {fileID: 501061205}
   speech: {fileID: 705137943}
-  speed: 5
 --- !u!4 &2120430950
 Transform:
   m_ObjectHideFlags: 0

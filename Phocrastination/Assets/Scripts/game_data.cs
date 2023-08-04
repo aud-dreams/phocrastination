@@ -19,6 +19,7 @@ public class game_data : ScriptableObject
     public bool pet_cat_done;
     public int tutorial_counter;
     public bool blink;
+    public bool tutorial_main;
 
     // main
     public bool first_main_help;

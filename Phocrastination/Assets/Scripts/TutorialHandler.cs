@@ -29,6 +29,10 @@ public class TutorialHandler : MonoBehaviour
             {
                 text.SetActive(false);
             }
+            foreach (GameObject toggle in toggles)
+            {
+                toggle.SetActive(false);
+            }
             if (game_data.tutorial_counter == 0)
             {
                 // hello there
@@ -41,13 +45,12 @@ public class TutorialHandler : MonoBehaviour
     private IEnumerator blink(GameObject toggle)
     {
         toggle_render = toggle.GetComponent<SpriteRenderer>();
-        Debug.Log("blinking");
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 6; i++)
         {
             toggle_render.enabled = true;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             toggle_render.enabled = false;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
         }
         game_data.blink = false;
     }

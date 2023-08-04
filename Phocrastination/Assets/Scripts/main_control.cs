@@ -9,9 +9,16 @@ public class main_control : MonoBehaviour
 
     void Update()
     {
-        if (game_data.can_next || (!game_data.can_next && game_data.customers_line.Count == 0 && !game_data.first_serving_help) ) {
+        if (!game_data.tutorial_main)
+        {
+            home.SetActive(false);
+        }
+        else if (game_data.can_next || (!game_data.can_next && game_data.customers_line.Count == 0 && !game_data.first_serving_help))
+        {
             home.SetActive(true);
-        } else {
+        }
+        else
+        {
             home.SetActive(false);
         }
     }
