@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Proyecto26;
 
 public class bowl_drag : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class bowl_drag : MonoBehaviour
 
     public Sprite clean_bowl, dirty_bowl;
     private SpriteRenderer render;
+
+    user_log user = new user_log();
 
     private void Start() {
         bowl = GetComponent<BoxCollider2D>();
@@ -77,6 +80,11 @@ public class bowl_drag : MonoBehaviour
                     clean_bowls += 1;
 
                     game_data.dirty_bowls = dirty_bowls;
+
+                    // post to database
+                    user.bowl_washed_ts = game_data.timer;
+                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+
                 }
             }
         }

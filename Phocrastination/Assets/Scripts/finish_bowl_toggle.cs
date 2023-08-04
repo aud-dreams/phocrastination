@@ -56,6 +56,7 @@ public class finish_bowl_toggle : MonoBehaviour
                     user.ratio_hit = stat_data.ratio_hit;
                     stat_data.CalculateTotalTimeDrawing();
                     user.total_time_drawing = stat_data.total_time_drawing;
+                    user.bowl_created_ts = game_data.timer;
                     RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
                 }
             }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Proyecto26;
 
 public class next_customer_toggle : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class next_customer_toggle : MonoBehaviour
     private new Collider collider;
     public game_data game_data;
     public GameObject button, toggle, home;
+
+    user_log user = new user_log();
 
     private void Start() {
         // get render component
@@ -88,5 +91,9 @@ public class next_customer_toggle : MonoBehaviour
         // increment num of orders & ordered_customers
         game_data.orders++;
         game_data.ordered_customers++;
+
+        user.order_collected_ts = game_data.timer;
+        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+
     }
 }
