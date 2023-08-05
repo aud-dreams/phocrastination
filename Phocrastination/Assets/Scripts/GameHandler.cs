@@ -42,6 +42,7 @@ public class GameHandler : MonoBehaviour
         game_data.crafting_blink = false;
         game_data.dishes_blink = false;
         game_data.home_on = false;
+        game_data.cat_blink = true;
 
         // main initialization
         game_data.first_main_help = true;

@@ -23,6 +23,7 @@ public class game_data : ScriptableObject
     public bool crafting_blink;
     public bool dishes_blink;
     public bool home_on;
+    public bool cat_blink;
 
     // main
     public bool first_main_help;

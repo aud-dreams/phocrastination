@@ -61,7 +61,6 @@ public class sink_pad_toggle : MonoBehaviour
                 help.SetActive(true);
                 if (!game_data.tutorial || game_data.home_on)
                 {
-                    Debug.Log("in here");
                     home.SetActive(true);
                     game_data.home_on = false;
                 }

@@ -12,25 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 69.55132640490774
-  userID: ac52109a-5405-48a9-a1fd-12b182c8c010
+  timer: 153.59342795959674
+  userID: af9f0002-9d32-493e-b727-efbb71bfeb1d
   allow_timer: 1
-  tutorial: 1
+  tutorial: 0
   take_order_done: 1
   make_order_done: 1
-  drop_order_done: 0
-  wash_dishes_done: 0
-  pet_cat_done: 0
-  tutorial_counter: 4
+  drop_order_done: 1
+  wash_dishes_done: 1
+  pet_cat_done: 1
+  tutorial_counter: 6
   blink: 1
   tutorial_main: 1
   crafting_blink: 0
+  dishes_blink: 0
+  home_on: 0
+  cat_blink: 0
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: -4.6763453, y: 1.9880099, z: 0}
+  character_position: {x: 6.1561513, y: -1.6172062, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: c0ec3bfcd56e4d2438404bcc31e06066, type: 3}
+  character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   first_serving_help: 0
   total_customers: 1
   current_customers: 0
@@ -57,12 +60,12 @@ MonoBehaviour:
   bowl_complete: 0
   counter: 0
   pad_on: 0
-  first_dishes_help: 1
-  dirty_bowls: 6
-  allow_bowls: 0
-  first_cat_help: 1
-  allow_hand: 0
+  first_dishes_help: 0
+  dirty_bowls: 0
+  allow_bowls: 1
+  first_cat_help: 0
+  allow_hand: 1
   hand_on: 0
-  progress_position: {x: -1.16, y: 3.79, z: 0}
-  progress_scale: {x: 0.01, y: 1.1, z: 0}
+  progress_position: {x: -0.7948545, y: 3.79, z: 0}
+  progress_scale: {x: 0.37517902, y: 1.1, z: 0}
   outside_catscene: 1

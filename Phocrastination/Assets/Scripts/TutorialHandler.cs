@@ -191,8 +191,12 @@ public class TutorialHandler : MonoBehaviour
                 }
                 else if (game_data.tutorial_counter == 6 && game_data.pet_cat_done)
                 {
+                    // good job
                     manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
                     game_data.tutorial = false;
+
+                    // insert scene change
                 }
             }
         }
