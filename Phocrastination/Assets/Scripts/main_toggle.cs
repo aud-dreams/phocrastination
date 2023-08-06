@@ -43,6 +43,15 @@ public class main_toggle : MonoBehaviour
         }
     }
 
+    public Animator crossfade;
+    public string scene;
+    IEnumerator LoadScene()
+    {
+        crossfade.SetTrigger("end");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene);
+    }
+
     void Update()
     {
         // blink home for tutorial after finish_bowl_button pressed (for crafting station)
@@ -53,7 +62,8 @@ public class main_toggle : MonoBehaviour
         }
 
         // blink home for tutorial when finish washing dishes
-        if (game_data.dishes_blink) {
+        if (game_data.dishes_blink)
+        {
             StartCoroutine(blink(home));
             game_data.dishes_blink = false;
             game_data.home_on = true;
@@ -66,14 +76,12 @@ public class main_toggle : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity))
             {
-                SceneManager.LoadScene("Main");
                 if (collider.CompareTag("Serving"))
                 {
                     game_data.can_next = false;
                     if (game_data.tutorial)
                     {
                         game_data.take_order_done = true;
-                        game_data.tutorial_main = false;
                         game_data.home_on = false;
                     }
                 }
@@ -110,7 +118,8 @@ public class main_toggle : MonoBehaviour
 
                 if (collider.CompareTag("Cat"))
                 {
-                    game_data.allow_hand = true;
+                    game_data.allow_hand = false;
+                    game_data.hand_on = false;
                     game_data.outside_catscene = true;
                     if (game_data.tutorial)
                     {
@@ -118,6 +127,8 @@ public class main_toggle : MonoBehaviour
                         game_data.home_on = false;
                     }
                 }
+
+                StartCoroutine(LoadScene());
             }
         }
     }

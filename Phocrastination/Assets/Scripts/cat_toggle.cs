@@ -39,6 +39,15 @@ public class cat_toggle : MonoBehaviour
         render.enabled = false;
     }
 
+    public Animator crossfade;
+    public string scene;
+    IEnumerator LoadScene()
+    {
+        crossfade.SetTrigger("end");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene);
+    }
+
     private void Update()
     {
         // hover on if player gets close
@@ -54,7 +63,7 @@ public class cat_toggle : MonoBehaviour
             {
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
-                SceneManager.LoadScene("Cat");
+                StartCoroutine(LoadScene());
                 game_data.outside_catscene = false;
 
                 // post to database

@@ -14,20 +14,14 @@ public class GameHandler : MonoBehaviour
         Initialize();
     }
 
-    void Update()
-    {
-        if (gameInProgress == false)
-        {
-            //endGame condition
-        }
-
-    }
-
     void Initialize()
     {
-        // global
+        // global initialization
         game_data.timer = 0;
         game_data.allow_timer = true;
+        game_data.Day1 = false;
+        game_data.Day2 = false;
+        game_data.Day3 = false;
 
         // tutorial initialization
         game_data.tutorial = true;
@@ -98,13 +92,12 @@ public class GameHandler : MonoBehaviour
         game_data.outside_catscene = true;
     }
 
-    void dayConfig()
+    void Update()
     {
-        // reset state vars
+        if (gameInProgress == false)
+        {
+            //endGame condition
+        }
 
-        // switch between days
     }
-
-
-    // log at start of day, end of day, enter & end scene, interacting w objects
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialHandler : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class TutorialHandler : MonoBehaviour
 
     void Start()
     {
+        if (!game_data.tutorial)
+        {
+            manager.SetActive(false);
+            gameObject.SetActive(false);
+        }
         tutorialConfig();
     }
 
@@ -53,6 +59,15 @@ public class TutorialHandler : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
         game_data.blink = false;
+    }
+
+    public Animator crossfade;
+    public string scene;
+    IEnumerator LoadScene()
+    {
+        crossfade.SetTrigger("end");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene);
     }
 
     private void Update()
@@ -196,7 +211,9 @@ public class TutorialHandler : MonoBehaviour
                     manager_text[game_data.tutorial_counter].SetActive(true);
                     game_data.tutorial = false;
 
-                    // insert scene change
+                    // scene crossfade to main (Day 1)
+                    StartCoroutine(LoadScene());
+                    game_data.Day1 = true;
                 }
             }
         }

@@ -9,6 +9,9 @@ public class game_data : ScriptableObject
     public double timer;
     public string userID;
     public bool allow_timer;
+    public bool Day1;
+    public bool Day2;
+    public bool Day3;
 
     // tutorial
     public bool tutorial;
