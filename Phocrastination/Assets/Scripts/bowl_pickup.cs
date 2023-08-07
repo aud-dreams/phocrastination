@@ -6,13 +6,13 @@ using Proyecto26;
 public class bowl_pickup : MonoBehaviour
 {
     public game_data game_data;
+    public stat_data stat_data;
     Vector3 mousePositionOffset;
     private SpriteRenderer render;
     private Renderer bowl_render;
     public GameObject bowl, button, toggle, sparkles, home;
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
     public EdgeCollider2D wall;
-    private bool isFirstClick = true;
 
     user_log user = new user_log();
 
@@ -41,10 +41,10 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // first click only
-        if (isFirstClick) {
+        if (stat_data.isFirstClick2) {
             user.order_given_ts1 = game_data.timer;
             RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-            isFirstClick = false;
+            stat_data.isFirstClick = false;
         }
     }
 
@@ -99,6 +99,9 @@ public class bowl_pickup : MonoBehaviour
             button.SetActive(true);
             toggle.SetActive(true);
         }
+
+        // reset isFirstClick2
+        stat_data.isFirstClick2 = true;
 
         // post to database
         user.order_given_ts2 = game_data.timer;

@@ -13,6 +13,7 @@ public class stat_data : ScriptableObject
     // serving station
 
     // pickup station
+    public bool isFirstClick2 = true;
 
     // crafting station
     public int redo;
