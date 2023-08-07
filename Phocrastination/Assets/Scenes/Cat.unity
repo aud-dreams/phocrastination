@@ -821,6 +821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  crossfade: {fileID: 2122806701}
+  scene: Main
 --- !u!4 &749425190
 Transform:
   m_ObjectHideFlags: 0

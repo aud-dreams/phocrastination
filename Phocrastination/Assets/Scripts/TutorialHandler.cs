@@ -65,9 +65,15 @@ public class TutorialHandler : MonoBehaviour
     public string scene;
     IEnumerator LoadScene()
     {
+        yield return new WaitForSeconds(1f);
         crossfade.SetTrigger("end");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(scene);
+    }
+
+    IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
 
     private void Update()
@@ -209,7 +215,6 @@ public class TutorialHandler : MonoBehaviour
                     // good job
                     manager_text[game_data.tutorial_counter - 1].SetActive(false);
                     manager_text[game_data.tutorial_counter].SetActive(true);
-                    game_data.tutorial = false;
 
                     // scene crossfade to main (Day 1)
                     StartCoroutine(LoadScene());

@@ -11,7 +11,7 @@ public class main_pad_toggle : MonoBehaviour
     private new Collider collider;
 
     public SpriteRenderer main_pad1, main_pad2, main_pad3, text_render;
-    public GameObject[] start, toggles, station_text, manager_text;
+    public GameObject[] start, toggles, station_text, manager_text, day_pads;
     public GameObject help, tutorial;
 
     private void Start()
@@ -22,6 +22,7 @@ public class main_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+
         if (game_data.first_main_help)
         {
             help.SetActive(false);
@@ -36,6 +37,10 @@ public class main_pad_toggle : MonoBehaviour
         foreach (GameObject text in manager_text)
         {
             text.SetActive(false);
+        }
+        foreach (GameObject day_pad in day_pads)
+        {
+            day_pad.SetActive(false);
         }
     }
 

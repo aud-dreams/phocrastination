@@ -19,29 +19,42 @@ public class clock : MonoBehaviour
 
         // initialize dict
         hours_keys = new List<string>() { "8am", "10am", "12pm", "2pm", "4pm", "6pm" };
-        for (int i = 0; i < hours_keys.Count; i++) {
+        for (int i = 0; i < hours_keys.Count; i++)
+        {
             hours.Add(hours_keys[i], hours_values[i]);
         }
     }
 
     void Update()
     {
-        if (game_data.timer < 60) {
+        if (game_data.timer < 80)
+        {
             clock_sprite.sprite = GetHour("8am");
-        } else if (game_data.timer < 120) {
+        }
+        else if (game_data.timer < 160)
+        {
             clock_sprite.sprite = GetHour("10am");
-        } else if (game_data.timer < 180) {
+        }
+        else if (game_data.timer < 240)
+        {
             clock_sprite.sprite = GetHour("12pm");
-        } else if (game_data.timer < 240) {
+        }
+        else if (game_data.timer < 320)
+        {
             clock_sprite.sprite = GetHour("2pm");
-        } else if (game_data.timer < 300) {
+        }
+        else if (game_data.timer < 400)
+        {
             clock_sprite.sprite = GetHour("4pm");
-        } else {
+        }
+        else if (game_data.timer < 480)
+        {
             clock_sprite.sprite = GetHour("6pm");
         }
     }
 
-    private Sprite GetHour(string key) {
+    private Sprite GetHour(string key)
+    {
         Sprite sprite = null;
         hours.TryGetValue(key, out sprite);
         return sprite;

@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 54.98569219955243
-  userID: a09a177c-2f81-41fb-ac4c-4fed09d66132
+  timer: 487.99779310042504
+  userID: 06006cc9-51b6-4364-8cef-f7c62dc0e81b
   allow_timer: 1
   Day1: 0
   Day2: 0
   Day3: 0
+  round_type: 3
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -25,7 +26,7 @@ MonoBehaviour:
   wash_dishes_done: 1
   pet_cat_done: 1
   tutorial_counter: 6
-  blink: 0
+  blink: 1
   tutorial_main: 1
   crafting_blink: 0
   dishes_blink: 0
@@ -34,9 +35,9 @@ MonoBehaviour:
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: -3.8334515, y: 2.633452, z: 0}
+  character_position: {x: 0, y: 0.3, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
+  character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   first_serving_help: 0
   total_customers: 3
   current_customers: 3
@@ -49,7 +50,7 @@ MonoBehaviour:
   ordered_line: []
   can_next2: 0
   once: 1
-  once2: 0
+  once2: 1
   constructed_orders: 0
   allow_drag: 1
   last2: 0
@@ -65,10 +66,11 @@ MonoBehaviour:
   bowl_complete: 0
   counter: 0
   pad_on: 0
-  crafting: 0
+  crafting: 1
   first_dishes_help: 0
   dirty_bowls: 5
   allow_bowls: 1
+  washing: 0
   first_cat_help: 0
   allow_hand: 1
   hand_on: 1

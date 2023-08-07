@@ -9,9 +9,10 @@ public class game_data : ScriptableObject
     public double timer;
     public string userID;
     public bool allow_timer;
-    public bool Day1;           // instantiation at beginning of day
+    public bool Day1;           // instantiation for beginning of day
     public bool Day2;
     public bool Day3;
+    public int round_type;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial

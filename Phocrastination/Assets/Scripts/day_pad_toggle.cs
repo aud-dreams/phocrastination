@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
-public class help_toggle : MonoBehaviour
+public class day_pad_toggle : MonoBehaviour
 {
+    public GameObject[] items;
     private Renderer render;
     private new Collider collider;
-    public game_data game_data;
-    public GameObject[] items;
-    public GameObject help, home;
 
-    private void Start()
+    void Start()
     {
         // get render component
         render = GetComponent<Renderer>();
@@ -40,23 +37,9 @@ public class help_toggle : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity))
             {
-                game_data.help = true;
-                game_data.click = 1;
                 foreach (GameObject item in items)
                 {
-                    item.SetActive(true);
-                }
-                help.SetActive(false);
-                home.SetActive(false);
-
-                if (collider.CompareTag("Crafting"))
-                {
-                    game_data.allow_timer = false;
-                }
-                if (collider.CompareTag("Dishes"))
-                {
-                    game_data.allow_bowls = false;
-                    game_data.allow_timer = false;
+                    item.SetActive(false);
                 }
             }
         }
