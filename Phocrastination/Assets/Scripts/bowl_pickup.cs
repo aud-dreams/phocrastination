@@ -12,6 +12,7 @@ public class bowl_pickup : MonoBehaviour
     public GameObject bowl, button, toggle, sparkles, home;
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
     public EdgeCollider2D wall;
+    private bool isFirstClick = true;
 
     user_log user = new user_log();
 
@@ -37,6 +38,13 @@ public class bowl_pickup : MonoBehaviour
         // capture mouse offset
         if (game_data.allow_drag) {
             mousePositionOffset = transform.position - GetMouseWorldPosition();
+        }
+
+        // first click only
+        if (isFirstClick) {
+            user.order_given_ts1 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+            isFirstClick = false;
         }
     }
 
@@ -93,8 +101,7 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // post to database
-        user.order_given_ts = game_data.timer;
+        user.order_given_ts2 = game_data.timer;
         RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-
     }
 }

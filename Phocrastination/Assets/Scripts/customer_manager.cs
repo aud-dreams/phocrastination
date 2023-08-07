@@ -89,7 +89,7 @@ public class customer_manager : MonoBehaviour
         game_data.orders++;
         game_data.ordered_customers++;
 
-        user.order_collected_ts = game_data.timer;
+        user.order_collected_ts2 = game_data.timer;
         RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
     }
 }

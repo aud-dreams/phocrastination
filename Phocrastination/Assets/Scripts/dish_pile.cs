@@ -1,13 +1,17 @@
 using UnityEngine;
+using Proyecto26;
 
 public class dish_pile : MonoBehaviour
 {
     public game_data game_data;
+    public stat_data stat_data;
     public int dirty_bowls;
     private new Collider collider;
     public GameObject bowl, dish_pile_large, dish_pile_small;
     Vector3 mousePositionOffset;
     private Renderer render;
+
+    user_log user = new user_log();
 
     private void Start() {
         collider = GetComponent<Collider>();
@@ -39,6 +43,13 @@ public class dish_pile : MonoBehaviour
                     bowl.transform.position = hit.point;
                     bowl.SetActive(true);
                     render.enabled = true;
+
+                    // first click only
+                    if (stat_data.isFirstClick) {
+                        user.bowl_washed_ts1 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        stat_data.isFirstClick = false;
+                    }
                 }
             }
 

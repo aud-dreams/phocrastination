@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Proyecto26;
 
 public class drawing_pad : MonoBehaviour
 {
@@ -20,6 +20,8 @@ public class drawing_pad : MonoBehaviour
     public int hit_dots;
     public float ratio_hit;
     public bool has_start_drawing;
+
+    user_log user = new user_log();
 
     void Start() 
     {
@@ -81,7 +83,12 @@ public class drawing_pad : MonoBehaviour
                 // calculate percentage hit
                 ratio_hit = (float)hit_dots / total_dots;
                 stat_data.ratio_hit = ratio_hit;
-                //Debug.Log("Ratio hit: " + ratio_hit);
+                
+                if (stat_data.isFirstDot) {
+                    user.bowl_created_ts1 = game_data.timer;
+                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    stat_data.isFirstDot = false;
+                }
             }
         }
     }
