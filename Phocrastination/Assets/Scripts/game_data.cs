@@ -9,9 +9,10 @@ public class game_data : ScriptableObject
     public double timer;
     public string userID;
     public bool allow_timer;
-    public bool Day1;
+    public bool Day1;           // instantiation at beginning of day
     public bool Day2;
     public bool Day3;
+    //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial
     public bool tutorial;
@@ -42,6 +43,7 @@ public class game_data : ScriptableObject
     public int current_customers;
     public List<GameObject> customers_line;
     public bool can_next;
+    public bool last;       // bool for main_control during last customer in line
     public int orders;
 
     // pickup station
@@ -67,6 +69,7 @@ public class game_data : ScriptableObject
     public bool bowl_complete;
     public int counter;
     public bool pad_on;
+    public bool crafting;
 
     // dishes station
     public bool first_dishes_help;

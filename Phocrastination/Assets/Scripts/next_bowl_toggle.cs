@@ -10,7 +10,8 @@ public class next_bowl_toggle : MonoBehaviour
     public GameObject[] items;
     public GameObject bowl_complete, next_bowl_button, brothOutline, herbsOutline, noodlesOutline;
 
-    private void Start() {
+    private void Start()
+    {
         // get render component
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
@@ -19,24 +20,31 @@ public class next_bowl_toggle : MonoBehaviour
         render.enabled = false;
     }
 
-    private void OnMouseEnter() {
-        if (!game_data.help) {
-            render.enabled = true; 
+    private void OnMouseEnter()
+    {
+        if (!game_data.help)
+        {
+            render.enabled = true;
         }
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                if (!game_data.help) {
-                    foreach(GameObject item in items) { item.SetActive(true); }
+            if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (!game_data.help)
+                {
+                    foreach (GameObject item in items) { item.SetActive(true); }
                     game_data.allow_paintbrush = true;
                     game_data.allow_drawing = true;
                     bowl_complete.SetActive(false);
@@ -47,6 +55,7 @@ public class next_bowl_toggle : MonoBehaviour
                     herbsOutline.SetActive(false);
                     noodlesOutline.SetActive(false);
                     game_data.current_color = Color.black;
+                    game_data.crafting = true;
                 }
             }
         }

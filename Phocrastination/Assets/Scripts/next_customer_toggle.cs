@@ -45,6 +45,11 @@ public class next_customer_toggle : MonoBehaviour
 
     void Update()
     {
+        // if (!game_data.toggle_spawn)
+        // {
+        //     render.enabled = false;
+        // }
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -54,6 +59,8 @@ public class next_customer_toggle : MonoBehaviour
             {
                 if (game_data.can_next && !game_data.help)
                 {
+                    //game_data.toggle_spawn = true;
+
                     // all customers shift left & front customer turns active & light
                     foreach (GameObject customer in game_data.customers_line)
                     {
@@ -64,6 +71,12 @@ public class next_customer_toggle : MonoBehaviour
                     StartCoroutine(Order(game_data.customers_line[0]));
                     game_data.customers_line.RemoveAt(0);
                     game_data.current_customers--;
+
+                    // check if last customer
+                    if (game_data.current_customers == 0)
+                    {
+                        game_data.last = true;
+                    }
 
                     // once button clicked, deactivate button again until next customer leaves
                     game_data.can_next = false;
@@ -79,6 +92,12 @@ public class next_customer_toggle : MonoBehaviour
 
     public IEnumerator Order(GameObject customer)
     {
+        // check if last customer
+        if (game_data.customers_line.Count == 0)
+        {
+            game_data.last = true;
+        }
+
         // wait 5 seconds for order
         speech.SetActive(true);
         yield return new WaitForSeconds(5f);
@@ -94,6 +113,7 @@ public class next_customer_toggle : MonoBehaviour
         customer.SetActive(false);
 
         game_data.can_next = false;
+        game_data.last = false;
         if (game_data.customers_line.Count != 0)
         {
             game_data.can_next = true;

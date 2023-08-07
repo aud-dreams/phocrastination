@@ -67,7 +67,7 @@ public class dishes_toggle : MonoBehaviour
         }
         else
         {
-            if (!game_data.blink)
+            if (!game_data.blink || !game_data.tutorial)
             {
                 render.enabled = false;
                 text_render.enabled = false;

@@ -9,17 +9,40 @@ public class main_control : MonoBehaviour
 
     void Update()
     {
-        if (!game_data.tutorial_main || game_data.help)
+        if (gameObject.CompareTag("Serving"))
         {
-            home.SetActive(false);
+            if (!game_data.tutorial_main || game_data.help)     // home off during tutorial
+            {
+                home.SetActive(false);
+            }
+            else if (game_data.last)        // home off while last customer talking
+            {
+                home.SetActive(false);
+            }
+            else if (game_data.customers_line.Count == 0 && !game_data.can_next)      // home on after last customer leaves
+            {
+                home.SetActive(true);
+            }
+            else if (!game_data.can_next)       // home off while customer talking
+            {
+                home.SetActive(false);
+            }
+            else if (game_data.can_next)      // home on after customer done
+            {
+                home.SetActive(true);
+            }
         }
-        else if (game_data.can_next || (!game_data.can_next && game_data.customers_line.Count == 0 && !game_data.first_serving_help))
+        else if (gameObject.CompareTag("Crafting"))
         {
-            home.SetActive(true);
+            if (game_data.crafting)         // home off if currently crafting
+            {
+                home.SetActive(false);
+            }
+            else if (!game_data.crafting)   // home on if not currently crafting
+            {
+                home.SetActive(true);
+            }
         }
-        else
-        {
-            home.SetActive(false);
-        }
+
     }
 }

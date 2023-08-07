@@ -48,8 +48,10 @@ public class finish_bowl_toggle : MonoBehaviour
             {
                 if (!game_data.help)
                 {
+                    game_data.crafting = false;
                     game_data.bowl_complete = true;
                     game_data.crafting_blink = true;
+                    game_data.crafting_continue = false;
                     game_data.home_on = true;
                     home.SetActive(true);
 

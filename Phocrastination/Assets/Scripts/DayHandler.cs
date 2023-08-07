@@ -5,26 +5,29 @@ using UnityEngine;
 public class DayHandler : MonoBehaviour
 {
     public game_data game_data;
-    public GameObject[] toggles;
+    public GameObject[] items;
     public Sprite sprite;
     void Start()
     {
-
+        dayConfig();
     }
 
     void dayConfig()
     {
         if (game_data.Day1)
         {
-            // turn on all toggles
-            foreach (GameObject toggle in toggles)
+            foreach (GameObject item in items)
             {
-                toggle.SetActive(true);
+                item.SetActive(true);
             }
 
             // global initialization
             game_data.timer = 0;
             game_data.allow_timer = true;
+            game_data.Day1 = false;
+
+            // tutorial initialization
+            game_data.tutorial_main = true;
 
             // main initialization
             game_data.first_main_help = false;
@@ -55,7 +58,7 @@ public class DayHandler : MonoBehaviour
             // crafting initialization
             game_data.first_crafting_help = false;
             game_data.current_color = Color.black;
-            game_data.crafting_continue = false;
+            game_data.crafting_continue = true;
             game_data.beef_inside = false;
             game_data.broth_inside = false;
             game_data.herbs_inside = false;
@@ -83,6 +86,6 @@ public class DayHandler : MonoBehaviour
 
     void Update()
     {
-        dayConfig();
+
     }
 }

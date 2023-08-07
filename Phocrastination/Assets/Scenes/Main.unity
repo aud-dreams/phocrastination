@@ -703,12 +703,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-  toggles:
+  items:
   - {fileID: 169298119}
   - {fileID: 257650330}
   - {fileID: 1833506152}
   - {fileID: 1387471441}
   - {fileID: 524853426}
+  - {fileID: 1672274451}
   sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
 --- !u!4 &201423566
 Transform:

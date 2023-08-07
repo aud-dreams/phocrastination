@@ -55,14 +55,14 @@ public class main_toggle : MonoBehaviour
     void Update()
     {
         // blink home for tutorial after finish_bowl_button pressed (for crafting station)
-        if (game_data.crafting_blink)
+        if (game_data.crafting_blink && game_data.tutorial)
         {
             StartCoroutine(blink(home));
             game_data.crafting_blink = false;
         }
 
         // blink home for tutorial when finish washing dishes
-        if (game_data.dishes_blink)
+        if (game_data.dishes_blink && game_data.tutorial)
         {
             StartCoroutine(blink(home));
             game_data.dishes_blink = false;

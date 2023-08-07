@@ -22,6 +22,7 @@ public class GameHandler : MonoBehaviour
         game_data.Day1 = false;
         game_data.Day2 = false;
         game_data.Day3 = false;
+        //game_data.toggle_spawn = false;
 
         // tutorial initialization
         game_data.tutorial = true;
@@ -53,6 +54,7 @@ public class GameHandler : MonoBehaviour
         game_data.customers_line = new List<GameObject>();
         game_data.orders = 0;
         game_data.can_next = false;
+        game_data.last = false;
 
         // pickup initialization
         game_data.first_pickup_help = true;
@@ -77,6 +79,7 @@ public class GameHandler : MonoBehaviour
         game_data.bowl_complete = false;
         game_data.counter = 0;
         game_data.pad_on = false;
+        game_data.crafting = true;
 
         // dishes initialization
         game_data.first_dishes_help = true;

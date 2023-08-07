@@ -55,6 +55,12 @@ public class customer_manager : MonoBehaviour
             StartCoroutine(Order(game_data.customers_line[0]));
             game_data.customers_line.RemoveAt(0);
             game_data.current_customers--;
+
+            // check if last customer
+            if (game_data.current_customers == 0)
+            {
+                game_data.last = true;
+            }
         }
     }
 
@@ -101,6 +107,7 @@ public class customer_manager : MonoBehaviour
         customer.SetActive(false);
 
         game_data.can_next = false;
+        game_data.last = false;
         if (game_data.customers_line.Count != 0)
         {
             game_data.can_next = true;
