@@ -71,6 +71,8 @@ public class next_customer_toggle2 : MonoBehaviour
                     }
                     Lighten();
                     game_data.ordered_line[0].SetActive(true);
+
+                    game_data.can_next2 = false;
                 }
             }
         }

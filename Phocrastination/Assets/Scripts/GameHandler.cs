@@ -65,6 +65,7 @@ public class GameHandler : MonoBehaviour
         game_data.once2 = true;
         game_data.constructed_orders = 0;
         game_data.allow_drag = false;
+        game_data.last2 = false;
 
         // crafting initialization
         game_data.first_crafting_help = true;

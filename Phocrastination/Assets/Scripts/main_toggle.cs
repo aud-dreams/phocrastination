@@ -78,7 +78,6 @@ public class main_toggle : MonoBehaviour
             {
                 if (collider.CompareTag("Serving"))
                 {
-                    game_data.can_next = false;
                     if (game_data.tutorial)
                     {
                         game_data.take_order_done = true;
@@ -99,7 +98,6 @@ public class main_toggle : MonoBehaviour
 
                 if (collider.CompareTag("Pickup"))
                 {
-                    game_data.can_next2 = false;
                     if (game_data.tutorial)
                     {
                         game_data.drop_order_done = true;

@@ -92,12 +92,6 @@ public class next_customer_toggle : MonoBehaviour
 
     public IEnumerator Order(GameObject customer)
     {
-        // check if last customer
-        if (game_data.customers_line.Count == 0)
-        {
-            game_data.last = true;
-        }
-
         // wait 5 seconds for order
         speech.SetActive(true);
         yield return new WaitForSeconds(5f);

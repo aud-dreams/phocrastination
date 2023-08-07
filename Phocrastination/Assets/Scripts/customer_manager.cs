@@ -49,6 +49,8 @@ public class customer_manager : MonoBehaviour
         button.SetActive(false);
         toggle.GetComponent<Renderer>().enabled = false;
 
+        game_data.can_next = false;
+
         // first customer in list leaves
         if (game_data.current_customers != 0)
         {

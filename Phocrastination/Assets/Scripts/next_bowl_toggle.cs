@@ -56,6 +56,7 @@ public class next_bowl_toggle : MonoBehaviour
                     noodlesOutline.SetActive(false);
                     game_data.current_color = Color.black;
                     game_data.crafting = true;
+                    game_data.crafting_continue = true;
                 }
             }
         }

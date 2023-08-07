@@ -65,16 +65,23 @@ public class bowl_pickup : MonoBehaviour
             if (game_data.once)
             {
                 // first customer in line leaves
-                game_data.ordered_customers--;
                 StartCoroutine(Pickup(game_data.ordered_line[0]));
                 game_data.ordered_line.RemoveAt(0);
+                game_data.ordered_customers--;
                 game_data.once = false;
+
+                // check if last customer
+                if (game_data.ordered_line.Count == 0)
+                {
+                    game_data.last2 = true;
+                }
+
             }
 
-            // once button clicked, deactivate button again until next customer leaves
-            button.SetActive(false);
-            toggle.SetActive(false);
-            game_data.can_next2 = false;
+            // // once button clicked, deactivate button again until next customer leaves
+            // button.SetActive(false);
+            // toggle.SetActive(false);
+            // game_data.can_next2 = false;
         }
     }
     private IEnumerator blink(GameObject toggle)
@@ -92,6 +99,8 @@ public class bowl_pickup : MonoBehaviour
     private float speed = 5f;
     public IEnumerator Pickup(GameObject customer)
     {
+        game_data.can_next2 = false;
+
         // if customer recieves bowl, sparkles + leaves
         sparkles.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -109,6 +118,7 @@ public class bowl_pickup : MonoBehaviour
         home.SetActive(true);
         game_data.once = true;
         game_data.constructed_orders--;
+        game_data.last2 = false;
 
         // next button on if customers left
         if (game_data.ordered_customers != 0)

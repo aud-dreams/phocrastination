@@ -55,6 +55,7 @@ public class game_data : ScriptableObject
     public bool once2;
     public int constructed_orders;
     public bool allow_drag;
+    public bool last2;
 
     // crafting station
     public bool first_crafting_help;
