@@ -8,17 +8,23 @@ public class dish_pile : MonoBehaviour
     Vector3 mousePositionOffset;
     private Renderer render;
 
-    private void Start() {
+    private void Start()
+    {
         collider = GetComponent<Collider>();
         render = bowl.GetComponent<Renderer>();
 
-        if (game_data.dirty_bowls >= 1 && game_data.dirty_bowls <= 4) {
+        if (game_data.dirty_bowls >= 1 && game_data.dirty_bowls <= 4)
+        {
             dish_pile_small.SetActive(true);
             dish_pile_large.SetActive(false);
-        } else if (game_data.dirty_bowls == 0) {
+        }
+        else if (game_data.dirty_bowls == 0)
+        {
             dish_pile_small.SetActive(false);
             dish_pile_large.SetActive(false);
-        } else {
+        }
+        else
+        {
             dish_pile_small.SetActive(false);
             dish_pile_large.SetActive(true);
         }
@@ -26,22 +32,29 @@ public class dish_pile : MonoBehaviour
         mousePositionOffset = bowl.transform.position - transform.position;
     }
 
-    private void Update() {
-        if (game_data.allow_bowls) {
-            if (Input.GetMouseButtonDown(0)) {
+    private void Update()
+    {
+        if (game_data.allow_bowls)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
-                if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
+                if (collider.Raycast(ray, out hit, Mathf.Infinity))
+                {
                     bowl.transform.position = hit.point;
                     bowl.SetActive(true);
                     render.enabled = true;
+                    game_data.washing = true;   // once bowl picked up, currently washing
 
                     // base condition
-                    if (game_data.dirty_bowls == 1) {
+                    if (game_data.dirty_bowls == 1)
+                    {
                         dish_pile_small.SetActive(false);
                     }
-                    if (game_data.dirty_bowls == 5) {
+                    if (game_data.dirty_bowls == 5)
+                    {
                         dish_pile_large.SetActive(false);
                         dish_pile_small.SetActive(true);
                     }

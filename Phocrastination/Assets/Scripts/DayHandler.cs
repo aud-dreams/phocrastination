@@ -44,6 +44,7 @@ public class DayHandler : MonoBehaviour
             game_data.customers_line = new List<GameObject>();
             game_data.orders = 0;
             game_data.can_next = false;
+            game_data.last = false;
 
             // pickup initialization
             game_data.first_pickup_help = false;
@@ -54,6 +55,7 @@ public class DayHandler : MonoBehaviour
             game_data.once2 = true;
             game_data.constructed_orders = 0;
             game_data.allow_drag = true;
+            game_data.last2 = false;
 
             // crafting initialization
             game_data.first_crafting_help = false;
@@ -68,11 +70,13 @@ public class DayHandler : MonoBehaviour
             game_data.bowl_complete = false;
             game_data.counter = 0;
             game_data.pad_on = false;
+            game_data.crafting = true;
 
             // dishes initialization
             game_data.first_dishes_help = false;
             game_data.dirty_bowls = 5;
             game_data.allow_bowls = true;
+            game_data.washing = false;
 
             // cat initialization
             game_data.first_cat_help = false;

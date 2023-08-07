@@ -18,47 +18,58 @@ public class bowl_drag : MonoBehaviour
 
     user_log user = new user_log();
 
-    private void Start() {
+    private void Start()
+    {
         bowl = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
         render.enabled = false;
     }
 
-    private Vector3 GetMouseWorldPosition() {
+    private Vector3 GetMouseWorldPosition()
+    {
         // capture mouse position & return WorldPoint
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         // capture mouse offset
-        if (game_data.allow_bowls) {
+        if (game_data.allow_bowls)
+        {
             render.enabled = true;
             mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
     }
 
-    private void OnMouseDrag() {
-        if (game_data.allow_bowls) {
+    private void OnMouseDrag()
+    {
+        if (game_data.allow_bowls)
+        {
             render.enabled = true;
             transform.position = GetMouseWorldPosition() + mousePositionOffset;
         }
     }
 
-    private IEnumerator OnTriggerEnter2D(Collider2D sink) {
-        if (sink.CompareTag("collider")) {
+    private IEnumerator OnTriggerEnter2D(Collider2D sink)
+    {
+        if (sink.CompareTag("collider"))
+        {
             // if bowl in sink, increment collisions
-            if (washing_complete == false) {
+            if (washing_complete == false)
+            {
                 collisions++;
 
                 // check if washing is complete
-                if (collisions >= 20) {
+                if (collisions >= 20)
+                {
                     // reset
                     collisions = 0;
                     washing_complete = true;
                 }
 
                 // dirty -> clean bowl
-                if (washing_complete == true) {
+                if (washing_complete == true)
+                {
                     washing_complete = false;
 
                     // convert to clean
@@ -69,6 +80,7 @@ public class bowl_drag : MonoBehaviour
 
                     // disappear
                     gameObject.SetActive(false);
+                    game_data.washing = false;
 
                     // convert to dirty
                     render.sprite = dirty_bowl;
@@ -79,7 +91,8 @@ public class bowl_drag : MonoBehaviour
 
                     game_data.dirty_bowls = dirty_bowls;
 
-                    if (game_data.dirty_bowls == 0 && game_data.tutorial) {
+                    if (game_data.dirty_bowls == 0 && game_data.tutorial)
+                    {
                         game_data.dishes_blink = true;
                         home.SetActive(true);
                     }

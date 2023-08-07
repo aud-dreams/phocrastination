@@ -76,6 +76,7 @@ public class game_data : ScriptableObject
     public bool first_dishes_help;
     public int dirty_bowls;
     public bool allow_bowls;
+    public bool washing;
 
     // cat station
     public bool first_cat_help;
