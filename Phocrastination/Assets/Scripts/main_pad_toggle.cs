@@ -10,7 +10,8 @@ public class main_pad_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
 
-    public SpriteRenderer main_pad1, main_pad2, main_pad3, text_render;
+    public SpriteRenderer main_pad1, main_pad2, main_pad3;
+    private SpriteRenderer text_render;
     public GameObject[] start, toggles, station_text, manager_text, day_pads;
     public GameObject help, tutorial;
 
@@ -38,9 +39,12 @@ public class main_pad_toggle : MonoBehaviour
         {
             text.SetActive(false);
         }
-        foreach (GameObject day_pad in day_pads)
+        if (game_data.tutorial)
         {
-            day_pad.SetActive(false);
+            foreach (GameObject day_pad in day_pads)
+            {
+                day_pad.SetActive(false);
+            }
         }
     }
 

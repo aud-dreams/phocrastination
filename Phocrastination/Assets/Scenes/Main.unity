@@ -714,6 +714,7 @@ MonoBehaviour:
   - {fileID: 1891377964}
   - {fileID: 1676073618}
   - {fileID: 1017430653}
+  - {fileID: 232420642}
   sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   shadow: {fileID: 1400434558}
 --- !u!4 &201423566
@@ -967,6 +968,7 @@ MonoBehaviour:
   - {fileID: 1676073618}
   - {fileID: 1017430653}
   - {fileID: 1400434558}
+  - {fileID: 232420642}
 --- !u!1 &236645401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,7 +1383,6 @@ MonoBehaviour:
   main_pad1: {fileID: 1217780167}
   main_pad2: {fileID: 33156621}
   main_pad3: {fileID: 264756263}
-  text_render: {fileID: 0}
   start:
   - {fileID: 1400434558}
   - {fileID: 1217780166}

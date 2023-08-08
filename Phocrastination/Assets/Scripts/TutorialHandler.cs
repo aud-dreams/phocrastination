@@ -219,6 +219,7 @@ public class TutorialHandler : MonoBehaviour
                     // scene crossfade to main (Day 1)
                     StartCoroutine(LoadScene());
                     game_data.Day1 = true;
+                    game_data.first_day1_help = true;
                 }
             }
         }

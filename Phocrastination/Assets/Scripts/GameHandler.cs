@@ -23,6 +23,9 @@ public class GameHandler : MonoBehaviour
         game_data.Day2 = false;
         game_data.Day3 = false;
         game_data.round_type = 0;       // 0 - tutorial, 1 - Day1, 2 - Day2, 3 - Day3
+        game_data.first_day1_help = false;
+        game_data.first_day2_help = false;
+        game_data.first_day3_help = false;
         //game_data.toggle_spawn = false;
 
         // tutorial initialization

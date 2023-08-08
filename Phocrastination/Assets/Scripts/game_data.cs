@@ -13,6 +13,9 @@ public class game_data : ScriptableObject
     public bool Day2;
     public bool Day3;
     public int round_type;
+    public bool first_day1_help;
+    public bool first_day2_help;
+    public bool first_day3_help;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial

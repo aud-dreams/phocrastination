@@ -16,9 +16,15 @@ public class DayHandler : MonoBehaviour
             dayConfig(3, 5, 1);
 
             // Day1 pad on
-            shadow.SetActive(true);
-            pads[0].SetActive(true);
-            Debug.Log("day1 on");
+            if (game_data.first_day1_help)
+            {
+                shadow.SetActive(true);
+                pads[0].SetActive(true);
+                pads[1].SetActive(false);
+                pads[2].SetActive(false);
+                game_data.first_day1_help = false;
+                game_data.first_day2_help = true;
+            }
         }
         else if (game_data.Day2)
         {
@@ -26,9 +32,15 @@ public class DayHandler : MonoBehaviour
             dayConfig(5, 10, 2);
 
             // Day2 pad on
-            shadow.SetActive(true);
-            pads[1].SetActive(true);
-            Debug.Log("day2 on");
+            if (game_data.first_day2_help)
+            {
+                shadow.SetActive(true);
+                pads[0].SetActive(false);
+                pads[1].SetActive(true);
+                pads[2].SetActive(false);
+                game_data.first_day2_help = false;
+                game_data.first_day3_help = true;
+            }
         }
         else if (game_data.Day3)
         {
@@ -36,9 +48,20 @@ public class DayHandler : MonoBehaviour
             dayConfig(3, 5, 3);
 
             // Day3 pad on
-            shadow.SetActive(true);
-            pads[2].SetActive(true);
-            Debug.Log("day3 on");
+            if (game_data.first_day3_help)
+            {
+                shadow.SetActive(true);
+                pads[0].SetActive(false);
+                pads[1].SetActive(false);
+                pads[2].SetActive(true);
+                game_data.first_day3_help = false;
+            }
+        }
+        else
+        {
+            pads[0].SetActive(false);
+            pads[1].SetActive(false);
+            pads[2].SetActive(false);
         }
     }
 
