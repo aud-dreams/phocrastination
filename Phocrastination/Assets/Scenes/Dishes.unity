@@ -937,11 +937,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-<<<<<<< HEAD
   stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   dirty_bowls: 0
-=======
->>>>>>> d424f9a429f80b004e26d502aed770c874b388fb
   bowl: {fileID: 240626603}
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}
@@ -2167,11 +2164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
-<<<<<<< HEAD
   stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   dirty_bowls: 0
-=======
->>>>>>> d424f9a429f80b004e26d502aed770c874b388fb
   bowl: {fileID: 240626603}
   dish_pile_large: {fileID: 1809112450}
   dish_pile_small: {fileID: 630836658}
