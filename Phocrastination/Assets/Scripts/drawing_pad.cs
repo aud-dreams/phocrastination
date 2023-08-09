@@ -84,10 +84,13 @@ public class drawing_pad : MonoBehaviour
                 ratio_hit = (float)hit_dots / total_dots;
                 stat_data.ratio_hit = ratio_hit;
                 
-                if (stat_data.isFirstDot) {
-                    user.bowl_created_ts1 = game_data.timer;
-                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-                    stat_data.isFirstDot = false;
+                // post to database
+                if (!game_data.tutorial) {
+                    if (stat_data.isFirstDot) {
+                        user.bowl_created_ts1 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        stat_data.isFirstDot = false;
+                    }
                 }
             }
         }

@@ -22,17 +22,17 @@ public class timer : MonoBehaviour
             game_data.timer += Time.deltaTime;
         }
 
-        if (game_data.timer > 480 && game_data.round_type == 1)      // Day1 over
+        if (game_data.timer > 400 && game_data.round_type == 1)      // Day1 over
         {
             game_data.Day2 = true;
             StartCoroutine(LoadScene());
         }
-        else if (game_data.timer > 480 && game_data.round_type == 2)      // Day2 over
+        else if (game_data.timer > 400 && game_data.round_type == 2)      // Day2 over
         {
             game_data.Day3 = true;
             StartCoroutine(LoadScene());
         }
-        else if (game_data.timer > 480 && game_data.round_type == 3)      // Day3 over
+        else if (game_data.timer > 400 && game_data.round_type == 3)      // Day3 over
         {
             Application.Quit();
         }

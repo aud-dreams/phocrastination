@@ -148,7 +148,9 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // post to database
-        user.order_given_ts2 = game_data.timer;
-        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        if (!game_data.tutorial) {
+            user.order_given_ts2 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        }
     }
 }

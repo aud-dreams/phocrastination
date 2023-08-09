@@ -8,6 +8,9 @@ public class DayHandler : MonoBehaviour
     public GameObject[] items, pads;
     public Sprite sprite;
     public GameObject shadow;
+    
+    user_log user = new user_log();
+
     void Start()
     {
         if (game_data.Day1)
@@ -25,6 +28,8 @@ public class DayHandler : MonoBehaviour
                 game_data.first_day1_help = false;
                 game_data.first_day2_help = true;
             }
+
+            user.game_status = game_data.round_type;
         }
         else if (game_data.Day2)
         {
@@ -41,6 +46,9 @@ public class DayHandler : MonoBehaviour
                 game_data.first_day2_help = false;
                 game_data.first_day3_help = true;
             }
+
+            user.game_status = game_data.round_type;
+
         }
         else if (game_data.Day3)
         {
@@ -56,6 +64,8 @@ public class DayHandler : MonoBehaviour
                 pads[2].SetActive(true);
                 game_data.first_day3_help = false;
             }
+
+            user.game_status = game_data.round_type;
         }
         else
         {

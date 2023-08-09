@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 487.99779310042504
-  userID: 06006cc9-51b6-4364-8cef-f7c62dc0e81b
+  timer: 482.5893592990469
+  userID: ca66f1ac-f376-4d78-aa65-9cea5e539686
   allow_timer: 1
   Day1: 0
   Day2: 0
   Day3: 0
   round_type: 3
+  first_day1_help: 0
+  first_day2_help: 0
+  first_day3_help: 0
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -28,7 +31,7 @@ MonoBehaviour:
   tutorial_counter: 6
   blink: 1
   tutorial_main: 1
-  crafting_blink: 0
+  crafting_blink: 1
   dishes_blink: 0
   home_on: 0
   cat_blink: 0

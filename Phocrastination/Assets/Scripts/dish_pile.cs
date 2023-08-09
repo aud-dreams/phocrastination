@@ -46,10 +46,12 @@ public class dish_pile : MonoBehaviour
                     render.enabled = true;
 
                     // first click only
-                    if (stat_data.isFirstClick) {
-                        user.bowl_washed_ts1 = game_data.timer;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-                        stat_data.isFirstClick = false;
+                    if (!game_data.tutorial) {
+                        if (stat_data.isFirstClick) {
+                            user.bowl_washed_ts1 = game_data.timer;
+                            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                            stat_data.isFirstClick = false;
+                        }
                     }
 
                     game_data.washing = true;   // once bowl picked up, currently washing
