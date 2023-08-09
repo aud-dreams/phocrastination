@@ -34,9 +34,19 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Pickup"))
         {
-            if (game_data.last2)        // home off while last customer sparkling
+            if (game_data.help || game_data.first_pickup_help)       // home off while pad on
             {
                 home.SetActive(false);
+                Debug.Log("home off 1");
+            } 
+            else if (game_data.last2)        // home off while last customer sparkling
+            {
+                home.SetActive(false);
+                Debug.Log("home off 2");
+            } 
+            else if (game_data.constructed_orders == 0)       // home on if no orders
+            {         
+                home.SetActive(true);
             }
             else if (game_data.ordered_line.Count == 0 && !game_data.can_next2)      // home on after last customer leaves
             {
@@ -45,6 +55,10 @@ public class main_control : MonoBehaviour
             else if (!game_data.can_next2)       // home off while customer sparkling
             {
                 home.SetActive(false);
+                Debug.Log("home off 3");
+            }
+            else {
+                home.SetActive(true);
             }
         }
         else if (gameObject.CompareTag("Crafting"))
@@ -60,7 +74,11 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Dishes"))
         {
-            if (game_data.washing || game_data.help || game_data.first_dishes_help)      // home off if currently washing
+            if (game_data.tutorial && game_data.dirty_bowls !=0) 
+            {
+                home.SetActive(false);
+            }
+            else if (game_data.washing || game_data.help || game_data.first_dishes_help)      // home off if currently washing
             {
                 home.SetActive(false);
             }

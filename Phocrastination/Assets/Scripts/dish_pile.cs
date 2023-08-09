@@ -51,20 +51,20 @@ public class dish_pile : MonoBehaviour
                         RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
                         stat_data.isFirstClick = false;
                     }
+
+                    game_data.washing = true;   // once bowl picked up, currently washing
+
+                    // base condition
+                    if (game_data.dirty_bowls == 1)
+                    {
+                        dish_pile_small.SetActive(false);
+                    }
+                    if (game_data.dirty_bowls == 5)
+                    {
+                        dish_pile_large.SetActive(false);
+                        dish_pile_small.SetActive(true);
+                    }
                 }
-            }
-
-            game_data.washing = true;   // once bowl picked up, currently washing
-
-            // base condition
-            if (game_data.dirty_bowls == 1)
-            {
-                dish_pile_small.SetActive(false);
-            }
-            if (game_data.dirty_bowls == 5)
-            {
-                dish_pile_large.SetActive(false);
-                dish_pile_small.SetActive(true);
             }
         }
     }
