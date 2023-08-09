@@ -14,18 +14,34 @@ public class GameHandler : MonoBehaviour
         Initialize();
     }
 
-    void Update()
+    void Initialize()
     {
-        if (gameInProgress == false) {
-            //endGame condition
-        }
-        
-    }
-
-    void Initialize() {
-        // global
+        // global initialization
         game_data.timer = 0;
         game_data.allow_timer = true;
+        game_data.Day1 = false;
+        game_data.Day2 = false;
+        game_data.Day3 = false;
+        game_data.round_type = 0;       // 0 - tutorial, 1 - Day1, 2 - Day2, 3 - Day3
+        game_data.first_day1_help = false;
+        game_data.first_day2_help = false;
+        game_data.first_day3_help = false;
+        //game_data.toggle_spawn = false;
+
+        // tutorial initialization
+        game_data.tutorial = true;
+        game_data.take_order_done = false;
+        game_data.make_order_done = false;
+        game_data.drop_order_done = false;
+        game_data.wash_dishes_done = false;
+        game_data.pet_cat_done = false;
+        game_data.tutorial_counter = 0;
+        game_data.blink = false;
+        game_data.tutorial_main = false;
+        game_data.crafting_blink = false;
+        game_data.dishes_blink = false;
+        game_data.home_on = false;
+        game_data.cat_blink = true;
 
         // main initialization
         game_data.first_main_help = true;
@@ -37,11 +53,12 @@ public class GameHandler : MonoBehaviour
 
         // serving initialization
         game_data.first_serving_help = true;
-        game_data.total_customers = 5;
-        game_data.current_customers = 5;
+        game_data.total_customers = 1;
+        game_data.current_customers = 1;
         game_data.customers_line = new List<GameObject>();
         game_data.orders = 0;
         game_data.can_next = false;
+        game_data.last = false;
 
         // pickup initialization
         game_data.first_pickup_help = true;
@@ -52,6 +69,7 @@ public class GameHandler : MonoBehaviour
         game_data.once2 = true;
         game_data.constructed_orders = 0;
         game_data.allow_drag = false;
+        game_data.last2 = false;
 
         // crafting initialization
         game_data.first_crafting_help = true;
@@ -66,11 +84,13 @@ public class GameHandler : MonoBehaviour
         game_data.bowl_complete = false;
         game_data.counter = 0;
         game_data.pad_on = false;
+        game_data.crafting = true;
 
         // dishes initialization
         game_data.first_dishes_help = true;
-        game_data.dirty_bowls = 6;
+        game_data.dirty_bowls = 2;
         game_data.allow_bowls = false;
+        game_data.washing = false;
 
         // cat initialization
         game_data.first_cat_help = true;
@@ -81,12 +101,12 @@ public class GameHandler : MonoBehaviour
         game_data.outside_catscene = true;
     }
 
-    void dayConfig() {
-        // reset state vars
+    void Update()
+    {
+        if (gameInProgress == false)
+        {
+            //endGame condition
+        }
 
-        // switch between days
     }
-
-
-    // log at start of day, end of day, enter & end scene, interacting w objects
 }

@@ -13,7 +13,8 @@ public class dish_pile : MonoBehaviour
 
     user_log user = new user_log();
 
-    private void Start() {
+    private void Start()
+    {
         collider = GetComponent<Collider>();
         render = bowl.GetComponent<Renderer>();
 
@@ -53,21 +54,17 @@ public class dish_pile : MonoBehaviour
                 }
             }
 
-            // get updated values
-            dirty_bowls = game_data.dirty_bowls;
+            game_data.washing = true;   // once bowl picked up, currently washing
 
             // base condition
-            if (dirty_bowls == 1) {
-                if (Input.GetMouseButtonDown(0)) {
-                    dish_pile_small.SetActive(false);
-                }
+            if (game_data.dirty_bowls == 1)
+            {
+                dish_pile_small.SetActive(false);
             }
-
-            if (dirty_bowls == 5) {
-                if (Input.GetMouseButtonDown(0)) {
-                    dish_pile_large.SetActive(false);
-                    dish_pile_small.SetActive(true);
-                }
+            if (game_data.dirty_bowls == 5)
+            {
+                dish_pile_large.SetActive(false);
+                dish_pile_small.SetActive(true);
             }
         }
     }

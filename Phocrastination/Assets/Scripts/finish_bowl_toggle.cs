@@ -10,11 +10,12 @@ public class finish_bowl_toggle : MonoBehaviour
     private new Collider collider;
     public game_data game_data;
     public stat_data stat_data;
-    public GameObject next_bowl_button, next_bowl_toggle;
+    public GameObject next_bowl_button, next_bowl_toggle, home;
 
     user_log user = new user_log();
 
-    private void Start() {
+    private void Start()
+    {
         // get render component
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
@@ -23,30 +24,43 @@ public class finish_bowl_toggle : MonoBehaviour
         render.enabled = false;
     }
 
-    private void OnMouseEnter() {
-        if (!game_data.help) {
+    private void OnMouseEnter()
+    {
+        if (!game_data.help)
+        {
             render.enabled = true;
         }
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity)) {
-                if (!game_data.help) {
+            if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
+            {
+                if (!game_data.help)
+                {
+                    game_data.crafting = false;
                     game_data.bowl_complete = true;
+                    game_data.crafting_blink = true;
+                    game_data.crafting_continue = false;
+                    game_data.home_on = true;
+                    home.SetActive(true);
 
-                    if (game_data.orders > 1) {
+                    if (game_data.orders > 1)
+                    {
                         next_bowl_button.SetActive(true);
                         next_bowl_toggle.SetActive(true);
                     }
-                    
+
                     // decrement num of orders
                     game_data.orders--;
                     game_data.constructed_orders++;

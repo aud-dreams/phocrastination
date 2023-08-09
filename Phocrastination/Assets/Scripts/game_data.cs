@@ -9,6 +9,29 @@ public class game_data : ScriptableObject
     public double timer;
     public string userID;
     public bool allow_timer;
+    public bool Day1;           // instantiation for beginning of day
+    public bool Day2;
+    public bool Day3;
+    public int round_type;
+    public bool first_day1_help;
+    public bool first_day2_help;
+    public bool first_day3_help;
+    //public bool toggle_spawn;   // for toggles renders to be off when first spawned
+
+    // tutorial
+    public bool tutorial;
+    public bool take_order_done;
+    public bool make_order_done;
+    public bool drop_order_done;
+    public bool wash_dishes_done;
+    public bool pet_cat_done;
+    public int tutorial_counter;
+    public bool blink;
+    public bool tutorial_main;
+    public bool crafting_blink;
+    public bool dishes_blink;
+    public bool home_on;
+    public bool cat_blink;
 
     // main
     public bool first_main_help;
@@ -24,6 +47,7 @@ public class game_data : ScriptableObject
     public int current_customers;
     public List<GameObject> customers_line;
     public bool can_next;
+    public bool last;       // bool for main_control during last customer in line
     public int orders;
 
     // pickup station
@@ -35,6 +59,7 @@ public class game_data : ScriptableObject
     public bool once2;
     public int constructed_orders;
     public bool allow_drag;
+    public bool last2;
 
     // crafting station
     public bool first_crafting_help;
@@ -49,11 +74,13 @@ public class game_data : ScriptableObject
     public bool bowl_complete;
     public int counter;
     public bool pad_on;
+    public bool crafting;
 
     // dishes station
     public bool first_dishes_help;
     public int dirty_bowls;
     public bool allow_bowls;
+    public bool washing;
 
     // cat station
     public bool first_cat_help;

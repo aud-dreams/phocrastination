@@ -8,7 +8,7 @@ public class bowl_pickup : MonoBehaviour
     public game_data game_data;
     public stat_data stat_data;
     Vector3 mousePositionOffset;
-    private SpriteRenderer render;
+    private SpriteRenderer render, toggle_render;
     private Renderer bowl_render;
     public GameObject bowl, button, toggle, sparkles, home;
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
@@ -16,27 +16,34 @@ public class bowl_pickup : MonoBehaviour
 
     user_log user = new user_log();
 
-    private void Start() {
+    private void Start()
+    {
         render = GetComponent<SpriteRenderer>();
         bowl_render = bowl.GetComponent<Renderer>();
 
-        if (game_data.constructed_orders != 0) {
+        if (game_data.constructed_orders != 0)
+        {
             bowl.SetActive(true);
             bowl.transform.position = bowl_position;
             bowl_render.enabled = true;
-        } else {
+        }
+        else
+        {
             bowl.SetActive(false);
         }
     }
 
-    private Vector3 GetMouseWorldPosition() {
+    private Vector3 GetMouseWorldPosition()
+    {
         // capture mouse position & return WorldPoint
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         // capture mouse offset
-        if (game_data.allow_drag) {
+        if (game_data.allow_drag)
+        {
             mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
 
@@ -48,53 +55,82 @@ public class bowl_pickup : MonoBehaviour
         }
     }
 
-    private void OnMouseDrag() {
-        if (game_data.allow_drag) {
+    private void OnMouseDrag()
+    {
+        if (game_data.allow_drag)
+        {
             transform.position = GetMouseWorldPosition() + mousePositionOffset;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D customer) {
-        if (customer.CompareTag("collider")) {
+    private void OnTriggerEnter2D(Collider2D customer)
+    {
+        if (customer.CompareTag("collider"))
+        {
             render.enabled = false;
             home.SetActive(false);
 
-            if (game_data.once) {
+            if (game_data.once)
+            {
                 // first customer in line leaves
-                game_data.ordered_customers--;
                 StartCoroutine(Pickup(game_data.ordered_line[0]));
                 game_data.ordered_line.RemoveAt(0);
+                game_data.ordered_customers--;
                 game_data.once = false;
+
+                // check if last customer
+                if (game_data.ordered_line.Count == 0)
+                {
+                    game_data.last2 = true;
+                }
+
             }
-                    
-            // once button clicked, deactivate button again until next customer leaves
-            button.SetActive(false);
-            toggle.SetActive(false);
-            game_data.can_next2 = false;
+
+            // // once button clicked, deactivate button again until next customer leaves
+            // button.SetActive(false);
+            // toggle.SetActive(false);
+            // game_data.can_next2 = false;
+        }
+    }
+    private IEnumerator blink(GameObject toggle)
+    {
+        toggle_render = toggle.GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 5; i++)
+        {
+            toggle_render.enabled = true;
+            yield return new WaitForSeconds(0.3f);
+            toggle_render.enabled = false;
+            yield return new WaitForSeconds(0.3f);
         }
     }
 
     private float speed = 5f;
-    public IEnumerator Pickup(GameObject customer) {
+    public IEnumerator Pickup(GameObject customer)
+    {
+        game_data.can_next2 = false;
+
         // if customer recieves bowl, sparkles + leaves
         sparkles.SetActive(true);
         yield return new WaitForSeconds(3f);
         sparkles.SetActive(false);
 
-        while (customer.transform.position.x > -11) {
+        while (customer.transform.position.x > -11)
+        {
             customer.transform.Translate(Vector3.left * speed * Time.deltaTime);
             yield return null;
         }
 
         // deactivate off screen
-        customer.SetActive(false); 
+        customer.SetActive(false);
 
         home.SetActive(true);
         game_data.once = true;
         game_data.constructed_orders--;
+        game_data.last2 = false;
 
         // next button on if customers left
-        if (game_data.ordered_customers != 0) {
+        if (game_data.ordered_customers != 0)
+        {
             game_data.can_next2 = true;
             button.SetActive(true);
             toggle.SetActive(true);
@@ -102,6 +138,14 @@ public class bowl_pickup : MonoBehaviour
 
         // reset isFirstClick2
         stat_data.isFirstClick2 = true;
+
+        // if in tutorial, blink home
+        if (game_data.tutorial)
+        {
+            game_data.tutorial_main = true;
+            StartCoroutine(blink(home));
+            game_data.home_on = true;
+        }
 
         // post to database
         user.order_given_ts2 = game_data.timer;

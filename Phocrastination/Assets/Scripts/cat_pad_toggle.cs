@@ -50,7 +50,12 @@ public class cat_pad_toggle : MonoBehaviour
                 game_data.allow_hand = true;
 
                 help.SetActive(true);
-                home.SetActive(true);
+                if (!game_data.tutorial || game_data.home_on)
+                {
+                    home.SetActive(true);
+                    game_data.home_on = false;
+                }
+
                 game_data.first_cat_help = false;
                 game_data.help = false;
                 game_data.allow_timer = true;

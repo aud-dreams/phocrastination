@@ -7,8 +7,7 @@ public class bowl_drag : MonoBehaviour
     Vector3 mousePositionOffset;
     public game_data game_data;
     public stat_data stat_data;
-    private int dirty_bowls;
-    private int clean_bowls;
+    private int dirty_bowls, clean_bowls;
 
     public BoxCollider2D bowl;
     private int collisions = 0;
@@ -16,52 +15,62 @@ public class bowl_drag : MonoBehaviour
 
     public Sprite clean_bowl, dirty_bowl;
     private SpriteRenderer render;
+    public GameObject home;
 
     user_log user = new user_log();
 
-    private void Start() {
+    private void Start()
+    {
         bowl = GetComponent<BoxCollider2D>();
         render = GetComponent<SpriteRenderer>();
         render.enabled = false;
     }
 
-    private Vector3 GetMouseWorldPosition() {
+    private Vector3 GetMouseWorldPosition()
+    {
         // capture mouse position & return WorldPoint
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         // capture mouse offset
-        if (game_data.allow_bowls) {
-            Debug.Log("down");
+        if (game_data.allow_bowls)
+        {
             render.enabled = true;
             mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
     }
 
-    private void OnMouseDrag() {
-        if (game_data.allow_bowls) {
-            Debug.Log("drag");
+    private void OnMouseDrag()
+    {
+        if (game_data.allow_bowls)
+        {
             render.enabled = true;
             transform.position = GetMouseWorldPosition() + mousePositionOffset;
         }
     }
 
-    private IEnumerator OnTriggerEnter2D(Collider2D sink) {
-        if (sink.CompareTag("collider")) {
+    private IEnumerator OnTriggerEnter2D(Collider2D sink)
+    {
+        if (sink.CompareTag("collider"))
+        {
             // if bowl in sink, increment collisions
-            if (washing_complete == false) {
+            if (washing_complete == false)
+            {
                 collisions++;
 
                 // check if washing is complete
-                if (collisions >= 20) {
+                if (collisions >= 20)
+                {
                     // reset
                     collisions = 0;
                     washing_complete = true;
                 }
 
                 // dirty -> clean bowl
-                if (washing_complete == true) {
+                if (washing_complete == true)
+                {
                     washing_complete = false;
 
                     // convert to clean
@@ -72,6 +81,7 @@ public class bowl_drag : MonoBehaviour
 
                     // disappear
                     gameObject.SetActive(false);
+                    game_data.washing = false;
 
                     // convert to dirty
                     render.sprite = dirty_bowl;
@@ -84,6 +94,12 @@ public class bowl_drag : MonoBehaviour
 
                     // reset isFirstClick
                     stat_data.isFirstClick = true;
+
+                    if (game_data.dirty_bowls == 0 && game_data.tutorial)
+                    {
+                        game_data.dishes_blink = true;
+                        home.SetActive(true);
+                    }
 
                     // post to database
                     user.bowl_washed_ts2 = game_data.timer;

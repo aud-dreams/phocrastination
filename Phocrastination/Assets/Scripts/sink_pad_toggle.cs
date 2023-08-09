@@ -19,39 +19,52 @@ public class sink_pad_toggle : MonoBehaviour
         // set visibility at start
         render.enabled = false;
 
-        if (game_data.first_dishes_help) {
+        if (game_data.first_dishes_help)
+        {
             game_data.allow_bowls = false;
         }
 
-        if (game_data.first_dishes_help) {
+        if (game_data.first_dishes_help)
+        {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_timer = false;
         }
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                foreach (GameObject item in items) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                foreach (GameObject item in items)
+                {
                     item.SetActive(false);
                 }
 
                 game_data.allow_bowls = true;
 
                 help.SetActive(true);
-                home.SetActive(true);
+                if (!game_data.tutorial || game_data.home_on)
+                {
+                    home.SetActive(true);
+                    game_data.home_on = false;
+                }
+
                 game_data.first_dishes_help = false;
                 game_data.help = false;
                 game_data.allow_timer = true;

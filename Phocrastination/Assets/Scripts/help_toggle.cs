@@ -11,7 +11,8 @@ public class help_toggle : MonoBehaviour
     public GameObject[] items;
     public GameObject help, home;
 
-    private void Start() {
+    private void Start()
+    {
         // get render component
         render = GetComponent<Renderer>();
         collider = GetComponent<Collider>();
@@ -20,32 +21,43 @@ public class help_toggle : MonoBehaviour
         render.enabled = false;
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
                 game_data.help = true;
                 game_data.click = 1;
-                foreach (GameObject item in items) {
+                foreach (GameObject item in items)
+                {
                     item.SetActive(true);
                 }
                 help.SetActive(false);
                 home.SetActive(false);
 
-                if (collider.CompareTag("Dishes")) {
-                    game_data.allow_bowls = false;
+                if (collider.CompareTag("Crafting"))
+                {
+                    game_data.allow_timer = false;
                 }
-                game_data.allow_timer = false;
+                if (collider.CompareTag("Dishes"))
+                {
+                    game_data.allow_bowls = false;
+                    game_data.allow_timer = false;
+                }
             }
         }
     }
