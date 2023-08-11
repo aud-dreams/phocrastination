@@ -16,6 +16,9 @@ public class game_data : ScriptableObject
     public bool first_day1_help;
     public bool first_day2_help;
     public bool first_day3_help;
+    public double customerTimer;
+    public double dishesTimer;
+    public double clockTimer;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial

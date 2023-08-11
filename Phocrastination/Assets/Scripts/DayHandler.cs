@@ -13,6 +13,7 @@ public class DayHandler : MonoBehaviour
         if (game_data.Day1)
         {
             game_data.Day1 = false;
+            game_data.clockTimer = 0;
             dayConfig(3, 5, 1);
 
             // Day1 pad on
@@ -29,6 +30,7 @@ public class DayHandler : MonoBehaviour
         else if (game_data.Day2)
         {
             game_data.Day2 = false;
+            game_data.clockTimer = 0;
             dayConfig(5, 10, 2);
 
             // Day2 pad on
@@ -45,6 +47,7 @@ public class DayHandler : MonoBehaviour
         else if (game_data.Day3)
         {
             game_data.Day3 = false;
+            game_data.clockTimer = 0;
             dayConfig(3, 5, 3);
 
             // Day3 pad on
@@ -137,11 +140,6 @@ public class DayHandler : MonoBehaviour
         game_data.progress_position = new Vector3(-1.16f, 3.79f, 0f);
         game_data.progress_scale = new Vector3(0.01f, 1.1f, 0f);
         game_data.outside_catscene = true;
-
-    }
-
-    void Update()
-    {
-
     }
 }
+

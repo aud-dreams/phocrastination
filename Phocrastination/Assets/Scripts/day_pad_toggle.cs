@@ -7,6 +7,7 @@ public class day_pad_toggle : MonoBehaviour
     public GameObject[] items;
     private Renderer render;
     private new Collider collider;
+    public game_data game_data;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class day_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+        game_data.allow_timer = false;
     }
 
     private void OnMouseEnter()
@@ -41,6 +43,8 @@ public class day_pad_toggle : MonoBehaviour
                 {
                     item.SetActive(false);
                 }
+
+                game_data.allow_timer = true;
             }
         }
     }

@@ -26,6 +26,9 @@ public class GameHandler : MonoBehaviour
         game_data.first_day1_help = false;
         game_data.first_day2_help = false;
         game_data.first_day3_help = false;
+        game_data.customerTimer = 60;
+        game_data.dishesTimer = 30;
+        game_data.clockTimer = 0;
         //game_data.toggle_spawn = false;
 
         // tutorial initialization

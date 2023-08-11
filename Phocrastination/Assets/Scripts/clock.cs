@@ -6,57 +6,28 @@ public class clock : MonoBehaviour
 {
     public game_data game_data;
     private SpriteRenderer clock_sprite;
-    private Dictionary<string, Sprite> hours;
-    private List<string> hours_keys;
-
-    [SerializeField]
-    private List<Sprite> hours_values;
+    public List<Sprite> hours;
 
     void Start()
     {
         clock_sprite = GetComponent<SpriteRenderer>();
-        hours = new Dictionary<string, Sprite>();
-
-        // initialize dict
-        hours_keys = new List<string>() { "8am", "10am", "12pm", "2pm", "4pm", "6pm" };
-        for (int i = 0; i < hours_keys.Count; i++)
-        {
-            hours.Add(hours_keys[i], hours_values[i]);
-        }
     }
 
     void Update()
     {
-        if (game_data.timer < 80)
+        if (game_data.allow_timer && !game_data.tutorial)
         {
-            clock_sprite.sprite = GetHour("8am");
+            game_data.clockTimer -= Time.deltaTime;
         }
-        else if (game_data.timer < 160)
-        {
-            clock_sprite.sprite = GetHour("10am");
-        }
-        else if (game_data.timer < 240)
-        {
-            clock_sprite.sprite = GetHour("12pm");
-        }
-        else if (game_data.timer < 320)
-        {
-            clock_sprite.sprite = GetHour("2pm");
-        }
-        else if (game_data.timer < 400)
-        {
-            clock_sprite.sprite = GetHour("4pm");
-        }
-        else if (game_data.timer < 480)
-        {
-            clock_sprite.sprite = GetHour("6pm");
-        }
-    }
 
-    private Sprite GetHour(string key)
-    {
-        Sprite sprite = null;
-        hours.TryGetValue(key, out sprite);
-        return sprite;
+        for (int i = 0; i < 5; i++)
+        {
+            if (game_data.clockTimer <= 0)      // every 84 seconds (1/5 of 7 mins), switch to next hour sprite (5 sprites to switch to in total)
+            {
+                clock_sprite.sprite = hours[i];
+                game_data.clockTimer = 84;
+            }
+        }
+
     }
 }
