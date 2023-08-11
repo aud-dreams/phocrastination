@@ -7,11 +7,15 @@ public class start_dishes_config : MonoBehaviour
     public GameObject[] start;
     public game_data game_data;
 
-    void Update() {
+    void Update()
+    {
         // turn menu on for first time loading main scene
-        if (game_data.first_dishes_help || game_data.help) {
+        if (game_data.first_dishes_help || game_data.help)
+        {
             foreach (GameObject item in start) { item.SetActive(true); }
-        } else {
+        }
+        else
+        {
             foreach (GameObject item in start) { item.SetActive(false); }
         }
     }

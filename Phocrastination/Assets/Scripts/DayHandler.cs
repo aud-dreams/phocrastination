@@ -8,7 +8,7 @@ public class DayHandler : MonoBehaviour
     public GameObject[] items, pads;
     public Sprite sprite;
     public GameObject shadow;
-    
+
     user_log user = new user_log();
 
     void Start()
@@ -27,7 +27,6 @@ public class DayHandler : MonoBehaviour
                 pads[1].SetActive(false);
                 pads[2].SetActive(false);
                 game_data.first_day1_help = false;
-                game_data.first_day2_help = true;
             }
 
             user.game_status = game_data.round_type;
@@ -46,7 +45,6 @@ public class DayHandler : MonoBehaviour
                 pads[1].SetActive(true);
                 pads[2].SetActive(false);
                 game_data.first_day2_help = false;
-                game_data.first_day3_help = true;
             }
 
             user.game_status = game_data.round_type;

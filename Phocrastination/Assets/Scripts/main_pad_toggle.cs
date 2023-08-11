@@ -29,6 +29,7 @@ public class main_pad_toggle : MonoBehaviour
             help.SetActive(false);
             game_data.allow_timer = false;
             tutorial.SetActive(false);
+            game_data.help = true;
         }
         foreach (GameObject text in station_text)
         {
@@ -72,12 +73,14 @@ public class main_pad_toggle : MonoBehaviour
                     main_pad2.enabled = true;
                     main_pad1.enabled = false;
                     game_data.click += 1;
+                    game_data.help = true;
                 }
                 else if (game_data.click == 2)
                 {
                     main_pad3.enabled = true;
                     main_pad2.enabled = false;
                     game_data.click += 1;
+                    game_data.help = true;
                 }
                 else if (game_data.click == 3)
                 {

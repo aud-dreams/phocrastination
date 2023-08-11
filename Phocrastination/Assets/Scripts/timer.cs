@@ -25,11 +25,13 @@ public class timer : MonoBehaviour
                 if (game_data.timer > 420 && game_data.round_type == 1)      // Day1 over
                 {
                         game_data.Day2 = true;
+                        game_data.first_day2_help = true;
                         StartCoroutine(LoadScene());
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 2)      // Day2 over
                 {
                         game_data.Day3 = true;
+                        game_data.first_day3_help = true;
                         StartCoroutine(LoadScene());
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 3)      // Day3 over

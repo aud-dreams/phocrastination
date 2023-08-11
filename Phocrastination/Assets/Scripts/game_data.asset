@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 162.89411640632898
-  userID: 7d10f9c0-0253-4934-a256-f97bff5676f3
+  timer: 10.85745449271053
+  userID: f0844ccf-8a76-4426-84ff-b22575bb73b5
   allow_timer: 0
   Day1: 0
   Day2: 0
@@ -22,9 +22,9 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 1
   first_day3_help: 0
-  customerTimer: 30.40264860750176
-  dishesTimer: 17.10688350687269
-  clockTimer: 78.40256560151465
+  customerTimer: 49.14254550728947
+  dishesTimer: 19.14254550728947
+  clockTimer: 73.14254550728947
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -34,26 +34,27 @@ MonoBehaviour:
   tutorial_counter: 6
   blink: 1
   tutorial_main: 1
-  crafting_blink: 1
+  crafting_blink: 0
   dishes_blink: 0
   home_on: 0
   cat_blink: 0
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: 2.2485282, y: 2.748529, z: 0}
+  character_position: {x: 1.2020813, y: 3.1020813, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
+  character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
   first_serving_help: 0
-  total_customers: 4
-  current_customers: 1
+  total_customers: 3
+  current_customers: 2
   customers_line:
+  - {fileID: 0}
   - {fileID: 0}
   can_next: 1
   last: 0
-  orders: 3
+  orders: 1
   first_pickup_help: 0
-  ordered_customers: 3
+  ordered_customers: 1
   ordered_line: []
   can_next2: 0
   once: 1
@@ -75,7 +76,7 @@ MonoBehaviour:
   pad_on: 0
   crafting: 1
   first_dishes_help: 0
-  dirty_bowls: 7
+  dirty_bowls: 5
   allow_bowls: 1
   washing: 0
   first_cat_help: 0

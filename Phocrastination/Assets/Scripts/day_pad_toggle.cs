@@ -17,7 +17,13 @@ public class day_pad_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
-        game_data.allow_timer = false;
+
+        if (game_data.first_day1_help || game_data.first_day2_help || game_data.first_day3_help)
+        {
+            game_data.help = true;
+            game_data.allow_timer = false;
+        }
+
     }
 
     private void OnMouseEnter()
@@ -45,6 +51,7 @@ public class day_pad_toggle : MonoBehaviour
                 }
 
                 game_data.allow_timer = true;
+                game_data.help = false;
             }
         }
     }

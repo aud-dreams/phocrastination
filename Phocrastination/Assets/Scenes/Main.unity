@@ -2164,12 +2164,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start:
-  - {fileID: 1400434558}
   - {fileID: 264756261}
   - {fileID: 33156620}
   - {fileID: 1217780166}
   - {fileID: 406121355}
+  day_pads:
+  - {fileID: 1891377964}
+  - {fileID: 1676073618}
+  - {fileID: 1017430653}
+  - {fileID: 232420642}
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  shadow: {fileID: 1400434558}
 --- !u!1 &852089803
 GameObject:
   m_ObjectHideFlags: 0
