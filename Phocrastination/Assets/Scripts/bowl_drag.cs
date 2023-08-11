@@ -6,6 +6,7 @@ public class bowl_drag : MonoBehaviour
 {
     Vector3 mousePositionOffset;
     public game_data game_data;
+    public stat_data stat_data;
     private int dirty_bowls, clean_bowls;
 
     public BoxCollider2D bowl;
@@ -91,6 +92,9 @@ public class bowl_drag : MonoBehaviour
 
                     game_data.dirty_bowls = dirty_bowls;
 
+                    // reset isFirstClick
+                    stat_data.isFirstClick = true;
+
                     if (game_data.dirty_bowls == 0 && game_data.tutorial)
                     {
                         game_data.dishes_blink = true;
@@ -98,9 +102,10 @@ public class bowl_drag : MonoBehaviour
                     }
 
                     // post to database
-                    user.bowl_washed_ts = game_data.timer;
-                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-
+                    if (!game_data.tutorial) {
+                        user.bowl_washed_ts2 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    }
                 }
             }
         }

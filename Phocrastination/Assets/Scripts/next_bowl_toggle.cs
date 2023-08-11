@@ -7,6 +7,7 @@ public class next_bowl_toggle : MonoBehaviour
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    public stat_data stat_data;
     public GameObject[] items;
     public GameObject bowl_complete, next_bowl_button, brothOutline, herbsOutline, noodlesOutline;
 
@@ -55,6 +56,10 @@ public class next_bowl_toggle : MonoBehaviour
                     herbsOutline.SetActive(false);
                     noodlesOutline.SetActive(false);
                     game_data.current_color = Color.black;
+
+                    // reset isFirstDot
+                    stat_data.isFirstDot = true;
+                    
                     game_data.crafting = true;
                     game_data.crafting_continue = true;
                 }

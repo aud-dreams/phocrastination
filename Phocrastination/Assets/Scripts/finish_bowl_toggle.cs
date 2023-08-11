@@ -66,12 +66,14 @@ public class finish_bowl_toggle : MonoBehaviour
                     game_data.constructed_orders++;
 
                     // post to database
-                    user.redo = stat_data.redo;
-                    user.ratio_hit = stat_data.ratio_hit;
-                    stat_data.CalculateTotalTimeDrawing();
-                    user.total_time_drawing = stat_data.total_time_drawing;
-                    user.bowl_created_ts = game_data.timer;
-                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    if (!game_data.tutorial) {
+                        user.redo = stat_data.redo;
+                        user.ratio_hit = stat_data.ratio_hit;
+                        stat_data.CalculateTotalTimeDrawing();
+                        user.total_time_drawing = stat_data.total_time_drawing;
+                        user.bowl_created_ts2 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    }
                 }
             }
         }

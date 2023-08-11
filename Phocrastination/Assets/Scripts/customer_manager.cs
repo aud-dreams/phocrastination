@@ -128,7 +128,10 @@ public class customer_manager : MonoBehaviour
             StartCoroutine(blink(home));
         }
 
-        user.order_collected_ts = game_data.timer;
-        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        // post to database
+        if (!game_data.tutorial) {
+            user.order_collected_ts2 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        }
     }
 }

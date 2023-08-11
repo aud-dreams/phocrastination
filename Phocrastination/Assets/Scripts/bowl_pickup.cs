@@ -6,6 +6,7 @@ using Proyecto26;
 public class bowl_pickup : MonoBehaviour
 {
     public game_data game_data;
+    public stat_data stat_data;
     Vector3 mousePositionOffset;
     private SpriteRenderer render, toggle_render;
     private Renderer bowl_render;
@@ -44,6 +45,13 @@ public class bowl_pickup : MonoBehaviour
         if (game_data.allow_drag)
         {
             mousePositionOffset = transform.position - GetMouseWorldPosition();
+        }
+
+        // first click only
+        if (stat_data.isFirstClick2) {
+            user.order_given_ts1 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+            stat_data.isFirstClick = false;
         }
     }
 
@@ -128,6 +136,9 @@ public class bowl_pickup : MonoBehaviour
             toggle.SetActive(true);
         }
 
+        // reset isFirstClick2
+        stat_data.isFirstClick2 = true;
+
         // if in tutorial, blink home
         if (game_data.tutorial)
         {
@@ -137,7 +148,9 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // post to database
-        user.order_given_ts = game_data.timer;
-        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        if (!game_data.tutorial) {
+            user.order_given_ts2 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        }
     }
 }

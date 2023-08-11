@@ -82,6 +82,12 @@ public class next_customer_toggle : MonoBehaviour
                     game_data.can_next = false;
                     button.SetActive(false);
                     toggle.GetComponent<Renderer>().enabled = false;
+
+                    // post to database
+                    if (!game_data.tutorial) {
+                        user.order_collected_ts1 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    }
                 }
             }
         }
@@ -119,7 +125,10 @@ public class next_customer_toggle : MonoBehaviour
         game_data.orders++;
         game_data.ordered_customers++;
 
-        user.order_collected_ts = game_data.timer;
-        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        // post to database
+        if (!game_data.tutorial) {
+            user.order_collected_ts2 = game_data.timer;
+            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+        }
     }
 }

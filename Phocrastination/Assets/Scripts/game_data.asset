@@ -34,7 +34,7 @@ MonoBehaviour:
   tutorial_counter: 6
   blink: 1
   tutorial_main: 1
-  crafting_blink: 0
+  crafting_blink: 1
   dishes_blink: 0
   home_on: 0
   cat_blink: 0

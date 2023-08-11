@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class serving_toggle : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class serving_toggle : MonoBehaviour
     public GameObject buttonObject, player, text;
     public float proximityThreshold;
     public game_data game_data;
+
+    user_log user = new user_log();
 
     void Start()
     {
@@ -59,6 +62,17 @@ public class serving_toggle : MonoBehaviour
             {
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
+
+                SceneManager.LoadScene("Serving");
+
+                // post to database
+                if (!game_data.tutorial) {
+                    if (game_data.current_customers != 0) {
+                        user.order_collected_ts1 = game_data.timer;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    }
+                }
+                
                 StartCoroutine(LoadScene());
             }
         }
