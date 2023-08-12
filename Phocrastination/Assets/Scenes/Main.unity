@@ -717,6 +717,8 @@ MonoBehaviour:
   - {fileID: 232420642}
   sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   shadow: {fileID: 1400434558}
+  manager: {fileID: 886693596}
+  tutorialHandler: {fileID: 1225048762}
 --- !u!4 &201423566
 Transform:
   m_ObjectHideFlags: 0

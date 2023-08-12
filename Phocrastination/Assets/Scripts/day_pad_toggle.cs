@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class day_pad_toggle : MonoBehaviour
 {
-    public GameObject[] items;
+    public game_data game_data;
     private Renderer render;
     private new Collider collider;
-    public game_data game_data;
+    public GameObject[] items;
+    public GameObject help;
 
     void Start()
     {
@@ -52,6 +53,20 @@ public class day_pad_toggle : MonoBehaviour
 
                 game_data.allow_timer = true;
                 game_data.help = false;
+                help.SetActive(true);
+
+                if (game_data.round_type == 1)
+                {
+                    game_data.first_day1_help = false;
+                }
+                else if (game_data.round_type == 2)
+                {
+                    game_data.first_day2_help = false;
+                }
+                else if (game_data.round_type == 3)
+                {
+                    game_data.first_day3_help = false;
+                }
             }
         }
     }

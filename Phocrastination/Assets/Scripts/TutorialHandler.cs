@@ -13,11 +13,6 @@ public class TutorialHandler : MonoBehaviour
 
     void Start()
     {
-        if (!game_data.tutorial)
-        {
-            manager.SetActive(false);
-            gameObject.SetActive(false);
-        }
         tutorialConfig();
     }
 
