@@ -10,21 +10,19 @@ public class start_main_config : MonoBehaviour
 
     void Update()
     {
-        // turn menu on for first time loading main scene
-        if (game_data.first_main_help || game_data.help)
+        if ((game_data.first_day1_help || game_data.first_day2_help || game_data.first_day3_help) && !game_data.tutorial)       // day pads on
+        {
+            foreach (GameObject item in start) { item.SetActive(false); }
+        }
+        else if (game_data.first_main_help || game_data.help)       // main pads on
         {
             foreach (GameObject item in start) { item.SetActive(true); }
             shadow.SetActive(true);
+        }
+        else    // all pads off
+        {
+            foreach (GameObject item in start) { item.SetActive(false); }
             foreach (GameObject pad in day_pads) { pad.SetActive(false); }
-        }
-        else if ((game_data.first_day1_help || game_data.first_day2_help || game_data.first_day3_help) && !game_data.tutorial)
-        {
-            shadow.SetActive(true);
-            foreach (GameObject item in start) { item.SetActive(false); }
-        }
-        else
-        {
-            foreach (GameObject item in start) { item.SetActive(false); }
             shadow.SetActive(false);
         }
     }

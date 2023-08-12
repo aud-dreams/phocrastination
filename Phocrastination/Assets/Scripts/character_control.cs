@@ -16,8 +16,12 @@ public class character_control : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        transform.position = game_data.character_position;
-        spriteRenderer.sprite = game_data.character_sprite;
+
+        if (!game_data.first_day1_help && !game_data.first_day2_help && !game_data.first_day3_help)
+        {
+            transform.position = game_data.character_position;
+            spriteRenderer.sprite = game_data.character_sprite;
+        }
     }
 
     private void Update()
@@ -27,7 +31,8 @@ public class character_control : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         // Update velocity based on input
-        if (game_data.allow_move) {
+        if (game_data.allow_move)
+        {
             Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized * movementSpeed;
             rb.velocity = movement;
 

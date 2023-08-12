@@ -8,13 +8,20 @@ public class DayHandler : MonoBehaviour
     public stat_data stat_data;
     public GameObject[] items, pads;
     public Sprite sprite;
-    public GameObject shadow;
+    public GameObject shadow, manager, tutorialHandler;
 
     user_log user = new user_log();
 
-    void Start()
+    void Update()
     {
-        if (game_data.Day1)
+        // tutorial stuff off
+        if (!(game_data.round_type == 3))
+        {
+            manager.SetActive(false);
+        }
+        tutorialHandler.SetActive(false);
+
+        if (game_data.Day1 && game_data.help)
         {
             game_data.Day1 = false;
             game_data.clockTimer = 0;
@@ -27,14 +34,14 @@ public class DayHandler : MonoBehaviour
                 pads[0].SetActive(true);
                 pads[1].SetActive(false);
                 pads[2].SetActive(false);
-                game_data.first_day1_help = false;
+                pads[3].SetActive(true);
             }
 
             user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
         }
-        else if (game_data.Day2)
+        else if (game_data.Day2 && game_data.help)
         {
             game_data.Day2 = false;
             game_data.clockTimer = 0;
@@ -47,15 +54,16 @@ public class DayHandler : MonoBehaviour
                 pads[0].SetActive(false);
                 pads[1].SetActive(true);
                 pads[2].SetActive(false);
-                game_data.first_day2_help = false;
+                pads[3].SetActive(true);
             }
 
             user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
         }
-        else if (game_data.Day3)
+        else if (game_data.Day3 && game_data.help)
         {
+            manager.SetActive(true);
             game_data.Day3 = false;
             game_data.clockTimer = 0;
             dayConfig(3, 5, 3);
@@ -67,18 +75,12 @@ public class DayHandler : MonoBehaviour
                 pads[0].SetActive(false);
                 pads[1].SetActive(false);
                 pads[2].SetActive(true);
-                game_data.first_day3_help = false;
+                pads[3].SetActive(true);
             }
 
             user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
-        }
-        else
-        {
-            pads[0].SetActive(false);
-            pads[1].SetActive(false);
-            pads[2].SetActive(false);
         }
     }
 
@@ -91,8 +93,11 @@ public class DayHandler : MonoBehaviour
 
         // global initialization
         game_data.timer = 0;
-        game_data.allow_timer = true;
+        game_data.allow_timer = false;
         game_data.round_type = round;
+        game_data.customerTimer = 60;
+        game_data.dishesTimer = 30;
+        game_data.clockTimer = 0;
 
         // tutorial initialization
         game_data.tutorial_main = true;
