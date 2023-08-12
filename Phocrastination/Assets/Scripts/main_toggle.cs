@@ -119,11 +119,6 @@ public class main_toggle : MonoBehaviour
                     game_data.allow_hand = false;
                     game_data.hand_on = false;
                     game_data.outside_catscene = true;
-                    if (game_data.tutorial)
-                    {
-                        game_data.pet_cat_done = true;
-                        game_data.home_on = false;
-                    }
                 }
 
                 StartCoroutine(LoadScene());

@@ -39,6 +39,7 @@ public class day_pad_toggle : MonoBehaviour
 
     void Update()
     {
+        help.SetActive(false);
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

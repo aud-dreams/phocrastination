@@ -14,11 +14,14 @@ public class DayHandler : MonoBehaviour
     void Update()
     {
         // tutorial stuff off
-        if (!(game_data.round_type == 3))
+        if (!(game_data.round_type == 3) && !(game_data.round_type == 0))
         {
             manager.SetActive(false);
         }
-        tutorialHandler.SetActive(false);
+        if (!(game_data.round_type == 0))
+        {
+            tutorialHandler.SetActive(false);
+        }
 
         if (game_data.Day1 && game_data.help)
         {

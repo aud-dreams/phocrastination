@@ -37,7 +37,6 @@ public class GameHandler : MonoBehaviour
         game_data.make_order_done = false;
         game_data.drop_order_done = false;
         game_data.wash_dishes_done = false;
-        game_data.pet_cat_done = false;
         game_data.tutorial_counter = 0;
         game_data.blink = false;
         game_data.tutorial_main = false;
@@ -45,6 +44,9 @@ public class GameHandler : MonoBehaviour
         game_data.dishes_blink = false;
         game_data.home_on = false;
         game_data.cat_blink = true;
+
+        // day3
+        game_data.day3_counter = 0;
 
         // main initialization
         game_data.first_main_help = true;

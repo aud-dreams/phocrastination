@@ -27,7 +27,6 @@ public class game_data : ScriptableObject
     public bool make_order_done;
     public bool drop_order_done;
     public bool wash_dishes_done;
-    public bool pet_cat_done;
     public int tutorial_counter;
     public bool blink;
     public bool tutorial_main;
@@ -35,6 +34,9 @@ public class game_data : ScriptableObject
     public bool dishes_blink;
     public bool home_on;
     public bool cat_blink;
+
+    // day3
+    public int day3_counter;
 
     // main
     public bool first_main_help;
