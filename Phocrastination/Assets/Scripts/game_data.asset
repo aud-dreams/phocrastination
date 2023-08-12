@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 5.39777730347123
-  userID: ebee5577-4a4c-4f4c-a716-7f1357fde2a4
-  allow_timer: 1
+  timer: 0.006879399996250868
+  userID: 9a0272f8-c8b0-43ee-ad92-39fd751f132a
+  allow_timer: 0
   Day1: 0
   Day2: 0
   Day3: 0
@@ -22,9 +22,10 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 54.60222269652877
-  dishesTimer: 24.60222269652877
-  clockTimer: 78.60222269652877
+  customerTimer: 59.99312060000375
+  dishesTimer: 29.99312060000375
+  clockTimer: 83.99312060000375
+  clock_counter: 1
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -37,6 +38,7 @@ MonoBehaviour:
   dishes_blink: 0
   home_on: 0
   cat_blink: 1
+  day3_counter: 0
   first_main_help: 0
   help: 0
   click: 1

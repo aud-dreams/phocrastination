@@ -29,6 +29,7 @@ public class GameHandler : MonoBehaviour
         game_data.customerTimer = 60;
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
+        game_data.clock_counter = 0;
         //game_data.toggle_spawn = false;
 
         // tutorial initialization
@@ -47,6 +48,8 @@ public class GameHandler : MonoBehaviour
 
         // day3
         game_data.day3_counter = 0;
+        game_data.next_text1 = false;
+        game_data.next_text2 = false;
 
         // main initialization
         game_data.first_main_help = true;

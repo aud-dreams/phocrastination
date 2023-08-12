@@ -67,6 +67,7 @@ public class day_pad_toggle : MonoBehaviour
                 else if (game_data.round_type == 3)
                 {
                     game_data.first_day3_help = false;
+                    game_data.allow_timer = false;
                 }
             }
         }
