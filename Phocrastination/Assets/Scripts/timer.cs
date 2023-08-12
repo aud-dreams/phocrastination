@@ -29,15 +29,19 @@ public class timer : MonoBehaviour
 
                 if (game_data.timer > 420 && game_data.round_type == 1)      // Day1 over
                 {
-                        user.order_collected_rem = game_data.current_customers;
-                        user.order_collected_tot = game_data.total_customers;
-                        user.order_given_rem = game_data.constructed_orders;
-                        user.order_given_tot = game_data.total_customers;
-                        user.bowl_created_rem = game_data.orders;
-                        user.bowl_created_tot = game_data.total_customers;
-                        user.bowl_washed_rem = game_data.dirty_bowls;
-                        user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        if(stat_data.firstLoad == true)
+                        {
+                                user.order_collected_rem = game_data.current_customers;
+                                user.order_collected_tot = game_data.total_customers;
+                                user.order_given_rem = game_data.constructed_orders;
+                                user.order_given_tot = game_data.total_customers;
+                                user.bowl_created_rem = game_data.orders;
+                                user.bowl_created_tot = game_data.total_customers;
+                                user.bowl_washed_rem = game_data.dirty_bowls;
+                                user.bowl_washed_tot = stat_data.dirty_bowls_tot;
+                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                stat_data.firstLoad = false;
+                        }
 
                         game_data.Day2 = true;
                         game_data.first_day2_help = true;
@@ -45,15 +49,19 @@ public class timer : MonoBehaviour
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 2)      // Day2 over
                 {
-                        user.order_collected_rem = game_data.current_customers;
-                        user.order_collected_tot = game_data.total_customers;
-                        user.order_given_rem = game_data.constructed_orders;
-                        user.order_given_tot = game_data.total_customers;
-                        user.bowl_created_rem = game_data.orders;
-                        user.bowl_created_tot = game_data.total_customers;
-                        user.bowl_washed_rem = game_data.dirty_bowls;
-                        user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        if(stat_data.firstLoad == true)
+                        {
+                                user.order_collected_rem = game_data.current_customers;
+                                user.order_collected_tot = game_data.total_customers;
+                                user.order_given_rem = game_data.constructed_orders;
+                                user.order_given_tot = game_data.total_customers;
+                                user.bowl_created_rem = game_data.orders;
+                                user.bowl_created_tot = game_data.total_customers;
+                                user.bowl_washed_rem = game_data.dirty_bowls;
+                                user.bowl_washed_tot = stat_data.dirty_bowls_tot;
+                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                stat_data.firstLoad = false;
+                        }
 
                         game_data.Day3 = true;
                         game_data.first_day3_help = true;
@@ -61,16 +69,20 @@ public class timer : MonoBehaviour
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 3)      // Day3 over
                 {
-                        user.order_collected_rem = game_data.current_customers;
-                        user.order_collected_tot = game_data.total_customers;
-                        user.order_given_rem = game_data.constructed_orders;
-                        user.order_given_tot = game_data.total_customers;
-                        user.bowl_created_rem = game_data.orders;
-                        user.bowl_created_tot = game_data.total_customers;
-                        user.bowl_washed_rem = game_data.dirty_bowls;
-                        user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-
+                        if(stat_data.firstLoad == true)
+                        {
+                                user.order_collected_rem = game_data.current_customers;
+                                user.order_collected_tot = game_data.total_customers;
+                                user.order_given_rem = game_data.constructed_orders;
+                                user.order_given_tot = game_data.total_customers;
+                                user.bowl_created_rem = game_data.orders;
+                                user.bowl_created_tot = game_data.total_customers;
+                                user.bowl_washed_rem = game_data.dirty_bowls;
+                                user.bowl_washed_tot = stat_data.dirty_bowls_tot;
+                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                stat_data.firstLoad = false;
+                        }
+                        
                         Application.Quit();
                 }
 

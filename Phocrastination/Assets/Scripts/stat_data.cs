@@ -7,6 +7,7 @@ public class stat_data : ScriptableObject
 {
 
     // global
+    public bool firstLoad = true;
 
     // main
 
@@ -18,10 +19,29 @@ public class stat_data : ScriptableObject
     // crafting station
     public int redo;
     public float ratio_hit;
+    public bool has_start_drawing = true;
     public double start_drawing, end_drawing;
     public double total_time_drawing;
 
     public bool isFirstDot = true;
+
+    public void IfZeroRedo() 
+    {
+        // flag for zero redos
+        if (redo == 0)
+        {
+            redo = -1;
+        }
+    }
+
+    public void IfZeroRatioHit()
+    {
+        // flag for zero ratios
+        if (ratio_hit == 0)
+        {
+            ratio_hit = -1;
+        }
+    }
 
     public void CalculateTotalTimeDrawing() 
     {
@@ -33,8 +53,8 @@ public class stat_data : ScriptableObject
     public int dirty_bowls;
     public int dirty_bowls_tot;
 
-    public void CalcualteTotalDirtyBowls() {
-        
+    public void CalcualteTotalDirtyBowls() 
+    {
         dirty_bowls_tot = dirty_bowls + 7;
     }
 

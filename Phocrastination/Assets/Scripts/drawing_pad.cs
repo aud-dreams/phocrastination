@@ -19,7 +19,6 @@ public class drawing_pad : MonoBehaviour
     public int total_dots;
     public int hit_dots;
     public float ratio_hit;
-    public bool has_start_drawing;
 
     user_log user = new user_log();
 
@@ -37,10 +36,12 @@ public class drawing_pad : MonoBehaviour
             isDrawing = true;
 
             // get start drawing time ONCE
-            if (!has_start_drawing) {
-                has_start_drawing = true;
+            if (stat_data.has_start_drawing) {
                 stat_data.start_drawing = game_data.timer;
+
+                stat_data.has_start_drawing = false;
             }
+
         } else if (Input.GetMouseButtonUp(0)) {
             isDrawing = false;
         }

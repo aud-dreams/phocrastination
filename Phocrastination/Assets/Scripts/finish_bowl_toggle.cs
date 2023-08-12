@@ -68,7 +68,9 @@ public class finish_bowl_toggle : MonoBehaviour
                     // post to database
                     if (!game_data.tutorial) {
                         user.redo = stat_data.redo;
+                        stat_data.IfZeroRedo();
                         user.ratio_hit = stat_data.ratio_hit;
+                        stat_data.IfZeroRatioHit();
                         stat_data.CalculateTotalTimeDrawing();
                         user.total_time_drawing = stat_data.total_time_drawing;
                         user.bowl_created_ts2 = game_data.timer;
