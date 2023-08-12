@@ -11,6 +11,14 @@ public class clock : MonoBehaviour
     void Start()
     {
         clock_sprite = GetComponent<SpriteRenderer>();
+        if (!(game_data.clock_counter == 0))
+        {
+            clock_sprite.sprite = hours[game_data.clock_counter - 1];
+        }
+        else
+        {
+            clock_sprite.sprite = hours[game_data.clock_counter];
+        }
     }
 
     void Update()
@@ -18,16 +26,13 @@ public class clock : MonoBehaviour
         if (game_data.allow_timer && !game_data.tutorial)
         {
             game_data.clockTimer -= Time.deltaTime;
-        }
 
-        for (int i = 0; i < 5; i++)
-        {
             if (game_data.clockTimer <= 0)      // every 84 seconds (1/5 of 7 mins), switch to next hour sprite (5 sprites to switch to in total)
             {
-                clock_sprite.sprite = hours[i];
+                clock_sprite.sprite = hours[game_data.clock_counter];
+                game_data.clock_counter++;
                 game_data.clockTimer = 84;
             }
         }
-
     }
 }

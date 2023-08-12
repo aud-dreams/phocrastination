@@ -19,6 +19,7 @@ public class game_data : ScriptableObject
     public double customerTimer;
     public double dishesTimer;
     public double clockTimer;
+    public int clock_counter;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial
@@ -37,6 +38,8 @@ public class game_data : ScriptableObject
 
     // day3
     public int day3_counter;
+    public bool next_text1;
+    public bool next_text2;
 
     // main
     public bool first_main_help;

@@ -101,6 +101,7 @@ public class DayHandler : MonoBehaviour
         game_data.customerTimer = 60;
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
+        game_data.clock_counter = 0;
 
         // tutorial initialization
         game_data.tutorial_main = true;
