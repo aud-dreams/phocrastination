@@ -5,6 +5,7 @@ using UnityEngine;
 public class DayHandler : MonoBehaviour
 {
     public game_data game_data;
+    public stat_data stat_data;
     public GameObject[] items, pads;
     public Sprite sprite;
     public GameObject shadow;
@@ -30,6 +31,8 @@ public class DayHandler : MonoBehaviour
             }
 
             user.game_status = game_data.round_type;
+            stat_data.dirty_bowls = game_data.dirty_bowls;
+            stat_data.CalcualteTotalDirtyBowls();
         }
         else if (game_data.Day2)
         {
@@ -48,7 +51,8 @@ public class DayHandler : MonoBehaviour
             }
 
             user.game_status = game_data.round_type;
-
+            stat_data.dirty_bowls = game_data.dirty_bowls;
+            stat_data.CalcualteTotalDirtyBowls();
         }
         else if (game_data.Day3)
         {
@@ -67,6 +71,8 @@ public class DayHandler : MonoBehaviour
             }
 
             user.game_status = game_data.round_type;
+            stat_data.dirty_bowls = game_data.dirty_bowls;
+            stat_data.CalcualteTotalDirtyBowls();
         }
         else
         {

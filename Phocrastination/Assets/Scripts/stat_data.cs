@@ -30,6 +30,13 @@ public class stat_data : ScriptableObject
 
     // dishes station
     public bool isFirstClick = true;
+    public int dirty_bowls;
+    public int dirty_bowls_tot;
+
+    public void CalcualteTotalDirtyBowls() {
+        
+        dirty_bowls_tot = dirty_bowls + 7;
+    }
 
     // cat station
     /* retrieve timestamp from cat sound & cat station entered, if <20 seconds, apply distractability weight */
