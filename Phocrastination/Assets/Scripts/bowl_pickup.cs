@@ -47,11 +47,14 @@ public class bowl_pickup : MonoBehaviour
             mousePositionOffset = transform.position - GetMouseWorldPosition();
         }
 
-        // first click only
-        if (stat_data.isFirstClick2) {
-            user.order_given_ts1 = game_data.timer;
-            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
-            stat_data.isFirstClick = false;
+        // post to database
+        if (!game_data.tutorial) {
+            // first click only
+            if (stat_data.isFirstClick2) {
+                user.order_given_ts1 = game_data.timer;
+                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                stat_data.isFirstClick2 = false;
+            }
         }
     }
 
