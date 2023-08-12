@@ -182,31 +182,6 @@ public class TutorialHandler : MonoBehaviour
                 }
                 else if (game_data.tutorial_counter == 5 && game_data.wash_dishes_done)
                 {
-                    // pet the cat
-                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                    manager_text[game_data.tutorial_counter].SetActive(true);
-
-                    // restrict toggles
-                    for (int i = 0; i < 5; i++)
-                    {
-                        if (i == game_data.tutorial_counter - 1)
-                        {
-                            toggles[i].SetActive(true);
-                        }
-                        else
-                        {
-                            toggles[i].SetActive(false);
-                        }
-                    }
-
-                    // blink cat toggle
-                    game_data.blink = true;
-                    StartCoroutine(blink(toggles[game_data.tutorial_counter - 1]));
-
-                    game_data.tutorial_counter++;
-                }
-                else if (game_data.tutorial_counter == 6 && game_data.pet_cat_done)
-                {
                     // good job
                     manager_text[game_data.tutorial_counter - 1].SetActive(false);
                     manager_text[game_data.tutorial_counter].SetActive(true);
