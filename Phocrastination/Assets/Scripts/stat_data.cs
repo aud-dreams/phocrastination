@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "stat_data", menuName = "stat_data")]
@@ -60,5 +61,20 @@ public class stat_data : ScriptableObject
 
     // cat station
     /* retrieve timestamp from cat sound & cat station entered, if <20 seconds, apply distractability weight */
-    public bool distractability_bool = true;
+    public double start_cat;
+    public double cat_cue = 300;    // temp
+    public bool distractability_bool = false;
+    public double sec_between;
+
+    public void CalculateDistractability()
+    {
+        sec_between = Math.Abs(start_cat - cat_cue);
+        if (sec_between <= 20)
+        {
+            distractability_bool = true;
+        }
+    }
+
+    public bool firstLoad2 = true;
+    public bool firstLoad3 = true;   
 }

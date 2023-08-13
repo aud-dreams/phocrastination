@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Proyecto26;
 
 public class main_toggle : MonoBehaviour
 {
     private Renderer render;
     private new Collider collider;
     public game_data game_data;
+    public stat_data stat_data;
     private SpriteRenderer toggle_render;
     public GameObject home;
+
+    user_log user = new user_log();
 
     private void Start()
     {
@@ -119,6 +123,20 @@ public class main_toggle : MonoBehaviour
                     game_data.allow_hand = false;
                     game_data.hand_on = false;
                     game_data.outside_catscene = true;
+
+                    // post to database
+                    if (!game_data.tutorial) {
+                        // first load
+                        if (stat_data.firstLoad3) {
+                            user.cat_scene_ts2 = game_data.timer;
+                            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+
+                            stat_data.firstLoad3 = false;
+                        }
+                    }
+
+                    stat_data.firstLoad2 = true;
+                    stat_data.firstLoad3 = true;
                 }
 
                 StartCoroutine(LoadScene());

@@ -68,9 +68,20 @@ public class cat_toggle : MonoBehaviour
 
                 // post to database
                 if (!game_data.tutorial) {
-                    user.cat_scene_ts = game_data.timer;
-                    user.distractability_bool = stat_data.distractability_bool;
-                    RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                    // first load
+                    if (stat_data.firstLoad2) {
+                        user.cat_scene_ts1 = game_data.timer;
+                        stat_data.start_cat = game_data.timer;
+
+                        // temp
+                        user.cat_cue = stat_data.cat_cue;
+                        
+                        stat_data.CalculateDistractability();
+                        user.distractability_bool = stat_data.distractability_bool;
+                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+
+                        stat_data.firstLoad2 = false;
+                    }
                 }
             }
         }

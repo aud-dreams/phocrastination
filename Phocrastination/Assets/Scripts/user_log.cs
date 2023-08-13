@@ -8,7 +8,6 @@ public class user_log
     public float global_timer;  // logged at end of day
     public int game_status;
 
-
     // main
 
     // serving station
@@ -40,6 +39,8 @@ public class user_log
     public int bowl_washed_tot;
 
     // cat station
-    public double cat_scene_ts;  // when entered
+    public double cat_scene_ts1;
+    public double cat_scene_ts2;
+    public double cat_cue;
     public bool distractability_bool;
 }

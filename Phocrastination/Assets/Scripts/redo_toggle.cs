@@ -31,7 +31,6 @@ public class redo_toggle : MonoBehaviour
     }
 
     public void clear() {
-        stat_data.redo++;
         GameObject[] dots = GameObject.FindGameObjectsWithTag("Dot");
         foreach (GameObject dot in dots) { 
             if (dot != mainDot.gameObject) {    // don't destroy main dot
@@ -46,7 +45,11 @@ public class redo_toggle : MonoBehaviour
             RaycastHit hit;
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                if (!game_data.help) { clear(); }
+
+                if (!game_data.help) { 
+                    clear();
+                    stat_data.redo++;
+                }
             }
         }
     }
