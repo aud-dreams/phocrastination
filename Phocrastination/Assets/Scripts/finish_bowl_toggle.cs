@@ -67,16 +67,21 @@ public class finish_bowl_toggle : MonoBehaviour
 
                     // post to database
                     if (!game_data.tutorial) {
-                        user.redo = stat_data.redo;
                         stat_data.IfZeroRedo();
-                        user.ratio_hit = stat_data.ratio_hit;
+                        user.redo = stat_data.redo;
+
                         stat_data.IfZeroRatioHit();
+                        user.ratio_hit = stat_data.ratio_hit;
+                        
                         stat_data.CalculateTotalTimeDrawing();
                         user.total_time_drawing = stat_data.total_time_drawing;
+                        
                         user.bowl_created_ts2 = game_data.timer;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }
 
+                    // reset flag
+                    stat_data.isFirstDot = true;
                     // reset redos
                     stat_data.redo = 0;
                 }

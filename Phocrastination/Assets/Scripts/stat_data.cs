@@ -6,7 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "stat_data", menuName = "stat_data")]
 public class stat_data : ScriptableObject
 {
-
     // global
     public bool firstLoad = true;
 

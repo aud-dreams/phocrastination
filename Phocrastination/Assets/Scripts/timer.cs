@@ -39,7 +39,7 @@ public class timer : MonoBehaviour
                                 user.bowl_created_tot = game_data.total_customers;
                                 user.bowl_washed_rem = game_data.dirty_bowls;
                                 user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
 
@@ -59,7 +59,7 @@ public class timer : MonoBehaviour
                                 user.bowl_created_tot = game_data.total_customers;
                                 user.bowl_washed_rem = game_data.dirty_bowls;
                                 user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
 
@@ -79,7 +79,7 @@ public class timer : MonoBehaviour
                                 user.bowl_created_tot = game_data.total_customers;
                                 user.bowl_washed_rem = game_data.dirty_bowls;
                                 user.bowl_washed_tot = stat_data.dirty_bowls_tot;
-                                RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                                RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
                         

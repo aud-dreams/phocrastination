@@ -129,7 +129,7 @@ public class main_toggle : MonoBehaviour
                         // first load
                         if (stat_data.firstLoad3) {
                             user.cat_scene_ts2 = game_data.timer;
-                            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
 
                             stat_data.firstLoad3 = false;
                         }

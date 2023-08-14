@@ -113,7 +113,7 @@ public class drawing_pad : MonoBehaviour
                     if (stat_data.isFirstDot)
                     {
                         user.bowl_created_ts1 = game_data.timer;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                         stat_data.isFirstDot = false;
                     }
                 }
