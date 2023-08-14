@@ -149,6 +149,7 @@ public class DayHandler : MonoBehaviour
         game_data.counter = 0;
         game_data.pad_on = false;
         game_data.crafting = true;
+        game_data.is_drawing = false;
 
         // dishes initialization
         game_data.first_dishes_help = false;

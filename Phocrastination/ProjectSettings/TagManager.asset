@@ -23,6 +23,7 @@ TagManager:
   - Pickup
   - Music
   - Cat_Music
+  - Jingle_Music
   layers:
   - Default
   - TransparentFX

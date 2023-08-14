@@ -84,6 +84,7 @@ public class game_data : ScriptableObject
     public int counter;
     public bool pad_on;
     public bool crafting;
+    public bool is_drawing;
 
     // dishes station
     public bool first_dishes_help;

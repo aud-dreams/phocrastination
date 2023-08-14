@@ -13,6 +13,8 @@ public class bowl_pickup : MonoBehaviour
     public GameObject bowl, button, toggle, sparkles, home;
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
     public EdgeCollider2D wall;
+    public AudioSource src;
+    public AudioClip sparkle;
 
     user_log user = new user_log();
 
@@ -31,6 +33,8 @@ public class bowl_pickup : MonoBehaviour
         {
             bowl.SetActive(false);
         }
+
+        src.clip = sparkle;
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -48,9 +52,11 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // post to database
-        if (!game_data.tutorial) {
+        if (!game_data.tutorial)
+        {
             // first click only
-            if (stat_data.isFirstClick2) {
+            if (stat_data.isFirstClick2)
+            {
                 user.order_given_ts1 = game_data.timer;
                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                 stat_data.isFirstClick2 = false;
@@ -114,6 +120,7 @@ public class bowl_pickup : MonoBehaviour
 
         // if customer recieves bowl, sparkles + leaves
         sparkles.SetActive(true);
+        src.Play();
         yield return new WaitForSeconds(3f);
         sparkles.SetActive(false);
 
@@ -151,7 +158,8 @@ public class bowl_pickup : MonoBehaviour
         }
 
         // post to database
-        if (!game_data.tutorial) {
+        if (!game_data.tutorial)
+        {
             user.order_given_ts2 = game_data.timer;
             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
         }

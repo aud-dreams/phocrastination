@@ -3,6 +3,27 @@ using UnityEngine;
 public class UpdateHandler : MonoBehaviour
 {
     public game_data game_data;
+    public AudioSource src;
+    public AudioClip jingle;
+
+    private void Awake()
+    {
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("Jingle_Music");
+
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        src.clip = jingle;
+    }
 
     private void Update()
     {
@@ -21,6 +42,8 @@ public class UpdateHandler : MonoBehaviour
             game_data.total_customers += 1;
             game_data.current_customers += 1;
             game_data.customerTimer = 60;
+
+            src.Play();
         }
 
         // Update dishes timer

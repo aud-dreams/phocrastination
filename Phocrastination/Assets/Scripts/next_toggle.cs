@@ -115,6 +115,7 @@ public class next_toggle : MonoBehaviour
                         game_data.allow_drawing = false;
                         game_data.pad_on = false;
                         game_data.crafting_continue = false;
+                        game_data.is_drawing = false;
 
                         // turn cursor back on
                         game_data.allow_paintbrush = false;

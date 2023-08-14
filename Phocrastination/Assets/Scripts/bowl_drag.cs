@@ -62,7 +62,7 @@ public class bowl_drag : MonoBehaviour
                 collisions++;
 
                 // check if washing is complete
-                if (collisions >= 30)
+                if (collisions >= 20)
                 {
                     // reset
                     collisions = 0;

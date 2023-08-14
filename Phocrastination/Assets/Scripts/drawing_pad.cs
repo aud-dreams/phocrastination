@@ -6,7 +6,6 @@ using Proyecto26;
 public class drawing_pad : MonoBehaviour
 {
     // drawing capability only when drawing_pad is active
-    private bool isDrawing = false;
     public Transform baseDot;
     private BoxCollider2D drawingBounds;
     public game_data game_data;
@@ -20,18 +19,12 @@ public class drawing_pad : MonoBehaviour
     public int hit_dots;
     public float ratio_hit;
 
-    // public AudioSource src;
-    // public AudioClip paint;
-
     user_log user = new user_log();
 
     void Start()
     {
         drawingBounds = GetComponent<BoxCollider2D>();
         game_data.pad_on = true;
-
-        // src.clip = paint;
-        // src.loop = true;
     }
 
     void Update()
@@ -40,7 +33,7 @@ public class drawing_pad : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            isDrawing = true;
+            game_data.is_drawing = true;
 
             // get start drawing time ONCE
             if (stat_data.has_start_drawing)
@@ -53,18 +46,16 @@ public class drawing_pad : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            isDrawing = false;
+            game_data.is_drawing = false;
         }
 
-        if (isDrawing && game_data.allow_drawing && !game_data.help)
+        if (game_data.is_drawing && game_data.allow_drawing && !game_data.help)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (drawingBounds.bounds.Contains(mousePosition))
             {   // only allow drawing within bounds
                 Instantiate(baseDot, mousePosition, baseDot.rotation).GetComponent<SpriteRenderer>().color = game_data.current_color;
-
-                //src.Play();
 
                 // count total dots
                 if (game_data.current_color == Color.black)
