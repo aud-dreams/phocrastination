@@ -5,7 +5,7 @@ using UnityEngine;
 public class user_log
 {
     // global
-    public float global_timer;  // logged at end of day
+    public double global_timer;  // logged at end of day
     public int game_status;
 
     // main
