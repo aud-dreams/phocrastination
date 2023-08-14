@@ -157,7 +157,14 @@ public class DayHandler : MonoBehaviour
         game_data.washing = false;
 
         // cat initialization
-        game_data.first_cat_help = false;
+        if (game_data.round_type == 1)
+        {
+            game_data.first_cat_help = true;
+        }
+        else
+        {
+            game_data.first_cat_help = false;
+        }
         game_data.allow_hand = true;
         game_data.hand_on = true;
         game_data.progress_position = new Vector3(-1.16f, 3.79f, 0f);

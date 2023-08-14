@@ -21,6 +21,7 @@ TagManager:
   - Dishes
   - Serving
   - Pickup
+  - Music
   layers:
   - Default
   - TransparentFX

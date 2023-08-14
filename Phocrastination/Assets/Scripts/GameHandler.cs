@@ -99,6 +99,7 @@ public class GameHandler : MonoBehaviour
         game_data.dirty_bowls = 2;
         game_data.allow_bowls = false;
         game_data.washing = false;
+        game_data.bubbles = false;
 
         // cat initialization
         game_data.first_cat_help = true;

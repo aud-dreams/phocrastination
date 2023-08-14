@@ -55,13 +55,14 @@ public class bowl_drag : MonoBehaviour
     {
         if (sink.CompareTag("collider"))
         {
+            game_data.bubbles = true;
             // if bowl in sink, increment collisions
             if (washing_complete == false)
             {
                 collisions++;
 
                 // check if washing is complete
-                if (collisions >= 20)
+                if (collisions >= 30)
                 {
                     // reset
                     collisions = 0;
@@ -83,6 +84,8 @@ public class bowl_drag : MonoBehaviour
                     gameObject.SetActive(false);
                     game_data.washing = false;
 
+                    game_data.bubbles = false;
+
                     // convert to dirty
                     render.sprite = dirty_bowl;
 
@@ -102,7 +105,8 @@ public class bowl_drag : MonoBehaviour
                     }
 
                     // post to database
-                    if (!game_data.tutorial) {
+                    if (!game_data.tutorial)
+                    {
                         user.bowl_washed_ts2 = game_data.timer;
                         RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
                     }

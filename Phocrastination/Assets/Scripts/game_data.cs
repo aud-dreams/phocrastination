@@ -89,6 +89,7 @@ public class game_data : ScriptableObject
     public int dirty_bowls;
     public bool allow_bowls;
     public bool washing;
+    public bool bubbles;
 
     // cat station
     public bool first_cat_help;
