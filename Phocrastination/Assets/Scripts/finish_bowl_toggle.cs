@@ -67,6 +67,8 @@ public class finish_bowl_toggle : MonoBehaviour
 
                     // post to database
                     if (!game_data.tutorial) {
+                        user.game_status = game_data.round_type;
+
                         stat_data.IfZeroRedo();
                         user.redo = stat_data.redo;
 

@@ -40,7 +40,6 @@ public class DayHandler : MonoBehaviour
                 pads[3].SetActive(true);
             }
 
-            user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
         }
@@ -60,7 +59,6 @@ public class DayHandler : MonoBehaviour
                 pads[3].SetActive(true);
             }
 
-            user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
         }
@@ -81,7 +79,6 @@ public class DayHandler : MonoBehaviour
                 pads[3].SetActive(true);
             }
 
-            user.game_status = game_data.round_type;
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
         }

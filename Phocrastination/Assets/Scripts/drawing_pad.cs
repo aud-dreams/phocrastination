@@ -103,6 +103,7 @@ public class drawing_pad : MonoBehaviour
                 {
                     if (stat_data.isFirstDot)
                     {
+                        user.game_status = game_data.round_type;
                         user.bowl_created_ts1 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                         stat_data.isFirstDot = false;

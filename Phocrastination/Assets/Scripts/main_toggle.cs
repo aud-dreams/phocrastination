@@ -128,6 +128,7 @@ public class main_toggle : MonoBehaviour
                     if (!game_data.tutorial) {
                         // first load
                         if (stat_data.firstLoad3) {
+                            user.game_status = game_data.round_type;
                             user.cat_scene_ts2 = game_data.timer;
                             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
 

@@ -68,6 +68,7 @@ public class serving_toggle : MonoBehaviour
                 // post to database
                 if (!game_data.tutorial) {
                     if (game_data.current_customers != 0) {
+                        user.game_status = game_data.round_type;
                         user.order_collected_ts1 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }

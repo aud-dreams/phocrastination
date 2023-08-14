@@ -70,6 +70,8 @@ public class cat_toggle : MonoBehaviour
                 if (!game_data.tutorial) {
                     // first load
                     if (stat_data.firstLoad2) {
+                        user.game_status = game_data.round_type;
+                        
                         user.cat_scene_ts1 = game_data.timer;
                         stat_data.start_cat = game_data.timer;
 

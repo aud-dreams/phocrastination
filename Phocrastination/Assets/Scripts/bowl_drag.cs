@@ -107,6 +107,7 @@ public class bowl_drag : MonoBehaviour
                     // post to database
                     if (!game_data.tutorial)
                     {
+                        user.game_status = game_data.round_type;
                         user.bowl_washed_ts2 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }

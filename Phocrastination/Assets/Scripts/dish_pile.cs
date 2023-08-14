@@ -48,6 +48,7 @@ public class dish_pile : MonoBehaviour
                     // first click only
                     if (!game_data.tutorial) {
                         if (stat_data.isFirstClick) {
+                            user.game_status = game_data.round_type;
                             user.bowl_washed_ts1 = game_data.timer;
                             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                             stat_data.isFirstClick = false;

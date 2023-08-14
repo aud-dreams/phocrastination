@@ -57,6 +57,7 @@ public class bowl_pickup : MonoBehaviour
             // first click only
             if (stat_data.isFirstClick2)
             {
+                user.game_status = game_data.round_type;
                 user.order_given_ts1 = game_data.timer;
                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                 stat_data.isFirstClick2 = false;
@@ -160,6 +161,7 @@ public class bowl_pickup : MonoBehaviour
         // post to database
         if (!game_data.tutorial)
         {
+            user.game_status = game_data.round_type;
             user.order_given_ts2 = game_data.timer;
             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
         }
