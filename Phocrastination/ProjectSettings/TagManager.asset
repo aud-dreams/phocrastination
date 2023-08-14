@@ -22,6 +22,7 @@ TagManager:
   - Serving
   - Pickup
   - Music
+  - Cat_Music
   layers:
   - Default
   - TransparentFX

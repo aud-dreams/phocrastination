@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: game_data
   m_EditorClassIdentifier: 
   timer: 0
-  userID: e8ae2539-a1fd-44fe-bb65-998290a70973
-  allow_timer: 1
+  userID: c3fedb02-2875-4218-bbb1-838cf5332362
+  db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
+  allow_timer: 0
   Day1: 0
   Day2: 0
   Day3: 0
@@ -28,15 +29,15 @@ MonoBehaviour:
   clock_counter: 0
   tutorial: 1
   take_order_done: 1
-  make_order_done: 1
-  drop_order_done: 1
+  make_order_done: 0
+  drop_order_done: 0
   wash_dishes_done: 0
-  tutorial_counter: 5
-  blink: 1
+  tutorial_counter: 3
+  blink: 0
   tutorial_main: 1
   crafting_blink: 0
   dishes_blink: 0
-  home_on: 1
+  home_on: 0
   cat_blink: 1
   day3_counter: 0
   next_text1: 0
@@ -44,7 +45,7 @@ MonoBehaviour:
   first_main_help: 0
   help: 0
   click: 3
-  character_position: {x: -0.4640975, y: -1.3748304, z: 0}
+  character_position: {x: -5.7914233, y: 0.50185025, z: 0}
   allow_move: 1
   character_sprite: {fileID: 21300000, guid: c0ec3bfcd56e4d2438404bcc31e06066, type: 3}
   first_serving_help: 0
@@ -53,34 +54,34 @@ MonoBehaviour:
   customers_line: []
   can_next: 0
   last: 0
-  orders: 2
-  first_pickup_help: 0
-  ordered_customers: 0
+  orders: 1
+  first_pickup_help: 1
+  ordered_customers: 1
   ordered_line: []
   can_next2: 0
   once: 1
-  once2: 0
+  once2: 1
   constructed_orders: 0
-  allow_drag: 1
+  allow_drag: 0
   last2: 0
-  first_crafting_help: 0
-  crafting_continue: 1
+  first_crafting_help: 1
+  crafting_continue: 0
   current_color: {r: 0, g: 0, b: 0, a: 1}
   beef_inside: 0
   broth_inside: 0
   herbs_inside: 0
   noodles_inside: 0
-  allow_drawing: 1
-  allow_paintbrush: 1
+  allow_drawing: 0
+  allow_paintbrush: 0
   bowl_complete: 0
   counter: 0
   pad_on: 1
   crafting: 1
-  first_dishes_help: 0
+  first_dishes_help: 1
   dirty_bowls: 2
-  allow_bowls: 1
-  washing: 1
-  bubbles: 1
+  allow_bowls: 0
+  washing: 0
+  bubbles: 0
   first_cat_help: 1
   allow_hand: 0
   hand_on: 0
