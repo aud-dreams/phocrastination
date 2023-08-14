@@ -78,7 +78,7 @@ public class cat_toggle : MonoBehaviour
                         
                         stat_data.CalculateDistractability();
                         user.distractability_bool = stat_data.distractability_bool;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
 
                         stat_data.firstLoad2 = false;
                     }

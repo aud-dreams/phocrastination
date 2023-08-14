@@ -104,7 +104,7 @@ public class bowl_drag : MonoBehaviour
                     // post to database
                     if (!game_data.tutorial) {
                         user.bowl_washed_ts2 = game_data.timer;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }
                 }
             }

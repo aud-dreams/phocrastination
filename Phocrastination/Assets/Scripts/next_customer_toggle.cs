@@ -86,7 +86,7 @@ public class next_customer_toggle : MonoBehaviour
                     // post to database
                     if (!game_data.tutorial) {
                         user.order_collected_ts1 = game_data.timer;
-                        RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }
                 }
             }
@@ -128,7 +128,7 @@ public class next_customer_toggle : MonoBehaviour
         // post to database
         if (!game_data.tutorial) {
             user.order_collected_ts2 = game_data.timer;
-            RestClient.Post("https://phocrastination-27ee9-default-rtdb.firebaseio.com/" + game_data.userID + ".json", user);
+            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
         }
     }
 }
