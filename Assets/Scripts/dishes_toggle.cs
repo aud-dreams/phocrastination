@@ -67,7 +67,15 @@ public class dishes_toggle : MonoBehaviour
         }
         else
         {
-            text_render.enabled = false;
+            if (game_data.tutorial)
+            {
+                text_render.enabled = false;
+            }
+            else
+            {
+                text_render.enabled = false;
+                render.enabled = false;
+            }
         }
     }
 }
