@@ -21,7 +21,8 @@ public class cat_pad_toggle : MonoBehaviour
         // set visibility at start
         render.enabled = false;
 
-        if (game_data.first_cat_help) {
+        if (game_data.first_cat_help)
+        {
             help.SetActive(false);
             home.SetActive(false);
             game_data.allow_hand = false;
@@ -29,21 +30,27 @@ public class cat_pad_toggle : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
         render.enabled = true;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         render.enabled = false;
     }
 
-    void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (collider.Raycast(ray, out hit, Mathf.Infinity)) {
-                foreach (GameObject item in items) {
+            if (collider.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                foreach (GameObject item in items)
+                {
                     item.SetActive(false);
                 }
 
@@ -62,7 +69,8 @@ public class cat_pad_toggle : MonoBehaviour
             }
         }
 
-        if (game_data.help) {
+        if (game_data.help)
+        {
             game_data.allow_hand = false;
         }
     }

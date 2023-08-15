@@ -9,6 +9,17 @@ public class cat_cue : MonoBehaviour
     public AudioClip cue;
     private bool once = false, twice = false;
 
+    private void Awake()
+    {
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("Cat_Music");
+
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         src.clip = cue;
@@ -22,6 +33,7 @@ public class cat_cue : MonoBehaviour
             {
                 src.Play();
                 once = true;
+                Debug.Log("here2");
             }
         }
 
@@ -31,6 +43,7 @@ public class cat_cue : MonoBehaviour
             {
                 src.Play();
                 twice = true;
+                Debug.Log("here1");
             }
         }
     }

@@ -53,6 +53,7 @@ public class day_pad_toggle : MonoBehaviour
                 }
 
                 game_data.allow_timer = true;
+                game_data.allow_move = true;
                 game_data.help = false;
                 help.SetActive(true);
 
