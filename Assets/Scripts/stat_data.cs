@@ -61,7 +61,7 @@ public class stat_data : ScriptableObject
     // cat station
     /* retrieve timestamp from cat sound & cat station entered, if <20 seconds, apply distractability weight */
     public double start_cat;
-    public double cat_cue = 300;    // temp
+    public double cat_cue;
     public bool distractability_bool = false;
     public double sec_between;
 

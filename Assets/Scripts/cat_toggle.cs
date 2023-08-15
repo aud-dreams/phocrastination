@@ -74,9 +74,6 @@ public class cat_toggle : MonoBehaviour
                         
                         user.cat_scene_ts1 = game_data.timer;
                         stat_data.start_cat = game_data.timer;
-
-                        // temp
-                        user.cat_cue = stat_data.cat_cue;
                         
                         stat_data.CalculateDistractability();
                         user.distractability_bool = stat_data.distractability_bool;

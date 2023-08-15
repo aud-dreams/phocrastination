@@ -41,6 +41,7 @@ public class user_log
     // cat station
     public double cat_scene_ts1;
     public double cat_scene_ts2;
-    public double cat_cue;
+    public double cat_cue_ts1;
+    public double cat_cue_ts2;
     public bool distractability_bool;
 }

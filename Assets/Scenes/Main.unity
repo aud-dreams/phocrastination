@@ -1931,6 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  stat_data: {fileID: 11400000, guid: 2c3c9acd0afd8f446b52fb4e26db082a, type: 2}
   src: {fileID: 1369400398}
   cue: {fileID: 8300000, guid: 2acf1f0e21329f3498fb5408c2cfa4a2, type: 3}
 --- !u!4 &635940073
