@@ -31,17 +31,28 @@ public class drawing_pad : MonoBehaviour
     {
         game_data.pad_on = true;
 
+        // post to database
+        if (!game_data.tutorial)
+        {
+            if (stat_data.isFirstDot)
+            {
+                user.game_status = game_data.round_type;
+                user.bowl_created_ts1 = game_data.timer;
+                RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
+                stat_data.isFirstDot = false;
+            }
+        }
+
+        // get start drawing time ONCE
+        if (stat_data.has_start_drawing)
+        {
+            stat_data.start_drawing = game_data.timer;
+            stat_data.has_start_drawing = false;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             game_data.is_drawing = true;
-
-            // get start drawing time ONCE
-            if (stat_data.has_start_drawing)
-            {
-                stat_data.start_drawing = game_data.timer;
-
-                stat_data.has_start_drawing = false;
-            }
 
         }
         else if (Input.GetMouseButtonUp(0))
@@ -97,18 +108,6 @@ public class drawing_pad : MonoBehaviour
                 // calculate percentage hit
                 ratio_hit = (float)hit_dots / total_dots;
                 stat_data.ratio_hit = ratio_hit;
-
-                // post to database
-                if (!game_data.tutorial)
-                {
-                    if (stat_data.isFirstDot)
-                    {
-                        user.game_status = game_data.round_type;
-                        user.bowl_created_ts1 = game_data.timer;
-                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
-                        stat_data.isFirstDot = false;
-                    }
-                }
             }
         }
     }
