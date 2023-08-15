@@ -66,10 +66,6 @@ public class next_toggle : MonoBehaviour
             {
                 game_data.counter++;
 
-                // get end drawing time
-                stat_data.end_drawing = game_data.timer;
-                stat_data.has_start_drawing = true;
-
                 if (!game_data.help)
                 {
                     if (game_data.counter == 1)
@@ -92,6 +88,10 @@ public class next_toggle : MonoBehaviour
                     }
                     else if (game_data.counter == 4)
                     {
+                        // get end drawing time when drawing pad shuts down
+                        stat_data.end_drawing = game_data.timer;
+                        stat_data.has_start_drawing = true;
+
                         game_data.counter = 0;
                         noodlesOutline.SetActive(false);
                         pad.SetActive(false);
