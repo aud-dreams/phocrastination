@@ -8,7 +8,8 @@ public class petting : MonoBehaviour
     private SpriteRenderer render;
     public GameObject hand;
     public game_data game_data;
-    public AudioSource cat_purr;
+    public AudioSource src;
+    public AudioClip purr;
 
     void Start()
     {
@@ -16,6 +17,9 @@ public class petting : MonoBehaviour
         render = hand.GetComponent<SpriteRenderer>();
         game_data.allow_hand = true;
         game_data.hand_on = true;
+
+        src.clip = purr;
+        src.loop = true;
     }
 
     private void Update()
@@ -40,7 +44,7 @@ public class petting : MonoBehaviour
                 game_data.hand_on = false;
 
                 // play cat purr sound
-                cat_purr.Play();
+                src.Play();
             }
         }
     }

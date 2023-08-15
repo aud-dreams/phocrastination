@@ -21,9 +21,10 @@ TagManager:
   - Dishes
   - Serving
   - Pickup
-  - Music
   - Cat_Music
   - Jingle_Music
+  - Src1
+  - Src2
   layers:
   - Default
   - TransparentFX

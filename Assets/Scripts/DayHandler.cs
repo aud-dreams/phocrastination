@@ -28,7 +28,7 @@ public class DayHandler : MonoBehaviour
         {
             game_data.Day1 = false;
             game_data.clockTimer = 0;
-            dayConfig(3, 5, 1);
+            dayConfig(2, 3, 1);
 
             // Day1 pad on
             if (game_data.first_day1_help)
@@ -47,7 +47,7 @@ public class DayHandler : MonoBehaviour
         {
             game_data.Day2 = false;
             game_data.clockTimer = 0;
-            dayConfig(5, 10, 2);
+            dayConfig(4, 5, 2);
 
             // Day2 pad on
             if (game_data.first_day2_help)
@@ -67,7 +67,7 @@ public class DayHandler : MonoBehaviour
             manager.SetActive(true);
             game_data.Day3 = false;
             game_data.clockTimer = 0;
-            dayConfig(3, 5, 3);
+            dayConfig(2, 3, 3);
 
             // Day3 pad on
             if (game_data.first_day3_help)
@@ -95,7 +95,7 @@ public class DayHandler : MonoBehaviour
         game_data.timer = 0;
         game_data.allow_timer = false;
         game_data.round_type = round;
-        game_data.customerTimer = 60;
+        game_data.customerTimer = 90;
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
         game_data.clock_counter = 0;
@@ -109,7 +109,7 @@ public class DayHandler : MonoBehaviour
         game_data.help = false;
         game_data.click = 1;
         game_data.character_position = new Vector3(0f, 0.3f, 0f);
-        game_data.allow_move = true;
+        game_data.allow_move = false;
         game_data.character_sprite = sprite;
 
         // serving initialization
