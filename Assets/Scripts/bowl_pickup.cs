@@ -105,7 +105,7 @@ public class bowl_pickup : MonoBehaviour
     private IEnumerator blink(GameObject toggle)
     {
         toggle_render = toggle.GetComponent<SpriteRenderer>();
-        for (int i = 0; i < 5; i++)
+        while (game_data.allow_blink)
         {
             toggle_render.enabled = true;
             yield return new WaitForSeconds(0.3f);
@@ -154,6 +154,7 @@ public class bowl_pickup : MonoBehaviour
         if (game_data.tutorial)
         {
             game_data.tutorial_main = true;
+            game_data.allow_blink = true;
             StartCoroutine(blink(home));
             game_data.home_on = true;
         }

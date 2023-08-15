@@ -1088,7 +1088,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1853,7 +1853,6 @@ MonoBehaviour:
   help: {fileID: 1094866287}
   home: {fileID: 359287493}
   hand: {fileID: 694925179}
-  petting: {fileID: 0}
 --- !u!65 &1948686069
 BoxCollider:
   m_ObjectHideFlags: 0

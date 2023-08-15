@@ -7,7 +7,6 @@ public class cat_cue : MonoBehaviour
     public game_data game_data;
     public AudioSource src;
     public AudioClip cue;
-    private bool once = false, twice = false;
 
     private void Awake()
     {
@@ -27,23 +26,21 @@ public class cat_cue : MonoBehaviour
 
     void Update()
     {
-        if (!once)
+        if (!game_data.cue_once)
         {
             if (game_data.timer > 330)      // 5.5 mins
             {
                 src.Play();
-                once = true;
-                Debug.Log("here2");
+                game_data.cue_once = true;
             }
         }
 
-        if (!twice)
+        if (!game_data.cue_twice)
         {
             if (game_data.timer > 150)     // 2.5 mins
             {
                 src.Play();
-                twice = true;
-                Debug.Log("here1");
+                game_data.cue_twice = true;
             }
         }
     }
