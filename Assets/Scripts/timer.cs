@@ -45,8 +45,6 @@ public class timer : MonoBehaviour
                                 stat_data.firstLoad = false;
                         }
 
-                        stat_data.firstLoad = true;
-
                         game_data.Day2 = true;
                         game_data.first_day2_help = true;
                         StartCoroutine(LoadScene());
@@ -68,8 +66,6 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-
-                        stat_data.firstLoad = true;
                         
                         game_data.Day3 = true;
                         game_data.first_day3_help = true;
