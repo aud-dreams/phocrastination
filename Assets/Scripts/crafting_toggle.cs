@@ -59,16 +59,13 @@ public class crafting_toggle : MonoBehaviour
             {
                 game_data.character_position = player.transform.position;
                 game_data.character_sprite = render2.sprite;
+                game_data.allow_blink = false;
                 StartCoroutine(LoadScene());
             }
         }
         else
         {
-            if (!game_data.blink || !game_data.tutorial)
-            {
-                render.enabled = false;
-                text_render.enabled = false;
-            }
+            text_render.enabled = false;
         }
     }
 }

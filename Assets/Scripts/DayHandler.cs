@@ -99,10 +99,13 @@ public class DayHandler : MonoBehaviour
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
         game_data.clock_counter = 0;
+        game_data.cue_once = false;
+        game_data.cue_twice = false;
 
         // tutorial initialization
         game_data.tutorial_main = true;
         game_data.tutorial = false;
+        game_data.allow_blink = false;
 
         // main initialization
         game_data.first_main_help = false;

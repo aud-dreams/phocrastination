@@ -12,52 +12,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 356.80595690372866
-  userID: 09fbd24a-56b9-4701-96ae-2c24642a4859
+  timer: 350.743139011669
+  userID: 5089afc5-7858-4fb5-a909-224509cc8420
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
-  allow_timer: 0
+  allow_timer: 1
   Day1: 0
   Day2: 0
   Day3: 0
-  round_type: 1
+  round_type: 3
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 48.039445395057555
-  dishesTimer: -18.40538220567396
-  clockTimer: 5.595154305337928
+  customerTimer: 58.76572488702368
+  dishesTimer: -1.23427511297632
+  clockTimer: 52.76572488702368
   clock_counter: 1
+  cue_once: 1
+  cue_twice: 1
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
   drop_order_done: 1
   wash_dishes_done: 1
-  tutorial_counter: 5
-  blink: 1
+  tutorial_counter: 9
   tutorial_main: 1
   crafting_blink: 0
   dishes_blink: 0
   home_on: 0
   cat_blink: 1
-  day3_counter: 0
-  next_text1: 0
-  next_text2: 0
+  allow_blink: 0
+  day3_counter: 2
+  next_text1: 1
+  next_text2: 1
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: 5.360444, y: -2.413311, z: 0}
+  character_position: {x: 0, y: 0.3, z: 0}
   allow_move: 1
   character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   first_serving_help: 0
-  total_customers: 4
-  current_customers: 3
-  customers_line:
-  - {fileID: 0}
-  can_next: 1
+  total_customers: 2
+  current_customers: 2
+  customers_line: []
+  can_next: 0
   last: 0
-  orders: 1
+  orders: 0
   first_pickup_help: 0
-  ordered_customers: 1
+  ordered_customers: 0
   ordered_line: []
   can_next2: 0
   once: 1
@@ -80,13 +81,13 @@ MonoBehaviour:
   crafting: 1
   is_drawing: 0
   first_dishes_help: 0
-  dirty_bowls: 4
+  dirty_bowls: 3
   allow_bowls: 1
   washing: 0
   bubbles: 0
   first_cat_help: 0
-  allow_hand: 0
+  allow_hand: 1
   hand_on: 1
-  progress_position: {x: -1.1130669, y: 3.79, z: 0}
-  progress_scale: {x: 0.05698245, y: 1.1, z: 0}
-  outside_catscene: 0
+  progress_position: {x: -1.1700236, y: 3.79, z: 0}
+  progress_scale: {x: -0.000009956653, y: 1.1, z: 0}
+  outside_catscene: 1

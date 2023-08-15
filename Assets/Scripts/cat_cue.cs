@@ -9,7 +9,6 @@ public class cat_cue : MonoBehaviour
     public stat_data stat_data;
     public AudioSource src;
     public AudioClip cue;
-    private bool once = false, twice = false;
 
     user_log user = new user_log();
 
@@ -31,12 +30,12 @@ public class cat_cue : MonoBehaviour
 
     void Update()
     {
-        if (!once)
+        if (!game_data.cue_once)
         {
             if (game_data.timer > 330)      // 5.5 mins
             {
                 src.Play();
-                once = true;
+                game_data.cue_once = true;
 
                 stat_data.cat_cue = game_data.timer;
                 user.cat_cue_ts1 = game_data.timer;
@@ -45,12 +44,12 @@ public class cat_cue : MonoBehaviour
             }
         }
 
-        if (!twice)
+        if (!game_data.cue_twice)
         {
             if (game_data.timer > 150)     // 2.5 mins
             {
                 src.Play();
-                twice = true;
+                game_data.cue_twice = true;
 
                 stat_data.cat_cue = game_data.timer;
                 user.cat_cue_ts1 = game_data.timer;

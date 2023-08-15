@@ -74,7 +74,7 @@ public class manager_day3 : MonoBehaviour
         }
     }
 
-    private float speed = 0.09f;
+    private float speed = 0.12f;
 
     IEnumerator managerLeave()
     {

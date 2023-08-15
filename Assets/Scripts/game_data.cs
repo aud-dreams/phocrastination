@@ -21,6 +21,8 @@ public class game_data : ScriptableObject
     public double dishesTimer;
     public double clockTimer;
     public int clock_counter;
+    public bool cue_once;
+    public bool cue_twice;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial
@@ -30,12 +32,12 @@ public class game_data : ScriptableObject
     public bool drop_order_done;
     public bool wash_dishes_done;
     public int tutorial_counter;
-    public bool blink;
     public bool tutorial_main;
     public bool crafting_blink;
     public bool dishes_blink;
     public bool home_on;
     public bool cat_blink;
+    public bool allow_blink;
 
     // day3
     public int day3_counter;

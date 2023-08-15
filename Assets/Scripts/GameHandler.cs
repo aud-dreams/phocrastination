@@ -30,6 +30,8 @@ public class GameHandler : MonoBehaviour
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
         game_data.clock_counter = 0;
+        game_data.cue_once = false;
+        game_data.cue_twice = false;
         //game_data.toggle_spawn = false;
 
         // tutorial initialization
@@ -39,12 +41,12 @@ public class GameHandler : MonoBehaviour
         game_data.drop_order_done = false;
         game_data.wash_dishes_done = false;
         game_data.tutorial_counter = 0;
-        game_data.blink = false;
         game_data.tutorial_main = false;
         game_data.crafting_blink = false;
         game_data.dishes_blink = false;
         game_data.home_on = false;
         game_data.cat_blink = true;
+        game_data.allow_blink = false;
 
         // day3
         game_data.day3_counter = 0;

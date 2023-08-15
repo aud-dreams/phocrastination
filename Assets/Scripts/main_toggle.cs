@@ -38,7 +38,7 @@ public class main_toggle : MonoBehaviour
     private IEnumerator blink(GameObject toggle)
     {
         toggle_render = toggle.GetComponent<SpriteRenderer>();
-        for (int i = 0; i < 5; i++)
+        while (game_data.allow_blink)
         {
             toggle_render.enabled = true;
             yield return new WaitForSeconds(0.3f);
@@ -61,6 +61,7 @@ public class main_toggle : MonoBehaviour
         // blink home for tutorial after finish_bowl_button pressed (for crafting station)
         if (game_data.crafting_blink && game_data.tutorial)
         {
+            game_data.allow_blink = true;
             StartCoroutine(blink(home));
             game_data.crafting_blink = false;
         }
@@ -68,6 +69,7 @@ public class main_toggle : MonoBehaviour
         // blink home for tutorial when finish washing dishes
         if (game_data.dishes_blink && game_data.tutorial)
         {
+            game_data.allow_blink = true;
             StartCoroutine(blink(home));
             game_data.dishes_blink = false;
             game_data.home_on = true;
@@ -86,6 +88,7 @@ public class main_toggle : MonoBehaviour
                     {
                         game_data.take_order_done = true;
                         game_data.home_on = false;
+                        game_data.allow_blink = false;
                     }
                 }
 
@@ -97,6 +100,7 @@ public class main_toggle : MonoBehaviour
                     {
                         game_data.make_order_done = true;
                         game_data.home_on = false;
+                        game_data.allow_blink = false;
                     }
                 }
 
@@ -106,6 +110,7 @@ public class main_toggle : MonoBehaviour
                     {
                         game_data.drop_order_done = true;
                         game_data.home_on = false;
+                        game_data.allow_blink = false;
                     }
                 }
 
@@ -115,6 +120,7 @@ public class main_toggle : MonoBehaviour
                     {
                         game_data.wash_dishes_done = true;
                         game_data.home_on = false;
+                        game_data.allow_blink = false;
                     }
                 }
 
@@ -125,9 +131,13 @@ public class main_toggle : MonoBehaviour
                     game_data.outside_catscene = true;
 
                     // post to database
-                    if (!game_data.tutorial) {
+                    if (!game_data.tutorial)
+                    {
+                        game_data.allow_blink = false;
+
                         // first load
-                        if (stat_data.firstLoad3) {
+                        if (stat_data.firstLoad3)
+                        {
                             user.game_status = game_data.round_type;
                             user.cat_scene_ts2 = game_data.timer;
                             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
