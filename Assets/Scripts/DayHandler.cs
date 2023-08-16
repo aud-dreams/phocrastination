@@ -95,7 +95,14 @@ public class DayHandler : MonoBehaviour
         game_data.timer = 0;
         game_data.allow_timer = false;
         game_data.round_type = round;
-        game_data.customerTimer = 90;
+        if (game_data.round_type == 2)
+        {
+            game_data.customerTimer = 60;
+        }
+        else
+        {
+            game_data.customerTimer = 90;
+        }
         game_data.dishesTimer = 30;
         game_data.clockTimer = 0;
         game_data.clock_counter = 0;
@@ -148,7 +155,7 @@ public class DayHandler : MonoBehaviour
         game_data.bowl_complete = false;
         game_data.counter = 0;
         game_data.pad_on = false;
-        game_data.crafting = true;
+        game_data.crafting = false;
         game_data.is_drawing = false;
 
         // dishes initialization

@@ -14,14 +14,16 @@ public class manager_day3 : MonoBehaviour
     void Start()
     {
         manager_render = manager.GetComponent<SpriteRenderer>();
-        if (game_data.day3_counter == 2)
-        {
-            manager.SetActive(false);
-        }
     }
 
     void Update()
     {
+        if (game_data.day3_counter == 0 && game_data.round_type == 3 && !game_data.first_day3_help)
+        {
+            text[game_data.day3_counter].SetActive(true);
+
+        }
+
         if (game_data.round_type == 3)
         {
             // constraints
@@ -40,9 +42,10 @@ public class manager_day3 : MonoBehaviour
                     if (Input.GetKey(KeyCode.Space))
                     {
                         // good job its the last day
-                        text[game_data.day3_counter].SetActive(true);
-                        text[game_data.day3_counter + 1].SetActive(false);
-                        text[game_data.day3_counter + 2].SetActive(false);
+                        text[0].SetActive(false);
+                        text[1].SetActive(true);
+                        text[2].SetActive(false);
+                        text[3].SetActive(false);
                         game_data.day3_counter++;
                         StartCoroutine(Wait());
                     }
@@ -51,10 +54,11 @@ public class manager_day3 : MonoBehaviour
                 {
                     if (Input.GetKey(KeyCode.Space))
                     {
-                        // today is up to you
-                        text[game_data.day3_counter - 1].SetActive(false);
-                        text[game_data.day3_counter].SetActive(true);
-                        text[game_data.day3_counter + 1].SetActive(false);
+                        // your coworker is taking over for today
+                        text[0].SetActive(false);
+                        text[1].SetActive(false);
+                        text[2].SetActive(true);
+                        text[3].SetActive(false);
                         game_data.day3_counter++;
                         StartCoroutine(Wait());
                     }
@@ -64,12 +68,17 @@ public class manager_day3 : MonoBehaviour
                     if (Input.GetKey(KeyCode.Space))
                     {
                         // feel free to do anything you desire
-                        text[game_data.day3_counter - 2].SetActive(false);
-                        text[game_data.day3_counter - 1].SetActive(false);
-                        text[game_data.day3_counter].SetActive(true);
+                        text[0].SetActive(false);
+                        text[1].SetActive(false);
+                        text[2].SetActive(false);
+                        text[3].SetActive(true);
                         StartCoroutine(managerLeave());
                     }
                 }
+            }
+            else if (game_data.day3_counter == 3)
+            {
+                manager.SetActive(false);
             }
         }
     }
@@ -79,7 +88,7 @@ public class manager_day3 : MonoBehaviour
     IEnumerator managerLeave()
     {
         yield return new WaitForSeconds(3f);
-        text[game_data.day3_counter].SetActive(false);
+        text[3].SetActive(false);
 
         // switch to right sprite
         manager_render.sprite = right_manager;
@@ -98,11 +107,13 @@ public class manager_day3 : MonoBehaviour
         {
             toggle.SetActive(true);
         }
+
+        game_data.day3_counter++;
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         if (game_data.next_text1 == false)
         {
             game_data.next_text1 = true;

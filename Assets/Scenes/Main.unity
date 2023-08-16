@@ -2720,6 +2720,7 @@ MonoBehaviour:
   manager: {fileID: 886693596}
   player: {fileID: 1307838401}
   text:
+  - {fileID: 305260624}
   - {fileID: 155491298}
   - {fileID: 1902720699}
   - {fileID: 1124666125}
