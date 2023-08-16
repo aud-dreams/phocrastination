@@ -66,9 +66,10 @@ public class TutorialHandler : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    IEnumerator Pause()
+    IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
+        game_data.tutorial_counter++;
     }
 
     private void Update()
@@ -110,10 +111,21 @@ public class TutorialHandler : MonoBehaviour
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold)
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.listen_text)
             {
                 game_data.tutorial_counter++;
 
+                // listen for the door jingle for more customers
+                manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                manager_text[game_data.tutorial_counter].SetActive(true);
+                StartCoroutine(Wait());
+                game_data.listen_text = true;
+            }
+        }
+        else if (game_data.tutorial_counter == 4 && game_data.take_order_done)
+        {
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.listen_text)
+            {
                 // make the order
                 manager_text[game_data.tutorial_counter - 1].SetActive(false);
                 manager_text[game_data.tutorial_counter].SetActive(true);
@@ -138,16 +150,28 @@ public class TutorialHandler : MonoBehaviour
                 game_data.tutorial_counter++;
             }
         }
-        else if (game_data.tutorial_counter == 4 && game_data.make_order_done)
+
+        else if (game_data.tutorial_counter == 5 && game_data.make_order_done)
         {
             // exclamation
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold)
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.outline_text)
             {
                 game_data.tutorial_counter++;
 
+                // did you outline in black
+                manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                manager_text[game_data.tutorial_counter].SetActive(true);
+                StartCoroutine(Wait());
+                game_data.outline_text = true;
+            }
+        }
+        else if (game_data.tutorial_counter == 7 && game_data.make_order_done)
+        {
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.outline_text)
+            {
                 // drop off the order
                 manager_text[game_data.tutorial_counter - 1].SetActive(false);
                 manager_text[game_data.tutorial_counter].SetActive(true);
@@ -172,7 +196,7 @@ public class TutorialHandler : MonoBehaviour
                 game_data.tutorial_counter++;
             }
         }
-        else if (game_data.tutorial_counter == 6 && game_data.drop_order_done)
+        else if (game_data.tutorial_counter == 8 && game_data.drop_order_done)
         {
             // exclamation
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
@@ -206,16 +230,27 @@ public class TutorialHandler : MonoBehaviour
                 game_data.tutorial_counter++;
             }
         }
-        else if (game_data.tutorial_counter == 8 && game_data.wash_dishes_done)
+        else if (game_data.tutorial_counter == 10 && game_data.wash_dishes_done)
         {
             // exclamation
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold)
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.remember_text)
             {
                 game_data.tutorial_counter++;
 
+                // remember your shift ends at 6pm
+                manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                manager_text[game_data.tutorial_counter].SetActive(true);
+                StartCoroutine(Wait());
+                game_data.remember_text = true;
+            }
+        }
+        else if (game_data.tutorial_counter == 12 && game_data.wash_dishes_done)
+        {
+            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.remember_text)
+            {
                 // good job
                 manager_text[game_data.tutorial_counter - 1].SetActive(false);
                 manager_text[game_data.tutorial_counter].SetActive(true);
@@ -228,4 +263,3 @@ public class TutorialHandler : MonoBehaviour
         }
     }
 }
-

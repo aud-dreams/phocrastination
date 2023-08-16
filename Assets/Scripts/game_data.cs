@@ -38,6 +38,9 @@ public class game_data : ScriptableObject
     public bool home_on;
     public bool cat_blink;
     public bool allow_blink;
+    public bool listen_text;
+    public bool outline_text;
+    public bool remember_text;
 
     // day3
     public int day3_counter;

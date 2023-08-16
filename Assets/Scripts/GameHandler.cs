@@ -47,6 +47,9 @@ public class GameHandler : MonoBehaviour
         game_data.home_on = false;
         game_data.cat_blink = true;
         game_data.allow_blink = false;
+        game_data.listen_text = false;
+        game_data.outline_text = false;
+        game_data.remember_text = false;
 
         // day3
         game_data.day3_counter = 0;
