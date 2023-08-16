@@ -24,6 +24,7 @@ public class stat_data : ScriptableObject
     public double total_time_drawing;
 
     public bool isFirstDot = true;
+    public bool switched = true;
 
     public void IfZeroRedo() 
     {
@@ -45,7 +46,7 @@ public class stat_data : ScriptableObject
 
     public void CalculateTotalTimeDrawing() 
     {
-        total_time_drawing += end_drawing - start_drawing;
+        total_time_drawing = end_drawing - start_drawing;
     }
 
     // dishes station

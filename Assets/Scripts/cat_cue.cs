@@ -37,6 +37,7 @@ public class cat_cue : MonoBehaviour
                 src.Play();
                 game_data.cue_once = true;
 
+                user.game_status = game_data.round_type;
                 stat_data.cat_cue = game_data.timer;
                 user.cat_cue_ts1 = game_data.timer;
                 user.cat_cue_ts2 = user.cat_cue_ts1 + 5; // + 5 seconds
@@ -51,6 +52,7 @@ public class cat_cue : MonoBehaviour
                 src.Play();
                 game_data.cue_twice = true;
 
+                user.game_status = game_data.round_type;
                 stat_data.cat_cue = game_data.timer;
                 user.cat_cue_ts1 = game_data.timer;
                 user.cat_cue_ts2 = user.cat_cue_ts1 + 5; // + 5 seconds

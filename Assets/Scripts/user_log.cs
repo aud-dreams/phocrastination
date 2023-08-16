@@ -26,6 +26,7 @@ public class user_log
     public int redo;
     public float ratio_hit;
     public double total_time_drawing;
+    public int color_switch;
     
     public double bowl_created_ts1;
     public double bowl_created_ts2;
