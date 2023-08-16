@@ -26,6 +26,7 @@ public class user_log
     public int redo;
     public float ratio_hit;
     public double total_time_drawing;
+    public int color_switch;
     
     public double bowl_created_ts1;
     public double bowl_created_ts2;
@@ -43,5 +44,5 @@ public class user_log
     public double cat_scene_ts2;
     public double cat_cue_ts1;
     public double cat_cue_ts2;
-    public bool distractability_bool;
+    public int distractability_bool;
 }
