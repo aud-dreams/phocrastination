@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 101.36468355008401
-  userID: 502748c4-3f0b-44d1-88d5-2bab5ddf19a5
+  timer: 25.22834504954517
+  userID: 91c3b12f-6348-46da-acee-8073af6e782b
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
   allow_timer: 1
   Day1: 0
@@ -23,10 +23,10 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: -11.36468355008401
-  dishesTimer: -71.36468355008401
-  clockTimer: 66.63916539179627
-  clock_counter: 2
+  customerTimer: 64.77165495045483
+  dishesTimer: 4.771654950454831
+  clockTimer: 58.77401165035553
+  clock_counter: 1
   cue_once: 0
   cue_twice: 0
   tutorial: 0
@@ -36,20 +36,20 @@ MonoBehaviour:
   wash_dishes_done: 1
   tutorial_counter: 9
   tutorial_main: 1
-  crafting_blink: 1
+  crafting_blink: 0
   dishes_blink: 0
-  home_on: 1
+  home_on: 0
   cat_blink: 1
   allow_blink: 0
-  day3_counter: 2
+  day3_counter: 3
   next_text1: 1
   next_text2: 1
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: -5.647916, y: 0.47045398, z: 0}
+  character_position: {x: 2.1000824, y: 2.92946, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: c0ec3bfcd56e4d2438404bcc31e06066, type: 3}
+  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
   first_serving_help: 0
   total_customers: 2
   current_customers: 1
@@ -57,14 +57,14 @@ MonoBehaviour:
   - {fileID: 0}
   can_next: 1
   last: 0
-  orders: 0
+  orders: 1
   first_pickup_help: 0
   ordered_customers: 1
   ordered_line: []
   can_next2: 0
   once: 1
   once2: 1
-  constructed_orders: 1
+  constructed_orders: 0
   allow_drag: 1
   last2: 0
   first_crafting_help: 0
@@ -74,8 +74,8 @@ MonoBehaviour:
   broth_inside: 0
   herbs_inside: 0
   noodles_inside: 0
-  allow_drawing: 1
-  allow_paintbrush: 1
+  allow_drawing: 0
+  allow_paintbrush: 0
   bowl_complete: 0
   counter: 0
   pad_on: 0
