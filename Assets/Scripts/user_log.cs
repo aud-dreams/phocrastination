@@ -44,5 +44,5 @@ public class user_log
     public double cat_scene_ts2;
     public double cat_cue_ts1;
     public double cat_cue_ts2;
-    public bool distractability_bool;
+    public int distractability_bool;
 }
