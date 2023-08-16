@@ -61,11 +61,7 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Crafting"))
         {
-            if (game_data.orders == 0)      // home on if no orders
-            {
-                home.SetActive(true);
-            }
-            else if (game_data.crafting)         // home off if currently crafting
+            if (game_data.crafting)         // home off if currently crafting
             {
                 home.SetActive(false);
             }

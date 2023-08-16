@@ -30,10 +30,9 @@ public class UpdateHandler : MonoBehaviour
             game_data.customerTimer -= Time.deltaTime;
         }
 
-        if ((game_data.timer > 120 && game_data.timer < 300) && game_data.customerTimer <= 0)       // timer between 3 min and 5 min, add customer every 90 secs
+        if ((game_data.round_type == 1 || game_data.round_type == 3) && (game_data.timer > 120 && game_data.timer < 300) && game_data.customerTimer <= 0)       // timer between 3 min and 5 min, add customer every 90 secs
         {
             // Day1: 2 start, 2 added, 4 total
-            // Day2: 4 start, 2 added, 6 total
             // Day3: 2 start, 2 added, 4 total
 
             game_data.total_customers += 1;
@@ -41,7 +40,14 @@ public class UpdateHandler : MonoBehaviour
             game_data.customerTimer = 90;
 
             src.Play();
-            Debug.Log("customer added");
+        }
+        else if ((game_data.round_type == 2) && (game_data.timer > 60 && game_data.timer < 360) && game_data.customerTimer <= 0)       // timer between 1 min and 6 min, add customer every 60 secs
+        {
+            // Day2: 4 start, 6 added, 10 total
+
+            game_data.total_customers += 1;
+            game_data.current_customers += 1;
+            game_data.customerTimer = 60;
         }
 
         // Update dishes timer
