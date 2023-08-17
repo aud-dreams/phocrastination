@@ -9,6 +9,8 @@ public class next_customer_toggle : MonoBehaviour
     private new Collider collider;
     public game_data game_data;
     public GameObject button, toggle;
+    public AudioSource src;
+    public AudioClip murmur1, murmur2;
 
     user_log user = new user_log();
 
@@ -84,7 +86,8 @@ public class next_customer_toggle : MonoBehaviour
                     toggle.GetComponent<Renderer>().enabled = false;
 
                     // post to database
-                    if (!game_data.tutorial) {
+                    if (!game_data.tutorial)
+                    {
                         user.game_status = game_data.round_type;
                         user.order_collected_ts1 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
@@ -99,7 +102,18 @@ public class next_customer_toggle : MonoBehaviour
 
     public IEnumerator Order(GameObject customer)
     {
-        // wait 5 seconds for order
+        // wait 5 seconds for order + play murmur
+        System.Random random = new System.Random();
+        int num = random.Next(1, 3);
+        if (num == 1)
+        {
+            src.clip = murmur1;
+        }
+        else
+        {
+            src.clip = murmur2;
+        }
+        src.Play();
         speech.SetActive(true);
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);
@@ -127,7 +141,8 @@ public class next_customer_toggle : MonoBehaviour
         game_data.ordered_customers++;
 
         // post to database
-        if (!game_data.tutorial) {
+        if (!game_data.tutorial)
+        {
             user.game_status = game_data.round_type;
             user.order_collected_ts2 = game_data.timer;
             RestClient.Post(game_data.db_url + game_data.userID + ".json", user);

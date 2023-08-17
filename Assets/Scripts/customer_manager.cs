@@ -11,6 +11,8 @@ public class customer_manager : MonoBehaviour
     public GameObject boy_customer, girl_customer, toggle, button, home;
     private GameObject current;
     private SpriteRenderer toggle_render;
+    public AudioSource src;
+    public AudioClip murmur1, murmur2;
     user_log user = new user_log();
 
     void Start()
@@ -94,7 +96,18 @@ public class customer_manager : MonoBehaviour
 
     public IEnumerator Order(GameObject customer)
     {
-        // wait 5 seconds for order
+        // wait 5 seconds for order + play murmur sound
+        System.Random random = new System.Random();
+        int num = random.Next(1, 3);
+        if (num == 1)
+        {
+            src.clip = murmur1;
+        }
+        else
+        {
+            src.clip = murmur2;
+        }
+        src.Play();
         speech.SetActive(true);
         yield return new WaitForSeconds(5f);
         speech.SetActive(false);
