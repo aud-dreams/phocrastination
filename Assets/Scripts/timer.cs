@@ -18,6 +18,8 @@ public class timer : MonoBehaviour
                 crossfade.SetTrigger("end");
                 yield return new WaitForSeconds(1f);
                 SceneManager.LoadScene(scene);
+                game_data.transition = true;
+                game_data.allow_timer = false;
         }
 
         void Update()
@@ -27,11 +29,10 @@ public class timer : MonoBehaviour
                         game_data.timer += Time.deltaTime;
                 }
 
-                if (game_data.timer > 420 && game_data.round_type == 1)      // Day1 over
+                if (game_data.timer > 420 && game_data.round_type == 1 && !game_data.transition)      // Day1 over
                 {
-                        if(stat_data.firstLoad == true)
+                        if (stat_data.firstLoad == true)
                         {
-                                user.global_timer = game_data.timer;
                                 user.game_status = game_data.round_type;
                                 user.order_collected_rem = game_data.current_customers;
                                 user.order_collected_tot = game_data.total_customers;
@@ -45,15 +46,12 @@ public class timer : MonoBehaviour
                                 stat_data.firstLoad = false;
                         }
 
-                        game_data.Day2 = true;
-                        game_data.first_day2_help = true;
                         StartCoroutine(LoadScene());
                 }
-                else if (game_data.timer > 420 && game_data.round_type == 2)      // Day2 over
+                else if (game_data.timer > 420 && game_data.round_type == 2 && !game_data.transition)      // Day2 over
                 {
-                        if(stat_data.firstLoad == true)
+                        if (stat_data.firstLoad == true)
                         {
-                                user.global_timer = game_data.timer;
                                 user.game_status = game_data.round_type;
                                 user.order_collected_rem = game_data.current_customers;
                                 user.order_collected_tot = game_data.total_customers;
@@ -66,16 +64,13 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-                        
-                        game_data.Day3 = true;
-                        game_data.first_day3_help = true;
+
                         StartCoroutine(LoadScene());
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 3)      // Day3 over
                 {
-                        if(stat_data.firstLoad == true)
+                        if (stat_data.firstLoad == true)
                         {
-                                user.global_timer = game_data.timer;
                                 user.game_status = game_data.round_type;
                                 user.order_collected_rem = game_data.current_customers;
                                 user.order_collected_tot = game_data.total_customers;
@@ -88,7 +83,8 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-                        
+
+                        StartCoroutine(LoadScene());
                         Application.Quit();
                 }
 

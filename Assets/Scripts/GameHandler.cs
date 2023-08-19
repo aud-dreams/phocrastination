@@ -32,6 +32,8 @@ public class GameHandler : MonoBehaviour
         game_data.clock_counter = 0;
         game_data.cue_once = false;
         game_data.cue_twice = false;
+        game_data.transition = false;
+        game_data.transition_counter = 0;
         //game_data.toggle_spawn = false;
 
         // tutorial initialization

@@ -12,23 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 21.011988601996563
-  userID: b11304b3-e4cf-4eb8-ba8c-66cfa4414fd2
+  timer: 421.00013760558795
+  userID: ffbe529d-55fd-45c5-a41e-378a408cf032
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
-  allow_timer: 1
+  allow_timer: 0
   Day1: 0
   Day2: 0
   Day3: 0
-  round_type: 3
+  round_type: 2
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 68.98801139800344
-  dishesTimer: 8.988011398003437
-  clockTimer: 62.990885298117064
+  customerTimer: 51.661664791521616
+  dishesTimer: 21.661664791521616
+  clockTimer: 75.67157749191392
   clock_counter: 1
-  cue_once: 0
-  cue_twice: 0
+  cue_once: 1
+  cue_twice: 1
+  transition: 1
+  transition_counter: 0
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -44,18 +46,18 @@ MonoBehaviour:
   listen_text: 1
   outline_text: 1
   remember_text: 1
-  day3_counter: 3
-  next_text1: 1
-  next_text2: 1
+  day3_counter: 0
+  next_text1: 0
+  next_text2: 0
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: 6.1840405, y: -1.6069971, z: 0}
+  character_position: {x: 0, y: 0.3, z: 0}
   allow_move: 1
   character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   first_serving_help: 0
-  total_customers: 2
-  current_customers: 2
+  total_customers: 5
+  current_customers: 5
   customers_line: []
   can_next: 0
   last: 0
@@ -84,13 +86,13 @@ MonoBehaviour:
   crafting: 0
   is_drawing: 0
   first_dishes_help: 0
-  dirty_bowls: 3
+  dirty_bowls: 5
   allow_bowls: 1
   washing: 0
   bubbles: 0
   first_cat_help: 0
-  allow_hand: 0
-  hand_on: 0
-  progress_position: {x: -1.0514762, y: 3.79, z: 0}
-  progress_scale: {x: 0.11857286, y: 1.1, z: 0}
+  allow_hand: 1
+  hand_on: 1
+  progress_position: {x: -1.1700236, y: 3.79, z: 0}
+  progress_scale: {x: -0.000009956653, y: 1.1, z: 0}
   outside_catscene: 1

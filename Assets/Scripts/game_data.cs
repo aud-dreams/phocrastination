@@ -23,6 +23,8 @@ public class game_data : ScriptableObject
     public int clock_counter;
     public bool cue_once;
     public bool cue_twice;
+    public bool transition;
+    public int transition_counter;
     //public bool toggle_spawn;   // for toggles renders to be off when first spawned
 
     // tutorial

@@ -14,11 +14,15 @@ public class DayHandler : MonoBehaviour
 
     void Update()
     {
-        // tutorial stuff off
-        if (!(game_data.round_type == 3) && !(game_data.round_type == 0))
+        if (game_data.transition)         // manager on for transition sequence
+        {
+            manager.SetActive(true);
+        }
+        else if (!(game_data.round_type == 3) && !(game_data.round_type == 0))      // tutorial stuff off
         {
             manager.SetActive(false);
         }
+
         if (!(game_data.round_type == 0))
         {
             tutorialHandler.SetActive(false);
@@ -108,11 +112,18 @@ public class DayHandler : MonoBehaviour
         game_data.clock_counter = 0;
         game_data.cue_once = false;
         game_data.cue_twice = false;
+        game_data.transition = false;
+        game_data.transition_counter = 0;
 
         // tutorial initialization
         game_data.tutorial_main = true;
         game_data.tutorial = false;
         game_data.allow_blink = false;
+
+        // day3
+        game_data.day3_counter = 0;
+        game_data.next_text1 = false;
+        game_data.next_text2 = false;
 
         // main initialization
         game_data.first_main_help = false;
