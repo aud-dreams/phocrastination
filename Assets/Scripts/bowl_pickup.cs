@@ -14,7 +14,7 @@ public class bowl_pickup : MonoBehaviour
     private Vector3 bowl_position = new Vector3(1.67f, 0.31f, 0f);
     public EdgeCollider2D wall;
     public AudioSource src;
-    public AudioClip sparkle;
+    public AudioClip sparkle1, sparkle2;
 
     user_log user = new user_log();
 
@@ -33,8 +33,6 @@ public class bowl_pickup : MonoBehaviour
         {
             bowl.SetActive(false);
         }
-
-        src.clip = sparkle;
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -121,6 +119,18 @@ public class bowl_pickup : MonoBehaviour
 
         // if customer recieves bowl, sparkles + leaves
         sparkles.SetActive(true);
+        System.Random random = new System.Random();
+        int num = random.Next(1, 3);
+        if (num == 1)
+        {
+            src.clip = sparkle1;
+            src.volume = 0.3f;
+        }
+        else
+        {
+            src.clip = sparkle2;
+            src.volume = 0.4f;
+        }
         src.Play();
         yield return new WaitForSeconds(3f);
         sparkles.SetActive(false);

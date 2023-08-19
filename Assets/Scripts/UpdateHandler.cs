@@ -43,11 +43,13 @@ public class UpdateHandler : MonoBehaviour
         }
         else if ((game_data.round_type == 2) && (game_data.timer > 60 && game_data.timer < 360) && game_data.customerTimer <= 0)       // timer between 1 min and 6 min, add customer every 60 secs
         {
-            // Day2: 4 start, 6 added, 10 total
+            // Day2: 5 start, 5 added, 10 total
 
             game_data.total_customers += 1;
             game_data.current_customers += 1;
             game_data.customerTimer = 60;
+
+            src.Play();
         }
 
         // Update dishes timer

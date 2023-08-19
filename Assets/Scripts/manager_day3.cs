@@ -18,18 +18,26 @@ public class manager_day3 : MonoBehaviour
 
     void Update()
     {
+        if (game_data.day3_counter == 3)
+        {
+            manager.SetActive(false);
+        }
+
         if (game_data.day3_counter == 0 && game_data.round_type == 3 && !game_data.first_day3_help)
         {
-            text[game_data.day3_counter].SetActive(true);
-
+            // exclamation
+            text[0].SetActive(true);
         }
 
         if (game_data.round_type == 3)
         {
             // constraints
-            foreach (GameObject toggle in toggles)
+            if (manager.activeSelf)
             {
-                toggle.SetActive(false);
+                foreach (GameObject toggle in toggles)
+                {
+                    toggle.SetActive(false);
+                }
             }
 
             // wait for interact with manager
@@ -75,10 +83,6 @@ public class manager_day3 : MonoBehaviour
                         StartCoroutine(managerLeave());
                     }
                 }
-            }
-            else if (game_data.day3_counter == 3)
-            {
-                manager.SetActive(false);
             }
         }
     }

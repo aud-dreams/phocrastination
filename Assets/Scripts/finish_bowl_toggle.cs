@@ -11,6 +11,8 @@ public class finish_bowl_toggle : MonoBehaviour
     public game_data game_data;
     public stat_data stat_data;
     public GameObject next_bowl_button, next_bowl_toggle, home;
+    public AudioSource src;
+    public AudioClip splash;
 
     user_log user = new user_log();
 
@@ -22,6 +24,8 @@ public class finish_bowl_toggle : MonoBehaviour
 
         // set visibility at start
         render.enabled = false;
+
+        src.clip = splash;
     }
 
     private void OnMouseEnter()
@@ -48,6 +52,7 @@ public class finish_bowl_toggle : MonoBehaviour
             {
                 if (!game_data.help)
                 {
+                    src.Play();
                     game_data.crafting = false;
                     game_data.bowl_complete = true;
                     game_data.crafting_blink = true;
@@ -66,7 +71,8 @@ public class finish_bowl_toggle : MonoBehaviour
                     game_data.constructed_orders++;
 
                     // post to database
-                    if (!game_data.tutorial) {
+                    if (!game_data.tutorial)
+                    {
                         user.game_status = game_data.round_type;
 
                         stat_data.IfZeroRedo();
@@ -74,10 +80,10 @@ public class finish_bowl_toggle : MonoBehaviour
 
                         stat_data.IfZeroRatioHit();
                         user.ratio_hit = stat_data.ratio_hit;
-                        
+
                         stat_data.CalculateTotalTimeDrawing();
                         user.total_time_drawing = stat_data.total_time_drawing;
-                        
+
                         user.bowl_created_ts2 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }

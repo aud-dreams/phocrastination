@@ -2467,7 +2467,8 @@ MonoBehaviour:
   home: {fileID: 915101460}
   wall: {fileID: 0}
   src: {fileID: 2099033356}
-  sparkle: {fileID: 8300000, guid: 47434b4adfb20984d83f9235346cea5d, type: 3}
+  sparkle1: {fileID: 8300000, guid: 47434b4adfb20984d83f9235346cea5d, type: 3}
+  sparkle2: {fileID: 8300000, guid: f976f09cf020a2442b827d8214779aff, type: 3}
 --- !u!61 &2015941270
 BoxCollider2D:
   m_ObjectHideFlags: 0

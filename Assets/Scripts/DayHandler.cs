@@ -47,7 +47,7 @@ public class DayHandler : MonoBehaviour
         {
             game_data.Day2 = false;
             game_data.clockTimer = 0;
-            dayConfig(4, 5, 2);
+            dayConfig(5, 5, 2);
 
             // Day2 pad on
             if (game_data.first_day2_help)
