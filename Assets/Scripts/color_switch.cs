@@ -55,51 +55,24 @@ public class color_switch : MonoBehaviour
                     if (this.CompareTag("BeefColor")) {
                         game_data.current_color = HexToColor("#8d6042");
 
-                        if(stat_data.switched)
-                        {
-                            user.game_status = game_data.round_type;
-                            user.color_switch++;
-                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
-                            stat_data.switched = false;
-                        }
-                        stat_data.switched = true;
+                        stat_data.color_switch++;
+
                     }
 
                     if (this.CompareTag("BrothColor")) {
                         game_data.current_color = HexToColor("#cfa76e");
 
-                        if(stat_data.switched)
-                        {
-                            user.game_status = game_data.round_type;
-                            user.color_switch++;
-                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
-                            stat_data.switched = false;
-                        }
-                        stat_data.switched = true;
+                        stat_data.color_switch++;
                     }
                     if (this.CompareTag("HerbsColor")) {
                         game_data.current_color = HexToColor("#507d4a");
 
-                        if(stat_data.switched)
-                        {
-                            user.game_status = game_data.round_type;
-                            user.color_switch++;
-                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
-                            stat_data.switched = false;
-                        }
-                        stat_data.switched = true;
+                        stat_data.color_switch++;
                     }
                     if (this.CompareTag("NoodlesColor")) {
                         game_data.current_color = HexToColor("#f0ddb6");
 
-                        if(stat_data.switched)
-                        {
-                            user.game_status = game_data.round_type;
-                            user.color_switch++;
-                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
-                            stat_data.switched = false;
-                        }
-                        stat_data.switched = true;
+                        stat_data.color_switch++;
                     }
                 }
             }

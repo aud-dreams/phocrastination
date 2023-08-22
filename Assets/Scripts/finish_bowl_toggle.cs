@@ -84,6 +84,9 @@ public class finish_bowl_toggle : MonoBehaviour
                         stat_data.CalculateTotalTimeDrawing();
                         user.total_time_drawing = stat_data.total_time_drawing;
 
+                        stat_data.IfZeroSwitch();
+                        user.color_switch = stat_data.color_switch;
+
                         user.bowl_created_ts2 = game_data.timer;
                         RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                     }

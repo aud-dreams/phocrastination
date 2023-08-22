@@ -24,7 +24,7 @@ public class stat_data : ScriptableObject
     public double total_time_drawing;
 
     public bool isFirstDot = true;
-    public bool switched = true;
+    public int color_switch;
 
     public void IfZeroRedo() 
     {
@@ -57,6 +57,15 @@ public class stat_data : ScriptableObject
     public void CalcualteTotalDirtyBowls() 
     {
         dirty_bowls_tot = dirty_bowls + 7;
+    }
+
+    public void IfZeroSwitch()
+    {
+        // flag for zero color switches
+        if (color_switch == 0)
+        {
+            color_switch = -1;
+        }
     }
 
     // cat station
