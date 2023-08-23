@@ -22,6 +22,14 @@ public class timer : MonoBehaviour
                 game_data.allow_timer = false;
         }
 
+        IEnumerator LoadEndScene()
+        {
+                crossfade.SetTrigger("end");
+                yield return new WaitForSeconds(1f);
+                SceneManager.LoadScene("End");
+                game_data.allow_timer = false;
+        }
+
         void Update()
         {
                 if (game_data.allow_timer && !game_data.tutorial)
@@ -84,8 +92,7 @@ public class timer : MonoBehaviour
                                 stat_data.firstLoad = false;
                         }
 
-                        StartCoroutine(LoadScene());
-                        Application.Quit();
+                        StartCoroutine(LoadEndScene());
                 }
 
                 // decrement cat bar once cat scene first clicked on
