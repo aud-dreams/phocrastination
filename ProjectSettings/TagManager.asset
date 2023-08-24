@@ -25,6 +25,7 @@ TagManager:
   - Jingle_Music
   - Src1
   - Src2
+  - Npc
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 421.00410110049415
-  userID: 169da418-efc7-4da6-855f-5bbbd8aa21c5
+  timer: 44.59552679990884
+  userID: b0bc2165-a898-4fc1-ac0b-2e11487256fa
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
-  allow_timer: 0
+  allow_timer: 1
   Day1: 0
   Day2: 0
   Day3: 0
@@ -23,12 +23,12 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 81.56006139877718
-  dishesTimer: 21.56006139877718
-  clockTimer: 75.56316469877493
+  customerTimer: 45.40447320009116
+  dishesTimer: -14.59552679990884
+  clockTimer: 39.40816870017443
   clock_counter: 1
-  cue_once: 1
-  cue_twice: 1
+  cue_once: 0
+  cue_twice: 0
   transition: 0
   transition_counter: 0
   tutorial: 0

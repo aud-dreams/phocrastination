@@ -8,12 +8,21 @@ public class DayHandler : MonoBehaviour
     public stat_data stat_data;
     public GameObject[] items, pads;
     public Sprite sprite;
-    public GameObject shadow, manager, tutorialHandler;
+    public GameObject shadow, manager, tutorialHandler, npc;
 
     user_log user = new user_log();
 
     void Update()
     {
+        if (game_data.round_type == 3 && game_data.day3_counter == 3)
+        {
+            npc.SetActive(true);
+        }
+        else
+        {
+            npc.SetActive(false);
+        }
+
         if (game_data.transition)         // manager on for transition sequence
         {
             manager.SetActive(true);
