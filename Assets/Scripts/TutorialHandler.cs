@@ -10,10 +10,12 @@ public class TutorialHandler : MonoBehaviour
     public GameObject manager, player;
     public float proximityThreshold;
     private SpriteRenderer toggle_render;
+    //private new Collider2D collider;
 
     void Start()
     {
         tutorialConfig();
+        //collider = manager.GetComponent<Collider2D>();
     }
 
 
@@ -79,30 +81,35 @@ public class TutorialHandler : MonoBehaviour
 
         if (game_data.tutorial_counter == 1)
         {
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold)
+            if (Input.GetMouseButtonDown(0))
             {
-                // take an order
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // restrict toggles
-                for (int i = 0; i < 5; i++)
+                if (hit.collider != null && distance <= proximityThreshold)
                 {
-                    if (i == 0)
+                    // take an order
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+
+                    // restrict toggles
+                    for (int i = 0; i < 5; i++)
                     {
-                        toggles[i].SetActive(true);
+                        if (i == 0)
+                        {
+                            toggles[i].SetActive(true);
+                        }
+                        else
+                        {
+                            toggles[i].SetActive(false);
+                        }
                     }
-                    else
-                    {
-                        toggles[i].SetActive(false);
-                    }
+
+                    // blink serving toggle
+                    game_data.allow_blink = true;
+                    StartCoroutine(blink(toggles[0]));
+
+                    game_data.tutorial_counter++;
                 }
-
-                // blink serving toggle
-                game_data.allow_blink = true;
-                StartCoroutine(blink(toggles[0]));
-
-                game_data.tutorial_counter++;
             }
         }
         else if (game_data.tutorial_counter == 2 && game_data.take_order_done)
@@ -111,43 +118,53 @@ public class TutorialHandler : MonoBehaviour
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.listen_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.tutorial_counter++;
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // listen for the door jingle for more customers
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
-                StartCoroutine(Wait());
-                game_data.listen_text = true;
+                if (hit.collider != null && distance <= proximityThreshold && !game_data.listen_text)
+                {
+                    game_data.tutorial_counter++;
+
+                    // listen for the door jingle for more customers
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+                    StartCoroutine(Wait());
+                    game_data.listen_text = true;
+                }
             }
         }
         else if (game_data.tutorial_counter == 4 && game_data.take_order_done)
         {
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.listen_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                // make the order
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // restrict toggles
-                for (int i = 0; i < 5; i++)
+                if (hit.collider != null && distance <= proximityThreshold && game_data.listen_text)
                 {
-                    if (i == 1)
+                    // make the order
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+
+                    // restrict toggles
+                    for (int i = 0; i < 5; i++)
                     {
-                        toggles[i].SetActive(true);
+                        if (i == 1)
+                        {
+                            toggles[i].SetActive(true);
+                        }
+                        else
+                        {
+                            toggles[i].SetActive(false);
+                        }
                     }
-                    else
-                    {
-                        toggles[i].SetActive(false);
-                    }
+
+                    // blink crafting toggle
+                    game_data.allow_blink = true;
+                    StartCoroutine(blink(toggles[1]));
+
+                    game_data.tutorial_counter++;
                 }
-
-                // blink crafting toggle
-                game_data.allow_blink = true;
-                StartCoroutine(blink(toggles[1]));
-
-                game_data.tutorial_counter++;
             }
         }
 
@@ -157,43 +174,53 @@ public class TutorialHandler : MonoBehaviour
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.outline_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.tutorial_counter++;
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // did you outline in black
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
-                StartCoroutine(Wait());
-                game_data.outline_text = true;
+                if (hit.collider != null && distance <= proximityThreshold && !game_data.outline_text)
+                {
+                    game_data.tutorial_counter++;
+
+                    // did you outline in black
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+                    StartCoroutine(Wait());
+                    game_data.outline_text = true;
+                }
             }
         }
         else if (game_data.tutorial_counter == 7 && game_data.make_order_done)
         {
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.outline_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                // drop off the order
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // restrict toggles
-                for (int i = 0; i < 5; i++)
+                if (hit.collider != null && distance <= proximityThreshold && game_data.outline_text)
                 {
-                    if (i == 2)
+                    // drop off the order
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+
+                    // restrict toggles
+                    for (int i = 0; i < 5; i++)
                     {
-                        toggles[i].SetActive(true);
+                        if (i == 2)
+                        {
+                            toggles[i].SetActive(true);
+                        }
+                        else
+                        {
+                            toggles[i].SetActive(false);
+                        }
                     }
-                    else
-                    {
-                        toggles[i].SetActive(false);
-                    }
+
+                    // blink pickup toggle
+                    game_data.allow_blink = true;
+                    StartCoroutine(blink(toggles[2]));
+
+                    game_data.tutorial_counter++;
                 }
-
-                // blink pickup toggle
-                game_data.allow_blink = true;
-                StartCoroutine(blink(toggles[2]));
-
-                game_data.tutorial_counter++;
             }
         }
         else if (game_data.tutorial_counter == 8 && game_data.drop_order_done)
@@ -202,32 +229,37 @@ public class TutorialHandler : MonoBehaviour
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold)
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.tutorial_counter++;
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // wash some dishes
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
-
-                // restrict toggles
-                for (int i = 0; i < 5; i++)
+                if (hit.collider != null && distance <= proximityThreshold)
                 {
-                    if (i == 3)
+                    game_data.tutorial_counter++;
+
+                    // wash some dishes
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+
+                    // restrict toggles
+                    for (int i = 0; i < 5; i++)
                     {
-                        toggles[i].SetActive(true);
+                        if (i == 3)
+                        {
+                            toggles[i].SetActive(true);
+                        }
+                        else
+                        {
+                            toggles[i].SetActive(false);
+                        }
                     }
-                    else
-                    {
-                        toggles[i].SetActive(false);
-                    }
+
+                    // blink dishes toggle
+                    game_data.allow_blink = true;
+                    StartCoroutine(blink(toggles[3]));
+
+                    game_data.tutorial_counter++;
                 }
-
-                // blink dishes toggle
-                game_data.allow_blink = true;
-                StartCoroutine(blink(toggles[3]));
-
-                game_data.tutorial_counter++;
             }
         }
         else if (game_data.tutorial_counter == 10 && game_data.wash_dishes_done)
@@ -236,29 +268,39 @@ public class TutorialHandler : MonoBehaviour
             manager_text[game_data.tutorial_counter - 1].SetActive(false);
             manager_text[game_data.tutorial_counter].SetActive(true);
 
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && !game_data.remember_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.tutorial_counter++;
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // remember your shift ends at 6pm
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
-                StartCoroutine(Wait());
-                game_data.remember_text = true;
+                if (hit.collider != null && distance <= proximityThreshold && !game_data.remember_text)
+                {
+                    game_data.tutorial_counter++;
+
+                    // remember your shift ends at 6pm
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+                    StartCoroutine(Wait());
+                    game_data.remember_text = true;
+                }
             }
         }
         else if (game_data.tutorial_counter == 12 && game_data.wash_dishes_done)
         {
-            if (Input.GetKey(KeyCode.Space) && distance <= proximityThreshold && game_data.remember_text)
+            if (Input.GetMouseButtonDown(0))
             {
-                // good job
-                manager_text[game_data.tutorial_counter - 1].SetActive(false);
-                manager_text[game_data.tutorial_counter].SetActive(true);
+                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
 
-                // scene crossfade to main (Day 1)
-                StartCoroutine(LoadScene());
-                game_data.Day1 = true;
-                game_data.first_day1_help = true;
+                if (hit.collider != null && distance <= proximityThreshold && game_data.remember_text)
+                {
+                    // good job
+                    manager_text[game_data.tutorial_counter - 1].SetActive(false);
+                    manager_text[game_data.tutorial_counter].SetActive(true);
+
+                    // scene crossfade to main (Day 1)
+                    StartCoroutine(LoadScene());
+                    game_data.Day1 = true;
+                    game_data.first_day1_help = true;
+                }
             }
         }
     }

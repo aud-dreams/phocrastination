@@ -11,10 +11,24 @@ public class manager_transition : MonoBehaviour
     public game_data game_data;
     public float proximityThreshold;
     public GameObject manager, player;
+    // private new Collider collider;
+
+    // void Start()
+    // {
+    //     collider = GetComponent<Collider>();
+    // }
 
     void Update()
     {
         float distance = Vector3.Distance(manager.transform.position, player.transform.position);
+
+        if (game_data.transition)
+        {
+            foreach (GameObject toggle in toggles)
+            {
+                toggle.SetActive(false);
+            }
+        }
 
         if (game_data.transition && game_data.transition_counter == 0)
         {
@@ -24,41 +38,41 @@ public class manager_transition : MonoBehaviour
 
         if (game_data.transition && distance <= proximityThreshold)
         {
-            foreach (GameObject toggle in toggles)
+            if (Input.GetMouseButtonDown(0))
             {
-                toggle.SetActive(false);
-            }
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
 
-            if (game_data.transition_counter == 0 && Input.GetKey(KeyCode.Space))
-            {
-                game_data.transition_counter++;
-            }
-            else if (Input.GetKey(KeyCode.Space) && game_data.transition_counter == 1)
-            {
-                if (game_data.round_type == 1)
+                if (hit.collider != null && (game_data.transition_counter == 0))
                 {
-                    // good job on day1
-                    text[0].SetActive(false);
-                    text[1].SetActive(true);
+                    game_data.transition_counter++;
                 }
-                else if (game_data.round_type == 2)
+                else if (hit.collider != null && game_data.transition_counter == 1)
                 {
-                    // good job on day2
-                    text[0].SetActive(false);
-                    text[2].SetActive(true);
-                }
+                    if (game_data.round_type == 1)
+                    {
+                        // good job on day1
+                        text[0].SetActive(false);
+                        text[1].SetActive(true);
+                    }
+                    else if (game_data.round_type == 2)
+                    {
+                        // good job on day2
+                        text[0].SetActive(false);
+                        text[2].SetActive(true);
+                    }
 
-                game_data.transition_counter++;
-                StartCoroutine(Wait());
-            }
-            else if (Input.GetKey(KeyCode.Space) && game_data.transition_counter == 2 && game_data.next_text1)
-            {
-                // see you tomorrow
-                text[1].SetActive(false);
-                text[2].SetActive(false);
-                text[3].SetActive(true);
-                StartCoroutine(Wait2());
-                StartCoroutine(LoadScene());
+                    game_data.transition_counter++;
+                    StartCoroutine(Wait());
+                }
+                else if (hit.collider != null && game_data.transition_counter == 2 && game_data.next_text1)
+                {
+                    // see you tomorrow
+                    text[1].SetActive(false);
+                    text[2].SetActive(false);
+                    text[3].SetActive(true);
+                    StartCoroutine(Wait2());
+                    StartCoroutine(LoadScene());
+                }
             }
         }
     }

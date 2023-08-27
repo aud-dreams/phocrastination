@@ -57,26 +57,32 @@ public class serving_toggle : MonoBehaviour
             render.enabled = true;
             text_render.enabled = true;
 
-            // switch scene if spacebar pressed
-            if (Input.GetKey(KeyCode.Space))
+            // switch scene if mouse click
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.character_position = player.transform.position;
-                game_data.character_sprite = render2.sprite;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-                SceneManager.LoadScene("Serving");
-
-                // post to database
-                if (!game_data.tutorial)
+                if (collider.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    if (game_data.current_customers != 0)
+                    game_data.character_position = player.transform.position;
+                    game_data.character_sprite = render2.sprite;
+
+                    SceneManager.LoadScene("Serving");
+
+                    // post to database
+                    if (!game_data.tutorial)
                     {
-                        user.game_status = game_data.round_type;
-                        user.order_collected_ts1 = game_data.timer;
-                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
+                        if (game_data.current_customers != 0)
+                        {
+                            user.game_status = game_data.round_type;
+                            user.order_collected_ts1 = game_data.timer;
+                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
+                        }
                     }
+                    game_data.allow_blink = false;
+                    StartCoroutine(LoadScene());
                 }
-                game_data.allow_blink = false;
-                StartCoroutine(LoadScene());
             }
         }
         else

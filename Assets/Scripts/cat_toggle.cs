@@ -58,34 +58,40 @@ public class cat_toggle : MonoBehaviour
             render.enabled = true;
             text_render.enabled = true;
 
-            // switch scene if spacebar pressed
-            if (Input.GetKey(KeyCode.Space))
+            // switch scene if mouse click
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.character_position = player.transform.position;
-                game_data.character_sprite = render2.sprite;
-                game_data.allow_blink = false;
-                game_data.outside_catscene = false;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-                // post to database
-                if (!game_data.tutorial)
+                if (collider.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    // first load
-                    if (stat_data.firstLoad2)
+                    game_data.character_position = player.transform.position;
+                    game_data.character_sprite = render2.sprite;
+                    game_data.allow_blink = false;
+                    game_data.outside_catscene = false;
+
+                    // post to database
+                    if (!game_data.tutorial)
                     {
-                        user.game_status = game_data.round_type;
+                        // first load
+                        if (stat_data.firstLoad2)
+                        {
+                            user.game_status = game_data.round_type;
 
-                        user.cat_scene_ts1 = game_data.timer;
-                        stat_data.start_cat = game_data.timer;
+                            user.cat_scene_ts1 = game_data.timer;
+                            stat_data.start_cat = game_data.timer;
 
-                        stat_data.CalculateDistractability();
-                        user.distractability_bool = stat_data.distractability_bool;
-                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
+                            stat_data.CalculateDistractability();
+                            user.distractability_bool = stat_data.distractability_bool;
+                            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
 
-                        stat_data.firstLoad2 = false;
+                            stat_data.firstLoad2 = false;
+                        }
                     }
-                }
 
-                StartCoroutine(LoadScene());
+                    StartCoroutine(LoadScene());
+                }
             }
         }
         else

@@ -10,10 +10,12 @@ public class manager_day3 : MonoBehaviour
     private SpriteRenderer manager_render;
     public Sprite right_manager;
     public float proximityThreshold;
+    //private new Collider collider;
 
     void Start()
     {
         manager_render = manager.GetComponent<SpriteRenderer>();
+        //collider = GetComponent<Collider>();
     }
 
     void Update()
@@ -47,47 +49,60 @@ public class manager_day3 : MonoBehaviour
             {
                 if (game_data.day3_counter == 0)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        // good job its the last day
-                        text[0].SetActive(false);
-                        text[1].SetActive(true);
-                        text[2].SetActive(false);
-                        text[3].SetActive(false);
-                        game_data.day3_counter++;
-                        StartCoroutine(Wait());
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+
+                        if (hit.collider != null)
+                        {
+                            // good job its the last day
+                            text[0].SetActive(false);
+                            text[1].SetActive(true);
+                            text[2].SetActive(false);
+                            text[3].SetActive(false);
+                            game_data.day3_counter++;
+                            StartCoroutine(Wait());
+                        }
                     }
                 }
                 else if (game_data.day3_counter == 1 && game_data.next_text1)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        // your coworker is taking over for today
-                        text[0].SetActive(false);
-                        text[1].SetActive(false);
-                        text[2].SetActive(true);
-                        text[3].SetActive(false);
-                        game_data.day3_counter++;
-                        StartCoroutine(Wait());
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+
+                        if (hit.collider != null)
+                        {
+                            // your coworker is taking over for today
+                            text[0].SetActive(false);
+                            text[1].SetActive(false);
+                            text[2].SetActive(true);
+                            text[3].SetActive(false);
+                            game_data.day3_counter++;
+                            StartCoroutine(Wait());
+                        }
                     }
                 }
                 else if (game_data.day3_counter == 2 && game_data.next_text2)
                 {
-                    if (Input.GetKey(KeyCode.Space))
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        // feel free to do anything you desire
-                        text[0].SetActive(false);
-                        text[1].SetActive(false);
-                        text[2].SetActive(false);
-                        text[3].SetActive(true);
-                        StartCoroutine(managerLeave());
+                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+
+                        if (hit.collider != null)
+                        {
+                            // feel free to do anything you desire
+                            text[0].SetActive(false);
+                            text[1].SetActive(false);
+                            text[2].SetActive(false);
+                            text[3].SetActive(true);
+                            StartCoroutine(managerLeave());
+                        }
                     }
                 }
             }
         }
     }
-
-    private float speed = 0.12f;
 
     IEnumerator managerLeave()
     {
@@ -100,7 +115,7 @@ public class manager_day3 : MonoBehaviour
         // move right and disappear at door
         while (manager.transform.position.x < 7.77)
         {
-            manager.transform.Translate(Vector3.right * speed * Time.deltaTime);
+            manager.transform.Translate(Vector3.right * 4 * Time.deltaTime);
             yield return null;
         }
 

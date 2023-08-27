@@ -54,13 +54,19 @@ public class crafting_toggle : MonoBehaviour
             render.enabled = true;
             text_render.enabled = true;
 
-            // switch scene if spacebar pressed
-            if (Input.GetKey(KeyCode.Space))
+            // switch scene if mouse click
+            if (Input.GetMouseButtonDown(0))
             {
-                game_data.character_position = player.transform.position;
-                game_data.character_sprite = render2.sprite;
-                game_data.allow_blink = false;
-                StartCoroutine(LoadScene());
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (collider.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    game_data.character_position = player.transform.position;
+                    game_data.character_sprite = render2.sprite;
+                    game_data.allow_blink = false;
+                    StartCoroutine(LoadScene());
+                }
             }
         }
         else
