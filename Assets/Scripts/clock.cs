@@ -27,11 +27,11 @@ public class clock : MonoBehaviour
         {
             game_data.clockTimer -= Time.deltaTime;
 
-            if (game_data.clockTimer <= 0)      // every 84 seconds (1/5 of 7 mins), switch to next hour sprite (5 sprites to switch to in total)
+            if (game_data.clockTimer <= 0)      // every 42 seconds (1/10 of 7 mins), switch to next hour sprite (10 sprites to switch to in total)
             {
                 clock_sprite.sprite = hours[game_data.clock_counter];
                 game_data.clock_counter++;
-                game_data.clockTimer = 84;
+                game_data.clockTimer = 42;
             }
         }
     }

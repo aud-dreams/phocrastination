@@ -5174,8 +5174,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743663152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.98, y: 4.586, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalPosition: {x: -7.72, y: 4.4438, z: 0}
+  m_LocalScale: {x: 0.889785, y: 0.88505644, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5196,10 +5196,15 @@ MonoBehaviour:
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
   hours:
   - {fileID: 21300000, guid: d20b3ba0f4df7364babdb47b8b18d877, type: 3}
+  - {fileID: 21300000, guid: f61f9fd57379d4f48884a107cb6f49e9, type: 3}
   - {fileID: 21300000, guid: d0a1ec0ec8717b148b3d12fa69944c93, type: 3}
+  - {fileID: 21300000, guid: 5f08fe90635620545a3a5d18690f0a5f, type: 3}
   - {fileID: 21300000, guid: e21ee3caccab37a47a54f7bb439188ce, type: 3}
+  - {fileID: 21300000, guid: dced0677227761f4fb4b7427cfcfe777, type: 3}
   - {fileID: 21300000, guid: 8bc0165a1b899f34db198d34cdd2712e, type: 3}
+  - {fileID: 21300000, guid: b33a382b969a94249b159831059f53e6, type: 3}
   - {fileID: 21300000, guid: 67878d44173a52a4e9be4de37f394632, type: 3}
+  - {fileID: 21300000, guid: 448ee5c5975f0f84f802bb2c99cefea1, type: 3}
   - {fileID: 21300000, guid: 341ed57a1bffe124ab5ecc12a06d964b, type: 3}
 --- !u!1 &1782223898
 GameObject:

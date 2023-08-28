@@ -80,7 +80,7 @@ public class DayHandler : MonoBehaviour
             manager.SetActive(true);
             game_data.Day3 = false;
             game_data.clockTimer = 0;
-            dayConfig(2, 3, 3);
+            dayConfig(2, 5, 3);
 
             // Day3 pad on
             if (game_data.first_day3_help)
