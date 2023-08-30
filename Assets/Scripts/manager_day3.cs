@@ -51,7 +51,8 @@ public class manager_day3 : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+                        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                         if (hit.collider != null)
                         {
@@ -69,7 +70,8 @@ public class manager_day3 : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+                        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                         if (hit.collider != null)
                         {
@@ -87,7 +89,8 @@ public class manager_day3 : MonoBehaviour
                 {
                     if (Input.GetMouseButtonDown(0))
                     {
-                        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f);
+                        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                         if (hit.collider != null)
                         {

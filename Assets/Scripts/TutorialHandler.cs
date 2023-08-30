@@ -83,7 +83,8 @@ public class TutorialHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold)
                 {
@@ -120,7 +121,8 @@ public class TutorialHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && !game_data.listen_text)
                 {
@@ -138,7 +140,8 @@ public class TutorialHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && game_data.listen_text)
                 {
@@ -176,7 +179,8 @@ public class TutorialHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && !game_data.outline_text)
                 {
@@ -194,7 +198,8 @@ public class TutorialHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && game_data.outline_text)
                 {
@@ -231,7 +236,8 @@ public class TutorialHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold)
                 {
@@ -270,7 +276,8 @@ public class TutorialHandler : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && !game_data.remember_text)
                 {
@@ -288,7 +295,8 @@ public class TutorialHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                RaycastHit2D hit = Physics2D.Raycast(manager.transform.position, Vector2.down, 1f);
+                Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 0f);
 
                 if (hit.collider != null && distance <= proximityThreshold && game_data.remember_text)
                 {

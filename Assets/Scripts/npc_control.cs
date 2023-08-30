@@ -44,7 +44,7 @@ public class npc_control : MonoBehaviour
             // move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, 4 * Time.deltaTime);
 
-            //  cif the character has reached the target position
+            // if the character has reached the target position
             if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
                 isMoving = false;
