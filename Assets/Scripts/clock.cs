@@ -23,6 +23,11 @@ public class clock : MonoBehaviour
 
     void Update()
     {
+        if (game_data.first_day1_help || game_data.first_day2_help || game_data.first_day3_help)
+        {
+            clock_sprite.sprite = hours[0];
+        }
+
         if (game_data.allow_timer && !game_data.tutorial)
         {
             game_data.clockTimer -= Time.deltaTime;
