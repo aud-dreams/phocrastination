@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 47.23673150653485
-  userID: 86931c1a-f1e8-4061-a8df-50dd55cd520d
+  timer: 449.4313099212013
+  userID: 9d351e4a-c218-428f-b7c1-2447d920c8be
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
   allow_timer: 1
-  Day1: 0
+  Day1: 1
   Day2: 0
   Day3: 0
   round_type: 1
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 15.031277682748623
-  dishesTimer: -44.96872231725138
-  clockTimer: -12.641218011267483
-  clock_counter: 11
-  cue_once: 0
-  cue_twice: 0
-  transition: 0
-  transition_counter: 0
+  customerTimer: 36.373786374693736
+  dishesTimer: -23.626213625306264
+  clockTimer: 30.333974888315424
+  clock_counter: 2
+  cue_once: 1
+  cue_twice: 1
+  transition: 1
+  transition_counter: 2
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -52,9 +52,9 @@ MonoBehaviour:
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: 1.2778172, y: 2.509188, z: 0}
+  character_position: {x: 6.13075, y: -1.5162505, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: e4d8d79aa62f0344197841b49c0b7406, type: 3}
+  character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
   first_serving_help: 0
   total_customers: 2
   current_customers: 1
@@ -91,9 +91,9 @@ MonoBehaviour:
   allow_bowls: 1
   washing: 0
   bubbles: 0
-  first_cat_help: 1
+  first_cat_help: 0
   allow_hand: 1
   hand_on: 1
-  progress_position: {x: -1.16, y: 3.79, z: 0}
-  progress_scale: {x: 0.01, y: 1.1, z: 0}
-  outside_catscene: 1
+  progress_position: {x: -1.0308444, y: 3.79, z: 0}
+  progress_scale: {x: 0.13916005, y: 1.1, z: 0}
+  outside_catscene: 0
