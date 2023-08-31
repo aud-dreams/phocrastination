@@ -8,21 +8,12 @@ public class DayHandler : MonoBehaviour
     public stat_data stat_data;
     public GameObject[] items, pads;
     public Sprite sprite;
-    public GameObject shadow, manager, tutorialHandler, npc;
+    public GameObject shadow, manager, tutorialHandler;
 
     user_log user = new user_log();
 
     void Update()
     {
-        if (game_data.round_type == 3 && game_data.day3_counter == 3)
-        {
-            npc.SetActive(true);
-        }
-        else
-        {
-            npc.SetActive(false);
-        }
-
         if (game_data.transition)         // manager on for transition sequence
         {
             manager.SetActive(true);
@@ -94,6 +85,9 @@ public class DayHandler : MonoBehaviour
 
             stat_data.dirty_bowls = game_data.dirty_bowls;
             stat_data.CalcualteTotalDirtyBowls();
+
+            // turn DayHandler inactive
+            gameObject.SetActive(false);
         }
     }
 
