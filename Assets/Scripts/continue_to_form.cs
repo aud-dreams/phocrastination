@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class copy_ID : MonoBehaviour
+public class continue_to_form : MonoBehaviour
 {
     public game_data game_data;
     private Renderer render;
@@ -16,10 +16,9 @@ public class copy_ID : MonoBehaviour
         collider = GetComponent<Collider>();
     }
 
-    public void CopyToClipboard()
+    public void OpenLink()
     {
-        GUIUtility.systemCopyBuffer = game_data.userID;
-        Debug.Log("Unique ID copied to clipboard: " + game_data.userID);
+        Debug.Log("opening link");
     }
 
     void Update()
@@ -31,7 +30,7 @@ public class copy_ID : MonoBehaviour
 
             if (GetComponent<Collider>().Raycast(ray, out hit, Mathf.Infinity))
             {
-                CopyToClipboard();
+                OpenLink();
             }
         }
     }
