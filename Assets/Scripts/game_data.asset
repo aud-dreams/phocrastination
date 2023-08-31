@@ -12,25 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 449.4313099212013
-  userID: 9d351e4a-c218-428f-b7c1-2447d920c8be
+  timer: 421.00622629886493
+  userID: 05e12a81-9311-40dd-8e25-558ab52763e7
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
-  allow_timer: 1
-  Day1: 1
+  allow_timer: 0
+  Day1: 0
   Day2: 0
   Day3: 0
-  round_type: 1
+  round_type: 3
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 36.373786374693736
-  dishesTimer: -23.626213625306264
-  clockTimer: 30.333974888315424
-  clock_counter: 2
+  customerTimer: 85.91483989742119
+  dishesTimer: 25.91483989742119
+  clockTimer: 37.91679579752963
+  clock_counter: 1
   cue_once: 1
   cue_twice: 1
-  transition: 1
-  transition_counter: 2
+  transition: 0
+  transition_counter: 0
   tutorial: 0
   take_order_done: 1
   make_order_done: 1
@@ -46,25 +46,24 @@ MonoBehaviour:
   listen_text: 1
   outline_text: 1
   remember_text: 1
-  day3_counter: 0
-  next_text1: 0
-  next_text2: 0
+  day3_counter: 3
+  next_text1: 1
+  next_text2: 1
   first_main_help: 0
   help: 0
   click: 1
-  character_position: {x: 6.13075, y: -1.5162505, z: 0}
+  character_position: {x: 0, y: 0.3, z: 0}
   allow_move: 1
-  character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
+  character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
   first_serving_help: 0
   total_customers: 2
-  current_customers: 1
-  customers_line:
-  - {fileID: 0}
-  can_next: 1
+  current_customers: 2
+  customers_line: []
+  can_next: 0
   last: 0
-  orders: 1
+  orders: 0
   first_pickup_help: 0
-  ordered_customers: 1
+  ordered_customers: 0
   ordered_line: []
   can_next2: 0
   once: 1
@@ -87,13 +86,13 @@ MonoBehaviour:
   crafting: 0
   is_drawing: 0
   first_dishes_help: 0
-  dirty_bowls: 3
+  dirty_bowls: 5
   allow_bowls: 1
   washing: 0
   bubbles: 0
   first_cat_help: 0
   allow_hand: 1
   hand_on: 1
-  progress_position: {x: -1.0308444, y: 3.79, z: 0}
-  progress_scale: {x: 0.13916005, y: 1.1, z: 0}
-  outside_catscene: 0
+  progress_position: {x: -1.1700236, y: 3.79, z: 0}
+  progress_scale: {x: -0.000009956653, y: 1.1, z: 0}
+  outside_catscene: 1

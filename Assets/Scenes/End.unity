@@ -503,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381671699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -2.44, z: 0}
+  m_LocalPosition: {x: 0.012, y: -1.812, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  userID: 
 --- !u!65 &1381671703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -534,8 +535,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9486268, y: 0.612998, z: 1}
-  m_Center: {x: -0.01179862, y: -0.018877983, z: 0}
+  m_Size: {x: 2.4724917, y: 0.8118119, z: 1}
+  m_Center: {x: -0.019249499, y: -0.18985796, z: 0}
 --- !u!212 &1381671704
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -577,7 +578,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -585,7 +586,7 @@ SpriteRenderer:
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1852065668
@@ -599,7 +600,7 @@ GameObject:
   - component: {fileID: 1852065670}
   - component: {fileID: 1852065669}
   m_Layer: 0
-  m_Name: copy
+  m_Name: continue_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +647,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4a80a84e6d1c0584c9f3fa333d9bfcf2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ba06108fc6b713499833075bd5fefe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -665,8 +666,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852065668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -2.45, z: 0.02170249}
-  m_LocalScale: {x: 0.8111, y: 0.8111, z: 0.8111}
+  m_LocalPosition: {x: 0, y: -2, z: 0.02170249}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.03100586, y: -0.018005371}
   m_SizeDelta: {x: 0.1826, y: 0.1478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2017868634
