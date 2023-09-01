@@ -96,6 +96,7 @@ public class main_toggle : MonoBehaviour
                 {
                     game_data.crafting_continue = true;
                     game_data.current_color = Color.black;
+
                     if (game_data.tutorial)
                     {
                         game_data.make_order_done = true;

@@ -10,12 +10,10 @@ public class TutorialHandler : MonoBehaviour
     public GameObject manager, player;
     public float proximityThreshold;
     private SpriteRenderer toggle_render;
-    //private new Collider2D collider;
 
     void Start()
     {
         tutorialConfig();
-        //collider = manager.GetComponent<Collider2D>();
     }
 
 

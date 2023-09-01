@@ -6,7 +6,7 @@ public class start_main_config : MonoBehaviour
 {
     public GameObject[] start, day_pads;
     public game_data game_data;
-    public GameObject shadow;
+    public GameObject shadow, dayHandler;
 
     void Update()
     {
@@ -24,6 +24,13 @@ public class start_main_config : MonoBehaviour
             foreach (GameObject item in start) { item.SetActive(false); }
             foreach (GameObject pad in day_pads) { pad.SetActive(false); }
             shadow.SetActive(false);
+        }
+
+        // turn DayHandler inactive
+        if (game_data.round_type == 3 && game_data.day3_counter == 3)
+        {
+            dayHandler.SetActive(false);
+            Debug.Log("here");
         }
     }
 }
