@@ -21,12 +21,8 @@ public class copy_ID : MonoBehaviour
     public void CopyToClipboard()
     {
         GUIUtility.systemCopyBuffer = game_data.userID.ToString();
-<<<<<<< HEAD
-        Debug.Log("Unique ID copied to clipboard: " + game_data.userID);
-=======
         Debug.Log("Unique ID copied to clipboard: " + game_data.userID.ToString());
         status.SetActive(true);
->>>>>>> 48bcd1db4ec8ffb0c770dc1a98efeab398e530f7
     }
 
     void Update()

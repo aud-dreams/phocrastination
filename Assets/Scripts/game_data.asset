@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  timer: 0
-  userID: 0
-=======
   timer: 421.0066211015219
   userID: 2f35d3aa-9b56-4a1d-9280-bd89ab933b6d
->>>>>>> 48bcd1db4ec8ffb0c770dc1a98efeab398e530f7
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
   allow_timer: 0
   Day1: 0
@@ -28,24 +23,6 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-<<<<<<< HEAD
-  customerTimer: 90
-  dishesTimer: 30
-  clockTimer: 0
-  clock_counter: 0
-  cue_once: 0
-  cue_twice: 0
-  transition: 0
-  transition_counter: 0
-  tutorial: 1
-  take_order_done: 0
-  make_order_done: 0
-  drop_order_done: 0
-  wash_dishes_done: 0
-  tutorial_counter: 0
-  tutorial_main: 0
-  crafting_blink: 0
-=======
   customerTimer: 17.768729525152594
   dishesTimer: -42.231270474847406
   clockTimer: 11.773367117741145
@@ -62,7 +39,6 @@ MonoBehaviour:
   tutorial_counter: 12
   tutorial_main: 1
   crafting_blink: 1
->>>>>>> 48bcd1db4ec8ffb0c770dc1a98efeab398e530f7
   dishes_blink: 0
   home_on: 1
   cat_blink: 1
@@ -76,26 +52,6 @@ MonoBehaviour:
   first_main_help: 1
   help: 1
   click: 1
-<<<<<<< HEAD
-  character_position: {x: 0, y: 0.3, z: 0}
-  allow_move: 0
-  character_sprite: {fileID: 21300000, guid: 2e33c64467e31224a8f94da6255ffddd, type: 3}
-  first_serving_help: 1
-  total_customers: 1
-  current_customers: 1
-  customers_line: []
-  can_next: 0
-  last: 0
-  orders: 0
-  first_pickup_help: 1
-  ordered_customers: 0
-  ordered_line: []
-  can_next2: 0
-  once: 1
-  once2: 1
-  constructed_orders: 0
-  allow_drag: 0
-=======
   character_position: {x: 5.643265, y: -1.864822, z: 0}
   allow_move: 1
   character_sprite: {fileID: 21300000, guid: f01d2d84365b7014e817da3a91d137e6, type: 3}
@@ -116,7 +72,6 @@ MonoBehaviour:
   once2: 0
   constructed_orders: 1
   allow_drag: 1
->>>>>>> 48bcd1db4ec8ffb0c770dc1a98efeab398e530f7
   last2: 0
   first_crafting_help: 1
   crafting_continue: 0
@@ -132,18 +87,6 @@ MonoBehaviour:
   pad_on: 0
   crafting: 1
   is_drawing: 0
-<<<<<<< HEAD
-  first_dishes_help: 1
-  dirty_bowls: 2
-  allow_bowls: 0
-  washing: 0
-  bubbles: 0
-  first_cat_help: 1
-  allow_hand: 0
-  hand_on: 0
-  progress_position: {x: -1.16, y: 3.79, z: 0}
-  progress_scale: {x: 0.01, y: 1.1, z: 0}
-=======
   first_dishes_help: 0
   dirty_bowls: 4
   allow_bowls: 1
@@ -154,5 +97,4 @@ MonoBehaviour:
   hand_on: 0
   progress_position: {x: -1.1700236, y: 3.79, z: 0}
   progress_scale: {x: -0.000009956653, y: 1.1, z: 0}
->>>>>>> 48bcd1db4ec8ffb0c770dc1a98efeab398e530f7
   outside_catscene: 1
