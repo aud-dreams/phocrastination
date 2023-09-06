@@ -10,10 +10,10 @@ public class generate_id : MonoBehaviour
     void Start()
     {
         //PostInitial();
-        GetNumberOfUsers();
+        GetUserID();
     }
 
-    private void GetNumberOfUsers()
+    private void GetUserID()
     {
         RestClient.Get<user_log>(game_data.db_url + "0.json").Then(callback =>
         {
