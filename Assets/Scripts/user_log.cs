@@ -7,8 +7,8 @@ public class user_log
     // global
     public double global_timer;  // logged at end of day
     public int game_status;
-
-    // main
+    public int player_count;    // only used for initial player 0
+    public bool game_done;
 
     // serving station
     public double order_collected_ts1;
@@ -27,7 +27,7 @@ public class user_log
     public float ratio_hit;
     public double total_time_drawing;
     public int color_switch;
-    
+
     public double bowl_created_ts1;
     public double bowl_created_ts2;
     public int bowl_created_rem;

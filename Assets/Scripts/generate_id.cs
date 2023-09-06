@@ -5,46 +5,32 @@ using Proyecto26;
 public class generate_id : MonoBehaviour
 {
     public game_data game_data;
-    Counter UserCount;
+    user_log user = new user_log();
 
     void Start()
     {
+        //PostInitial();
         GetNumberOfUsers();
     }
 
     private void GetNumberOfUsers()
     {
-        RestClient.Get("https://phocrastination-user-default-rtdb.firebaseio.com/test.json").Then(response =>
+        RestClient.Get<user_log>(game_data.db_url + "0.json").Then(callback =>
         {
-            Debug.Log(response.ToString());
+            // take current player_count and increment
+            Debug.Log(callback.player_count);
+            game_data.userID = callback.player_count + 1;
+            Debug.Log(game_data.userID);
 
-            // // create Counter instance
-            // UserCount = new Counter(response.user_count);
-            // UserCount.add();
-            // game_data.userID = UserCount.user_count;
-
-            // // increment and update database
-            // RestClient.Put("https://phocrastination-user-default-rtdb.firebaseio.com/test.json", UserCount);
-            // Debug.Log(game_data.userID);
+            // PUT (replace) player_count of player 0
+            user.player_count = game_data.userID;
+            RestClient.Put(game_data.db_url + "0.json", user);
         });
     }
 
-    public class Counter
-    {
-        public int user_count { get; set; }
-
-        public Counter()
-        {
-        }
-
-        public Counter(int initial)
-        {
-            user_count = initial;
-        }
-
-        public void add()
-        {
-            user_count++;
-        }
-    }
+    // private void PostInitial()
+    // {
+    //     user.player_count = 0;
+    //     RestClient.Put(game_data.db_url + "0.json", user);
+    // }
 }
