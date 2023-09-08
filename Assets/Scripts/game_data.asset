@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a10e4284d9fb504583280e5587723c3, type: 3}
   m_Name: game_data
   m_EditorClassIdentifier: 
-  timer: 0
-  userID: 7
+  timer: 421.0191674998496
+  userID: player8
   db_url: https://phocrastination-user-default-rtdb.firebaseio.com/
   allow_timer: 0
   Day1: 0
@@ -23,12 +23,12 @@ MonoBehaviour:
   first_day1_help: 0
   first_day2_help: 0
   first_day3_help: 0
-  customerTimer: 90
-  dishesTimer: 30
-  clockTimer: 0
-  clock_counter: 0
-  cue_once: 0
-  cue_twice: 0
+  customerTimer: 3.5137211920227855
+  dishesTimer: -56.486278807977214
+  clockTimer: 39.52114439883735
+  clock_counter: 3
+  cue_once: 1
+  cue_twice: 1
   transition: 0
   transition_counter: 0
   tutorial: 0
@@ -46,9 +46,9 @@ MonoBehaviour:
   listen_text: 1
   outline_text: 1
   remember_text: 1
-  day3_counter: 0
-  next_text1: 0
-  next_text2: 0
+  day3_counter: 3
+  next_text1: 1
+  next_text2: 1
   first_main_help: 0
   help: 0
   click: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   washing: 0
   bubbles: 0
   first_cat_help: 0
-  allow_hand: 1
+  allow_hand: 0
   hand_on: 1
   progress_position: {x: -1.1700236, y: 3.79, z: 0}
   progress_scale: {x: -0.000009956653, y: 1.1, z: 0}

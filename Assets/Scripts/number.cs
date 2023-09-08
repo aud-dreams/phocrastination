@@ -21,53 +21,74 @@ public class number : MonoBehaviour
 
         // initialize dict
         numbers_keys = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        for (int i = 0; i < numbers_keys.Count; i++) {
+        for (int i = 0; i < numbers_keys.Count; i++)
+        {
             numbers.Add(numbers_keys[i], numbers_values[i]);
         }
     }
 
     void Update()
     {
-        if (gameObject.CompareTag("Serving")) {
+        if (gameObject.CompareTag("Serving"))
+        {
             // customers in line
-            if (game_data.current_customers <= 9) {  // single digits = 1 sprite
+            if (game_data.current_customers <= 9)   // single digits = 1 sprite
+            {
                 render1.sprite = GetNumber(game_data.current_customers);
                 render2.sprite = null;
-            } else {  // double digits = 2 sprites side by side
+            }
+            else    // double digits = 2 sprites side by side
+            {
                 render1.sprite = GetNumber(game_data.current_customers / 10);
                 render2.sprite = GetNumber(game_data.current_customers % 10);
             }
-        } else if (gameObject.CompareTag("Crafting")) {
+        }
+        else if (gameObject.CompareTag("Crafting"))
+        {
             // orders placed
-            if (game_data.orders <= 9) {
+            if (game_data.orders <= 9)
+            {
                 render1.sprite = GetNumber(game_data.orders);
                 render2.sprite = null;
-            } else {
+            }
+            else
+            {
                 render1.sprite = GetNumber(game_data.orders / 10);
                 render2.sprite = GetNumber(game_data.orders % 10);
             }
-        } else if (gameObject.CompareTag("Dishes")) {
+        }
+        else if (gameObject.CompareTag("Dishes"))
+        {
             // dirty bowls
-            if (game_data.dirty_bowls <= 9) {
+            if (game_data.dirty_bowls <= 9)
+            {
                 render1.sprite = GetNumber(game_data.dirty_bowls);
                 render2.sprite = null;
-            } else {
+            }
+            else
+            {
                 render1.sprite = GetNumber(game_data.dirty_bowls / 10);
                 render2.sprite = GetNumber(game_data.dirty_bowls % 10);
             }
-        } else if (gameObject.CompareTag("Pickup")) {
+        }
+        else if (gameObject.CompareTag("Pickup"))
+        {
             // ordered customers in line
-            if (game_data.ordered_customers <= 9) {  // single digits = 1 sprite
+            if (game_data.ordered_customers <= 9)
+            {
                 render1.sprite = GetNumber(game_data.ordered_customers);
                 render2.sprite = null;
-            } else {  // double digits = 2 sprites side by side
+            }
+            else
+            {
                 render1.sprite = GetNumber(game_data.ordered_customers / 10);
                 render2.sprite = GetNumber(game_data.ordered_customers % 10);
             }
         }
     }
 
-    private Sprite GetNumber(int key) {
+    private Sprite GetNumber(int key)
+    {
         Sprite sprite = null;
         numbers.TryGetValue(key, out sprite);
         return sprite;
