@@ -53,7 +53,9 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-
+                        game_data.allow_paintbrush = false;
+                        game_data.allow_hand = false;
+                        Cursor.visible = true;
                         StartCoroutine(LoadScene());
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 2 && !game_data.transition)      // Day2 over
@@ -72,7 +74,9 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-
+                        game_data.allow_paintbrush = false;
+                        game_data.allow_hand = false;
+                        Cursor.visible = true;
                         StartCoroutine(LoadScene());
                 }
                 else if (game_data.timer > 420 && game_data.round_type == 3)      // Day3 over
@@ -91,7 +95,9 @@ public class timer : MonoBehaviour
                                 RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
                                 stat_data.firstLoad = false;
                         }
-
+                        game_data.allow_paintbrush = false;
+                        game_data.allow_hand = false;
+                        Cursor.visible = true;
                         StartCoroutine(LoadEndScene());
                 }
 

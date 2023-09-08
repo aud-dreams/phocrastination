@@ -7,7 +7,7 @@ public class game_data : ScriptableObject
 {
     // global
     public double timer;
-    public int userID;
+    public string userID;
     public string db_url = "https://phocrastination-user-default-rtdb.firebaseio.com/";
     public bool allow_timer;
     public bool Day1;           // instantiation for beginning of day

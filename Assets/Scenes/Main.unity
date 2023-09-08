@@ -3093,6 +3093,11 @@ MonoBehaviour:
   - {fileID: 1833506152}
   - {fileID: 1387471441}
   - {fileID: 524853426}
+  - {fileID: 228695510}
+  - {fileID: 617979599}
+  - {fileID: 1721679937}
+  - {fileID: 1673181024}
+  - {fileID: 102225786}
   crossfade: {fileID: 407537919}
   scene: Main
   game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}

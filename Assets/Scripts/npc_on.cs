@@ -9,7 +9,11 @@ public class npc_on : MonoBehaviour
 
     void Update()
     {
-        if (game_data.round_type == 3 && game_data.day3_counter == 3)
+        if (game_data.round_type == 2 && game_data.transition)      // npc off during scene transition 2
+        {
+            npc.SetActive(false);
+        }
+        if (game_data.round_type == 3 && game_data.day3_counter == 3)   // npc on during round 3 after manager leaves
         {
             npc.SetActive(true);
         }

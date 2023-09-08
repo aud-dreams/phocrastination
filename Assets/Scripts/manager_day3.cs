@@ -135,7 +135,7 @@ public class manager_day3 : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         if (game_data.next_text1 == false)
         {
             game_data.next_text1 = true;

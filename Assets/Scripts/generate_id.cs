@@ -18,12 +18,10 @@ public class generate_id : MonoBehaviour
         RestClient.Get<user_log>(game_data.db_url + "0.json").Then(callback =>
         {
             // take current player_count and increment
-            Debug.Log(callback.player_count);
-            game_data.userID = callback.player_count + 1;
-            Debug.Log(game_data.userID);
+            game_data.userID = "player" + (callback.player_count + 1).ToString();
 
             // PUT (replace) player_count of player 0
-            user.player_count = game_data.userID;
+            user.player_count = callback.player_count + 1;
             RestClient.Put(game_data.db_url + "0.json", user);
         });
     }
