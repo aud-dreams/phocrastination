@@ -26,7 +26,7 @@ public class stat_data : ScriptableObject
     public bool isFirstDot = true;
     public int color_switch;
 
-    public void IfZeroRedo() 
+    public void IfZeroRedo()
     {
         // flag for zero redos
         if (redo == 0)
@@ -44,7 +44,7 @@ public class stat_data : ScriptableObject
         }
     }
 
-    public void CalculateTotalTimeDrawing() 
+    public void CalculateTotalTimeDrawing()
     {
         total_time_drawing = end_drawing - start_drawing;
     }
@@ -54,7 +54,7 @@ public class stat_data : ScriptableObject
     public int dirty_bowls;
     public int dirty_bowls_tot;
 
-    public void CalcualteTotalDirtyBowls() 
+    public void CalcualteTotalDirtyBowls()
     {
         dirty_bowls_tot = dirty_bowls + 7;
     }
@@ -71,14 +71,22 @@ public class stat_data : ScriptableObject
     // cat station
     /* retrieve timestamp from cat sound & cat station entered, if <20 seconds, apply distractability weight */
     public double start_cat;
+    public double end_cat;
     public double cat_cue;
     public int distractability_bool;
     public double sec_between;
+    public double total_time_cat;
 
     public void CalculateDistractability()
     {
         sec_between = Math.Abs(start_cat - cat_cue);
+        total_time_cat = Math.Abs(end_cat - start_cat);
+
         if (sec_between <= 20)
+        {
+            distractability_bool = 1;
+        }
+        else if (total_time_cat >= 20)
         {
             distractability_bool = 1;
         }
@@ -89,5 +97,5 @@ public class stat_data : ScriptableObject
     }
 
     public bool firstLoad2 = true;
-    public bool firstLoad3 = true;   
+    public bool firstLoad3 = true;
 }

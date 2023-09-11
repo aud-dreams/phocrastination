@@ -2167,7 +2167,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.2965784, y: -2.4518943}
+  m_Offset: {x: 3.2965784, y: -2.2831469}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2178,7 +2178,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9394684, y: 6.025956}
+  m_Size: {x: 0.9394684, y: 10.149273}
   m_EdgeRadius: 0
 --- !u!4 &551624832
 Transform:
@@ -3287,7 +3287,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.4996624, y: -4.6362743}
+  m_Offset: {x: -4.2817426, y: -4.6362743}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3298,7 +3298,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.431007, y: 1.9316616}
+  m_Size: {x: 17.914608, y: 1.9316616}
   m_EdgeRadius: 0
 --- !u!4 &1009580231
 Transform:
@@ -5882,7 +5882,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -11.915615, y: -1.5012164}
+  m_Offset: {x: -11.915615, y: -0.562098}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5893,7 +5893,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.630928, y: 5.7193937}
+  m_Size: {x: 2.630928, y: 10.150859}
   m_EdgeRadius: 0
 --- !u!4 &1950668650
 Transform:
@@ -6063,7 +6063,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.8565378, y: -0.18200064}
+  m_Offset: {x: -5.123934, y: 1.0792433}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6074,7 +6074,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.3948, y: 0.9355545}
+  m_Size: {x: 17.929594, y: 3.4580424}
   m_EdgeRadius: 0
 --- !u!4 &2047301324
 Transform:

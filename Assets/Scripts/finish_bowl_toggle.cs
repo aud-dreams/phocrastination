@@ -97,6 +97,7 @@ public class finish_bowl_toggle : MonoBehaviour
                     stat_data.redo = 0;
                     // reset color_switch
                     user.color_switch = 0;
+                    stat_data.color_switch = 0;
                 }
             }
         }

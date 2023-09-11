@@ -19,6 +19,7 @@ public class GameHandler : MonoBehaviour
         // global initialization
         game_data.timer = 0;
         game_data.userID = "0";
+        game_data.db_url = "https://phocrastination-final-default-rtdb.firebaseio.com/";
         game_data.allow_timer = true;
         game_data.Day1 = false;
         game_data.Day2 = false;
