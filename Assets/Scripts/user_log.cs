@@ -9,6 +9,7 @@ public class user_log
     public int game_status;
     public int player_count;    // only used for initial player 0
     public bool game_done;
+    public bool tutorial_started;
 
     // serving station
     public double order_collected_ts1;

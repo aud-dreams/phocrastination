@@ -23,6 +23,9 @@ public class generate_id : MonoBehaviour
             // PUT (replace) player_count of player 0
             user.player_count = callback.player_count + 1;
             RestClient.Put(game_data.db_url + "0.json", user);
+
+            user.tutorial_started = true;
+            RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
         });
     }
 
