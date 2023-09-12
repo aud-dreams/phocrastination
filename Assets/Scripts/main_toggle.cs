@@ -82,6 +82,23 @@ public class main_toggle : MonoBehaviour
 
             if (collider.Raycast(ray, out hit, Mathf.Infinity))
             {
+                if (collider.CompareTag("Play"))
+                {
+                    user_log user = new user_log();
+                    RestClient.Get<user_log>(game_data.db_url + "0.json").Then(callback =>
+                    {
+                        // take current player_count and increment
+                        game_data.userID = "player" + (callback.player_count + 1).ToString();
+
+                        // PUT (replace) player_count of player 0
+                        user.player_count = callback.player_count + 1;
+                        RestClient.Put(game_data.db_url + "0.json", user);
+
+                        user.tutorial_started = true;
+                        RestClient.Post(game_data.db_url + game_data.userID + ".json", user);
+                    });
+                }
+
                 if (collider.CompareTag("Serving"))
                 {
                     if (game_data.tutorial)
