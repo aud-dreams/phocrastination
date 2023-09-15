@@ -169,6 +169,7 @@ public class main_toggle : MonoBehaviour
                     stat_data.firstLoad3 = true;
                 }
 
+                game_data.going_home = true;
                 StartCoroutine(LoadScene());
             }
         }

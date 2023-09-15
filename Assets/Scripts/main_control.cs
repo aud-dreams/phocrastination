@@ -11,6 +11,12 @@ public class main_control : MonoBehaviour
     {
         if (gameObject.CompareTag("Serving"))
         {
+            if (game_data.going_home)
+            {
+                home.SetActive(true);
+                game_data.going_home = false;
+            }
+
             if (!game_data.tutorial_main || game_data.help)     // home off during tutorial
             {
                 home.SetActive(false);
@@ -34,6 +40,12 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Pickup"))
         {
+            if (game_data.going_home)
+            {
+                home.SetActive(true);
+                game_data.going_home = false;
+            }
+
             if (game_data.help || game_data.first_pickup_help)       // home off while pad on
             {
                 home.SetActive(false);
@@ -61,6 +73,12 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Crafting"))
         {
+            if (game_data.going_home)
+            {
+                home.SetActive(true);
+                game_data.going_home = false;
+            }
+
             if (game_data.crafting)         // home off if currently crafting
             {
                 home.SetActive(false);
@@ -72,6 +90,12 @@ public class main_control : MonoBehaviour
         }
         else if (gameObject.CompareTag("Dishes"))
         {
+            if (game_data.going_home)
+            {
+                home.SetActive(true);
+                game_data.going_home = false;
+            }
+
             if (game_data.tutorial && game_data.dirty_bowls != 0)
             {
                 home.SetActive(false);
@@ -83,6 +107,14 @@ public class main_control : MonoBehaviour
             else if (!game_data.washing)    // home on if not currently washing
             {
                 home.SetActive(true);
+            }
+        }
+        else if (gameObject.CompareTag("Cat"))
+        {
+            if (game_data.going_home)
+            {
+                home.SetActive(true);
+                game_data.going_home = false;
             }
         }
     }

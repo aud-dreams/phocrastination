@@ -1702,9 +1702,10 @@ GameObject:
   - component: {fileID: 1918423560}
   - component: {fileID: 1918423559}
   - component: {fileID: 1918423563}
+  - component: {fileID: 1918423564}
   m_Layer: 0
   m_Name: cat_station
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1819,6 +1820,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 27.911976, y: 13.620919}
   m_EdgeRadius: 0
+--- !u!114 &1918423564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918423557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b6d3c5981253b4889c65b91551406d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game_data: {fileID: 11400000, guid: 2fd0507ec7c3aab4f845cd38b780535a, type: 2}
+  home: {fileID: 359287493}
 --- !u!1 &1948686067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.047912598, y: 0.030517578}
+  m_AnchoredPosition: {x: -0.047851562, y: 0.030517578}
   m_SizeDelta: {x: 0.1826, y: 0.1478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2122806701

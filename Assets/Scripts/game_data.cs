@@ -25,7 +25,7 @@ public class game_data : ScriptableObject
     public bool cue_twice;
     public bool transition;
     public int transition_counter;
-    //public bool toggle_spawn;   // for toggles renders to be off when first spawned
+    public bool going_home;
 
     // tutorial
     public bool tutorial;

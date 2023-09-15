@@ -117,6 +117,7 @@ public class DayHandler : MonoBehaviour
         game_data.cue_twice = false;
         game_data.transition = false;
         game_data.transition_counter = 0;
+        game_data.going_home = false;
         stat_data.firstLoad = true;
 
         // tutorial initialization

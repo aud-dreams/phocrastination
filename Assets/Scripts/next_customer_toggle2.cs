@@ -59,6 +59,7 @@ public class next_customer_toggle2 : MonoBehaviour
                     {
                         bowl.transform.position = bowl_position;
                         bowl_render.enabled = true;
+                        game_data.allow_drag = true;
                     }
 
                     button.SetActive(false);

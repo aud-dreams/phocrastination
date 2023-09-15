@@ -28,6 +28,7 @@ public class bowl_pickup : MonoBehaviour
             bowl.SetActive(true);
             bowl.transform.position = bowl_position;
             bowl_render.enabled = true;
+            game_data.allow_drag = true;
         }
         else
         {
@@ -93,11 +94,6 @@ public class bowl_pickup : MonoBehaviour
                 }
 
             }
-
-            // // once button clicked, deactivate button again until next customer leaves
-            // button.SetActive(false);
-            // toggle.SetActive(false);
-            // game_data.can_next2 = false;
         }
     }
     private IEnumerator blink(GameObject toggle)
@@ -116,6 +112,7 @@ public class bowl_pickup : MonoBehaviour
     public IEnumerator Pickup(GameObject customer)
     {
         game_data.can_next2 = false;
+        game_data.allow_drag = false;
 
         // if customer recieves bowl, sparkles + leaves
         sparkles.SetActive(true);
